@@ -1,4 +1,4 @@
-Tutorial de JQuery
+Tutorial de JQuery en español
 ==========================================================================================
 
 ### [Sesión 1](./sesion01/)
@@ -10,3 +10,15 @@ Tutorial de JQuery
   - Selectores CSS
  - Introducción a **jQuery**
   - Selectores con jQuery
+
+>> **Nota**: Por el momento este manual se esta elaborando:
+
+Para poder colaborar puedes clonar el proyecto:
+
+<pre class='shell'>
+git clone git@github.com:mundoSICA/tutorial_hispano_jQuery.git
+</pre>
+
+Ó realizar un fork:
+
+- <https://github.com/mundosica/tutorial_hispano_jQuery/>
