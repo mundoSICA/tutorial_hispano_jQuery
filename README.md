@@ -3,7 +3,7 @@ Manual de JQuery
 
 Este es un manual de jQuery en linea, el cual lo puedes visitar desde:
 
-	<http://mundosica.github.com/tutorial_hispano_jQuery/>
+- <http://mundosica.github.com/tutorial_hispano_jQuery/>
 
 En este espacio(_brazo_) solo hay documentación para desarrolladores.
 
