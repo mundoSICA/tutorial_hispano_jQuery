@@ -11,16 +11,7 @@ En este espacio(_brazo_) solo hay documentación para desarrolladores.
 
 ### Obteniendo el proyecto.
 
-Lo primero que tienes que hacer es realizar una ramificación de este proyecto(_pull Request_).
-
-<div class='title-actions-bar'>
-<ul class='pagehead-actions'>
-<li class="nspr">
-<a class="minibutton btn-pull-request" href="/mundoSICA/tutorial_hispano_jQuery/pull/new/master"><span class="icon"></span>Pull Request</a>
-</li>
-</ul>
-</div>
-
+Lo primero que tienes que hacer es realizar una ramificación de este proyecto(_Fork_).Esto lo haces desde el icono de fork que esta en parte superior de [esta página](https://github.com/mundoSICA/tutorial_hispano_jQuery) **Fork**.
 
 Una vez que tengas tu copia lo siguiente es clonar el proyecto, por ejemplo mi usaurio es @fitorec y mi copia estaria ubicada en <https://github.com/fitorec/tutorial_hispano_jQuery> por lo cual el clone que tengo que hacer seria:
 
