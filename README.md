@@ -7,9 +7,10 @@ Este es un manual de jQuery en linea, el cual lo puedes visitar desde:
 
 En este espacio(_brazo_) solo hay documentación para desarrolladores.
 
-## Documentación para colaboradores.
+Documentación para colaboradores.
+==========================================================================================
 
-### Obteniendo el proyecto.
+## Obteniendo el proyecto.
 
 Lo primero que tienes que hacer es realizar una ramificación de este proyecto(_Fork_).Esto lo haces desde el icono de fork que esta en parte superior de [esta página](https://github.com/mundoSICA/tutorial_hispano_jQuery) **Fork**.
 
