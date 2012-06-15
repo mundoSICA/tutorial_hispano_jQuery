@@ -86,7 +86,7 @@ p code{
 p{
 	text-align:justify;
 }
-.shellcode {
+.shell {
   background: #1A1A1A url(../img/shell.gif) no-repeat scroll 5px 5px;
   color: #00FF08;
   text-shadow:1px 1px 1px #000,-1px -1px 1px #000;
