@@ -1,7 +1,8 @@
 Manual de JQuery en español
 ==========================================================================================
 
-### [Sesión 1](./sesion01/)
+[Sesión 1](./sesion01/) - Referencia e introducción
+------------------------------------------------------------------------------------------
  - Referencia **HTML**
   - Concepto **DOM**
   - Consultas Xpath
@@ -10,6 +11,71 @@ Manual de JQuery en español
   - Selectores CSS
  - Introducción a **jQuery**
   - Selectores con jQuery
+
+[Sesión 2](http://api.jquery.com/category/manipulation/style-properties/) - Propiedades y estilos
+------------------------------------------------------------------------------------------
+ -Funciones
+  - `css()`
+  - `height()`
+  - `innerHeight()`
+  - `offset()`
+  - `outerHeight()`
+  - `outerWidth()`
+  - `position()`
+  - `scrollLeft()`
+  - `scrollTop()`
+	- `addClass()`
+	- `hasClass()`
+	- `removeClass()`
+  - `toggleClass()`
+ - Efectos.
+  - animate()
+  - .clearQueue()
+  - .clearQueue()
+  - .delay()
+  - .dequeue()
+  - .fadeIn()
+  - .fadeOut()
+  - .fadeTo()
+  - .fadeToggle()
+  - jQuery.fx.interval
+  - jQuery.fx.off
+  - .hide()
+  
+[Sesión 3](http://api.jquery.com/category/manipulation/) - Manipulacion del DOM
+ - Funciones
+  - `after()`
+  - `append()`
+  - `appendTo()`
+  - `attr()`
+  - `before()`
+  - `detach()`
+  - `empty()`
+  - `html()`
+  - `text()`
+  - `val()`
+  - `insertAfter()`
+  - `insertBefore()`
+  - `offset()`
+  - `outerHeight()`
+  - `prop()`
+  - `remove()`
+  - `removeAttr()`
+  - `removeProp()`
+  - `unwrap()`
+  - `wrap()`
+  - `wrapAll()`
+  - `wrapInner()`
+
+
+[Sesión 4](http://api.jquery.com/category/ajax/low-level-interface/) - Respuestas asincronas.
+
+ - Funciones
+  - jQuery.ajax()
+  - jQuery.ajaxPrefilter()
+  - jQuery.ajaxSetup()
+  
+
 
 > **Nota**: Por el momento este manual se esta elaborando:
 
