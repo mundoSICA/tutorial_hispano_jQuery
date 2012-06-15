@@ -16,6 +16,9 @@ a{
 a:hover{
 	color: #D15F00;
 }
+img{
+	margin: 0;
+}
 h1{
 	text-shadow:1px 1px 5px #FFF;
 	font-size:40px
@@ -31,9 +34,11 @@ pre{
   width: 725px;
   overflow: auto;
   white-space: pre;
-}
-pre:hover{
-	background-color: #d6f1f9;
+  opacity:0.9;
+  -moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
 }
 p code{
 	background:#fdfdfd;
@@ -41,6 +46,7 @@ p code{
 	font-size:0.9em;
 	border: 1px solid #ddd;
 	color:#222;
+	border: solid 1px #EADC94;
 }
 /* layout section */
 .sica{
@@ -77,6 +83,11 @@ p code{
 	padding: 5px 10px;
 	background:#F8F8F8;
 	margin:0 Auto 0 Auto;
+	-webkit-box-shadow:0 2px 15px #aaa;
+	-moz-box-shadow:0 2px 15px #aaa;
+	-ms-box-shadow:0 2px 15px #aaa;
+	-o-box-shadow:0 2px 15px #aaa;
+	box-shadow:0 2px 15px #aaa;
 }
 #content #inner-content{
 	background:#fff;
@@ -87,12 +98,113 @@ p{
 	text-align:justify;
 }
 .shell {
-  background: #1A1A1A url(../img/shell.gif) no-repeat scroll 5px 5px;
+	background-image: url(../img/shell.gif);
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-color: #111;
   color: #00FF08;
   text-shadow:1px 1px 1px #000,-1px -1px 1px #000;
+  opacity:0.9;
 }
-.shell:hover {
-  background-color: #000;
-  color: #31FF00;
-  text-shadow:0 2px 3px #115900;
+
+blockquote:hover,
+.shell:hover,
+pre:hover
+{
+	opacity:1;
+	-webkit-box-shadow:0 2px 15px #ccc;
+	-moz-box-shadow:0 2px 15px #ccc;
+	-ms-box-shadow:0 2px 15px #ccc;
+	-o-box-shadow:0 2px 15px #ccc;
+	box-shadow:0 2px 15px #ccc;
+}
+blockquote {
+    background-image: url(../img/note.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-color: #FFF6C8;
+    font-size: 1em;
+    font-style: italic;
+    line-height: 20px;
+    padding:2px 35px;
+    text-align: left;
+    border: solid 1px #EADC94;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-o-border-radius: 10px;
+		border-radius: 10px;
+		color: #170C00;
+		opacity:0.9;
+}
+
+blockquote p{
+  padding:0;
+  text-shadow:none;
+}
+
+#pie_pagina{
+	width: 820px;
+	margin:-20px auto 0 auto;
+	background: #FF5000;
+	background-repeat: repeat-x;
+	background-image: -moz-linear-gradient(top, #222, #111);
+	background-image: -ms-linear-gradient(top, #222, #111);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#FF5000), to(#C01106));
+	background-image: -webkit-linear-gradient(top, #222, #111);
+	background-image: -o-linear-gradient(top, #222, #111);
+	background-image: linear-gradient(top, #222, #111);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#111',GradientType=0 );
+	height:150px;
+}
+
+#colaboradores {
+	float:right;
+	padding: 5px;
+	text-shadow:1px 1px 1px #000,0 0 5px #000;
+}
+
+#colaboradores h2{
+	color: #0050B5;
+	margin:40px 0 20px 0;
+	font-size: 1.2em;
+}
+#colaboradores span{
+	font-size:0.8em;
+	color:#555;
+}
+#colaboradores ul li{ display: inline; float:right; margin-bottom:10px;}
+#colaboradores ul li a{
+	padding: 5px;
+	margin-left: 10px;
+	background-image: -moz-linear-gradient(top, #262626, #161616);
+	background-image: -ms-linear-gradient(top, #262626, #161616);
+	background-image: -webkit-linear-gradient(top, #262626, #161616);
+	background-image: -o-linear-gradient(top, #262626, #161616);
+	background-image: linear-gradient(top, #262626, #161616);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#262626', endColorstr='#161616',GradientType=0 );
+	border:1px solid #000;
+	color:#FFF;
+	text-shadow:-2px -2px 2px #000;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+	-webkit-box-shadow: 1px 1px 1px #000;
+	-moz-box-shadow: 1px 1px 1px #000;
+	-ms-box-shadow: 1px 1px 1px #000;
+	-o-box-shadow: 1px 1px 1px #000;
+	box-shadow: 1px 1px 1px #000;
+}
+
+#colaboradores ul li a:hover{
+	background-image: -moz-linear-gradient(top, #111, #000);
+	background-image: -ms-linear-gradient(top, #111, #000);
+	background-image: -webkit-linear-gradient(top, #111, #000);
+	background-image: -o-linear-gradient(top, #111, #000);
+	background-image: linear-gradient(top, #111, #000);
+	-webkit-box-shadow: 1px 1px 2px #444;
+	-moz-box-shadow: 1px 1px 2px #444;
+	-ms-box-shadow: 1px 1px 2px #444;
+	-o-box-shadow: 1px 1px 2px #444;
+	box-shadow: 1px 1px 2px #444;
 }

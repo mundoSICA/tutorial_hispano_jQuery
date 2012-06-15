@@ -1,5 +1,10 @@
-Capitulo 1
+Sessión 1
 ==========================================================================================
+
+Introducción.
+------------------------------------------------------------------------------------------
+Este manual esta licenciado bajo [_atribución creative commons_](http://creativecommons.org/licenses/by/2.5/mx/), si desear colaborar te invito a que visites el [repositorio](https://github.com/mundoSICA/tutorial_hispano_jQuery) para que puedas ver _las instrucciones para los colaboradores_.
+
 
 Referencia **HTML**
 ------------------------------------------------------------------------------------------
@@ -8,7 +13,7 @@ Referencia **HTML**
 <p>HTML también sirve para referirse al contenido del <a href="/wiki/Multipurpose_Internet_Mail_Extensions" title="Multipurpose Internet Mail Extensions">tipo de MIME</a> text/html o todavía más ampliamente como un término genérico para el HTML, ya sea en forma descendida del <a href="/wiki/XML" title="XML" class="mw-redirect">XML</a> (como <a href="/wiki/XHTML" title="XHTML">XHTML</a> 1.0 y posteriores) o en forma descendida directamente de <a href="/wiki/SGML" title="SGML">SGML</a> (como HTML 4.01 y anteriores).</p>
 
 
->> fuente: <http://es.wikipedia.org/wiki/HTML>
+> fuente: <http://es.wikipedia.org/wiki/HTML>
 
 ### Concepto **DOM**
 
@@ -18,7 +23,7 @@ El responsable del DOM es el _World Wide Web Consortium_ (W3C).
 
 El DOM es una interfaz de programación de aplicaciones para acceder, añadir y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (_JavaScript_).
 
->> fuente: <http://es.wikipedia.org/wiki/Document_Object_Model>
+> fuente: <http://es.wikipedia.org/wiki/Document_Object_Model>
 
 ### Consultas Xpath
 

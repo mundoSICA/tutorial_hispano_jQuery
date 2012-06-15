@@ -4,15 +4,25 @@
 # - Git
 # - Markdown
 
+#Revisamos que las dependencias se cumplan satisfactoriamente
+DEPENDENCIES="git markdown"
+for dep in $DEPENDENCIES
+do
+	which $dep > /dev/null;
+	if [ $? -ne 0 ]
+	then
+			echo -e "Dependencia incumplida ${dep}, favor de instalar";
+			echo -e "sudo apt-get install ${dep}";
+	fi
+done;
+
+#optenemos la ruta del repositorio
 repo_path=$(git rev-parse --show-toplevel)
-#echo $repo_path;
-#echo $1;
-#exit 0;
 
 #Si no recibe ningún argumento, actualiza todo el directorio
 if [ $# -ne 1 ]
 then
-  echo "Ejecucion modo actualización general";
+  echo "Ejecución modo actualización general";
   echo "--------------------------------------------------------------------------------";
   #for file in `git diff --name-only | grep -E '\.md$' | sort `;
   for file in `find $repo_path -iregex ".*\.md$" | sort `;
@@ -61,8 +71,22 @@ echo "<div id='head'>
 
 markdown $1 >> $archivo_salida
 
-#Fin del content, del body y del documento html
-echo '</div>
+#Fin del content,Agregamos pie de pagina, finalmente cerramos el body y del documento html
+echo '</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="colaboradores">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br clear="all" />
+		<span>Obra está licencia bajo 
+			<a rel="license" href="http://creativecommons.org/licenses/by/2.5/mx/">Creative Commons Atribución 2.5 México</a>.
+		</span>
+	</div>
+</div>
 </body>
 </html>'  >> $archivo_salida
 ##########################################################################################

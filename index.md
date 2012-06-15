@@ -11,7 +11,7 @@ Tutorial de JQuery en español
  - Introducción a **jQuery**
   - Selectores con jQuery
 
->> **Nota**: Por el momento este manual se esta elaborando:
+> **Nota**: Por el momento este manual se esta elaborando:
 
 Para poder colaborar puedes clonar el proyecto:
 
