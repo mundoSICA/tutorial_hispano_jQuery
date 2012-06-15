@@ -91,3 +91,8 @@ p{
   color: #00FF08;
   text-shadow:1px 1px 1px #000,-1px -1px 1px #000;
 }
+.shell:hover {
+  background-color: #000;
+  color: #31FF00;
+  text-shadow:0 2px 3px #115900;
+}

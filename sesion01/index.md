@@ -27,13 +27,26 @@ Referencia **CSS**
 ------------------------------------------------------------------------------------------
 
 ### Secretos css3
+
 ### Selectores CSS
 
+#### Lista de Recursos:
+ - <http://www.w3.org/TR/CSS21/selector.html>
+ - <http://mathiasbynens.be/notes/css-escapes> - CSS escapes!(buena lectura)
+ - <http://www.librosweb.es/css_avanzado/pdf/> - CSS avanzado(libro pdf descargable)
 Introducción a **jQuery**
 ------------------------------------------------------------------------------------------
 
 ### Selectores con Jquery
-<http://api.jquery.com/category/selectors/>
+<http://api.jquery.com/category/selectors/> - sitio oficial
+<http://www.w3schools.com/jquery/jquery_ref_selectors.asp> - buena descripción.
+
+#### Selectores xPath y CSS
+
+ - <http://ejohn.org/blog/xpath-css-selectors/>
+ 
+### Trasversatilidad
+ - http://api.jquery.com/category/traversing/
 
 
 Lista de ejemplos:
