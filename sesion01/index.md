@@ -34,3 +34,9 @@ Introducción a **jQuery**
 
 ### Selectores con Jquery
 <http://api.jquery.com/category/selectors/>
+
+
+Lista de ejemplos:
+------------------------------------------------------------------------------------------
+
+ # [Selectores con **CSS**](ejemplos/selector_css.html)

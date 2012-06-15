@@ -1,7 +1,7 @@
 <script language="Javascript"  type="text/javascript">
-$(function() {
-		$('ul li:odd').css('background','#ddd');
-});
+	$(function() {
+			$('ul li:odd').css('background','#ddd');
+	});
 </script>
 
 #selectores CSS
@@ -21,10 +21,10 @@ Ahora por cuestiones de usabilidad queremos los elementos impares de la lista se
 Para esto cabe señarar que existe una lista no numerica `ul` y  que ellos estan contenida varios items `li`:
 
 	<script language="Javascript"  type="text/javascript">
-	$(function() {
-			$('ul li:odd').css('background','#ddd');
-	});
-		</script>
+		$(function() {
+				$('ul li:odd').css('background','#ddd');
+		});
+	</script>
 
 Lo cual genera la siguiente salida:
 
