@@ -12,9 +12,11 @@ Documentación para colaboradores.
 
 ## Obteniendo el proyecto.
 
-Lo primero que tienes que hacer es realizar una ramificación de este proyecto(_Fork_).Esto lo haces desde el icono de fork que esta en parte superior de [esta página](https://github.com/mundoSICA/tutorial_hispano_jQuery) **Fork**.
+Lo primero que tienes que hacer es realizar una ramificación de este proyecto(_Fork_). Esto lo haces desde el icono de fork que esta en parte superior de [esta página](https://github.com/mundoSICA/tutorial_hispano_jQuery) **Fork**.
 
-Una vez que tengas tu copia lo siguiente es clonar el proyecto, por ejemplo mi usaurio es @fitorec y mi copia estaria ubicada en <https://github.com/fitorec/tutorial_hispano_jQuery> por lo cual el clone que tengo que hacer seria:
+Una vez que tengas tu **fork** del proyecto, lo siguiente es clonarlo en tu computadora.
+
+Por ejemplo mi usaurio es @fitorec y mi **fork** estaría ubicado en <https://github.com/fitorec/tutorial_hispano_jQuery> por lo cual el clone que tengo que hacer seria:
 
 	git clone git@github.com:fitorec/tutorial_hispano_jQuery.git
 
