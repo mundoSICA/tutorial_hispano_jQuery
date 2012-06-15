@@ -1,4 +1,4 @@
-Tutorial de JQuery en español
+Manual de JQuery en español
 ==========================================================================================
 
 ### [Sesión 1](./sesion01/)

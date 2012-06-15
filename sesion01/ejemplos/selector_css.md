@@ -4,7 +4,7 @@
 	});
 </script>
 
-#selectores CSS
+# Selectores CSS
 
 Imagina que tienes una tabla con los siguientes datos:
 
@@ -18,7 +18,7 @@ Imagina que tienes una tabla con los siguientes datos:
 
 Ahora por cuestiones de usabilidad queremos los elementos impares de la lista se les cambie el color de fondo.
 
-Para esto cabe señarar que existe una lista no numerica `ul` y  que ellos estan contenida varios items `li`:
+Para esto cabe señalar que existe una lista no numérica `ul` y  que ellos están contenida varios items `li`:
 
 	<script language="Javascript"  type="text/javascript">
 		$(function() {
