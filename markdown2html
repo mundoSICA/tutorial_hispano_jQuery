@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+#Requiere:
+# - Git
+# - Markdown
+
+#Si no recibe ningún argumento, actualiza todo el directorio
+if [ $# -ne 1 ]
+then
+  echo "Ejecucion modo actualización general";
+  echo "--------------------------------------------------------------------------------";
+  for file in `git diff --name-only | grep -E '\.md$' | sort `;
+  do
+		$0 $file
+	done;
+	exit 0;
+fi
+#Revisamos que el archivo de entrada tenga la extensión adecuada.
+(echo ${1} | grep -Evq '\.md$') && (echo "El documento de entrada ${1} debe tener la extension md"; exit 1 );
+#generamos el nombre que tendra el archivo de salida
+archivo_salida=`echo ${1} | sed 's/\.md$/.html/'`;
+echo -e "\t${archivo_salida}";
+
+USER=`eval whoami`
+#generamos el titulo
+TITLE=`markdown $1 | grep -Eo "<h1>.*</h1>" | head -1 | sed -r  "s/<h1>(.*)<\/h1>/\1/"`
+##########################################################################################
+#generando el archivo de salida.
+##########################################################################################
+#Cabecera Html
+echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>' > $archivo_salida
+
+#Titulo
+echo "<title>$TITLE</title>" >>  $archivo_salida
+
+#Seccion metadatos, css y javascript
+echo "<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\" />
+	<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/style.css\" />
+	<script language='Javascript'  type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+</head>
+<body>
+<div id='content'>
+" >> $archivo_salida
+
+markdown $1 >> $archivo_salida
+echo '</div>
+</body>
+</html>'  >> $archivo_salida
+##########################################################################################
+
+#Finalmente mandamos abrir el archivo
+gnome-open $archivo_salida &
