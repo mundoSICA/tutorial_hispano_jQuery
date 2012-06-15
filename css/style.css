@@ -1,187 +1,85 @@
-html, address,
-blockquote,
-body, dd, div,
-dl, dt, fieldset, form,
-frame, frameset,
-h1, h2, h3, h4,
-h5, h6, noframes,
-ol, p, ul, center,
-dir, hr, menu, pre   { display: block; unicode-bidi: embed }
-li              { display: list-item }
-head            { display: none }
-table           { display: table }
-tr              { display: table-row }
-thead           { display: table-header-group }
-tbody           { display: table-row-group }
-tfoot           { display: table-footer-group }
-col             { display: table-column }
-colgroup        { display: table-column-group }
-td, th          { display: table-cell }
-caption         { display: table-caption }
-th              { font-weight: bolder; text-align: center }
-caption         { text-align: center }
-body            { margin: 8px }
-h1              { font-size: 2em; margin: .67em 0 }
-h2              { font-size: 1.5em; margin: .75em 0 }
-h3              { font-size: 1.17em; margin: .83em 0 }
-h4, p,
-blockquote, ul,
-fieldset, form,
-ol, dl, dir,
-menu            { margin: 1.12em 0 }
-h5              { font-size: .83em; margin: 1.5em 0 }
-h6              { font-size: .75em; margin: 1.67em 0 }
-h1, h2, h3, h4,
-h5, h6, b,
-strong          { font-weight: bolder }
-blockquote      { margin-left: 40px; margin-right: 40px }
-i, cite, em,
-var, address    { font-style: italic }
-pre, tt, code,
-kbd, samp       { font-family: monospace }
-pre             { white-space: pre }
-button, textarea,
-input, select   { display: inline-block }
-big             { font-size: 1.17em }
-small, sub, sup { font-size: .83em }
-sub             { vertical-align: sub }
-sup             { vertical-align: super }
-table           { border-spacing: 2px; }
-thead, tbody,
-tfoot           { vertical-align: middle }
-td, th, tr      { vertical-align: inherit }
-s, strike, del  { text-decoration: line-through }
-hr              { border: 1px inset }
-ol, ul, dir,
-menu, dd        { margin-left: 40px }
-ol              { list-style-type: decimal }
-ol ul, ul ol,
-ul ul, ol ol    { margin-top: 0; margin-bottom: 0 }
-u, ins          { text-decoration: underline }
-br:before       { content: "\A"; white-space: pre-line }
-center          { text-align: center }
-:link, :visited { text-decoration: none }
-:focus          { outline: thin dotted invert }
-
-/* Begin bidirectionality settings (do not change) */
-BDO[DIR="ltr"]  { direction: ltr; unicode-bidi: bidi-override }
-BDO[DIR="rtl"]  { direction: rtl; unicode-bidi: bidi-override }
-
-*[DIR="ltr"]    { direction: ltr; unicode-bidi: embed }
-*[DIR="rtl"]    { direction: rtl; unicode-bidi: embed }
-
-@media print {
-  h1            { page-break-before: always }
-  h1, h2, h3,
-  h4, h5, h6    { page-break-after: avoid }
-  ul, ol, dl    { page-break-before: avoid }
-}
-::selection { background: #0078D7; color:#FFF; text-shadow:none !important; }
-::-moz-selection { background: #0078D7;color:#FFF;text-shadow:none !important; }
-/* @group Reset */
+div{border:0;padding:0;}
 body{
-	background: #4D4D4D URL(bg.png);
-	color: #000;
-	font-family: rial,helvetica,sans-serif;
-	font-size: 1.1em;
-	text-align: justify;
-	width: 95% ;
-	margin-left: auto ;
-	margin-right: auto ;
+	background:#EFEFEF;
+	font-family: sans-serif;
+	margin:0;
+	padding:0;
+}
+@font-face {
+	font-family: "neuropol";
+	src: url(./../img/neuropol.ttf) format("truetype");
 }
 a{
 	text-decoration: none;
-	color: #004294;
+	color: #5071BD;
 }
 a:hover{
-	color: #942500;
+	color: #D15F00;
 }
-@font-face {
-	font-family: "Ubuntu-R";
-	src: url(./Ubuntu-R.ttf) format("truetype");
+h1{
+	text-shadow:1px 1px 5px #FFF;
+	font-size:40px
 }
-@font-face {
-	font-family: "cursive_standard";
-	src: url(./cursive_standard.ttf) format("truetype");
-}
-h1,h2,h3,h4,h5,h6 {
-	font-family: "Ubuntu-R", sans-serif;
-	color: #E83F00;
-	text-shadow:1px 1px 0 #FFF,-1px -1px 0 #FFF;
-}
-h2 {
-	color: #292929;
-}
-
-h3,h4,h5,h6{
-	color: #292929;
-}
-/* #----------------- */
-del{
-	color: #BFBFBF; 
-}
-cite{
-	color: #4D4D4D;
-	background: #FFFDD1;
-	font-family: sans-serif;
-}
-p{
-	text-align: justify;
-}
-em{
-	background: RGBA(255,255,255,0.2);
-	padding: 0 5px 0 5px;
-	color: #111;
-}
-
-/* -------------------------class of pre-format--------------------------------- */
+/* section code */
 pre{
-  background: #DBE7EA url(code.png) no-repeat scroll 5px 5px;
+  background: #DBE7EA url(../img/code.png) no-repeat scroll 5px 5px;
   font-family:"Bitstream Vera Sans Mono",Monaco,"Lucida Console",monospace;
   margin: 10px 5px;
   padding:10px 10px 10px 35px;
   color: #1A1A1A;
   border: 1px solid #bbb;
-  width: 95%;
+  width: 725px;
   overflow: auto;
   white-space: pre;
-  text-shadow:1px 1px 1px #FFF;
-  resize: both;
-  overflow: auto;
 }
 pre:hover{
 	background-color: #d6f1f9;
-	z-index:10;
 }
-.shellcode {
-  background: #1A1A1A url(shell.gif) no-repeat scroll 5px 5px;
-  color: #00FF08;
-  text-shadow:1px 1px 1px #000,-1px -1px 1px #000;
+p code{
+	background:#fdfdfd;
+	font-family:"Bitstream Vera Sans Mono",Monaco,"Lucida Console",monospace;
+	font-size:0.9em;
+	border: 1px solid #ddd;
+	color:#222;
 }
-.shellcode:hover {
-  background: #101010 url(shell.gif) no-repeat scroll 5px 5px;
-  color: #61FF00;
+/* layout section */
+.sica{
+	color:#FF4800;
+	font-family: "neuropol";
 }
-.php {
-  background: #F3F3F3 url(php.png) no-repeat scroll 5px 5px;
-  color: #1A1A1A;
+
+#head{
+	width:800px;
+	height:153px;
+	background: #1A1A1A;
+	padding:0 10px 0 10px;
+	margin:0 Auto 0 Auto;
 }
-.php:hover{ background-color: white }
-	div#content{
-	width: 750px;
-	margin: auto;
-	background: #fff URL(bg-content.png);
-	padding: 30px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	border:10px #FFF solid;
-	-webkit-box-shadow: inset 0 1px 0 #7A7A7A;
-	-moz-box-shadow: inset 0 1px 0 #7A7A7A;
-	-ms-box-shadow: inset 0 1px 0 #7A7A7A;
-	-o-box-shadow: inset 0 1px 0 #7A7A7A;
-	box-shadow:inset 1px 1px 3px #444,inset -1px -1px 1px #444,0 0 30px #000;
-	min-width:600px;
-	max-width:99%;
-	resize: both;
-	overflow: auto; 
+#head a#logoSICA{
+	width: 217px;
+	height:153px;
+	display:block;
+	float: left;
+	background:URL(../img/logo_sica.png) no-repeat;
+}
+#head a#logoSICA:hover{
+	background-position:0 -153px;
+}
+#head div#colaboradores{
+	background:URL(../img/colaboradores.png) no-repeat;
+	position:absolute;
+	width:400px;
+	height:177px;
+	margin-left: 415px;
+}
+#content{
+	width: 800px;
+	padding: 5px 10px;
+	background:#F8F8F8;
+	margin:0 Auto 0 Auto;
+}
+#content #inner-content{
+	background:#fff;
+	text-align:justify;
+	padding:0 10px 10px 10px;
 }

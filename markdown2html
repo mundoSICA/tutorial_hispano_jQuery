@@ -4,12 +4,18 @@
 # - Git
 # - Markdown
 
+repo_path=$(git rev-parse --show-toplevel)
+#echo $repo_path;
+#echo $1;
+#exit 0;
+
 #Si no recibe ningún argumento, actualiza todo el directorio
 if [ $# -ne 1 ]
 then
   echo "Ejecucion modo actualización general";
   echo "--------------------------------------------------------------------------------";
-  for file in `git diff --name-only | grep -E '\.md$' | sort `;
+  #for file in `git diff --name-only | grep -E '\.md$' | sort `;
+  for file in `find $repo_path -iregex ".*\.md$" | sort `;
   do
 		$0 $file
 	done;
@@ -36,16 +42,26 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 #Titulo
 echo "<title>$TITLE</title>" >>  $archivo_salida
 
+
 #Seccion metadatos, css y javascript
 echo "<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\" />
-	<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/style.css\" />
+	<link rel=\"stylesheet\" type=\"text/css\" href=\"http://mundosica.github.com/tutorial_hispano_jQuery/css/style.css\" />
 	<script language='Javascript'  type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
 </head>
 <body>
-<div id='content'>
 " >> $archivo_salida
 
+#Seccion  Cabecera e inicio del content
+echo "<div id='head'>
+	<a href='http://mundosica.github.com/tutorial_hispano_jQuery/' id='logoSICA' title='SICÁ - Publicación de códigos abiertos'></a>
+	<div id='colaboradores'></div>
+</div>
+<div id='content'>
+" >>  $archivo_salida
+
 markdown $1 >> $archivo_salida
+
+#Fin del content, del body y del documento html
 echo '</div>
 </body>
 </html>'  >> $archivo_salida
