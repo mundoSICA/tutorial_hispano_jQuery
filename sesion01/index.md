@@ -38,8 +38,11 @@ Referencia **CSS**
 
 #### Lista de Recursos:
  - <http://www.w3.org/TR/CSS21/selector.html>
+ - <http://www.w3.org/TR/css3-selectors/#selectors> - Lista de selectores _CSS_
  - <http://mathiasbynens.be/notes/css-escapes> - CSS escapes!(buena lectura)
+ - <http://www.xanthir.com/blog/b4JF0> - _CSS_ Como maneja los errores.
  - <http://www.librosweb.es/css_avanzado/pdf/> - CSS avanzado(libro pdf descargable)
+
 Introducción a **jQuery**
 ------------------------------------------------------------------------------------------
 
