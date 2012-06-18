@@ -1,7 +1,7 @@
 Manual de JQuery en español
 ==========================================================================================
 
-##  Sessión 1 - Introducción al manual
+##  [Sessión 1 - Introducción al manual](sesion01/index.html)
  - Descripción de este manual
  - Breve referencia <strong>HTML</strong>
   - Concepto <strong>DOM</strong>
@@ -13,7 +13,7 @@ Manual de JQuery en español
   3. La libreria jQuery.
  - Lecturas externas recomendables:
 
-##  Sesion 02 - Conociendo jQuery
+##  [Sesion 02 - Conociendo jQuery](sesion02/index.html)
  - Introducción a <strong>jQuery</strong>
   - Selectores con Jquery
   - Selectores xPath y CSS
