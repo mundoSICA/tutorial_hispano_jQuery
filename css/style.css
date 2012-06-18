@@ -247,10 +247,11 @@ pre:hover
 	-o-border-radius:none;
 	border-radius:none;
 }
-.snippet-wrap .snippet-menu pre, .snippet-wrap .snippet-hide pre { box-shadow:none}
+.snippet-wrap .snippet-menu pre, .snippet-wrap .snippet-hide pre { box-shadow:none;padding:0;
+}
 .snippet-menu:{ text-align: right;}
 th{
-	color:#FFF;
+	color:#FF8A00;
 	text-shadow:1px 1px 2px #000;
 	background: #444;
 	background-repeat: repeat-x;
@@ -261,4 +262,11 @@ th{
 	background-image: -o-linear-gradient(top, #444, #111);
 	background-image: linear-gradient(top, #444, #111);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444', endColorstr='#111',GradientType=0 );
+}
+input, textarea {
+    clear: both;
+    font-family: "frutiger linotype","lucida grande","verdana",sans-serif;
+    font-size: 140%;
+    padding: 1%;
+    width: 98%;
 }

@@ -17,6 +17,14 @@
 </div>
 <div id='content'>
 
+<script type="text/javascript" src="../js/jquery.snippet.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+<script language="Javascript"  type="text/javascript">
+$(function() {
+    $("pre").snippet("html", {style:'darkness'});
+});
+</script>
+
 <h1>Sesión 02 - Conociendo jQuery</h1>
 
 <h2>Introducción a <strong>jQuery</strong></h2>
@@ -26,6 +34,19 @@
 <blockquote>
   <p>Extracto: <a href="http://es.wikipedia.org/wiki/JQuery">http://es.wikipedia.org/wiki/JQuery</a></p>
 </blockquote>
+
+<h2>Agregando <strong>jQuery</strong></h2>
+
+<p>Una vez que tenemos la libreria <a href="http://docs.jquery.com/Downloading_jQuery"><strong>jQuery más reciente</strong></a>, lo siguiente es incluir la libreria en nuestros documentos html, esto lo hacemos, agregando el script dentro de la cabecera del documento.</p>
+
+<pre>&lt;head&gt;
+  &lt;!-- agregando libreria jQuery --&gt;
+  &lt;script type='text/javascript' src='js/jquery1.7.3.js'&gt;&lt;/script&gt;
+&lt;/head&gt;</pre>
+
+<p>Por otra parte tambien puedes agregar la libreria directo del servidor de google</p>
+
+<p><input value='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></p>
 
 <h2>Selectores con <strong>jQuery</strong></h2>
 

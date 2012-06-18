@@ -1,3 +1,11 @@
+<script type="text/javascript" src="../js/jquery.snippet.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+<script language="Javascript"  type="text/javascript">
+$(function() {
+	$("pre").snippet("html", {style:'darkness'});
+});
+</script>
+
 Sesión 02 - Conociendo jQuery
 =============================================================================
 
@@ -7,6 +15,23 @@ Introducción a **jQuery**
 **jQuery** es una biblioteca de _JavaScript_, creada inicialmente por [John Resig](http://ejohn.org/), que nos permite simplificar la manera de interactuar con los documentos **HTML**, manipular el árbol **DOM**, manejar eventos, desarrollar animaciones y agregar interacción con la técnica **AJAX** a páginas web.
 
 > Extracto: <http://es.wikipedia.org/wiki/JQuery>
+
+
+Agregando **jQuery**
+------------------------------------------------------------------------------------------
+
+Una vez que tenemos la libreria [__jQuery más reciente__](http://docs.jquery.com/Downloading_jQuery), lo siguiente es incluir la libreria en nuestros documentos html, esto lo hacemos, agregando el script dentro de la cabecera del documento.
+
+
+<pre>&lt;head&gt;
+  &lt;!-- agregando libreria jQuery --&gt;
+  &lt;script type='text/javascript' src='js/jquery1.7.3.js'&gt;&lt;/script&gt;
+&lt;/head&gt;</pre>
+
+Por otra parte tambien puedes agregar la libreria directo del servidor de google
+
+<input value='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'>
+
 
 Selectores con **jQuery**
 ------------------------------------------------------------------------------------------
