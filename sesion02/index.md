@@ -30,7 +30,7 @@ Una vez que tenemos la libreria [__jQuery más reciente__](http://docs.jquery.co
 
 Por otra parte tambien puedes agregar la libreria directo del servidor de google
 
-<input value='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'>
+<input id='jqueryInput' value='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'>
 
 
 Selectores con **jQuery**
