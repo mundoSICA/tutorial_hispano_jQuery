@@ -52,22 +52,25 @@ Con __CSS__ podemos hacer declaraciones de estilo sobre los elementos **HTML**, 
 Software a usar
 ------------------------------------------------------------------------------------------
 
-Para desarrollar sitios de Internet con **jQuery** basicamente necesitamos 3 cosas:
+Para desarrollar sitios de Internet con **jQuery** basicamente necesitamos 4 cosas:
 
 1. Editor de texto
 2. Navegador web.
 3. La libreria jQuery.
+4. Servidor web(para la sección `ajax`, `json`).
 
 
 ### 1. Editor de texto:
 
-El editor de texto es la herramienta básica para editar archivos: __HTML_, __javaScript__ y __CSS__. Hay muchos editores muy buenos y usted puede puede usar el editor de su agrado, entre los que recomendamos son los siguientes:
+El editor de texto es la herramienta básica para editar archivos: __HTML_, __javaScript__ y __CSS__. Hay muchos editores muy buenos y usted puede puede usar el editor de su agrado, entre los que recomendamos son los siguientes (_ordenados según mis preferencias_):
 
+ - [Geany](http://www.geany.org/Download/Releases)
  - [Vim](http://www.vim.org/download.php)
  - [Emacs](http://www.gnu.org/software/emacs/)
- - [Geany](http://www.geany.org/Download/Releases)
+ - [Kate](http://kate-editor.org/)
  - [Notepad++](http://notepad-plus-plus.org/download/v6.1.3.html)
- - sublimeText
+ - [TextMate](http://kate-editor.org/)
+ - [sublimeText](http://www.sublimetext.com/)
 
 
 Sin embargo te recomiendo el [geany](http://www.geany.org/Download/Releases) el cual esta disponible para multiples Sistema operativos, ademas de agregarle el [geany-web-ninja](http://mundosica.github.com/geany-web-ninja/) el cual es una colección de archivos de configuración orientadas al desarrollo web. 
@@ -88,6 +91,16 @@ Por cuestiones de pruebas te recomiendo que tengas todos los navegadores que est
 ![compartiva jQuery1.6.4 vs Query1.7](../img/compartiva_jquery_1.6.4_vs_1.7.png)
 
 > fuente: [blog.jquery.com/2011/11/03/jquery-1-7-released](http://blog.jquery.com/2011/11/03/jquery-1-7-released/)
+
+
+### 4. Servidor web.
+
+
+Un servidor web es un equipo que esta en la escucha del puerto http(`80`), para nuestros fines nos es suficiente con instalar [**apache web server**](http://httpd.apache.org/), sin embargo cuando se habla de servidor web casi siempre se incluye **apache**, **php** y **msql**,si deseas tener todos estos paquetes los cuales te seran utiles a futuro te recomiendo instalar un [**xampp**](http://www.apachefriends.org/en/xampp.html) el cual esta disponible para:
+
+ - GNU/Linux
+ - Mac &copy;
+ - Windows &copy;
 
 
 Lecturas externas recomendables:
