@@ -2,33 +2,36 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Manual de JQuery en español</title>
+<title>CSS3 colores <input type="text" value="black" class='input' name='input' id='input' /></title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="http://mundosica.github.com/tutorial_hispano_jQuery/css/style.css" />
 	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-	<script language="Javascript"  type="text/javascript" src="css3-colores.js"></script>
-	<style type="text/css">
-	table.hslexample { background: #808080; padding:1em; margin:0; float:left; }
-	table.hslexample td,table.hslexample th { font-size:smaller;width:3em }
-	#content{
-		width:90%;
-		min-height:1000px;
-	}
-	tr:nth-child(2n) {
-		background:#868686;
-	}
-	tr:hover{
-		background:none;
-	}
-	</style>
- </head>
+</head>
 <body>
+
+<div id='head'>
+	<h1>
+		<a id='link_principal' href='http://mundosica.github.com/tutorial_hispano_jQuery/'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
 <div id='content'>
-<input type="text" value="black" class='input' name='input' id='input' />
-<h1>CSS3 colores</h1>
+
+<script language="Javascript"  type="text/javascript" src="css3-colores.js"></script>
+
+<p><style type="text/css">table.hslexample { background: #808080; padding:5px 20px; margin:0; float:left; }table.hslexample td,table.hslexample th { font-size:smaller;width:3em }tr:nth-child(2n) {background:#868686;}tr:hover{background:none;}th{background:#7C7C7C;}input, textarea {width:4em;font-size:1em;}.colores{ background: orange}#content{  height:1150px;}
+</style></p>
+
+<h1>CSS3 colores <input type="text" value="black" class='input' name='input' id='input' /></h1>
+
 <p>Cada cuadro representa un matiz. Doce colores equidistantes (es decir, intervalos de 30º) han sido seleccionados de entre el círculo de color: <em>rojo, amarillo, verde, cian, azul, magenta,</em> con todos los colores intermedios (el último es el color entre el magenta y rojo).</p>
+
 <p>El eje X de cada tabla representa la saturación (100%, 75%, 50%, 25%, 0%).</p>
+
 <p>El eje Y representa la claridad. 50% es "normal".</p>
+
+<p>Información obtenida de: <a href="http://www.w3.org/TR/css3-color/#hsl-examples">http://www.w3.org/TR/css3-color/</a></p>
+
 <table class="hslexample">
 <tbody>
 <tr>
@@ -45,7 +48,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 </tr>
 <tr>
  <th> 88 </th>
@@ -53,7 +55,6 @@
  <td style="background:#F7C7C7">&nbsp;</td>
  <td style="background:#EFCFCF">&nbsp;</td>
  <td style="background:#E7D7D7">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75 </th>
@@ -61,7 +62,6 @@
  <td style="background:#EF8F8F">&nbsp;</td>
  <td style="background:#DF9F9F">&nbsp;</td>
  <td style="background:#CFAFAF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63 </th>
@@ -69,7 +69,6 @@
  <td style="background:#E75858">&nbsp;</td>
  <td style="background:#CF7070">&nbsp;</td>
  <td style="background:#B78787">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50 </th>
@@ -77,7 +76,6 @@
  <td style="background:#DF2020">&nbsp;</td>
  <td style="background:#BF4040">&nbsp;</td>
  <td style="background:#9F6060">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38 </th>
@@ -85,7 +83,6 @@
  <td style="background:#A71818">&nbsp;</td>
  <td style="background:#8F3030">&nbsp;</td>
  <td style="background:#784848">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25 </th>
@@ -93,7 +90,6 @@
  <td style="background:#701010">&nbsp;</td>
  <td style="background:#602020">&nbsp;</td>
  <td style="background:#503030">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13 </th>
@@ -101,10 +97,10 @@
  <td style="background:#380808">&nbsp;</td>
  <td style="background:#301010">&nbsp;</td>
  <td style="background:#281818">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
 </tr>
 </table>
-  <table class="hslexample">
+
+<table class="hslexample">
   <tbody>
  <tr>
  <th></th>
@@ -120,7 +116,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 </tr>
 <tr>
  <th> 88</th>
@@ -128,7 +123,6 @@
  <td style="background:#F7DFC7">&nbsp;</td>
  <td style="background:#EFDFCF">&nbsp;</td>
  <td style="background:#E7DFD7">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -136,7 +130,6 @@
  <td style="background:#EFBF8F">&nbsp;</td>
  <td style="background:#DFBF9F">&nbsp;</td>
  <td style="background:#CFBFAF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -144,7 +137,6 @@
  <td style="background:#E79F58">&nbsp;</td>
  <td style="background:#CF9F70">&nbsp;</td>
  <td style="background:#B79F87">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -152,7 +144,6 @@
  <td style="background:#DF8020">&nbsp;</td>
  <td style="background:#BF8040">&nbsp;</td>
  <td style="background:#9F8060">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -160,7 +151,6 @@
  <td style="background:#A76018">&nbsp;</td>
  <td style="background:#8F6030">&nbsp;</td>
  <td style="background:#786048">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -168,7 +158,6 @@
  <td style="background:#704010">&nbsp;</td>
  <td style="background:#604020">&nbsp;</td>
  <td style="background:#504030">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -176,9 +165,9 @@
  <td style="background:#382008">&nbsp;</td>
  <td style="background:#302010">&nbsp;</td>
  <td style="background:#282018">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
-  </table>
-  <table class="hslexample">
+</table>
+
+<table class="hslexample">
    <tbody>
 <tr>
  <th></th>
@@ -194,7 +183,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 
 <tr>
  <th> 88</th>
@@ -202,7 +190,6 @@
  <td style="background:#F7F7C7">&nbsp;</td>
  <td style="background:#EFEFCF">&nbsp;</td>
  <td style="background:#E7E7D7">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -210,7 +197,6 @@
  <td style="background:#EFEF8F">&nbsp;</td>
  <td style="background:#DFDF9F">&nbsp;</td>
  <td style="background:#CFCFAF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -218,7 +204,6 @@
  <td style="background:#E7E758">&nbsp;</td>
  <td style="background:#CFCF70">&nbsp;</td>
  <td style="background:#B7B787">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -226,7 +211,6 @@
  <td style="background:#DFDF20">&nbsp;</td>
  <td style="background:#BFBF40">&nbsp;</td>
  <td style="background:#9F9F60">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -234,7 +218,6 @@
  <td style="background:#A7A718">&nbsp;</td>
  <td style="background:#8F8F30">&nbsp;</td>
  <td style="background:#787848">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -242,7 +225,6 @@
  <td style="background:#707010">&nbsp;</td>
  <td style="background:#606020">&nbsp;</td>
  <td style="background:#505030">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -250,9 +232,9 @@
  <td style="background:#383808">&nbsp;</td>
  <td style="background:#303010">&nbsp;</td>
  <td style="background:#282818">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
-  </table>
-  <table class="hslexample">
+</table>
+
+<table class="hslexample">
    <tbody>
 <tr>
  <th></th>
@@ -268,7 +250,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 
 <tr>
  <th> 88</th>
@@ -276,7 +257,6 @@
  <td style="background:#DFF7C7">&nbsp;</td>
  <td style="background:#DFEFCF">&nbsp;</td>
  <td style="background:#DFE7D7">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -284,7 +264,6 @@
  <td style="background:#BFEF8F">&nbsp;</td>
  <td style="background:#BFDF9F">&nbsp;</td>
  <td style="background:#BFCFAF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -292,7 +271,6 @@
  <td style="background:#9FE758">&nbsp;</td>
  <td style="background:#9FCF70">&nbsp;</td>
  <td style="background:#9FB787">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -300,7 +278,6 @@
  <td style="background:#80DF20">&nbsp;</td>
  <td style="background:#80BF40">&nbsp;</td>
  <td style="background:#809F60">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -308,7 +285,6 @@
  <td style="background:#60A718">&nbsp;</td>
  <td style="background:#608F30">&nbsp;</td>
  <td style="background:#607848">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -316,7 +292,6 @@
  <td style="background:#407010">&nbsp;</td>
  <td style="background:#406020">&nbsp;</td>
  <td style="background:#405030">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -324,9 +299,9 @@
  <td style="background:#203808">&nbsp;</td>
  <td style="background:#203010">&nbsp;</td>
  <td style="background:#202818">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
-  </table>
-  <table class="hslexample">
+</table>
+
+<table class="hslexample">
    <tbody>
 <tr>
  <th></th>
@@ -342,7 +317,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 
 <tr>
  <th> 88</th>
@@ -350,7 +324,6 @@
  <td style="background:#C7F7C7">&nbsp;</td>
  <td style="background:#CFEFCF">&nbsp;</td>
  <td style="background:#D7E7D7">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -358,7 +331,6 @@
  <td style="background:#8FEF8F">&nbsp;</td>
  <td style="background:#9FDF9F">&nbsp;</td>
  <td style="background:#AFCFAF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -366,7 +338,6 @@
  <td style="background:#58E758">&nbsp;</td>
  <td style="background:#70CF70">&nbsp;</td>
  <td style="background:#87B787">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -374,7 +345,6 @@
  <td style="background:#20DF20">&nbsp;</td>
  <td style="background:#40BF40">&nbsp;</td>
  <td style="background:#609F60">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -382,7 +352,6 @@
  <td style="background:#18A718">&nbsp;</td>
  <td style="background:#308F30">&nbsp;</td>
  <td style="background:#487848">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -390,7 +359,6 @@
  <td style="background:#107010">&nbsp;</td>
  <td style="background:#206020">&nbsp;</td>
  <td style="background:#305030">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -398,9 +366,9 @@
  <td style="background:#083808">&nbsp;</td>
  <td style="background:#103010">&nbsp;</td>
  <td style="background:#182818">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
-  </table>
-  <table class="hslexample">
+</table>
+
+<table class="hslexample">
    <tbody>
 <tr>
  <th></th>
@@ -416,7 +384,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 
 <tr>
  <th> 88</th>
@@ -424,7 +391,6 @@
  <td style="background:#C7F7DF">&nbsp;</td>
  <td style="background:#CFEFDF">&nbsp;</td>
  <td style="background:#D7E7DF">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -432,7 +398,6 @@
  <td style="background:#8FEFBF">&nbsp;</td>
  <td style="background:#9FDFBF">&nbsp;</td>
  <td style="background:#AFCFBF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -440,7 +405,6 @@
  <td style="background:#58E79F">&nbsp;</td>
  <td style="background:#70CF9F">&nbsp;</td>
  <td style="background:#87B79F">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -448,7 +412,6 @@
  <td style="background:#20DF80">&nbsp;</td>
  <td style="background:#40BF80">&nbsp;</td>
  <td style="background:#609F80">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -456,7 +419,6 @@
  <td style="background:#18A760">&nbsp;</td>
  <td style="background:#308F60">&nbsp;</td>
  <td style="background:#487860">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -464,7 +426,6 @@
  <td style="background:#107040">&nbsp;</td>
  <td style="background:#206040">&nbsp;</td>
  <td style="background:#305040">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -472,9 +433,9 @@
  <td style="background:#083820">&nbsp;</td>
  <td style="background:#103020">&nbsp;</td>
  <td style="background:#182820">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
-  </table>
-  <table class="hslexample">
+</table>
+
+<table class="hslexample">
    <tbody>
 <tr>
  <th></th>
@@ -490,7 +451,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 
 <tr>
  <th> 88</th>
@@ -498,7 +458,6 @@
  <td style="background:#C7F7F7">&nbsp;</td>
  <td style="background:#CFEFEF">&nbsp;</td>
  <td style="background:#D7E7E7">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -506,7 +465,6 @@
  <td style="background:#8FEFEF">&nbsp;</td>
  <td style="background:#9FDFDF">&nbsp;</td>
  <td style="background:#AFCFCF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -514,7 +472,6 @@
  <td style="background:#58E7E7">&nbsp;</td>
  <td style="background:#70CFCF">&nbsp;</td>
  <td style="background:#87B7B7">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -522,7 +479,6 @@
  <td style="background:#20DFDF">&nbsp;</td>
  <td style="background:#40BFBF">&nbsp;</td>
  <td style="background:#609F9F">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -530,7 +486,6 @@
  <td style="background:#18A7A7">&nbsp;</td>
  <td style="background:#308F8F">&nbsp;</td>
  <td style="background:#487878">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -538,7 +493,6 @@
  <td style="background:#107070">&nbsp;</td>
  <td style="background:#206060">&nbsp;</td>
  <td style="background:#305050">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -546,9 +500,9 @@
  <td style="background:#083838">&nbsp;</td>
  <td style="background:#103030">&nbsp;</td>
  <td style="background:#182828">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
-  </table>
-  <table class="hslexample">
+</table>
+
+<table class="hslexample">
    <tbody>
 <tr>
  <th></th>
@@ -564,7 +518,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 
 <tr>
  <th> 88</th>
@@ -572,7 +525,6 @@
  <td style="background:#C7DFF7">&nbsp;</td>
  <td style="background:#CFDFEF">&nbsp;</td>
  <td style="background:#D7DFE7">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -580,7 +532,6 @@
  <td style="background:#8FBFEF">&nbsp;</td>
  <td style="background:#9FBFDF">&nbsp;</td>
  <td style="background:#AFBFCF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -588,7 +539,6 @@
  <td style="background:#589FE7">&nbsp;</td>
  <td style="background:#709FCF">&nbsp;</td>
  <td style="background:#879FB7">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -596,7 +546,6 @@
  <td style="background:#2080DF">&nbsp;</td>
  <td style="background:#4080BF">&nbsp;</td>
  <td style="background:#60809F">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -604,7 +553,6 @@
  <td style="background:#1860A7">&nbsp;</td>
  <td style="background:#30608F">&nbsp;</td>
  <td style="background:#486078">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -612,7 +560,6 @@
  <td style="background:#104070">&nbsp;</td>
  <td style="background:#204060">&nbsp;</td>
  <td style="background:#304050">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -620,9 +567,9 @@
  <td style="background:#082038">&nbsp;</td>
  <td style="background:#102030">&nbsp;</td>
  <td style="background:#182028">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
-  </table>
-  <table class="hslexample">
+</table>
+
+<table class="hslexample">
    <tbody>
 <tr>
  <th></th>
@@ -638,7 +585,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 
 <tr>
  <th> 88</th>
@@ -646,7 +592,6 @@
  <td style="background:#C7C7F7">&nbsp;</td>
  <td style="background:#CFCFEF">&nbsp;</td>
  <td style="background:#D7D7E7">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -654,7 +599,6 @@
  <td style="background:#8F8FEF">&nbsp;</td>
  <td style="background:#9F9FDF">&nbsp;</td>
  <td style="background:#AFAFCF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -662,7 +606,6 @@
  <td style="background:#5858E7">&nbsp;</td>
  <td style="background:#7070CF">&nbsp;</td>
  <td style="background:#8787B7">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -670,7 +613,6 @@
  <td style="background:#2020DF">&nbsp;</td>
  <td style="background:#4040BF">&nbsp;</td>
  <td style="background:#60609F">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -678,7 +620,6 @@
  <td style="background:#1818A7">&nbsp;</td>
  <td style="background:#30308F">&nbsp;</td>
  <td style="background:#484878">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -686,7 +627,6 @@
  <td style="background:#101070">&nbsp;</td>
  <td style="background:#202060">&nbsp;</td>
  <td style="background:#303050">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -694,9 +634,9 @@
  <td style="background:#080838">&nbsp;</td>
  <td style="background:#101030">&nbsp;</td>
  <td style="background:#181828">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
-  </table>
-  <table class="hslexample">
+</table>
+
+<table class="hslexample">
    <tbody>
 <tr>
  <th></th>
@@ -712,7 +652,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 
 <tr>
  <th> 88</th>
@@ -720,7 +659,6 @@
  <td style="background:#DFC7F7">&nbsp;</td>
  <td style="background:#DFCFEF">&nbsp;</td>
  <td style="background:#DFD7E7">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -728,7 +666,6 @@
  <td style="background:#BF8FEF">&nbsp;</td>
  <td style="background:#BF9FDF">&nbsp;</td>
  <td style="background:#BFAFCF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -736,7 +673,6 @@
  <td style="background:#9F58E7">&nbsp;</td>
  <td style="background:#9F70CF">&nbsp;</td>
  <td style="background:#9F87B7">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -744,7 +680,6 @@
  <td style="background:#8020DF">&nbsp;</td>
  <td style="background:#8040BF">&nbsp;</td>
  <td style="background:#80609F">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -752,7 +687,6 @@
  <td style="background:#6018A7">&nbsp;</td>
  <td style="background:#60308F">&nbsp;</td>
  <td style="background:#604878">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -760,7 +694,6 @@
  <td style="background:#401070">&nbsp;</td>
  <td style="background:#402060">&nbsp;</td>
  <td style="background:#403050">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -768,9 +701,9 @@
  <td style="background:#200838">&nbsp;</td>
  <td style="background:#201030">&nbsp;</td>
  <td style="background:#201828">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
-  </table>
-  <table class="hslexample">
+</table>
+
+<table class="hslexample">
    <tbody>
 <tr>
  <th></th>
@@ -786,7 +719,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 
 <tr>
  <th> 88</th>
@@ -794,7 +726,6 @@
  <td style="background:#F7C7F7">&nbsp;</td>
  <td style="background:#EFCFEF">&nbsp;</td>
  <td style="background:#E7D7E7">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -802,7 +733,6 @@
  <td style="background:#EF8FEF">&nbsp;</td>
  <td style="background:#DF9FDF">&nbsp;</td>
  <td style="background:#CFAFCF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -810,7 +740,6 @@
  <td style="background:#E758E7">&nbsp;</td>
  <td style="background:#CF70CF">&nbsp;</td>
  <td style="background:#B787B7">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -818,7 +747,6 @@
  <td style="background:#DF20DF">&nbsp;</td>
  <td style="background:#BF40BF">&nbsp;</td>
  <td style="background:#9F609F">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -826,7 +754,6 @@
  <td style="background:#A718A7">&nbsp;</td>
  <td style="background:#8F308F">&nbsp;</td>
  <td style="background:#784878">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -834,7 +761,6 @@
  <td style="background:#701070">&nbsp;</td>
  <td style="background:#602060">&nbsp;</td>
  <td style="background:#503050">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -842,10 +768,10 @@
  <td style="background:#380838">&nbsp;</td>
  <td style="background:#301030">&nbsp;</td>
  <td style="background:#281828">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
-  </table>
-  <table class="hslexample">
-   <tbody>
+</table>
+
+<table class="hslexample">
+<tbody>
 <tr>
  <th></th>
  <th colspan="5">330&deg; Magenta-Reds</th>
@@ -860,7 +786,6 @@
  <th>75%</th>
  <th>50%</th>
  <th>25%</th>
- <th>0%</th>
 </tr>
 <tr>
  <th> 88</th>
@@ -868,7 +793,6 @@
  <td style="background:#F7C7DF">&nbsp;</td>
  <td style="background:#EFCFDF">&nbsp;</td>
  <td style="background:#E7D7DF">&nbsp;</td>
- <td style="background:#DFDFDF">&nbsp;</td>
 </tr>
 <tr>
  <th> 75</th>
@@ -876,7 +800,6 @@
  <td style="background:#EF8FBF">&nbsp;</td>
  <td style="background:#DF9FBF">&nbsp;</td>
  <td style="background:#CFAFBF">&nbsp;</td>
- <td style="background:#BFBFBF">&nbsp;</td>
 </tr>
 <tr>
  <th> 63</th>
@@ -884,7 +807,6 @@
  <td style="background:#E7589F">&nbsp;</td>
  <td style="background:#CF709F">&nbsp;</td>
  <td style="background:#B7879F">&nbsp;</td>
- <td style="background:#9F9F9F">&nbsp;</td>
 </tr>
 <tr>
  <th> 50</th>
@@ -892,7 +814,6 @@
  <td style="background:#DF2080">&nbsp;</td>
  <td style="background:#BF4080">&nbsp;</td>
  <td style="background:#9F6080">&nbsp;</td>
- <td style="background:#808080">&nbsp;</td>
 </tr>
 <tr>
  <th> 38</th>
@@ -900,7 +821,6 @@
  <td style="background:#A71860">&nbsp;</td>
  <td style="background:#8F3060">&nbsp;</td>
  <td style="background:#784860">&nbsp;</td>
- <td style="background:#606060">&nbsp;</td>
 </tr>
 <tr>
  <th> 25</th>
@@ -908,7 +828,6 @@
  <td style="background:#701040">&nbsp;</td>
  <td style="background:#602040">&nbsp;</td>
  <td style="background:#503040">&nbsp;</td>
- <td style="background:#404040">&nbsp;</td>
 </tr>
 <tr>
  <th> 13</th>
@@ -916,12 +835,21 @@
  <td style="background:#380820">&nbsp;</td>
  <td style="background:#301020">&nbsp;</td>
  <td style="background:#281820">&nbsp;</td>
- <td style="background:#202020">&nbsp;</td>
 </tr>
 </table>
-<br />
-<p>información obtenida de: <a href="http://www.w3.org/TR/css3-color/#hsl-examples">http://www.w3.org/TR/css3-color/</a></p>
-
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
 </div>
 </body>
 </html>

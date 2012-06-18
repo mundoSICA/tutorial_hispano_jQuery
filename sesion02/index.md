@@ -2,7 +2,14 @@
 <link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
 <script language="Javascript"  type="text/javascript">
 $(function() {
+	google_api = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
 	$("pre").snippet("html", {style:'darkness'});
+	$('#jqueryInput').val();
+	$('#jqueryInput').focus( function(google_api){
+		$(this).select();
+	}).blur(function(){
+		$(this).val(google_api);
+	});
 });
 </script>
 
@@ -30,7 +37,7 @@ Una vez que tenemos la libreria [__jQuery más reciente__](http://docs.jquery.co
 
 Por otra parte tambien puedes agregar la libreria directo del servidor de google
 
-<input id='jqueryInput' value='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'>
+<input id='jqueryInput' value=''>
 
 
 Selectores con **jQuery**
