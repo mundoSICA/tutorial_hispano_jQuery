@@ -1,6 +1,6 @@
 div{border:0;padding:0;}
 body{
-	background:#EFEFEF;
+	background:URL(../img/linen.jpg);
 	font-family: sans-serif;
 	margin:0;
 	padding:0;
@@ -8,6 +8,10 @@ body{
 @font-face {
 	font-family: "neuropol";
 	src: url(./../img/neuropol.ttf) format("truetype");
+}
+@font-face {
+	font-family: "Cagliostro-Regular";
+	src: url(Cagliostro-Regular.ttf) format("truetype");
 }
 a{
 	text-decoration: none;
@@ -21,7 +25,8 @@ img{
 }
 h1{
 	text-shadow:1px 1px 5px #FFF;
-	font-size:40px
+	font-size:40px;
+	font-family:Cagliostro-Regular;
 }
 /* section code */
 pre{
@@ -84,27 +89,28 @@ tr:hover{
 *****************************************************************************************/
 #head{
 	width:800px;
-	height:153px;
-	background: #1A1A1A;
+	height:133px;
+	background: #EEE;
+	background-image: URL(../img/logo_ADSL.jpg), URL(../img/header_bg.jpg);
+	background-repeat: no-repeat, repeat-x;
 	padding:0 10px 0 10px;
 	margin:0 Auto 0 Auto;
 }
-#head a#logoSICA{
-	width: 217px;
-	height:153px;
+#head h1{float:right}
+
+#head h1 a#link_principal:hover{
+	color:#985200;
+}
+#head h1 a#link_principal{
+	color:#705b48;
+	font-family:"Cagliostro-Regular";
+	text-shadow:1px 2px 1px #AAA;
+}
+#head h1 span#descripcion{
+	font-size:0.5em;
 	display:block;
-	float: left;
-	background:URL(../img/logo_sica.png) no-repeat;
-}
-#head a#logoSICA:hover{
-	background-position:0 -153px;
-}
-#head div#colaboradores{
-	background:URL(../img/colaboradores.png) no-repeat;
-	position:absolute;
-	width:400px;
-	height:177px;
-	margin-left: 415px;
+	float:right;
+	color:#BE6700;
 }
 #content{
 	width: 800px;
@@ -233,4 +239,4 @@ pre:hover
 	-o-box-shadow:0 0 10px #444;
 	box-shadow:0 0 10px #444;
 }
-#agradecimientos a.copy{background-image:url(../img/creativecommons88x31.png);}
+#agradecimientos a.copy{background-image:url(../img/creativecommons88x31.png); margin-left: 5px}
