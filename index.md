@@ -13,7 +13,7 @@ Manual de JQuery en español
   3. La libreria jQuery.
  - Lecturas externas recomendables:
 
-##  [Sesion 02 - Conociendo jQuery](sesion02/index.html)
+##  [Sesión 02 - Conociendo jQuery](sesion02/index.html)
  - Introducción a <strong>jQuery</strong>
   - Selectores con Jquery
   - Selectores xPath y CSS

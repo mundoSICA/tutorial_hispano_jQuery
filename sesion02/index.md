@@ -1,4 +1,4 @@
-Sesion 02 - Conociendo jQuery
+Sesión 02 - Conociendo jQuery
 =============================================================================
 
 Introducción a **jQuery**
