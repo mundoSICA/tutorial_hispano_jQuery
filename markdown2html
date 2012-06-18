@@ -56,7 +56,7 @@ echo "<title>$TITLE</title>" >>  $archivo_salida
 #Seccion metadatos, css y javascript
 echo "<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\" />
 	<link rel=\"stylesheet\" type=\"text/css\" href=\"http://mundosica.github.com/tutorial_hispano_jQuery/css/style.css\" />
-	<script language='Javascript'  type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
 </head>
 <body>
 " >> $archivo_salida
@@ -74,22 +74,17 @@ markdown $1 >> $archivo_salida
 #Fin del content,Agregamos pie de pagina, finalmente cerramos el body y del documento html
 echo '</div><!-- end content -->
 <div id="pie_pagina">
-	<div id="colaboradores">
+	<div id="agradecimientos">
 		<h2>Con especial agredecimiento a:</h2>
 		<ul>
 				<li><a href="http://mundosica.com">mundosica</a></li>
 				<li><a href="http://adsl.mx">ADSL</a></li>
 				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
 		</ul>
-		<br clear="all" />
-		<span>Obra está licencia bajo 
-			<a rel="license" href="http://creativecommons.org/licenses/by/2.5/mx/">Creative Commons Atribución 2.5 México</a>.
-		</span>
+		<br/>
+		<a class="copy" rel="license" href="https://github.com/mundosica/tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
 	</div>
 </div>
 </body>
 </html>'  >> $archivo_salida
-##########################################################################################
-
-#Finalmente mandamos abrir el archivo
-gnome-open $archivo_salida &

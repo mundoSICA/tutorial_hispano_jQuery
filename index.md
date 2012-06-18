@@ -1,20 +1,28 @@
 Manual de JQuery en español
 ==========================================================================================
 
-[Sesión 1](./sesion01/) - Referencia e introducción
-------------------------------------------------------------------------------------------
- - Referencia **HTML**
-  - Concepto **DOM**
-  - Consultas Xpath
- - Referencia **CSS**
-  - Secretos css3
-  - Selectores CSS
- - Introducción a **jQuery**
-  - Selectores con jQuery
+##  Sessión 1 - Introducción al manual
+ - Descripción de este manual
+ - Breve referencia <strong>HTML</strong>
+  - Concepto <strong>DOM</strong>
+ - Breve referencia <strong>CSS</strong>
+  - Anatomía CSS
+ - Software a usar
+  1. Editor de texto:
+  2. Navegador web:
+  3. La libreria jQuery.
+ - Lecturas externas recomendables:
 
-[Sesión 2](http://api.jquery.com/category/manipulation/style-properties/) - Propiedades y estilos
-------------------------------------------------------------------------------------------
+##  Sesion 02 - Conociendo jQuery
+ - Introducción a <strong>jQuery</strong>
+  - Selectores con Jquery
+  - Selectores xPath y CSS
+  - Trasversatilidad
+ - Lista de ejemplos:
 
+Funciones a ver:
+-----------------------------------------------------
+ - Introducción
  - `css()`
  - `height()`
  - `innerHeight()`

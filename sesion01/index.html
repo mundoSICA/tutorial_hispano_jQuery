@@ -2,10 +2,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Sessión 1</title>
+<title>Sessión 1 - Introducción al manual</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="http://mundosica.github.com/tutorial_hispano_jQuery/css/style.css" />
-	<script language='Javascript'  type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
 </head>
 <body>
 
@@ -15,89 +15,109 @@
 </div>
 <div id='content'>
 
-<h1>Sessión 1</h1>
+<h1>Sessión 1 - Introducción al manual</h1>
 
-<h2>Introducción.</h2>
+<h2>Descripción de este manual</h2>
+
+<p>Este es un pequeño manual <em>básico de <strong>jQuery</strong></em>, el cual consta de 5 capitulos, esta diseñadado para una clase de 2 horas cada capitulo.</p>
 
 <p>Este manual esta licenciado bajo <a href="http://creativecommons.org/licenses/by/2.5/mx/"><em>atribución creative commons</em></a>, si desear colaborar te invito a que visites el <a href="https://github.com/mundoSICA/tutorial_hispano_jQuery">repositorio</a> para que puedas ver <em>las instrucciones para los colaboradores</em>.</p>
 
-<h2>Referencia <strong>HTML</strong></h2>
+<h2>Breve referencia <strong>HTML</strong></h2>
 
-<p><strong>HTML</strong>, siglas de <em>HyperText Markup Language</em> («lenguaje de marcado de hipertexto»), hace referencia al <a href="http://es.wikipedia.org/wiki/Lenguaje_de_marcado">lenguaje de marcado</a> predominante para la elaboración de páginas web que se utiliza para describir la estructura y el contenido en forma de texto, así como para complementar el texto con objetos tales como imágenes. El HTML se escribe en forma de «etiquetas», rodeadas por <a href="http://es.wikipedia.org/wiki/Par%C3%A9ntesis">corchetes angulares</a> (<code>&lt;</code>,<code>&gt;</code>). HTML también puede describir, hasta un cierto punto, la apariencia de un documento, y puede incluir un script (por ejemplo <a href="http://es.wikipedia.org/wiki/JavaScript">JavaScript</a>), el cual puede afectar el comportamiento de navegadores web y otros procesadores de <em>HTML.1</em></p>
-
-<p><strong>HTML</strong> también sirve para referirse al contenido del tipo de <a href="http://es.wikipedia.org/wiki/Multipurpose_Internet_Mail_Extensions">MIME text/html</a> o todavía más ampliamente como un término genérico para el HTML, ya sea en forma descendida del XML (como XHTML 1.0 y posteriores) o en forma descendida directamente de SGML (como HTML 4.01 y anteriores).</p>
+<p><strong>HTML</strong>, siglas de <em>HyperText Markup Language</em> («lenguaje de marcado de hipertexto»), hace referencia al <a href="http://es.wikipedia.org/wiki/Lenguaje_de_marcado">lenguaje de marcado</a> para la elaboración de páginas web. Se utiliza para describir la estructura y el contenido en forma de texto. El <strong>HTML</strong> se escribe en forma de «etiquetas», rodeadas por <em>corchetes angulares</em> (<code>&lt;</code>,<code>&gt;</code>). <strong>HTML</strong> también puede describir, hasta un cierto punto, la apariencia de un documento aunque resulta una practica más recomendable incluir hojas de estilos(<strong>CSS</strong>) para este proposito, tambien suele incluir scripts (como <a href="http://es.wikipedia.org/wiki/JavaScript">JavaScript</a>), el cual puede afectar el comportamiento de navegadores web.</p>
 
 <blockquote>
-  <p>fuente: <a href="http://es.wikipedia.org/wiki/HTML">http://es.wikipedia.org/wiki/HTML</a></p>
+  <p>A lo largo de esta manual se usara <strong>XHTML1.0 estricto</strong> almenos que se diga lo contrario.</p>
+
+<p>fuente: <a href="http://es.wikipedia.org/wiki/HTML">http://es.wikipedia.org/wiki/HTML</a></p>
 </blockquote>
 
 <h3>Concepto <strong>DOM</strong></h3>
 
-<p>El <em>Document Object Model</em> o <strong>DOM</strong> ('Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos') es esencialmente una interfaz de programación de aplicaciones (API) que proporciona un conjunto estándar de objetos para representar documentos <strong>HTML</strong> y <strong>XML</strong>, un modelo estándar sobre cómo pueden combinarse dichos objetos, y una interfaz estándar para acceder a ellos y manipularlos. A través del DOM, los programas pueden acceder y modificar el contenido, estructura y estilo de los documentos <strong>HTML</strong> y* <em>XML</em>*, que es para lo que se diseñó principalmente.</p>
+<p>El <em>Document Object Model</em> o <strong>DOM</strong> ('Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos'), proporciona un conjunto estándar de objetos para representar documentos <strong>HTML</strong> y <strong>XML</strong>, un modelo estándar sobre cómo pueden combinarse dichos objetos, y una interfaz estándar para acceder a ellos y manipularlos. A través del DOM, los programas pueden acceder y modificar el contenido, estructura y estilo de los documentos <strong>HTML</strong> y* <em>XML</em>*, que es para lo que se diseñó principalmente.</p>
 
-<p>El responsable del DOM es el <em>World Wide Web Consortium</em> (<strong>W3C</strong>).</p>
+<p>En otras parabras el DOM es una interfaz de programación de aplicaciones para acceder, añadir y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (<em>JavaScript</em>).</p>
 
-<p>El DOM es una interfaz de programación de aplicaciones para acceder, añadir y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (<em>JavaScript</em>).</p>
+<p><img src="../img/dom.png" alt="Imagen Dom" title="" /></p>
 
 <blockquote>
-  <p>fuente: <a href="http://es.wikipedia.org/wiki/Document_Object_Model">http://es.wikipedia.org/wiki/Document_Object_Model</a></p>
+  <p>El responsable del DOM es el <em>World Wide Web Consortium</em> (<a href="http://www.w3.org/DOM/"><strong>W3C</strong></a>).</p>
 </blockquote>
 
-<h3>Consultas Xpath</h3>
+<h2>Breve referencia <strong>CSS</strong></h2>
 
-<p><a href="https://developer.mozilla.org/en/Introduction_to_using_XPath_in_JavaScript">https://developer.mozilla.org/en/Introduction_to_using_XPath_in_JavaScript</a></p>
+<p><em>Cascading Style Sheets</em> (hojas de estilo en cascada). CSS es un lenguaje usado para definir la presentación de un documento estructurado escrito en HTML o XML2 (y por extensión en XHTML). El consorcio web <a href="http://www.w3.org/Style/CSS/">W3C</a> es el encargado de mantener la especificaciones.</p>
 
-<h2>Referencia <strong>CSS</strong></h2>
+<h3>Anatomía CSS</h3>
 
-<h3>Secretos css3</h3>
+<p>La anatomía de la sintaxis de CSS es la siguiente:</p>
 
-<h3>Selectores CSS</h3>
+<p><img src="../img/anatomia_basica_css.png" alt="Imagen Dom" title="" /></p>
 
-<h4>Lista de Recursos:</h4>
+<p>Con <strong>CSS</strong> podemos hacer declaraciones de estilo sobre los elementos <strong>HTML</strong>, para esto <strong>CSS</strong> ha definido una serie de selectores.</p>
 
-<ul>
-<li><a href="http://www.w3.org/TR/CSS21/selector.html">http://www.w3.org/TR/CSS21/selector.html</a></li>
-<li><a href="http://www.w3.org/TR/css3-selectors/#selectors">http://www.w3.org/TR/css3-selectors/#selectors</a> - Lista de selectores <em>CSS</em></li>
-<li><a href="http://mathiasbynens.be/notes/css-escapes">http://mathiasbynens.be/notes/css-escapes</a> - CSS escapes!(buena lectura)</li>
-<li><a href="http://www.xanthir.com/blog/b4JF0">http://www.xanthir.com/blog/b4JF0</a> - <em>CSS</em> Como maneja los errores.</li>
-<li><a href="http://www.librosweb.es/css_avanzado/pdf/">http://www.librosweb.es/css_avanzado/pdf/</a> - CSS avanzado(libro pdf descargable)</li>
-</ul>
+<p><strong>JQuery</strong> hace uso de estos selectores para interactuar con el DOM, por esta razón es importante que el lector comprenda <strong>CSS</strong>  lamentablemente el alcance de este manual no contempla la explicación detallada de <strong>CSS</strong>. Sin embargo para nuestros fines nos basta con que conozcamos bien el uso de sus selectores por tal motivo he agregado una <a href="../recursos/selectores_css.html">lista de selectores css</a>. </p>
 
-<h2>Introducción a <strong>jQuery</strong></h2>
+<h2>Software a usar</h2>
 
-<h3>Selectores con Jquery</h3>
+<p>Para desarrollar sitios de Internet con <strong>jQuery</strong> basicamente necesitamos 3 cosas:</p>
 
-<p><a href="http://api.jquery.com/category/selectors/">http://api.jquery.com/category/selectors/</a> - sitio oficial
-<a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp">http://www.w3schools.com/jquery/jquery_ref_selectors.asp</a> - buena descripción.</p>
+<ol>
+<li>Editor de texto</li>
+<li>Navegador web.</li>
+<li>La libreria jQuery.</li>
+</ol>
 
-<h4>Selectores xPath y CSS</h4>
+<h3>1. Editor de texto:</h3>
 
-<ul>
-<li><a href="http://ejohn.org/blog/xpath-css-selectors/">http://ejohn.org/blog/xpath-css-selectors/</a></li>
-</ul>
-
-<h3>Trasversatilidad</h3>
+<p>El editor de texto es la herramienta básica para editar archivos: <strong>HTML<em>, _</em>javaScript</strong> y <strong>CSS</strong>. Hay muchos editores muy buenos y usted puede puede usar el editor de su agrado, entre los que recomendamos son los siguientes:</p>
 
 <ul>
-<li>http://api.jquery.com/category/traversing/</li>
+<li><a href="http://www.vim.org/download.php">Vim</a></li>
+<li><a href="http://www.gnu.org/software/emacs/">Emacs</a></li>
+<li><a href="http://www.geany.org/Download/Releases">Geany</a></li>
+<li><a href="http://notepad-plus-plus.org/download/v6.1.3.html">Notepad++</a></li>
+<li>sublimeText</li>
 </ul>
 
-<h2>Lista de ejemplos:</h2>
+<p>Sin embargo te recomiendo el <a href="http://www.geany.org/Download/Releases">geany</a> el cual esta disponible para multiples Sistema operativos, ademas de agregarle el <a href="http://mundosica.github.com/geany-web-ninja/">geany-web-ninja</a> el cual es una colección de archivos de configuración orientadas al desarrollo web. </p>
 
-<p># <a href="ejemplos/selector_css.html">Selectores con <strong>CSS</strong></a></p>
+<h3>2. Navegador web:</h3>
+
+<p>Por cuestiones de pruebas te recomiendo que tengas todos los navegadores que esten disponibles en tu <strong>S.O.</strong>, sin embargo para  desarrollar/depurar te comiendo el <a href="http://www.mozilla.org/en-US/firefox/all.html#es-MX"><strong>firefox</strong></a> con la extensión <a href="https://addons.mozilla.org/en-US/firefox/addon/firebug/?src=search"><strong>firebug</strong></a>.</p>
+
+<p><img src="../img/firefox_con_firebug.png" alt="Imagen firefox con el complemento firebug" title="" /></p>
+
+<h3>3. La libreria jQuery.</h3>
+
+<p><strong>JQuery</strong> es una libreria en constante evolución, te recomiendo usar la <a href="http://docs.jquery.com/Downloading_jQuery">libreria más reciente</a>, ya que en cada nueva versión se integran caracteristicas nuevas al tiempo que se mejoran las anteriores, la imagen siguiente representa una compativa en el rendimiento de <strong style='background:#36c;color:white'>jQuery 1.6.4</strong>  VS <strong style='background:#dc3912;color:white'>jQuery 1.7</strong>.</p>
+
+<p><img src="../img/compartiva_jquery_1.6.4_vs_1.7.png" alt="compartiva jQuery1.6.4 vs Query1.7" title="" /></p>
+
+<blockquote>
+  <p>fuente: <a href="http://blog.jquery.com/2011/11/03/jquery-1-7-released/">blog.jquery.com/2011/11/03/jquery-1-7-released</a></p>
+</blockquote>
+
+<h2>Lecturas externas recomendables:</h2>
+
+<ul>
+<li><a href="http://www.librosweb.es/css_avanzado/">Libro <strong>CSS</strong> Avanzado</a></li>
+<li><a href="http://mathiasbynens.be/notes/css-escapes">Secuencias de caracteres de escape <strong>CSS</strong></a></li>
+<li><a href="http://www.xanthir.com/blog/b4JF0">Como maneja <em>CSS</em> los errores.</a></li>
+</ul>
 </div><!-- end content -->
 <div id="pie_pagina">
-	<div id="colaboradores">
+	<div id="agradecimientos">
 		<h2>Con especial agredecimiento a:</h2>
 		<ul>
 				<li><a href="http://mundosica.com">mundosica</a></li>
 				<li><a href="http://adsl.mx">ADSL</a></li>
 				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
 		</ul>
-		<br clear="all" />
-		<span>Obra está licencia bajo 
-			<a rel="license" href="http://creativecommons.org/licenses/by/2.5/mx/">Creative Commons Atribución 2.5 México</a>.
-		</span>
+		<br/>
+		<a class="copy" rel="license" href="https://github.com/mundosica/tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
 	</div>
 </div>
 </body>

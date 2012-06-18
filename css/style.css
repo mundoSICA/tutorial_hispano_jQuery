@@ -48,12 +48,40 @@ p code{
 	color:#222;
 	border: solid 1px #EADC94;
 }
-/* layout section */
-.sica{
-	color:#FF4800;
-	font-family: "neuropol";
+p{
+	text-align:justify;
 }
-
+blockquote {
+    background-image: url(../img/note.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-color: #FFF6C8;
+    font-size: 1em;
+    font-style: italic;
+    line-height: 20px;
+    padding:2px 35px;
+    text-align: left;
+    border: solid 1px #EADC94;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-o-border-radius: 10px;
+		border-radius: 10px;
+		color: #170C00;
+		opacity:0.9;
+}
+blockquote p{
+  padding:0;
+  text-shadow:none;
+}
+tr:nth-child(2n) {
+  background:#EEE;
+}
+tr:hover{
+	background:#FFF3D4;
+}
+/*****************************************************************************************
+ ********************************* layout section ****************************************
+*****************************************************************************************/
 #head{
 	width:800px;
 	height:153px;
@@ -94,9 +122,6 @@ p code{
 	text-align:justify;
 	padding:0 10px 10px 10px;
 }
-p{
-	text-align:justify;
-}
 .shell {
 	background-image: url(../img/shell.gif);
   background-position: 10px center;
@@ -118,29 +143,6 @@ pre:hover
 	-o-box-shadow:0 2px 15px #ccc;
 	box-shadow:0 2px 15px #ccc;
 }
-blockquote {
-    background-image: url(../img/note.png);
-    background-position: 10px center;
-    background-repeat: no-repeat;
-    background-color: #FFF6C8;
-    font-size: 1em;
-    font-style: italic;
-    line-height: 20px;
-    padding:2px 35px;
-    text-align: left;
-    border: solid 1px #EADC94;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		-o-border-radius: 10px;
-		border-radius: 10px;
-		color: #170C00;
-		opacity:0.9;
-}
-
-blockquote p{
-  padding:0;
-  text-shadow:none;
-}
 
 #pie_pagina{
 	width: 820px;
@@ -157,23 +159,24 @@ blockquote p{
 	height:150px;
 }
 
-#colaboradores {
+#agradecimientos {
 	float:right;
 	padding: 5px;
 	text-shadow:1px 1px 1px #000,0 0 5px #000;
 }
 
-#colaboradores h2{
-	color: #0050B5;
-	margin:40px 0 20px 0;
+#agradecimientos h2{
+	color: rgba(0,0,0,0.7);
+	margin:25px 0 20px 0;
 	font-size: 1.2em;
+	text-shadow:0 1px 2px rgba(255,255,255,0.1);
 }
-#colaboradores span{
+#agradecimientos span{
 	font-size:0.8em;
 	color:#555;
 }
-#colaboradores ul li{ display: inline; float:right; margin-bottom:10px;}
-#colaboradores ul li a{
+#agradecimientos ul li{ display: inline; float:right; margin-bottom:10px;}
+#agradecimientos ul li a{
 	padding: 5px;
 	margin-left: 10px;
 	background-image: -moz-linear-gradient(top, #262626, #161616);
@@ -182,7 +185,7 @@ blockquote p{
 	background-image: -o-linear-gradient(top, #262626, #161616);
 	background-image: linear-gradient(top, #262626, #161616);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#262626', endColorstr='#161616',GradientType=0 );
-	border:1px solid #000;
+	border:1px solid rgba(0,0,0,0.5);
 	color:#FFF;
 	text-shadow:-2px -2px 2px #000;
 	-moz-border-radius:10px;
@@ -196,7 +199,7 @@ blockquote p{
 	box-shadow: 1px 1px 1px #000;
 }
 
-#colaboradores ul li a:hover{
+#agradecimientos ul li a:hover{
 	background-image: -moz-linear-gradient(top, #111, #000);
 	background-image: -ms-linear-gradient(top, #111, #000);
 	background-image: -webkit-linear-gradient(top, #111, #000);
@@ -208,9 +211,26 @@ blockquote p{
 	-o-box-shadow: 1px 1px 2px #444;
 	box-shadow: 1px 1px 2px #444;
 }
-tr:nth-child(2n) {
-  background:#EEE;
+#agradecimientos  a.xhtml-valido,
+#agradecimientos  a.copy
+{
+	width:81px;
+	height:31px;
+	background-image:url(../img/xhtml_valido.png);
+	background-color:#000;
+	opacity:0.5;
 }
-tr:hover{
-	background:#FFF3D4;
+#agradecimientos  a{
+	float:right;
 }
+#agradecimientos  a.xhtml-valido:hover,
+#agradecimientos  a.copy
+{
+	opacity:1;
+	-webkit-box-shadow:0 0 10px #444;
+	-moz-box-shadow:0 0 10px #444;
+	-ms-box-shadow:0 0 10px #444;
+	-o-box-shadow:0 0 10px #444;
+	box-shadow:0 0 10px #444;
+}
+#agradecimientos a.copy{background-image:url(../img/creativecommons88x31.png);}
