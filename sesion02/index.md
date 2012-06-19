@@ -4,7 +4,7 @@
 $(function() {
 	google_api = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
 	$("pre").snippet("html", {style:'darkness'});
-	$('#jqueryInput').val();
+	$('#jqueryInput').val(google_api);
 	$('#jqueryInput').focus( function(google_api){
 		$(this).select();
 	}).blur(function(){
