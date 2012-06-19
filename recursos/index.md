@@ -1,8 +1,22 @@
-# Recursos.
+# Lista de recursos disponibles
+
+Paleta de colores CSS3
+------------------------------------------------------------------------------------------
+
+Paleta de colores [ir](./css3-colores.html).
 
 
 
-## Recursos Externos.
+Lista de selectores CSS
+------------------------------------------------------------------------------------------
+
+Listado con ejemplo de los distintos selectores CSS [ir](./selectores_css.html).
+
+
+
+
+Recursos Externos.
+------------------------------------------------------------------------------------------
 
  - <http://leaverou.github.com/regexplained/> - tester de expresiones regulares.
 
@@ -18,8 +32,6 @@ Es un excelente _tester_ en linea que te ayuda a determinar la compatibilidad de
 
 Esta es una librería escrita en _JavaScript_ que nos ayuda a contruir sitios bajo __HTML5__ y __CSS3__.
 
-
-
  - <http://modernizr.com>
  - <http://html5please.com>
  - <http://html5boilerplate.com>
@@ -28,9 +40,9 @@ Esta es una librería escrita en _JavaScript_ que nos ayuda a contruir sitios ba
  - <http://html5demos.com>
  - <http://movethewebforward.org>
 
-
 #### Documentación
 
 Si deseas documentar, tal vez se te es mas comodo un editor en linea, te recomiendo el _showdown_:
 
 - <http://www.showdown.im/>
+

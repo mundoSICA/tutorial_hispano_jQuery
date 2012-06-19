@@ -1,6 +1,10 @@
 Manual de JQuery en español
 ==========================================================================================
 
+
+
+<img src="img/samurai_javascript.png" align='right' alt="el chaco samurai javascript" />
+
 ##  [Sessión 1 - Introducción al manual](sesion01/index.html)
  - Descripción de este manual
  - Breve referencia <strong>HTML</strong>
@@ -18,38 +22,52 @@ Manual de JQuery en español
   - Selectores con Jquery
   - Selectores xPath y CSS
   - Trasversatilidad
- - Lista de ejemplos:
 
-Funciones a ver:
------------------------------------------------------
- - Introducción
- - `css()`
- - `height()`
- - `innerHeight()`
- - `offset()`
- - `outerHeight()`
- - `outerWidth()`
- - `position()`
- - `scrollLeft()`
- - `scrollTop()`
- - `addClass()`
- - `hasClass()`
- - `removeClass()`
- - `toggleClass()`
- - `animate()`
- - `clearQueue()`
- - `clearQueue()`
- - `delay()`
- - `dequeue()`
- - `fadeIn()`
- - `fadeOut()`
- - `fadeTo()`
- - `fadeToggle()`
- - `jQuery.fx.interval`
- - `jQuery.fx.off`
- - `hide()`
+[Lista de recursos disponibles](./recursos/)
+------------------------------------------------------------------------------------------
+
+ - [Paleta de colores CSS3](./recursos/css3-colores.html)
+ - [Lista de selectores CSS](./recursos/selectores_css.html)
+ - Recursos Externos.
+
+> De aquí en adelante los demas temas estan pendientes.
+
+------------------------------------------------------------------------------------------
 
 [Sesión 3](http://api.jquery.com/category/manipulation/) - Manipulacion del DOM
+------------------------------------------------------------------------------------------
+
+> Este tema esta pendiente
+
+ - Lista de ejemplos:
+ - **Funciones a ver(_por revisar_)**:
+  - Introducción
+  - `css()`
+  - `height()`
+  - `innerHeight()`
+  - `offset()`
+  - `outerHeight()`
+  - `outerWidth()`
+  - `position()`
+  - `scrollLeft()`
+  - `scrollTop()`
+  - `addClass()`
+  - `hasClass()`
+  - `removeClass()`
+  - `toggleClass()`
+  - `animate()`
+  - `clearQueue()`
+  - `clearQueue()`
+  - `delay()`
+  - `dequeue()`
+  - `fadeIn()`
+  - `fadeOut()`
+  - `fadeTo()`
+  - `fadeToggle()`
+  - `jQuery.fx.interval`
+  - `jQuery.fx.off`
+  - `hide()`
+
 ------------------------------------------------------------------------------------------
 
  - `after()`
@@ -75,16 +93,19 @@ Funciones a ver:
  - `wrapAll()`
  - `wrapInner()`
 
-
 [Sesión 4](http://api.jquery.com/category/ajax/low-level-interface/) - Respuestas asincronas.
 ------------------------------------------------------------------------------------------
  - `jQuery.ajax()`
  - `jQuery.ajaxPrefilter()`
  - `jQuery.ajaxSetup()`
   
+> Este tema esta pendiente
 
+[Sesión 5] pendiente
+------------------------------------------------------------------------------------------
 
-> **Nota**: Por el momento este manual se esta elaborando:
+> Este tema esta pendiente
+ 
 
 Para poder colaborar puedes clonar el proyecto:
 
