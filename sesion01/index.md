@@ -83,6 +83,16 @@ Por cuestiones de pruebas te recomiendo que tengas todos los navegadores que est
 
 ![Imagen firefox con el complemento firebug](../img/firefox_con_firebug.png)
 
+
+Otra de las ventajas que tiene es que a partir de la [versión 11](http://arstechnica.com/business/2012/03/firefox-11-released-with-style-editor-and-3d-dom-viewer/) de **Mozilla Firefox**, trae integrado el _**3D inspector**_ el cual nos permite analizar la profundidad de las capas __CSS__ desde una forma muy gráfica, como podemos ver a continuación:
+
+
+![Imagen firefox con el complemento firebug](../img/3d_inspector.png)
+
+> Otra razón para usar firefox es que es un proyecto de codigo libre y abierto, distribuyendose bajo [triple licencia](http://es.wikipedia.org/wiki/Mozilla_Firefox#Licencias): <ul><li>Licencia Pública de Mozilla (MPL)</li><li>Licencia pública general de GNU (GPL)</li><li>Licencia pública general reducida de GNU (LGPL).</li></ul>
+
+
+
 ### 3. La libreria jQuery.
 
 **JQuery** es una libreria en constante evolución, te recomiendo usar la [libreria más reciente](http://docs.jquery.com/Downloading_jQuery), ya que en cada nueva versión se integran caracteristicas nuevas al tiempo que se mejoran las anteriores, la imagen siguiente representa una compativa en el rendimiento de <strong style='background:#36c;color:white'>jQuery 1.6.4</strong>  VS <strong style='background:#dc3912;color:white'>jQuery 1.7</strong>.
