@@ -4,20 +4,21 @@
 <head>
 <title>Sesión 02 - Conociendo jQuery</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="http://mundosica.github.com/tutorial_hispano_jQuery/css/style.css" />
-	<link rel='icon' type='image/png' href='http://mundosica.github.com/tutorial_hispano_jQuery/img/favicon.png' />
-	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
 </head>
 <body>
 
 <div id='head'>
 	<h1>
-		<a id='link_principal' href='http://mundosica.github.com/tutorial_hispano_jQuery/'>Manual básico de jQuery</a><br />
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
 		<span id='descripcion'>Compartiendo conocimientos</span>
 	</h1>
 </div>
 <div id='content'>
-
+<div id='tabla_contenidos'></div>
 <script type="text/javascript" src="../js/jquery.snippet.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
 <script language="Javascript"  type="text/javascript">
@@ -76,19 +77,24 @@ $(function() {
 <li><a href="../recursos/selectores_css.html">lista de selectores css</a></li>
 </ul>
 
-<p>Sin embargo no vimos a detalle los selectores, así que veamos algunos ejemplos:</p>
-
-<h3>Selectores xPath y CSS</h3>
-
-<ul>
-<li><a href="http://ejohn.org/blog/xpath-css-selectors/">http://ejohn.org/blog/xpath-css-selectors/</a></li>
-</ul>
-
 <h3>Trasversatilidad</h3>
 
+<p>La transversatilidad es un <a href="http://api.jquery.com/category/traversing/">conjunto de metodos</a> definidos por <strong>jQuery</strong> para refinamiento de selectores, para explicar esto ocuparemos 2 funciones.</p>
+
 <ul>
-<li>http://api.jquery.com/category/traversing/</li>
+<li><strong>find</strong>: Nos permite realizar una consulta sobre un objeto jQuery.</li>
+<li><strong>filter</strong>: Nos permite realizar un filtrado, descartando elementos, sobre un objeto jQuery.</li>
 </ul>
+
+<p>Imaginemos que tenemos una <em>tabla</em> que tiene como atributo <strong>id</strong> el valor <strong>idTabla</strong>, el cual queremos accecer a todos sus elementos th, una forma de hacerlo seria:</p>
+
+<pre><code>$("#idTabla th").css('background', '#ddd');
+</code></pre>
+
+<p>Otra alternativa es usar el metodo find para buscar en un objeto de jQuery el cual me representa una rama del DOM.</p>
+
+<pre><code>$("#idTabla").find('th').css('background', '#ddd');
+</code></pre>
 
 <h2>Lista de ejemplos:</h2>
 

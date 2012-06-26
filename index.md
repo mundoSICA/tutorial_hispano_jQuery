@@ -5,7 +5,7 @@ Manual de JQuery en español
 
 <img src="img/samurai_javascript.png" align='right' alt="el chaco samurai javascript" />
 
-##  [Sessión 1 - Introducción al manual](sesion01/index.html)
+##  [Sessión 1 - Introducción](sesion01/index.html)
  - Descripción de este manual
  - Breve referencia <strong>HTML</strong>
   - Concepto <strong>DOM</strong>

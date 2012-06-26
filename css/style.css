@@ -273,3 +273,7 @@ input, textarea {
 .sh_html, .snippet-formatted, .sh_sourceCode{
 	padding:0;
 }
+
+div.tabla_contenidos{
+	background:#A9D4FF;
+}

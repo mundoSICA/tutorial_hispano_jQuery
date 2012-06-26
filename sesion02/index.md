@@ -58,19 +58,21 @@ En el capitulo pasado conocimos la anatomia de __CSS__ si usted tiene alguna dud
 
  - [lista de selectores css](../recursos/selectores_css.html)
 
-Sin embargo no vimos a detalle los selectores, así que veamos algunos ejemplos:
-
-
-
-
-
-
-### Selectores xPath y CSS
-
- - <http://ejohn.org/blog/xpath-css-selectors/>
  
 ### Trasversatilidad
- - http://api.jquery.com/category/traversing/
+
+La transversatilidad es un [conjunto de metodos](http://api.jquery.com/category/traversing/) definidos por __jQuery__ para refinamiento de selectores, para explicar esto ocuparemos 2 funciones.
+
+ - **find**: Nos permite realizar una consulta sobre un objeto jQuery.
+ - **filter**: Nos permite realizar un filtrado, descartando elementos, sobre un objeto jQuery.
+
+Imaginemos que tenemos una _tabla_ que tiene como atributo **id** el valor **idTabla**, el cual queremos accecer a todos sus elementos th, una forma de hacerlo seria:
+
+	$("#idTabla th").css('background', '#ddd');
+
+Otra alternativa es usar el metodo find para buscar en un objeto de jQuery el cual me representa una rama del DOM.
+
+	$("#idTabla").find('th').css('background', '#ddd');
 
 
 Lista de ejemplos:

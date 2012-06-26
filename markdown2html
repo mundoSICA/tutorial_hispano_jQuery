@@ -37,6 +37,14 @@ fi
 archivo_salida=`echo ${1} | sed 's/\.md$/.html/'`;
 echo -e "\t${archivo_salida}";
 
+#Optenemos la referencia local
+aux_path_level=`echo ${1} | sed "s|${repo_path}||i" | xargs dirname`;
+ref_path='./';
+while [ "${aux_path_level}" != "/" ]; do
+	aux_path_level=`dirname $aux_path_level`;
+	ref_path=`echo ${ref_path}../`;
+done
+
 USER=`eval whoami`
 #generamos el titulo
 TITLE=`markdown $1 | grep -Eo "<h1>.*</h1>" | head -1 | sed -r  "s/<h1>(.*)<\/h1>/\1/"`
@@ -55,9 +63,10 @@ echo "<title>$TITLE</title>" >>  $archivo_salida
 
 #Seccion metadatos, css y javascript
 echo "<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\" />
-	<link rel=\"stylesheet\" type=\"text/css\" href=\"http://mundosica.github.com/tutorial_hispano_jQuery/css/style.css\" />
-	<link rel='icon' type='image/png' href='http://mundosica.github.com/tutorial_hispano_jQuery/img/favicon.png' />
-	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+	<link rel=\"stylesheet\" type=\"text/css\" href=\"${ref_path}css/style.css\" />
+	<link rel='icon' type='image/png' href='${ref_path}img/favicon.png' />
+	<script type='text/javascript' src='${ref_path}js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='${ref_path}js/tabla_contenidos.js'></script>
 </head>
 <body>
 " >> $archivo_salida
@@ -65,12 +74,12 @@ echo "<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\" />
 #Seccion  Cabecera e inicio del content
 echo "<div id='head'>
 	<h1>
-		<a id='link_principal' href='http://mundosica.github.com/tutorial_hispano_jQuery/'>Manual básico de jQuery</a><br />
+		<a id='link_principal' href='${ref_path}index.html'>Manual básico de jQuery</a><br />
 		<span id='descripcion'>Compartiendo conocimientos</span>
 	</h1>
 </div>
 <div id='content'>
-" >>  $archivo_salida
+<div id='tabla_contenidos'></div>" >>  $archivo_salida
 
 markdown $1 >> $archivo_salida
 
@@ -91,3 +100,5 @@ echo '</div><!-- end content -->
 </div>
 </body>
 </html>'  >> $archivo_salida
+
+firefox $archivo_salida
