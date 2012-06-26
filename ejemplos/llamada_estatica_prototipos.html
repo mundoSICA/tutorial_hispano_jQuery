@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title></title>
+<title>Llamada estatica versus prototipo</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
@@ -28,38 +28,48 @@ $(function() {
 });
 </script>
 
-<h1 id='tituloPrincipal'>Función anonima <i>auto-ejecutable</i>.</h1>
-
-<p>Una función lambda es una función que al definir no tiene nombre, esta nos resulta utiles por ejemplo para almacenarla en una variable.</p>
-
-<pre><code>imprimeContenido = function (id){
-        console.log(document.getElementById(id).innerHTML)
-    }
-
-    imprimeContenido('tituloPrincipal');
-</code></pre>
-
-<h2>concepto <code>auto-ejecutable</code>.</h2>
-
-<p>En ocaciones no es necesario almacenarlas entonces la funcion lambda la podemos ejecutar directamente al final de su declaración agregando los parentesis <code>(arg1,arg2,...,argn)</code> veamos:</p>
-
-<p>Atienda al siguiente código:</p>
-
-<pre><code>&lt;h1 id='tituloPrincipal'&gt;Función anonima auto ejecutable.&lt;/h1&gt;
-&lt;script&gt;
-    (function (id){
-        console.log(document.getElementById(id).innerHTML)
-    })('tituloPrincipal');
-&lt;script&gt;
-</code></pre>
-
-<p>Como resultado manda a la bitacola de la consola el mensaje <code>Función anonima auto ejecutable</code>, como se puede ver en esta página al observar la consola.</p>
-
 <script language="Javascript"  type="text/javascript">
-(function (id){
-    console.log(document.getElementById('tituloPrincipal').innerHTML);
-})('tituloPrincipal');
+//constructor objeto Gato
+function Gato( str ) {
+    this.msg = str;
+}
+//extendemos el prototipo del Gato
+Gato.prototype.imprime = function() {
+    console.log( this.msg );
+}
+//funcion estatica no es necesario instaciar un obj para llamarla
+Gato.impremeEstatico = function ( msg ){
+    console.log( msg );
+}
+//test
+gato = new Gato('hola mundo');
+gato.imprime();
+Gato.impremeEstatico('Adios mundo cruel');
 </script>
+
+<h1>Llamada estatica versus prototipo</h1>
+
+<p>Atienda al siguiente código.</p>
+
+<pre><code>//constructor objeto Gato
+function Gato( str ) {
+    this.msg = str;
+}
+//extendemos el prototipo del Gato
+Gato.prototype.imprime = function() {
+    console.log( this.msg );
+}
+//funcion estatica no es necesario instaciar un obj para llamarla
+Gato.impremeEstatico = function ( msg ){
+    console.log( msg );
+}
+//test
+gato = new Gato('hola mundo');
+gato.imprime();
+Gato.impremeEstatico('Adios mundo cruel');
+</code></pre>
+
+<p>Que pasaria si en lugar de Gato se llamara <code>jQuery</code> o <code>$</code>.</p>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">

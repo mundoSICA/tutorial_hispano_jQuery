@@ -7,14 +7,27 @@ $(function() {
 });
 </script>
 
-<h1 id='tituloPrincipal'>Función anonima auto ejecutable.</h1>
+<h1 id='tituloPrincipal'>Función anonima <i>auto-ejecutable</i>.</h1>
+
+Una función lambda es una función que al definir no tiene nombre, esta nos resulta utiles por ejemplo para almacenarla en una variable.
+
+	imprimeContenido = function (id){
+			console.log(document.getElementById(id).innerHTML)
+		}
+		
+		imprimeContenido('tituloPrincipal');
+
+
+## concepto `auto-ejecutable`.
+
+En ocaciones no es necesario almacenarlas entonces la funcion lambda la podemos ejecutar directamente al final de su declaración agregando los parentesis `(arg1,arg2,...,argn)` veamos:
 
 Atienda al siguiente código:
 
 	<h1 id='tituloPrincipal'>Función anonima auto ejecutable.</h1>
 	<script>
 		(function (id){
-			console.log(document.getElementById(id).innerText)
+			console.log(document.getElementById(id).innerHTML)
 		})('tituloPrincipal');
 	<script>
 

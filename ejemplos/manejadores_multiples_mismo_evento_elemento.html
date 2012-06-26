@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title></title>
+<title>Ejecución multiples manejadores mismo elemento/evento.</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
@@ -25,41 +25,32 @@
 <script language="Javascript"  type="text/javascript">
 $(function() {
     $("pre").snippet("javascript", {style:'darkness'});
+    $("h1")
+            .click(function() {
+                console.log('Ejecución del manejador1 para el evento click del h1');
+            })
+            .click(function() {
+                console.log('Ejecución del manejador2 para el evento click del h1');
+            });
 });
 </script>
 
-<h1 id='tituloPrincipal'>Función anonima <i>auto-ejecutable</i>.</h1>
+<h1>Ejecución multiples manejadores mismo elemento/evento.</h1>
 
-<p>Una función lambda es una función que al definir no tiene nombre, esta nos resulta utiles por ejemplo para almacenarla en una variable.</p>
+<p>Observe el siguiente código:</p>
 
-<pre><code>imprimeContenido = function (id){
-        console.log(document.getElementById(id).innerHTML)
-    }
-
-    imprimeContenido('tituloPrincipal');
+<pre><code>$("h1")
+        .click(function() {
+            console.log('Ejecución del manejador1 para el evento click del h1');
+        })
+        .click(function() {
+            console.log('Ejecución del manejador2 para el evento click del h1');
+        });
 </code></pre>
 
-<h2>concepto <code>auto-ejecutable</code>.</h2>
+<p>¿Que crees que suceda?.</p>
 
-<p>En ocaciones no es necesario almacenarlas entonces la funcion lambda la podemos ejecutar directamente al final de su declaración agregando los parentesis <code>(arg1,arg2,...,argn)</code> veamos:</p>
-
-<p>Atienda al siguiente código:</p>
-
-<pre><code>&lt;h1 id='tituloPrincipal'&gt;Función anonima auto ejecutable.&lt;/h1&gt;
-&lt;script&gt;
-    (function (id){
-        console.log(document.getElementById(id).innerHTML)
-    })('tituloPrincipal');
-&lt;script&gt;
-</code></pre>
-
-<p>Como resultado manda a la bitacola de la consola el mensaje <code>Función anonima auto ejecutable</code>, como se puede ver en esta página al observar la consola.</p>
-
-<script language="Javascript"  type="text/javascript">
-(function (id){
-    console.log(document.getElementById('tituloPrincipal').innerHTML);
-})('tituloPrincipal');
-</script>
+<p>Compruebalo dare <code>click</code> al titulo principal y observa la consola, trata de explicarlo.</p>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">
