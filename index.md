@@ -5,23 +5,31 @@ Manual de JQuery en español
 
 <img src="img/samurai_javascript.png" align='right' alt="el chaco samurai javascript" />
 
-##  [Sessión 1 - Introducción](sesion01/index.html)
+##  Sessión 1 - Introducción al manual
  - Descripción de este manual
  - Breve referencia <strong>HTML</strong>
   - Concepto <strong>DOM</strong>
  - Breve referencia <strong>CSS</strong>
   - Anatomía CSS
  - Software a usar
-  1. Editor de texto:
-  2. Navegador web:
-  3. La libreria jQuery.
+  - 1. Editor de texto:
+  - 2. Navegador web:
+  - 3. La libreria jQuery.
+  - 4. Servidor web.
  - Lecturas externas recomendables:
-
-##  [Sesión 02 - Conociendo jQuery](sesion02/index.html)
+##  Sesión 02 - Conociendo jQuery
  - Introducción a <strong>jQuery</strong>
-  - Selectores con Jquery
-  - Selectores xPath y CSS
+ - Agregando <strong>jQuery</strong>
+ - Selectores con <strong>jQuery</strong>
   - Trasversatilidad
+ - Lista de ejemplos:
+##  Sesión 03 - Conceptos basicos de jQuery.
+ - Diseñado para realizar consultas atraves del <strong>DOM</strong>.
+ - Trabaja por grupos(<em>Iteración implicita</em>).
+ - Es un sistema modular.
+ - Chaining.
+ - Enlaces externos.
+
 
 [Lista de recursos disponibles](./recursos/)
 ------------------------------------------------------------------------------------------

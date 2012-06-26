@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Juego del memorama</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" media="all" href="css/base.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="css/one_piece/style.css" />
+<!--
+	Los demas estilos se agregan de forma alterna(alternate).
+	<link rel="alternate stylesheet" type="text/css" href="css/otro_estilo/style.css" title="otro" />
+-->
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+	<script type="text/javascript" src="js/styleswitcher.js"></script>
+	<script language="Javascript"  type="text/javascript"><!--//
+$(function (){
+	$('#tablero').find('.fila .ficha').click(function (){
+		alert('has presionado ' + this.id );
+	});
+});
+//--></script>
+</head>
+
+<body>
+	<div id="seleccion_estilo">
+		<span>Seleccine un thema</span><br />
+		<select name="selectorEstilo" id="selectorEstilo">
+			<option value="one_piece">one piece</option>
+			<option value="other">other</option>
+		</select>
+	</div>
+	<div id="tablero">
+		<h1>Juego del memorama</h1>
+			<div class="fila">
+					<div class="ficha" id='ficha01'> </div>
+					<div class="ficha" id='ficha02'> </div>
+					<div class="ficha" id='ficha03'> </div>
+					<div class="ficha" id='ficha04'> </div>
+			</div>
+			<div class="fila">
+					<div class="ficha" id='ficha05'> </div>
+					<div class="ficha" id='ficha06'> </div>
+					<div class="ficha" id='ficha07'> </div>
+					<div class="ficha" id='ficha08'> </div>
+			</div>
+			<div class="fila">
+					<div class="ficha" id='ficha09'> </div>
+					<div class="ficha" id='ficha10'> </div>
+					<div class="ficha" id='ficha11'> </div>
+					<div class="ficha" id='ficha12'> </div>
+			</div>
+	</div>
+</body>
+</html>

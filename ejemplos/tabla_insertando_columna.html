@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Insercion de una columna en una tabla.</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+</head>
+<body>
+
+<div id='head'>
+	<h1>
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<script type="text/javascript" src="../js/jquery.snippet.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<script language="Javascript"  type="text/javascript">
+$(function() {
+    $("pre").snippet("javascript", {style:'darkness'});
+});
+</script>
+
+<script language="Javascript"  type="text/javascript">
+$(function() {
+    $('table tr').each(function() {
+    // Hacemos uso del refinado transversal que nos proporciona find, para encontrar las
+    // etiquetas th y td contendidas en el tr en cuestion, al obtener el elemento con posición 1
+    // accedemos al segundo elemento de la lista que nos devuelve el find
+        el = $(this).find('th,td')[1];
+            // Vemos si la etiquetas corresponden TH ó TD para insertar el elemento correcto
+            if( el.tagName == 'TH' )
+                $('<TH>Nueva Comuna</TH>').insertBefore(el);
+            else
+                $('</TD>nuevo valor</TD>').insertBefore(el);
+    });
+});
+</script>
+
+<h1>Insercion de una columna en una tabla.</h1>
+
+<p>Atienda al siguiente código HTML.</p>
+
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;columna 1&lt;/th&gt;
+            &lt;th&gt;columna 2&lt;/th&gt;
+            &lt;th&gt;columna 3&lt;/th&gt;
+            &lt;th&gt;columna 4&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;fila 1 elemento 1&lt;/td&gt;
+            &lt;td&gt;fila 1 elemento 2&lt;/td&gt;
+            &lt;td&gt;fila 1 elemento 2&lt;/td&gt;
+            &lt;td&gt;fila 1 elemento 4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;fila 2 elemento 1&lt;/td&gt;
+            &lt;td&gt;fila 2 elemento 2&lt;/td&gt;
+            &lt;td&gt;fila 2 elemento 2&lt;/td&gt;
+            &lt;td&gt;fila 2 elemento 4&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+</code></pre>
+
+<p>Ahora ahora observe el siguiente código en jQuery:</p>
+
+<pre><code>$('table tr').each(function() {
+// Hacemos uso del refinado transversal que nos proporciona find, para encontrar las
+// etiquetas th y td contendidas en el tr en cuestion, al obtener el elemento con posición 1
+// accedemos al segundo elemento de la lista que nos devuelve el find
+    el = $(this).find('th,td')[1];
+        // Vemos si la etiquetas corresponden TH ó TD para insertar el elemento correcto
+        if( el.tagName == 'TH' )
+            $('&lt;TH&gt;Nueva Comuna&lt;/TH&gt;').insertBefore(el);
+        else
+            $('&lt;/TD&gt;nuevo valor&lt;/TD&gt;').insertBefore(el);
+});
+</code></pre>
+
+<p>El resultado es el siguiente:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>columna 1</th><th>columna 2</th>
+            <th>columna 3</th><th>columna 4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>fila 1 elemento 1</td><td>fila 1 elemento 2</td>
+            <td>fila 1 elemento 2</td><td>fila 1 elemento 4</td>
+        </tr>
+        <tr>
+            <td>fila 2 elemento 1</td><td>fila 2 elemento 2</td>
+            <td>fila 2 elemento 2</td><td>fila 2 elemento 4</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Como podemos ver acabamos de insertar una columna.</p>
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
+</div>
+</body>
+</html>

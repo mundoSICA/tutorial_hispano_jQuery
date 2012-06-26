@@ -1,0 +1,28 @@
+body{
+	background: #00DCF1;
+	background-repeat: repeat-x;
+	background-image: -moz-linear-gradient(top, #00DCF1, #00398C);
+	background-image: -ms-linear-gradient(top, #00DCF1, #00398C);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#00DCF1), to(#00398C));
+	background-image: -webkit-linear-gradient(top, #00DCF1, #00398C);
+	background-image: -o-linear-gradient(top, #00DCF1, #00398C);
+	background-image: linear-gradient(top, #00DCF1, #00398C);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00DCF1', endColorstr='#00398C',GradientType=0 );
+}
+
+#tablero{
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	-o-border-radius:20px;
+	border-radius:20px;
+}
+
+.fila .ficha{
+	border:1px solid #00000A;
+	background: #0041B7;
+	background-image:URL(ficha_fondo.png);
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+}
