@@ -40,6 +40,7 @@ echo -e "\t${archivo_salida}";
 #Optenemos la referencia local
 aux_path_level=`echo ${1} | sed "s|${repo_path}||i" | xargs dirname`;
 ref_path='./';
+
 while [ "${aux_path_level}" != "/" ]; do
 	aux_path_level=`dirname $aux_path_level`;
 	ref_path=`echo ${ref_path}../`;
@@ -101,4 +102,4 @@ echo '</div><!-- end content -->
 </body>
 </html>'  >> $archivo_salida
 
-firefox $archivo_salida
+#//firefox $archivo_salida &
