@@ -12,7 +12,7 @@ $(function() {
 	//test enlaces.
 	$('a.testClick').click( function(){
 		console.log( $(this).text() );
-	}
+	});
 });
 </script>
 
