@@ -5,30 +5,35 @@ Manual de JQuery en español
 
 <img src="img/samurai_javascript.png" align='right' alt="el chaco samurai javascript" />
 
-##  Sessión 1 - Introducción al manual
- - Descripción de este manual
- - Breve referencia <strong>HTML</strong>
-  - Concepto <strong>DOM</strong>
- - Breve referencia <strong>CSS</strong>
-  - Anatomía CSS
- - Software a usar
-  - 1. Editor de texto:
-  - 2. Navegador web:
-  - 3. La libreria jQuery.
-  - 4. Servidor web.
- - Lecturas externas recomendables:
-##  Sesión 02 - Conociendo jQuery
- - Introducción a <strong>jQuery</strong>
- - Agregando <strong>jQuery</strong>
- - Selectores con <strong>jQuery</strong>
-  - Trasversatilidad
- - Lista de ejemplos:
-##  Sesión 03 - Conceptos basicos de jQuery.
- - Diseñado para realizar consultas atraves del <strong>DOM</strong>.
- - Trabaja por grupos(<em>Iteración implicita</em>).
- - Es un sistema modular.
- - Chaining.
- - Enlaces externos.
+##  [Sessión 1 - Introducción al manual](./sesion01/index.html)
+ - [Descripción de este manual](./sesion01/index.html)
+ - [Breve referencia <strong>HTML</strong>](./sesion01/index.html)
+  - [Concepto <strong>DOM</strong>](./sesion01/index.html)
+ - [Breve referencia <strong>CSS</strong>](./sesion01/index.html)
+  - [Anatomía CSS](./sesion01/index.html)
+ - [Software a usar](./sesion01/index.html)
+  - [1. Editor de texto:](./sesion01/index.html)
+  - [2. Navegador web:](./sesion01/index.html)
+  - [3. La libreria jQuery.](./sesion01/index.html)
+  - [4. Servidor web.](./sesion01/index.html)
+ - [Lecturas externas recomendables:](./sesion01/index.html)
+##  [Sesión 02 - Conociendo jQuery](./sesion02/index.html)
+ - [Introducción a <strong>jQuery</strong>](./sesion02/index.html)
+ - [Agregando <strong>jQuery</strong>](./sesion02/index.html)
+ - [Selectores con <strong>jQuery</strong>](./sesion02/index.html)
+  - [Trasversatilidad](./sesion02/index.html)
+ - [Lista de ejemplos:](./sesion02/index.html)
+##  [Conceptos basicos de jQuery.](./sesion03/index.html)
+ - [Diseñado para realizar consultas atraves del <strong>DOM</strong>.](./sesion03/index.html)
+ - [Trabaja por grupos(<em>Iteración implicita</em>).](./sesion03/index.html)
+ - [Es un sistema modular.](./sesion03/index.html)
+ - [Chaining.](./sesion03/index.html)
+ - [Enlaces externos.](./sesion03/index.html)
+##  [Sesión 4 .- Manejo de eventos.](./sesion04/index.html)
+ - [Introducción a los eventos.](./sesion04/index.html)
+ - [Comportamiento en cola.](./sesion04/index.html)
+ - [función on/off.](./sesion04/index.html)
+
 
 
 [Lista de recursos disponibles](./recursos/)
