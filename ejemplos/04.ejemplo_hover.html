@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Lista de ejemplos disponibles</title>
+<title>Ejemplo hover</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
@@ -19,24 +19,42 @@
 </div>
 <div id='content'>
 <div id='tabla_contenidos'></div>
-<h1>Lista de ejemplos disponibles</h1>
+<script type="text/javascript" src="../js/jquery.snippet.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<script language="Javascript"  type="text/javascript">
+$(function() {
+    $("pre").snippet("javascript", {style:'darkness'});
+});
+</script>
 
-<ul>
-<li><a href="./04.ejemplo_hover.html"><code>04.ejemplo_hover.html</code></a></li>
-<li><a href="./04_evento_one.html"><code>04_evento_one.html</code></a></li>
-<li><a href="./04.informacion_evento.html"><code>04.informacion_evento.html</code></a></li>
-<li><a href="./dom.html"><code>dom.html</code></a></li>
-<li><a href="./ejemplo_xpath.html"><code>ejemplo_xpath.html</code></a></li>
-<li><a href="./funcion_anonima_auto_ejecutable.html"><code>funcion_anonima_auto_ejecutable.html</code></a></li>
-<li><a href="./index.html"><code>index.html</code></a></li>
-<li><a href="./lambda.html"><code>lambda.html</code></a></li>
-<li><a href="./llamada_estatica_prototipos.html"><code>llamada_estatica_prototipos.html</code></a></li>
-<li><a href="./manejadores_multiples_mismo_evento_elemento.html"><code>manejadores_multiples_mismo_evento_elemento.html</code></a></li>
-<li><a href="./onClick.html"><code>onClick.html</code></a></li>
-<li><a href="./selector_css.html"><code>selector_css.html</code></a></li>
-<li><a href="./tabla_contenidos.html"><code>tabla_contenidos.html</code></a></li>
-<li><a href="./tabla_insertando_columna.html"><code>tabla_insertando_columna.html</code></a></li>
-</ul>
+<script language="Javascript"  type="text/javascript">
+$(function() {
+    $("h1").hover(
+        function (){$(this).css("color", "red");},
+        function (){$(this).css("color", "black");}
+    );
+});
+</script>
+
+<h1>Ejemplo hover</h1>
+
+<p>Analice el siguiente código HTML:</p>
+
+<pre><code>&lt;h1&gt;Titulo Prueba&lt;/h1&gt;
+</code></pre>
+
+<p>Ahora tenemos el siguiente código <strong>jQuery</strong>:</p>
+
+<pre><code>$("h3").hover({
+    function (){$(this).css("color", "red");},
+    function (){$(this).css("color", "black");}
+);
+</code></pre>
+
+<p>¿Que pasa?, cuando pasamos el mouse y lo quitamos?</p>
+
+<h1>Titulo Prueba</h1>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">
