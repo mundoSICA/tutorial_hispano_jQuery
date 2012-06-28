@@ -3,6 +3,7 @@
  - [`04.ejemplo_hover.html`](./04.ejemplo_hover.html)
  - [`04_evento_one.html`](./04_evento_one.html)
  - [`04.informacion_evento.html`](./04.informacion_evento.html)
+ - [`05.-fadeIn.html`](./05.-fadeIn.html)
  - [`05.tabla_insertando_columna.html`](./05.tabla_insertando_columna.html)
  - [`05.tabla_insertando_fila.html`](./05.tabla_insertando_fila.html)
  - [`dom.html`](./dom.html)
