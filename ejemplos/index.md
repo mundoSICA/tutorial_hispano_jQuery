@@ -4,6 +4,7 @@
  - [`04_evento_one.html`](./04_evento_one.html)
  - [`04.informacion_evento.html`](./04.informacion_evento.html)
  - [`05.tabla_insertando_columna.html`](./05.tabla_insertando_columna.html)
+ - [`05.tabla_insertando_fila.html`](./05.tabla_insertando_fila.html)
  - [`dom.html`](./dom.html)
  - [`ejemplo_xpath.html`](./ejemplo_xpath.html)
  - [`funcion_anonima_auto_ejecutable.html`](./funcion_anonima_auto_ejecutable.html)
