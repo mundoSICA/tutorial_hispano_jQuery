@@ -32,7 +32,20 @@ Manual de JQuery en español
 ##  [Sesión 4 .- Manejo de eventos.](./sesion04/index.html)
  - [Introducción a los eventos.](./sesion04/index.html)
  - [Comportamiento en cola.](./sesion04/index.html)
- - [función on/off.](./sesion04/index.html)
+ - [Borrando eventos función off.](./sesion04/index.html)
+ - [Enlaces recomendados.](./sesion04/index.html)
+##  [Sesión05. - Efectos y modificaciones sobre el DOM.](./sesion05/index.html)
+ - [insertbefore](./sesion05/index.html)
+ - [before](./sesion05/index.html)
+ - [insertafter](./sesion05/index.html)
+ - [after](./sesion05/index.html)
+ - [append](./sesion05/index.html)
+ - [appendto](./sesion05/index.html)
+ - [fadeIn](./sesion05/index.html)
+ - [Animate](./sesion05/index.html)
+ - [show](./sesion05/index.html)
+ - [hide](./sesion05/index.html)
+ - [Lecturas recomendadas.](./sesion05/index.html)
 
 
 

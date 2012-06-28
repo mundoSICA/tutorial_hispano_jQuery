@@ -75,7 +75,19 @@ La respuesta la podemos encontrar al reflexionar que sucede cuando mandamos a ll
 	Ejecución del manejador2 para el evento click del h1
 
 
-## función on/off.
+## Borrando eventos función off.
+
+Podemos desvincular los eventos con la función `off` po ejemplo para eliminar el evento click en H1 podriamos hacer.
+
+	$("h1").off('click');
+
+Con esto eliminariamos todos los eventos click del `h1`, si quisieramos eliminar un unico evento click, podriamos hacer uso de los espacios de nombres.
+
+
 
 Desde la versión `1.7` de **jQuery**, 
 
+
+## Enlaces recomendados.
+
+ - [Dos formas de propagación de un evento](http://www.quirksmode.org/js/events_order.html#link1)

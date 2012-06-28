@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Sesión05. - Efectos y modificaciones sobre el DOM.</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+</head>
+<body>
+
+<div id='head'>
+	<h1>
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<script type="text/javascript" src="../js/jquery.snippet.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<script language="Javascript"  type="text/javascript">
+$(function() {
+    $("pre").snippet("javascript", {style:'darkness'});
+});
+</script>
+
+<script>
+$(function() {
+    console.log($.fx.speeds);
+});
+</script>
+
+<h1>Sesión05. - Efectos y modificaciones sobre el DOM.</h1>
+
+<h2>insertbefore</h2>
+
+<pre><code>$('&lt;p&gt;Test&lt;/p&gt;').insertBefore('#selector');
+</code></pre>
+
+<h2>before</h2>
+
+<pre><code>$('#selector').before('&lt;p&gt;Test&lt;/p&gt;');
+</code></pre>
+
+<h2>insertafter</h2>
+
+<pre><code>$('&lt;p&gt;Test&lt;/p&gt;').insertAfter('#selector');
+</code></pre>
+
+<h2>after</h2>
+
+<pre><code>$('#selector').after('&lt;p&gt;Test&lt;/p&gt;');
+</code></pre>
+
+<h2>append</h2>
+
+<pre><code>$('#selector').append('&lt;p&gt;Test&lt;/p&gt;');
+</code></pre>
+
+<h2>appendto</h2>
+
+<pre><code>$('&lt;p&gt;Test&lt;/p&gt;').appendTo('#selector');
+</code></pre>
+
+<h2>fadeIn</h2>
+
+<pre><code>$('%selector').fadeIn();
+</code></pre>
+
+<p>Tambien puede llevar un argumento como <code>slow</code>, <code>fast</code>.</p>
+
+<pre><code>$('%selector').fadeIn('slow');
+</code></pre>
+
+<p>ó agregar un valor en milisegundos.</p>
+
+<pre><code>$('%selector').fadeIn('slow');
+</code></pre>
+
+<p>Los valores de <code>slow</code>, <code>fast</code>, estan predeterminados en la libreria usted puede ver los valores, predeterminados de los efectos.</p>
+
+<pre><code>console.log($.fx.speeds);
+</code></pre>
+
+<h2>Animate</h2>
+
+<p>Forma simple:</p>
+
+<pre><code>$("selector").animate('width', "500px");
+</code></pre>
+
+<p>Forma relativa:</p>
+
+<pre><code>$("selector").animate({"left": "+=50px"}, "slow");
+</code></pre>
+
+<p>Multiples parametros.</p>
+
+<pre><code>$("selector").animate({
+    width: "70%",
+    opacity: 0.4,
+    marginLeft: "0.6in",
+    fontSize: "3em",
+    borderWidth: "10px"
+}, 1500 );
+</code></pre>
+
+<h2>show</h2>
+
+<p>forma simple.</p>
+
+<pre><code>$('selector').show();
+</code></pre>
+
+<p>forma con velocidad.</p>
+
+<pre><code>$('slector').show('fast');
+</code></pre>
+
+<h2>hide</h2>
+
+<p>forma simple.</p>
+
+<pre><code>$('selector').hide();
+</code></pre>
+
+<p>forma con velocidad.</p>
+
+<pre><code>$('selector').hide('fast');
+</code></pre>
+
+<h2>Lecturas recomendadas.</h2>
+
+<ul>
+<li><a href="http://api.jquery.com/category/effects/">Categoría efectos <strong>jQuery</strong></a></li>
+<li><a href="http://api.jquery.com/category/manipulation/">Manipulación <strong>jQuery</strong></a></li>
+</ul>
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
+</div>
+</body>
+</html>

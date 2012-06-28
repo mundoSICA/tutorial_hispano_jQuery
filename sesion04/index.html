@@ -99,9 +99,22 @@ $(function() {
 Ejecución del manejador2 para el evento click del h1
 </code></pre>
 
-<h2>función on/off.</h2>
+<h2>Borrando eventos función off.</h2>
+
+<p>Podemos desvincular los eventos con la función <code>off</code> po ejemplo para eliminar el evento click en H1 podriamos hacer.</p>
+
+<pre><code>$("h1").off('click');
+</code></pre>
+
+<p>Con esto eliminariamos todos los eventos click del <code>h1</code>, si quisieramos eliminar un unico evento click, podriamos hacer uso de los espacios de nombres.</p>
 
 <p>Desde la versión <code>1.7</code> de <strong>jQuery</strong>, </p>
+
+<h2>Enlaces recomendados.</h2>
+
+<ul>
+<li><a href="http://www.quirksmode.org/js/events_order.html#link1">Dos formas de propagación de un evento</a></li>
+</ul>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">
