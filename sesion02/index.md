@@ -13,7 +13,7 @@ $(function() {
 });
 </script>
 
-Sesión 02 - Conociendo jQuery
+Sesión 2 - Conociendo jQuery
 =============================================================================
 
 Introducción a **jQuery**

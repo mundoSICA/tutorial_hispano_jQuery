@@ -19,7 +19,8 @@ $(function() {
 });
 </script>
 
-# Sesión 4 .- Manejo de eventos.
+Sesión 4 - Manejo de eventos
+=============================================================================
 
 ## Introducción a los eventos.
 

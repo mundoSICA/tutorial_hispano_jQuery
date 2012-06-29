@@ -6,10 +6,10 @@ $(function (){
 	//  1.- $('#content').find('h2') tiene mejor rendimiento que $('#content h2')
 	//  2.- Por convención la variable que contenga el resultado de una consulta debera iniciar con $
 	$h2 = $('#content').find('h2');
-	// Una vez almacenada la búsqueda en $h2, podemos insertar nuevos elementos h2
-	// dentro de #content alterando el DOM sin alterar el contenido de $h2
-	$('<h2>Tabla de contenidos</h2><ol id="lista_contenidos"><ol>')
-		.appendTo('#tabla_contenidos');
+	// Almecenamos en un contenedor el futuro contendio que tendra la tabla de conenido
+	tContenidoHtml = '<h2>Tabla de contenidos</h2><ol id="lista_contenidos">';
+	pie_links = '<div	class="links_paginacion"><a href="#tabla_contenidos">Tabla de Contendidos</a>';
+	pie_links += ' | <a href="../index.html">Indice principal</a></div>';
 	// Para todos los títulos nivel 2(h2) almacenados en $h2, vamos a:
 	$h2.each( function(key, h2_actual) {
 		// Generamos el nuevo identificador que tendrá el h2_actual
@@ -19,9 +19,12 @@ $(function (){
 		        .replace(/\s+/g, "-");      // Remplazamos los espacios en blanco por el guión menos
 		// Seteamos el atributo id del h2_actual por el nuevoID
 		$(h2_actual).attr('id',  nuevoID);
+		$(h2_actual).before(pie_links);
 		// Creamos un item de la lista(<li>) con un link(<a>) con referencia(href) al #nuevoID
-		$('<li><a href="#' + nuevoID + '">' + $(h2_actual).html() + '</a></li>').appendTo('#lista_contenidos');
+		tContenidoHtml += '<li><a href="#' + nuevoID + '">' + $(h2_actual).html() + '</a></li>';
 		// Mandamos a imprimir el resultado en la bitacola de la consola.
 		console.log( key + '. ' + nuevoID );
 	});
+	$(tContenidoHtml + '<ol>').appendTo('#tabla_contenidos');
+	$( pie_links ).appendTo('#content');
 });

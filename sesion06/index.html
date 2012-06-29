@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Sesión 6 - ajax y buenas prácticas.</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+</head>
+<body>
+
+<div id='head'>
+	<h1>
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<script type="text/javascript" src="../js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="../js/jquery.snippet.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<script language="Javascript"  type="text/javascript">
+$(function() {$("pre").snippet("javascript", {style:'darkness'});});
+</script>
+
+<h1>Sesión 6 - ajax y buenas prácticas.</h1>
+
+<h2>Ajax.</h2>
+
+<p><strong>Ajax</strong>, acrónimo de Asynchronous JavaScript And XML (<em>JavaScript asíncrono y XML</em>), es una técnica de desarrollo web para crear aplicaciones interactivas o RIA (Rich Internet Applications). Estas aplicaciones se ejecutan en el cliente, es decir, en el navegador de los usuarios mientras se mantiene la comunicación asíncrona con el servidor en segundo plano. De esta forma es posible realizar cambios sobre las páginas sin necesidad de recargarlas, lo que significa aumentar la interactividad, velocidad y usabilidad en las aplicaciones.</p>
+
+<p>En concepta parte del hecho que desde javascript podemos realizar solicitudes( <em>httpRequests</em> ) y que por medio que <em>javascript</em> no espera el resultado de dicha solicitud para continuar su flujo, veamos un ejemplo con javascript puro.</p>
+
+<h4>Opteniendo un httpRequests.</h4>
+
+<pre><code>//regresa un Requests Object
+function createRequestObject() {
+    var ro;
+    if (window.XMLHttpRequest) {
+            ro = new XMLHttpRequest();
+    } else {
+            ro = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if (!ro)
+            debug("Couldn't start XMLHttpRequest object");
+    return ro;
+}
+</code></pre>
+
+<h4>Manejador de la respuesta.</h4>
+
+<pre><code>function handleResponse() {
+if (http.readyState != 4 &amp;&amp; http.readyState != 3)
+    return;
+if (http.readyState == 3 &amp;&amp; http.status != 200)
+    return;
+if (http.readyState == 4 &amp;&amp; http.status != 200) {
+    clearInterval(pollTimer);
+    inProgress = false;
+}
+// In konqueror http.responseText is sometimes null here...
+if (http.responseText === null)
+    return;
+
+while (prevDataLength != http.responseText.length) {
+    if (http.readyState == 4  &amp;&amp; prevDataLength == http.responseText.length)
+        break;
+    prevDataLength = http.responseText.length;
+    var response = http.responseText.substring(nextLine);
+    var lines = response.split('\n');
+    nextLine = nextLine + response.lastIndexOf('\n') + 1;
+    if (response[response.length-1] != '\n')
+        lines.pop();
+
+    for (var i = 0; i &lt; lines.length; i++) {
+        // ...
+    }
+}
+
+if (http.readyState == 4 &amp;&amp; prevDataLength == http.responseText.length)
+    clearInterval(pollTimer);
+
+inProgress = false;
+}
+</code></pre>
+
+<h4>Usandolos</h4>
+
+<pre><code>function startProcess(dataUrl) {
+    http = createRequestObject();
+    http.open('get', dataUrl);
+    http.onreadystatechange = handleResponse;
+    http.send(null);
+
+    pollTimer = setInterval(handleResponse, 1000);
+}
+</code></pre>
+
+<h2>Ajax y Jquery.</h2>
+
+<h4>Ejemplo básico</h4>
+
+<pre><code>$.ajax({
+    url: 'ajax/test.html',
+    success: function(data) {
+        $('.result').html(data);
+        alert('Load was performed.');
+    }
+});
+</code></pre>
+
+<h3>Quitando la opción asincrona.</h3>
+
+<p>Observe el siguiente código.</p>
+
+<pre><code>var datos  = null;
+$.ajax({
+    url: 'ajax/test.html',
+    success: function(data) {
+        datos = data;
+    }
+});
+console.log(datos);
+</code></pre>
+
+<p>Datos sera <code>null</code>, ya que la respuesta es asincrona es decir <code>console.log()</code> no espera la finalización de <code>$.ajax</code> para ejecutarse, hacer <code>async</code> igual a <code>false</code> resulta una opción util para esta logica.</p>
+
+<pre><code>var datos  = null;
+$.ajax({
+    url: 'ajax/test.html',
+    //detiene la ejecución.
+    async : false,
+    success: function(data) {
+        datos = data;
+    }
+});
+console.log(datos);
+</code></pre>
+
+<p>Otra opción para esperar que ajax se haya ejecutado para realizar determinada acción seria encaminar la funcion <code>done</code> como se muestra acontinuación.</p>
+
+<pre><code>var datos  = null;
+$.ajax({
+    url: 'ajax/test.html',
+    success: function(data) {
+        datos = data;
+    }
+}).done(function( msg ) {
+    console.log(datos);}
+);
+</code></pre>
+
+<h4>Ejemplo Manejando el error.</h4>
+
+<p>Si somos detallistas nos daremos cuenta que <code>console.log(datos);</code> no garantiza que los datos no sean nulos, pues la respuesta puede llegar a fallar y en este caso tal vez deseamos rellenar a datos con valores por defecto.</p>
+
+<pre><code>var datos  = null;
+$.ajax({
+    url: 'ajax/test.html',
+    success: function(data) {
+        datos = data;
+    }
+    error: function() {
+        datos = {v1:'valor defecto 1', v2:'valor defecto 2'};
+    }
+}).done(function( msg ) {
+    console.log(datos);}
+);
+</code></pre>
+
+<h2>Otras funciones Ajax</h2>
+
+<p>Existen otras funciones definas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria <strong>Ajax</strong> de la api de <strong>jQuery</strong>:</p>
+
+<ul>
+<li><a href="http://api.jquery.com/category/ajax/">http://api.jquery.com/category/ajax/</a></li>
+</ul>
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
+</div>
+</body>
+</html>

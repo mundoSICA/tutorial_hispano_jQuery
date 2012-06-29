@@ -32,7 +32,6 @@ Es un excelente _tester_ en linea que te ayuda a determinar la compatibilidad de
 
 Esta es una librería escrita en _JavaScript_ que nos ayuda a contruir sitios bajo __HTML5__ y __CSS3__.
 
- - <http://modernizr.com>
  - <http://html5please.com>
  - <http://html5boilerplate.com>
  - <http://developer.mozilla.org/en-US/learn/html5>

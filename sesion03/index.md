@@ -1,4 +1,5 @@
-# Conceptos basicos de jQuery.
+Sesión 3 -Conceptos básicos de jQuery.
+==========================================================================================
 
 ## Diseñado para realizar consultas atraves del **DOM**.
 
