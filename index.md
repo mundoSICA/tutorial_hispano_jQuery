@@ -60,4 +60,3 @@ Manual de JQuery en español
  - [Lista de selectores CSS](./recursos/selectores_css.html)
  - Recursos Externos.
 
-> De aquí en adelante los demas temas estan pendientes.
