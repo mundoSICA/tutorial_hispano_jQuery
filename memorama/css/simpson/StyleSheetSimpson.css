@@ -1,0 +1,30 @@
+body{
+	background: #FFC310;
+	background-repeat: repeat-x;
+	background-image: -moz-linear-gradient(top, #F2B90F, #D97904);
+	background-image: -ms-linear-gradient(top, #F2B90F, #D97904);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#F2B90F), to(#D97904));
+	background-image: -webkit-linear-gradient(top, #F2B90F, #D97904);
+	background-image: -o-linear-gradient(top, #F2B90F, #D97904);
+	background-image: linear-gradient(top, #F2B90F, #D97904);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F2B90F', endColorstr='#D97904',GradientType=0 );
+}
+
+#tablero{
+    background-color:#169EF2;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	-o-border-radius:50px;
+	border-radius:50px;
+}
+
+.fila .ficha
+{
+	border:1px solid #056CF2;
+	background: #F22D1B;
+	background-image:URL(bart.png);
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+}

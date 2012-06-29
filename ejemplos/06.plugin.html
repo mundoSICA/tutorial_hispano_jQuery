@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+</head>
+<body>
+
+<div id='head'>
+	<h1>
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<script type="text/javascript" src="../js/jquery.snippet.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<script language="Javascript"  type="text/javascript">
+(function($){
+    $.fn.rojo = function(radius, options){
+            i=0;
+            return this.each(function(){
+                c = (i++%2)? 'red' : 'blue';
+                    $(this).css('color', c);
+            });
+    };
+})(jQuery);
+
+$(function() {
+    $('h2').rojo().css('background','#eee');
+    $("pre").snippet("javascript", {style:'darkness'});
+});
+</script>
+
+<h2>Creando plugins.</h2>
+
+<h2>Observe esta fucnion anonima.</h2>
+
+<h2>forma No conflic.</h2>
+
+<h2>Ejemplo de un plugin</h2>
+
+<pre><code>(function($){
+        $.fn.rojo = function(radius, options){
+                i=0;
+                return this.each(function(){
+                        c = (i++%2)? 'red' : 'blue';
+                        $(this).css('color', c);
+                });
+        };
+})(jQuery);
+</code></pre>
+
+<h2>Ejemplo de uso.</h2>
+
+<pre><code>$('h2').rojo().css('background','#eee');
+</code></pre>
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
+</div>
+</body>
+</html>

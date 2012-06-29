@@ -4,8 +4,8 @@
 		'descripcion' : 'tema de la serie One piece',
 		'css_path': '/css/one_piece/estilo.css',
 	},
-	otro : {
-		'autor' : 'otra_persona',
-		'descripcion' : 'otra descripcion',
+	simpson : {
+		'autor' : 'Jorge Carreño',
+		'descripcion' : 'Tema de los simpsons',
 	},
 }

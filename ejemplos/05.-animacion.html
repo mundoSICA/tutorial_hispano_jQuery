@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Efecto de animación</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+</head>
+<body>
+
+<div id='head'>
+	<h1>
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<script type="text/javascript" src="../js/jquery.snippet.js"></script>
+
+<p><link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<script language="Javascript"  type="text/javascript">
+$(function() {
+    $("pre").snippet("javascript", {style:'darkness'});
+    i=0;
+    $(".animacion").hover(function () {
+            i= (i+1)%6? i+1: 1;
+            $(this)
+            .css('background-position', (i*100)+'px 0');
+        },
+        function () {
+            $(this)
+            .css('background-position', '0 0');
+        });
+});
+</script><style type="text/css" media="all">
+div.animacion{
+    width:100px;
+    height:300px;
+    background-image: URL(../img/sprite.jpg);
+    background-position:  0 0;
+}</style></p>
+
+<h1>Efecto de animación</h1>
+
+<h2>Código HTML.</h2>
+
+<pre><code>&lt;div class='animacion'&gt;&lt;/div&gt;
+</code></pre>
+
+<h2>Código CSS</h2>
+
+<pre><code>div.animacion{
+    width:100px;
+    height:100px;
+    background-image: (../img/sprite.jpg);
+    background-position:  0 0;
+}
+</code></pre>
+
+<h2>Código jQuery</h2>
+
+<pre><code>$(function() {
+$("pre").snippet("javascript", {style:'darkness'});
+i=0;
+$(".animacion").hover(function () {
+        i= (i+1)%6? i+1: 1;
+        $(this)
+        .css('background-position', (i*100)+'px 0');
+    },
+    function () {
+        $(this)
+        .css('background-position', '0 0');
+    });
+});
+</code></pre>
+
+<h2>Resultado</h2>
+
+<div class='animacion'></div>
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
+</div>
+</body>
+</html>

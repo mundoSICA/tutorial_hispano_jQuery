@@ -33,10 +33,10 @@ $(function() {
     colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00' ];
     var i = 0;
     $box = $('div.box');
-    animate_loop = function() {
+    animate<em>loop = function() {
     $($box).animate({backgroundColor:colors[(i++)%colors.length]
         }, 900, function(){
-            animate_loop();
+            animate</em>loop();
         });
     }
     animate_loop();
