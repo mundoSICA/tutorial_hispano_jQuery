@@ -39,7 +39,26 @@ function index_ejemplos {
 		mv $ejemplos_path/index.txt $ejemplos_path/index.md;
 }
 
+##########################################################################################
+# Imprime Temario.
+##########################################################################################
+function imprimeTemario {
 
+	echo -e "# Manual de JQuery en español\n";
+	echo '<img src="img/samurai_javascript.png" align="right" alt="el chaco samurai javascript" />';
+	echo '';
+	for i in {1..6}
+	do
+		 grep -ERhio "^<h[1-3]>(.*)</h[0-9]>" sesion0${i}/index.html | \
+				sed -r "s/^<h([1-3]+)>(.*)<\/h[1-3]>/\1\2/" | sed -r "s/(\.|:)$//"  | \
+				sed -r "s/^(1)(.*)/\1[\2](.\/sesion0${i}\/index.html)/" | \
+				sed -r 's/^2/  - /;s/^3/   - /;s/^1/ - /';
+	done
+	grep -ERhio "^<h[1-3]>(.*)</h[0-9]>" recursos/index.html | \
+				sed -r "s/^<h([1-3]+)>(.*)<\/h[1-3]>/\1\2/" | sed -r "s/(\.|:)$//"  | \
+				sed -r "s/^(1)(.*)/\1[\2](.\/recursos\/index.html)/" | \
+				sed -r 's/^2/  - /;s/^3/   - /;s/^1/ - /';
+}
 #Si no recibe ningún argumento, actualiza todo el directorio
 if [ $# -ne 1 ]
 then
@@ -51,7 +70,9 @@ then
 		$0 $file
 	done;
 	index_ejemplos;
-	$0 $repo_path/ejemplos/index.md
+	$0 $repo_path/ejemplos/index.md;
+	imprimeTemario > $repo_path/index.md;
+	$0 $repo_path/index.md;
 	exit 0;
 fi
 #Revisamos que el archivo de entrada tenga la extensión adecuada.
