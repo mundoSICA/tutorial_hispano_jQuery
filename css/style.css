@@ -112,12 +112,23 @@ tr:hover{
 	width:100%;
 	min-width:700px;
 	height:133px;
-	background: #EEE;
-	background-image: URL(../img/logo_ADSL.jpg), URL(../img/header_bg.jpg);
-	background-position:2% 0, 0 0;
-	background-repeat: no-repeat, repeat-x;
+	background: #EEE URL(../img/header_bg.jpg) repeat-x;
 	padding:0 10px 0 10px;
 	margin:0 Auto 0 Auto;
+}
+#logoADSL{
+	height:23px;
+	position:absolute;
+	width:176px;
+	display:block;
+	margin:-10px 0 0 2%;
+	background: URL(../img/logo_ADSL.jpg);
+	color:#b6580e;
+	padding-top:110px;
+	font-size:14px;
+	text-aling:center;
+	font-style:italic;
+	border:none;
 }
 #head h1{float:right; padding-right:3%;}
 
