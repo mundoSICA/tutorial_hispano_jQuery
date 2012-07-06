@@ -2,14 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Insercion de una fila en una tabla.</title>
+<title>Insercion de una columna en una tabla.</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
 	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
 	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
 	<script type='text/javascript'>
-	var fileName='/ejemplos/05.tabla_insertando_fila.html'
+	var fileName='/ejemplos/04.tabla_insertando_columna.html'
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -42,17 +42,21 @@ $(function() {
 
 <script language="Javascript"  type="text/javascript">
 $(function() {
-    fila_nueva = '<tr>'
-                                '<td>fNueva elemento 1</td>'+
-                                '<td>fNueva elemento 2</td>'+
-                                '<td>fNueva elemento 2</td>'+
-                                '<td>fNueva elemento 4</td>'+
-                            '</tr>';
-    $( $('table tr')[2] ).before(fila_nueva);
+    $('table tr').each(function() {
+    // Hacemos uso del refinado transversal que nos proporciona find, para encontrar las
+    // etiquetas th y td contendidas en el tr en cuestion, al obtener el elemento con posición 1
+    // accedemos al segundo elemento de la lista que nos devuelve el find
+        el = $(this).find('th,td')[1];
+            // Vemos si la etiquetas corresponden TH ó TD para insertar el elemento correcto
+            if( el.tagName == 'TH' )
+                $('<TH>Nueva Comuna</TH>').insertBefore(el);
+            else
+                $('</TD>nuevo valor</TD>').insertBefore(el);
+    });
 });
 </script>
 
-<h1>Insercion de una fila en una tabla.</h1>
+<h1>Insercion de una columna en una tabla.</h1>
 
 <p>Atienda al siguiente código HTML.</p>
 
@@ -83,15 +87,17 @@ $(function() {
 
 <p>Ahora ahora observe el siguiente código en jQuery:</p>
 
-<pre><code>//creamos la fila nueva
-fila_nueva = '&lt;tr&gt;'
-                            '&lt;td&gt;fNueva elemento 1&lt;/td&gt;'+
-                            '&lt;td&gt;fNueva elemento 2&lt;/td&gt;'+
-                            '&lt;td&gt;fNueva elemento 2&lt;/td&gt;'+
-                            '&lt;td&gt;fNueva elemento 4&lt;/td&gt;'+
-                        '&lt;/tr&gt;';
-//la insertamos antes de la fila 3
-$( $('table tr')[2] ).before(fila_nueva);
+<pre><code>$('table tr').each(function() {
+// Hacemos uso del refinado transversal que nos proporciona find, para encontrar las
+// etiquetas th y td contendidas en el tr en cuestion, al obtener el elemento con posición 1
+// accedemos al segundo elemento de la lista que nos devuelve el find
+    el = $(this).find('th,td')[1];
+        // Vemos si la etiquetas corresponden TH ó TD para insertar el elemento correcto
+        if( el.tagName == 'TH' )
+            $('&lt;TH&gt;Nueva Comuna&lt;/TH&gt;').insertBefore(el);
+        else
+            $('&lt;/TD&gt;nuevo valor&lt;/TD&gt;').insertBefore(el);
+});
 </code></pre>
 
 <p>El resultado es el siguiente:</p>

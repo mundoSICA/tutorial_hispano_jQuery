@@ -1,94 +1,156 @@
+<script type="text/javascript" src="../js/jquery-ui-1.8.21.custom.min.js"></script>
 <script type="text/javascript" src="../js/jquery.snippet.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 <script language="Javascript"  type="text/javascript">
 $(function() {
+	//mostrando la info del pre
 	$("pre").snippet("javascript", {style:'darkness'});
-	//
-	$("h1")
-			.click(function() {
-				console.log('Ejecución del manejador1 para el evento click del h1');
-			})
-			.click(function() {
-				console.log('Ejecución del manejador2 para el evento click del h1');
-			});
-	//test enlaces.
-	$('a.testClick').click( function(){
-		console.log( $(this).text() );
-	});
+	//Sección efecto color cambiante
+	colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00' ];
+	var i = 0;
+	$box = $('div.box');
+	animateLoop = function() {
+	$($box).animate({backgroundColor:colors[(i++)%colors.length]
+		}, 900, function(){
+			animateLoop();
+		});
+	}
+	animateLoop();
+	//Enviando la info de las velocidades
+	console.log($.fx.speeds);
 });
-</script>
+</script><style type="text/css" media="all">
+div.box{
+	width: 100%;
+	height: 200px;
+	background:#666;
+	border:1px solid #EEE:
+}
+</style>
 
-Sesión 4 - Manejo de eventos
+
+Sesión 4 - Efectos y modificaciones sobre el DOM.
 =============================================================================
 
-## Introducción a los eventos.
+## insertbefore
 
-**jQuery** define una lista de eventos y funciones para la administración de los mismos, la sintaxis por defecto para un manejador de evento es de la siguiente forma `$.fn.nombreEvento`.
+	$('<p>Test</p>').insertBefore('#selector');
 
-	$('Selector').nombreEvento( function(){
-		//funcion que administra el evento.
-		//this es el elemento que disparo el evento.
+## before
+
+	$('#selector').before('<p>Test</p>');
+
+## insertafter
+
+	$('<p>Test</p>').insertAfter('#selector');
+
+## after
+
+	$('#selector').after('<p>Test</p>');
+
+## append
+
+	$('#selector').append('<p>Test</p>');
+
+## appendto
+
+	$('<p>Test</p>').appendTo('#selector');
+
+
+## fadeIn
+
+	$('%selector').fadeIn();
+
+Tambien puede llevar un argumento como `slow`, `fast`.
+
+	$('%selector').fadeIn('slow');
+
+ó agregar un valor en milisegundos.
+
+	$('%selector').fadeIn('slow');
+
+
+Los valores de `slow`, `fast`, estan predeterminados en la libreria usted puede ver los valores, predeterminados de los efectos.
+
+	console.log($.fx.speeds);
+
+## Animate
+
+Forma simple:
+
+	$("selector").animate('width', "500px");
+
+Forma relativa:
+
+	$("selector").animate({"left": "+=50px"}, "slow");
+
+Multiples parametros.
+
+	$("selector").animate({
+		width: "70%",
+		opacity: 0.4,
+		marginLeft: "0.6in",
+		fontSize: "3em",
+		borderWidth: "10px"
+	}, 1500 );
+
+## animate sobre un color.
+
+Desgraciadamente efectos como los colores no funcionan del todo bien, anteriormente habia un plugin `jquery-plugin-color`que nos ayudaba a realizar integrar comportamiento pero ya no le han dado mantenimiento, sin embargo una forma de realizar determinada característica es por medio de [jQuery-Ui](http://jqueryui.com/download), del cual para este caso requerimos el nucleo **jQuery-Ui** (`core`),  el nucleo de los efectos (`Effects Core`) , y finalmente la opción `Effect "Highlight"`, una vez esto optenemos un archivo con el nombre `jquery-ui-1.8.21.custom.min.js` el cual contiene de forma compacta lo que requerimos, ahora lo siguiente es agregarla a la cabecera de nuestro archivo y hacer un tests:
+
+#### Código HTML.
+
+	<div class="box"></div>
+
+#### Código CSS.
+
+		div.box{
+			width: 100%;
+			height: 200px;
+			background:#666;
+			border:1px solid #EEE:
+		}
+#### Código jQuery.
+
+	colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00' ];
+	var i = 0;
+	$box = $('div.box');
+	animate_loop = function() {      
+	$($box).animate({backgroundColor:colors[(i++)%colors.length]
+		}, 900, function(){
+			animate_loop();
+		});
 	}
+	animate_loop();
 
-Aquí es importante resaltar que **this** contendra la instancia del elemento que disparo el evento, por ejemplos si a los enlaces(`a`) le agregamos el evento `click`, this contendra la instancia del enlace especifo sobre del cual  hallamos hecho click, analice el siguiente codigo.
+#### Resultado
 
-**Codigo HTML**
-
-	<a class='testClick' href='#'>enlace 1</a>
-	<a class='testClick' href='#'>enlace 3</a>
-	<a class='testClick' href='#'>enlace 2</a>
-
-**Código jQuery**
-
-	$('a.testClick').click( function(){
-		console.log( $(this).text() );
-	}
-
-** Como puede ver **
-<ul>
-	<li><a class='testClick' href='#'>enlace 1</a></li>
-	<li><a class='testClick' href='#'>enlace 3</a></li>
-	<li><a class='testClick' href='#'>enlace 2</a></li>
-</ul>
-
-En este caso mandaremos a la salida de la consola el contenido del enlace que se precione.
+<div class="box"></div>
 
 
-## Comportamiento en cola.
+## show
 
-Observe el siguiente código.
+forma simple.
 
+	$('selector').show();
 
-		$("h1")
-			.click(function() {
-				console.log('Ejecución del manejador1 para el evento click del h1');
-			})
-			.click(function() {
-				console.log('Ejecución del manejador2 para el evento click del h1');
-			});
+forma con velocidad.
 
-¿Que cree que suceda cuando le demos click a un h1 en esta página?.
+	$('slector').show('fast');
 
-La respuesta la podemos encontrar al reflexionar que sucede cuando mandamos a llamar miltiples veces el evento `document.onReady`. Lo que hace **jQuery** es ocupar una cola para administrar los eventos, de esta forma se pueden agregar multiples funciones sobre el mismo `evento/elemento`, sin más el resultado en la consola seria:
+## hide
 
-	Ejecución del manejador1 para el evento click del h1
-	Ejecución del manejador2 para el evento click del h1
+forma simple.
 
+	$('selector').hide();
 
-## Borrando eventos función off.
+forma con velocidad.
 
-Podemos desvincular los eventos con la función `off` po ejemplo para eliminar el evento click en H1 podriamos hacer.
+	$('selector').hide('fast');
 
-	$("h1").off('click');
+## Lecturas recomendadas.
 
-Con esto eliminariamos todos los eventos click del `h1`, si quisieramos eliminar un unico evento click, podriamos hacer uso de los espacios de nombres.
-
-
-
-Desde la versión `1.7` de **jQuery**, 
-
-
-## Enlaces recomendados.
-
- - [Dos formas de propagación de un evento](http://www.quirksmode.org/js/events_order.html#link1)
+ - [Categoría efectos **jQuery** - http://api.jquery.com/category/effects/](http://api.jquery.com/category/effects/)
+ - [Manipulación **jQuery** - http://api.jquery.com/category/manipulation/](http://api.jquery.com/category/manipulation/)
+ - [Efectos jQuery-Ui - http://jqueryui.com/download](http://jqueryui.com/download)

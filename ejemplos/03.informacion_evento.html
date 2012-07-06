@@ -2,14 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Ejemplo one</title>
+<title>Informacion del evento</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
 	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
 	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
 	<script type='text/javascript'>
-	var fileName='/ejemplos/04_evento_one.html'
+	var fileName='/ejemplos/03.informacion_evento.html'
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -42,14 +42,13 @@ $(function() {
 
 <script language="Javascript"  type="text/javascript">
 $(function() {
-    $('ol li').one('click', function(){
-        $(this).css("color", "red");
-        alert($(this).text());
+    $('ol li').one('click', function(e){
+        alert('Posicion del mouse (' + e.pageX + 'px,'+ e.pageY+'px)');
     });
 });
 </script>
 
-<h1>Ejemplo one</h1>
+<h1>Informacion del evento</h1>
 
 <p>Analice el siguiente código HTML:</p>
 
@@ -62,9 +61,8 @@ $(function() {
 <p>Ahora tenemos el siguiente código <strong>jQuery</strong>:</p>
 
 <pre><code>$(function() {
-    $('ol li').one('click', function(){
-        $(this).css("color", "red");
-        alert($(this).text());
+    $('ol li').one('click', function(e){
+        alert('Posicion del mouse (' + e.pageX + 'px,'+ e.pageY+'px)');
     });
 });
 </code></pre>

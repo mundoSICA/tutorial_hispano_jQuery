@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Sesión 2 - Conociendo jQuery</title>
+<title>Sesión 2 -Caracteristicas principales de jQuery.</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
@@ -31,93 +31,122 @@
 </div>
 <div id='content'>
 <div id='tabla_contenidos'></div>
+<script type="text/javascript" src="../js/jquery-ui-1.8.21.custom.min.js"></script>
 <script type="text/javascript" src="../js/jquery.snippet.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <script language="Javascript"  type="text/javascript">
 $(function() {
-    google_api = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
-    $pre = $("pre");
-    console.log($pre);
-    $($pre[0]).snippet("html", {style:'darkness'});
-    $($pre[1]).snippet("javascript", {style:'darkness'});
-    $($pre[2]).snippet("javascript", {style:'darkness'});
-
-    $('#jqueryInput').val(google_api);
-    $('#jqueryInput').focus( function(google_api){
-        $(this).select();
-    }).blur(function(){
-        $(this).val(google_api);
-    });
+    //mostrando la info del pre
+    $("pre").snippet("javascript", {style:'darkness'});
+    //Cambiando el color de los titulos 2.
+    //forma 1 con iteración explicita
+        //$.each($('h2'), function(key, value) {
+        //  $(this).css("color", "#333");
+        //});
+    //
+    //cambiando los parrafos seguidos, de un titulo nivel 2.
+    //Opción1 no recomendado.
+        //$('h2 + p').css('color', '#946900');
+        //$('h2 + p').css('font-style', 'italic');
+    //Opción 2 recimendado cuando se va ocupar varias veces la misma consulta.
+        //$parrafosBajoTitulo = $('h2 + p');
+        //$parrafosBajoTitulo.css('color', '#946900');
+        //$parrafosBajoTitulo.css('font-style', 'italic');
+    //opcion 3, recomendado cuando todo lo que vamos a hacer se puede encolar.
+    $('h2 + p')
+        .css('color', '#946900')
+        .css('font-style', 'italic');
 });
 </script>
 
-<h1>Sesión 2 - Conociendo jQuery</h1>
+<h1>Sesión 2 -Caracteristicas principales de jQuery.</h1>
 
-<h2>Introducción a <strong>jQuery</strong></h2>
+<h2>Trabaja por grupos(<em>Iteración implicita</em>).</h2>
 
-<p><strong>jQuery</strong> es una biblioteca de <em>JavaScript</em>, creada inicialmente por <a href="http://ejohn.org/">John Resig</a>, que nos permite simplificar la manera de interactuar con los documentos <strong>HTML</strong>, manipular el árbol <strong>DOM</strong>, manejar eventos, desarrollar animaciones y agregar interacción con la técnica <strong>AJAX</strong> a páginas web.</p>
+<p>Una carácteristica muy interesante es que los metodos de <strong>jQuery</strong> que realizan una consulta trabajan con iteración implicita, por ejemplo, la consulta.</p>
+
+<pre><code>$('h2')
+</code></pre>
+
+<p>Nos devuelve todos los titulos nivel 2 (<code>h2</code>) que esten en la página, ahora si por ejemplo quisieramos cambiarle el color a un gris obscuro (<code>#333</code>), esto lo podriamos hacer de la siguiente manera.</p>
+
+<pre><code>$.each($('h2'), function() {
+    $(this).css("color", "#333");
+});
+</code></pre>
+
+<p>En este caso estamos ocupando el metodo <code>each</code> el nos dice que para cada titulo en la selección ejecuta una función la cual le cambia el color.</p>
+
+<p>De momento no se preocupe en comprender el each, lo importante es que comprenda que estamos iterando explicitamente para realizar determinada acción sobre cada elemento en la selección.</p>
+
+<p>Existe una forma de hacer esto más fácil y es ocupando este comportamiento de trabajar por grupos de jQuery, en este caso la función <code>css</code> puede trabajar sobre toda una selección:</p>
+
+<pre><code>$('h2').css('color', '#333');
+</code></pre>
+
+<p>En general las funciones que tengan esta forma:</p>
+
+<pre><code>$('selector').funcionNombre(param1,param2,...);
+</code></pre>
+
+<p>Trabajan sobre toda la selección, es decir si la selección es todo un grupo la función se ejecutara sobre todos los elementos. A esta funciones las llamaremos <code>jQuery.fn.funcionNombre</code> o bien su forma reducida <code>$.fn.funcionNombre</code> ya que pertenecen al espacio de nombre <code>fn</code> de jQuery.</p>
+
+<p>Cuando hacemos referencia a <code>jQuery.fn</code> se hace referencia al espacio de nombre de <strong>jQuery</strong> del prototipo es decir de una extensión de <strong>jQuery</strong>, <code>jQuery.fn</code> es también un alias de <code>jQuery.prototype</code> <a href="https://github.com/mundoSICA/tutorial_hispano_jQuery/blob/gh-pages/js/jquery-1.7.2.js#L97"></a>.</p>
+
+<h2>Diseñado para realizar consultas atraves del <strong>DOM</strong>.</h2>
+
+<p>Quizas la principal caracteristica de <strong>jQuery</strong> es que esta diseñado para realizar consultas a travez de el <strong>DOM</strong>, como ya se menciono antes, <strong>jQuery</strong> nos permite realizar consultas <strong>CSS</strong>, <strong>xPath</strong> y <strong>trasversales</strong>.</p>
+
+<pre><code>$('h2 + p').css('color', '#946900');
+$('h2 + p').css('font-style', 'italic');
+</code></pre>
+
+<p>Con esto indicamos que todo parrafos(<code>p</code>) inmediatamente seguidos(<code>+</code>) de un titulo nivel 2(<code>h2</code>), va a tomar el color de la letra a café y el estilo de la fuente sera del tipo italica.</p>
+
+<p>No abuse de esta característica, la tarea de realizar una consulta atravez del <strong>DOM</strong> puede llegar a ser algo bastente complejo (<em>dependiendo de la consulta</em>).</p>
+
+<p>Una mejor opción es almacenar la consulta realizada en una variable:</p>
+
+<pre><code>$parrafosBajoTitulo = $('h2 + p');
+$parrafosBajoTitulo.css('color', '#946900');
+$parrafosBajoTitulo.css('font-style', 'italic');
+</code></pre>
 
 <blockquote>
-  <p>Extracto: <a href="http://es.wikipedia.org/wiki/JQuery">http://es.wikipedia.org/wiki/JQuery</a></p>
+  <p>Es buena práctica agregar el prefijo <code>$</code> a las variables que almacenan el resultado de una consulta.</p>
 </blockquote>
 
-<h2>Agregando <strong>jQuery</strong></h2>
-
-<p>Una vez que tenemos la libreria <a href="http://docs.jquery.com/Downloading_jQuery"><strong>jQuery más reciente</strong></a>, lo siguiente es incluir la libreria en nuestros documentos html, esto lo hacemos, agregando el script dentro de la cabecera del documento.</p>
-
-<pre>&lt;head&gt;
-  &lt;!-- agregando libreria jQuery --&gt;
-  &lt;script type='text/javascript' src='js/jquery1.7.3.js'&gt;&lt;/script&gt;
-&lt;/head&gt;</pre>
-
-<p>Por otra parte tambien puedes agregar la libreria directo del servidor de google</p>
-
-<p><input id='jqueryInput' value=''></p>
-
-<h2>Selectores con <strong>jQuery</strong></h2>
-
-<p>Quizás la propiedad más significativa de <strong>jQuery</strong> es su flexibilidad para hacer consultas a través del <strong>DOM</strong>(de ahí el nombre).</p>
-
-<p><strong>jQuery</strong> basicamente nos permite hacer 3 tipos de consultas:</p>
+<h2>Es un sistema modular.</h2>
 
 <ul>
-<li>[Consultas <strong>CSS</strong>]</li>
-<li><a href="http://www.ibm.com/developerworks/xml/library/x-xpathjquery/">Consultas <strong>xPath</strong></a></li>
-<li>[Consultas <strong>Trasversales</strong>]</li>
+<li><a href="https://github.com/jquery/plugins.jquery.com">jQuery plugins</a></li>
+<li><a href="http://jqueryui.com/">jQuery UI</a></li>
+<li><a href="http://jquerymobile.com/">jQuery mobile</a></li>
 </ul>
 
-<p>Por cuestiones del alancance de este manual, sólo veremos las consultas <strong>CSS</strong> y algunos metodos <strong>trasversales</strong>, dejando un poco de lado las consultas <strong>xPath</strong> ya que casi no se usan pero es bueno que el lector sepa que existen y que tambien son una forma de acceder a los elementos.</p>
+<h2>Chaining.</h2>
 
-<p>En el capitulo pasado conocimos la anatomia de <strong>CSS</strong> si usted tiene alguna duda sobre los selectores CSS que usaremos le invito a consultar la siguiente tabla:</p>
+<p>Atienda al siguiente código:</p>
 
-<ul>
-<li><a href="../recursos/selectores_css.html">lista de selectores css</a></li>
-</ul>
-
-<h3>Trasversatilidad</h3>
-
-<p>La transversatilidad es un <a href="http://api.jquery.com/category/traversing/">conjunto de metodos</a> definidos por <strong>jQuery</strong> para refinamiento de selectores, para explicar esto ocuparemos 2 funciones.</p>
-
-<ul>
-<li><strong>find</strong>: Nos permite realizar una consulta sobre un objeto jQuery.</li>
-<li><strong>filter</strong>: Nos permite realizar un filtrado, descartando elementos, sobre un objeto jQuery.</li>
-</ul>
-
-<p>Imaginemos que tenemos una <em>tabla</em> que tiene como atributo <strong>id</strong> el valor <strong>idTabla</strong>, el cual queremos accecer a todos sus elementos th, una forma de hacerlo seria:</p>
-
-<pre><code>$("#idTabla th").css('background', '#ddd');
+<pre><code>$('h2').css('color','red');
+$('h2').text('Cambiando el contenido a todos los elementos h2');
 </code></pre>
 
-<p>Otra alternativa es usar el metodo find para buscar en un objeto de jQuery el cual me representa una rama del DOM.</p>
+<p>Ahora comparelo con el siguiente código:</p>
 
-<pre><code>$("#idTabla").find('th').css('background', '#ddd');
+<pre><code>$('h2')
+            .css('color','red')
+            .text('Cambiando el contenido a todos los elementos h2');
 </code></pre>
 
-<h2>Lista de ejemplos:</h2>
+<p>¿Cual cree que sea mejor?, argumente su respuesta.</p>
 
-<ol>
-<li><a href="ejemplos/selector_css.html">Selectores con <strong>CSS</strong></a></li>
-</ol>
+<h2>Enlaces externos.</h2>
+
+<ul>
+<li><a href="http://www.w3.org/TR/html5/global-attributes.html#custom-data-attribute">Atributos personalizados</a></li>
+</ul>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">

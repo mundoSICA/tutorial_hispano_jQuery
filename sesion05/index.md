@@ -3,154 +3,154 @@
 <link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 <script language="Javascript"  type="text/javascript">
-$(function() {
-	//mostrando la info del pre
-	$("pre").snippet("javascript", {style:'darkness'});
-	//Sección efecto color cambiante
-	colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00' ];
-	var i = 0;
-	$box = $('div.box');
-	animate_loop = function() {
-	$($box).animate({backgroundColor:colors[(i++)%colors.length]
-		}, 900, function(){
-			animate_loop();
-		});
-	}
-	animate_loop();
-	//Enviando la info de las velocidades
-	console.log($.fx.speeds);
-});
-</script><style type="text/css" media="all">
-div.box{
-	width: 100%;
-	height: 200px;
-	background:#666;
-	border:1px solid #EEE:
-}
-</style>
+$(function() {$("pre").snippet("javascript", {style:'darkness'});});
+</script>
 
-
-Sesión 5 - Efectos y modificaciones sobre el DOM.
+Sesión 5 - Ajax y buenas prácticas.
 =============================================================================
 
-## insertbefore
+## Ajax.
 
-	$('<p>Test</p>').insertBefore('#selector');
+**Ajax**, acrónimo de Asynchronous JavaScript And XML (_JavaScript asíncrono y XML_), es una técnica de desarrollo web para crear aplicaciones interactivas o RIA (Rich Internet Applications). Estas aplicaciones se ejecutan en el cliente, es decir, en el navegador de los usuarios mientras se mantiene la comunicación asíncrona con el servidor en segundo plano. De esta forma es posible realizar cambios sobre las páginas sin necesidad de recargarlas, lo que significa aumentar la interactividad, velocidad y usabilidad en las aplicaciones.
 
-## before
-
-	$('#selector').before('<p>Test</p>');
-
-## insertafter
-
-	$('<p>Test</p>').insertAfter('#selector');
-
-## after
-
-	$('#selector').after('<p>Test</p>');
-
-## append
-
-	$('#selector').append('<p>Test</p>');
-
-## appendto
-
-	$('<p>Test</p>').appendTo('#selector');
+En concepta parte del hecho que desde javascript podemos realizar solicitudes( _httpRequests_ ) y que por medio que _javascript_ no espera el resultado de dicha solicitud para continuar su flujo, veamos un ejemplo con javascript puro.
 
 
-## fadeIn
+#### Opteniendo un httpRequests.
 
-	$('%selector').fadeIn();
-
-Tambien puede llevar un argumento como `slow`, `fast`.
-
-	$('%selector').fadeIn('slow');
-
-ó agregar un valor en milisegundos.
-
-	$('%selector').fadeIn('slow');
-
-
-Los valores de `slow`, `fast`, estan predeterminados en la libreria usted puede ver los valores, predeterminados de los efectos.
-
-	console.log($.fx.speeds);
-
-## Animate
-
-Forma simple:
-
-	$("selector").animate('width', "500px");
-
-Forma relativa:
-
-	$("selector").animate({"left": "+=50px"}, "slow");
-
-Multiples parametros.
-
-	$("selector").animate({
-		width: "70%",
-		opacity: 0.4,
-		marginLeft: "0.6in",
-		fontSize: "3em",
-		borderWidth: "10px"
-	}, 1500 );
-
-## animate sobre un color.
-
-Desgraciadamente efectos como los colores no funcionan del todo bien, anteriormente habia un plugin `jquery-plugin-color`que nos ayudaba a realizar integrar comportamiento pero ya no le han dado mantenimiento, sin embargo una forma de realizar determinada característica es por medio de [jQuery-Ui](http://jqueryui.com/download), del cual para este caso requerimos el nucleo **jQuery-Ui** (`core`),  el nucleo de los efectos (`Effects Core`) , y finalmente la opción `Effect "Highlight"`, una vez esto optenemos un archivo con el nombre `jquery-ui-1.8.21.custom.min.js` el cual contiene de forma compacta lo que requerimos, ahora lo siguiente es agregarla a la cabecera de nuestro archivo y hacer un tests:
-
-#### Código HTML.
-
-	<div class="box"></div>
-
-#### Código CSS.
-
-		div.box{
-			width: 100%;
-			height: 200px;
-			background:#666;
-			border:1px solid #EEE:
-		}
-#### Código jQuery.
-
-	colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00' ];
-	var i = 0;
-	$box = $('div.box');
-	animate_loop = function() {      
-	$($box).animate({backgroundColor:colors[(i++)%colors.length]
-		}, 900, function(){
-			animate_loop();
-		});
+	//regresa un Requests Object
+	function createRequestObject() {
+        var ro;
+        if (window.XMLHttpRequest) {
+                ro = new XMLHttpRequest();
+        } else {
+                ro = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        if (!ro)
+                debug("Couldn't start XMLHttpRequest object");
+        return ro;
 	}
-	animate_loop();
 
-#### Resultado
+#### Manejador de la respuesta.
 
-<div class="box"></div>
+	function handleResponse() {
+    if (http.readyState != 4 && http.readyState != 3)
+        return;
+    if (http.readyState == 3 && http.status != 200)
+        return;
+    if (http.readyState == 4 && http.status != 200) {
+        clearInterval(pollTimer);
+        inProgress = false;
+    }
+    // In konqueror http.responseText is sometimes null here...
+    if (http.responseText === null)
+        return;
+
+    while (prevDataLength != http.responseText.length) {
+        if (http.readyState == 4  && prevDataLength == http.responseText.length)
+            break;
+        prevDataLength = http.responseText.length;
+        var response = http.responseText.substring(nextLine);
+        var lines = response.split('\n');
+        nextLine = nextLine + response.lastIndexOf('\n') + 1;
+        if (response[response.length-1] != '\n')
+            lines.pop();
+
+        for (var i = 0; i < lines.length; i++) {
+            // ...
+        }
+    }
+
+    if (http.readyState == 4 && prevDataLength == http.responseText.length)
+        clearInterval(pollTimer);
+
+    inProgress = false;
+	}
+
+#### Usandolos
+
+	function startProcess(dataUrl) {
+        http = createRequestObject();
+        http.open('get', dataUrl);
+        http.onreadystatechange = handleResponse;
+        http.send(null);
+
+        pollTimer = setInterval(handleResponse, 1000);
+	}
+
+## Ajax y Jquery.
+
+#### Ejemplo básico
+
+	$.ajax({
+		url: 'ajax/test.html',
+		success: function(data) {
+			$('.result').html(data);
+			alert('Load was performed.');
+		}
+	});
+
+### Quitando la opción asincrona.
+
+Observe el siguiente código.
+	
+	var datos  = null;
+	$.ajax({
+		url: 'ajax/test.html',
+		success: function(data) {
+			datos = data;
+		}
+	});
+	console.log(datos);
+
+Datos sera `null`, ya que la respuesta es asincrona es decir `console.log()` no espera la finalización de `$.ajax` para ejecutarse, hacer `async` igual a `false` resulta una opción util para esta logica.
+
+	var datos  = null;
+	$.ajax({
+		url: 'ajax/test.html',
+		//detiene la ejecución.
+		async : false,
+		success: function(data) {
+			datos = data;
+		}
+	});
+	console.log(datos);	
+
+Otra opción para esperar que ajax se haya ejecutado para realizar determinada acción seria encaminar la funcion `done` como se muestra acontinuación.
+
+	var datos  = null;
+	$.ajax({
+		url: 'ajax/test.html',
+		success: function(data) {
+			datos = data;
+		}
+	}).done(function( msg ) {
+		console.log(datos);}
+	);
 
 
-## show
+#### Ejemplo Manejando el error.
 
-forma simple.
+Si somos detallistas nos daremos cuenta que `console.log(datos);` no garantiza que los datos no sean nulos, pues la respuesta puede llegar a fallar y en este caso tal vez deseamos rellenar a datos con valores por defecto.
 
-	$('selector').show();
+	var datos  = null;
+	$.ajax({
+		url: 'ajax/test.html',
+		success: function(data) {
+			datos = data;
+		}
+		error: function() {
+			datos = {v1:'valor defecto 1', v2:'valor defecto 2'};
+		}
+	}).done(function( msg ) {
+		console.log(datos);}
+	);
 
-forma con velocidad.
+## Otras funciones Ajax
 
-	$('slector').show('fast');
+Existen otras funciones definas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria **Ajax** de la api de **jQuery**:
 
-## hide
+ - <http://api.jquery.com/category/ajax/>
+ - [Usando herramientas de calidad de código - por Anton Kovalyov (_inglés_)](http://anton.kovalyov.net/slides/gothamjs/)
+ - [Principios para escribir JavaScript consistente e idiomático](https://github.com/rwldrn/idiomatic.js/tree/master/translations/es_ES)
 
-forma simple.
-
-	$('selector').hide();
-
-forma con velocidad.
-
-	$('selector').hide('fast');
-
-## Lecturas recomendadas.
-
- - [Categoría efectos **jQuery** - http://api.jquery.com/category/effects/](http://api.jquery.com/category/effects/)
- - [Manipulación **jQuery** - http://api.jquery.com/category/manipulation/](http://api.jquery.com/category/manipulation/)
- - [Efectos jQuery-Ui - http://jqueryui.com/download](http://jqueryui.com/download)

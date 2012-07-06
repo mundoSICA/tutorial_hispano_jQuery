@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Sesión 3 -Caracteristicas principales de jQuery.</title>
+<title>Sesión 3 - Manejo de eventos</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
@@ -31,121 +31,101 @@
 </div>
 <div id='content'>
 <div id='tabla_contenidos'></div>
-<script type="text/javascript" src="../js/jquery-ui-1.8.21.custom.min.js"></script>
 <script type="text/javascript" src="../js/jquery.snippet.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 <script language="Javascript"  type="text/javascript">
 $(function() {
-    //mostrando la info del pre
     $("pre").snippet("javascript", {style:'darkness'});
-    //Cambiando el color de los titulos 2.
-    //forma 1 con iteración explicita
-        //$.each($('h2'), function(key, value) {
-        //  $(this).css("color", "#333");
-        //});
     //
-    //cambiando los parrafos seguidos, de un titulo nivel 2.
-    //Opción1 no recomendado.
-        //$('h2 + p').css('color', '#946900');
-        //$('h2 + p').css('font-style', 'italic');
-    //Opción 2 recimendado cuando se va ocupar varias veces la misma consulta.
-        //$parrafosBajoTitulo = $('h2 + p');
-        //$parrafosBajoTitulo.css('color', '#946900');
-        //$parrafosBajoTitulo.css('font-style', 'italic');
-    //opcion 3, recomendado cuando todo lo que vamos a hacer se puede encolar.
-    $('h2 + p')
-        .css('color', '#946900')
-        .css('font-style', 'italic');
+    $("h1")
+            .click(function() {
+                console.log('Ejecución del manejador1 para el evento click del h1');
+            })
+            .click(function() {
+                console.log('Ejecución del manejador2 para el evento click del h1');
+            });
+    //test enlaces.
+    $('a.testClick').click( function(){
+        console.log( $(this).text() );
+    });
 });
 </script>
 
-<h1>Sesión 3 -Caracteristicas principales de jQuery.</h1>
+<h1>Sesión 3 - Manejo de eventos</h1>
 
-<h2>Trabaja por grupos(<em>Iteración implicita</em>).</h2>
+<h2>Introducción a los eventos.</h2>
 
-<p>Una carácteristica muy interesante es que los metodos de <strong>jQuery</strong> que realizan una consulta trabajan con iteración implicita, por ejemplo, la consulta.</p>
+<p><strong>jQuery</strong> define una lista de eventos y funciones para la administración de los mismos, la sintaxis por defecto para un manejador de evento es de la siguiente forma <code>$.fn.nombreEvento</code>.</p>
 
-<pre><code>$('h2')
+<pre><code>$('Selector').nombreEvento( function(){
+    //funcion que administra el evento.
+    //this es el elemento que disparo el evento.
+}
 </code></pre>
 
-<p>Nos devuelve todos los titulos nivel 2 (<code>h2</code>) que esten en la página, ahora si por ejemplo quisieramos cambiarle el color a un gris obscuro (<code>#333</code>), esto lo podriamos hacer de la siguiente manera.</p>
+<p>Aquí es importante resaltar que <strong>this</strong> contendra la instancia del elemento que disparo el evento, por ejemplos si a los enlaces(<code>a</code>) le agregamos el evento <code>click</code>, this contendra la instancia del enlace especifo sobre del cual  hallamos hecho click, analice el siguiente codigo.</p>
 
-<pre><code>$.each($('h2'), function() {
-    $(this).css("color", "#333");
-});
+<p><strong>Codigo HTML</strong></p>
+
+<pre><code>&lt;a class='testClick' href='#'&gt;enlace 1&lt;/a&gt;
+&lt;a class='testClick' href='#'&gt;enlace 3&lt;/a&gt;
+&lt;a class='testClick' href='#'&gt;enlace 2&lt;/a&gt;
 </code></pre>
 
-<p>En este caso estamos ocupando el metodo <code>each</code> el nos dice que para cada titulo en la selección ejecuta una función la cual le cambia el color.</p>
+<p><strong>Código jQuery</strong></p>
 
-<p>De momento no se preocupe en comprender el each, lo importante es que comprenda que estamos iterando explicitamente para realizar determinada acción sobre cada elemento en la selección.</p>
-
-<p>Existe una forma de hacer esto más fácil y es ocupando este comportamiento de trabajar por grupos de jQuery, en este caso la función <code>css</code> puede trabajar sobre toda una selección:</p>
-
-<pre><code>$('h2').css('color', '#333');
+<pre><code>$('a.testClick').click( function(){
+    console.log( $(this).text() );
+}
 </code></pre>
 
-<p>En general las funciones que tengan esta forma:</p>
-
-<pre><code>$('selector').funcionNombre(param1,param2,...);
-</code></pre>
-
-<p>Trabajan sobre toda la selección, es decir si la selección es todo un grupo la función se ejecutara sobre todos los elementos. A esta funciones las llamaremos <code>jQuery.fn.funcionNombre</code> o bien su forma reducida <code>$.fn.funcionNombre</code> ya que pertenecen al espacio de nombre <code>fn</code> de jQuery.</p>
-
-<p>Cuando hacemos referencia a <code>jQuery.fn</code> se hace referencia al espacio de nombre de <strong>jQuery</strong> del prototipo es decir de una extensión de <strong>jQuery</strong>, <code>jQuery.fn</code> es también un alias de <code>jQuery.prototype</code> <a href="https://github.com/mundoSICA/tutorial_hispano_jQuery/blob/gh-pages/js/jquery-1.7.2.js#L97"></a>.</p>
-
-<h2>Diseñado para realizar consultas atraves del <strong>DOM</strong>.</h2>
-
-<p>Quizas la principal caracteristica de <strong>jQuery</strong> es que esta diseñado para realizar consultas a travez de el <strong>DOM</strong>, como ya se menciono antes, <strong>jQuery</strong> nos permite realizar consultas <strong>CSS</strong>, <strong>xPath</strong> y <strong>trasversales</strong>.</p>
-
-<pre><code>$('h2 + p').css('color', '#946900');
-$('h2 + p').css('font-style', 'italic');
-</code></pre>
-
-<p>Con esto indicamos que todo parrafos(<code>p</code>) inmediatamente seguidos(<code>+</code>) de un titulo nivel 2(<code>h2</code>), va a tomar el color de la letra a café y el estilo de la fuente sera del tipo italica.</p>
-
-<p>No abuse de esta característica, la tarea de realizar una consulta atravez del <strong>DOM</strong> puede llegar a ser algo bastente complejo (<em>dependiendo de la consulta</em>).</p>
-
-<p>Una mejor opción es almacenar la consulta realizada en una variable:</p>
-
-<pre><code>$parrafosBajoTitulo = $('h2 + p');
-$parrafosBajoTitulo.css('color', '#946900');
-$parrafosBajoTitulo.css('font-style', 'italic');
-</code></pre>
-
-<blockquote>
-  <p>Es buena práctica agregar el prefijo <code>$</code> a las variables que almacenan el resultado de una consulta.</p>
-</blockquote>
-
-<h2>Es un sistema modular.</h2>
+<p><em>* Como puede ver *</em></p>
 
 <ul>
-<li><a href="https://github.com/jquery/plugins.jquery.com">jQuery plugins</a></li>
-<li><a href="http://jqueryui.com/">jQuery UI</a></li>
-<li><a href="http://jquerymobile.com/">jQuery mobile</a></li>
+    <li><a class='testClick' href='#'>enlace 1</a></li>
+    <li><a class='testClick' href='#'>enlace 3</a></li>
+    <li><a class='testClick' href='#'>enlace 2</a></li>
 </ul>
 
-<h2>Chaining.</h2>
+<p>En este caso mandaremos a la salida de la consola el contenido del enlace que se precione.</p>
 
-<p>Atienda al siguiente código:</p>
+<h2>Comportamiento en cola.</h2>
 
-<pre><code>$('h2').css('color','red');
-$('h2').text('Cambiando el contenido a todos los elementos h2');
+<p>Observe el siguiente código.</p>
+
+<pre><code>    $("h1")
+        .click(function() {
+            console.log('Ejecución del manejador1 para el evento click del h1');
+        })
+        .click(function() {
+            console.log('Ejecución del manejador2 para el evento click del h1');
+        });
 </code></pre>
 
-<p>Ahora comparelo con el siguiente código:</p>
+<p>¿Que cree que suceda cuando le demos click a un h1 en esta página?.</p>
 
-<pre><code>$('h2')
-            .css('color','red')
-            .text('Cambiando el contenido a todos los elementos h2');
+<p>La respuesta la podemos encontrar al reflexionar que sucede cuando mandamos a llamar miltiples veces el evento <code>document.onReady</code>. Lo que hace <strong>jQuery</strong> es ocupar una cola para administrar los eventos, de esta forma se pueden agregar multiples funciones sobre el mismo <code>evento/elemento</code>, sin más el resultado en la consola seria:</p>
+
+<pre><code>Ejecución del manejador1 para el evento click del h1
+Ejecución del manejador2 para el evento click del h1
 </code></pre>
 
-<p>¿Cual cree que sea mejor?, argumente su respuesta.</p>
+<h2>Borrando eventos función off.</h2>
 
-<h2>Enlaces externos.</h2>
+<p>Podemos desvincular los eventos con la función <code>off</code> po ejemplo para eliminar el evento click en H1 podriamos hacer.</p>
+
+<pre><code>$("h1").off('click');
+</code></pre>
+
+<p>Con esto eliminariamos todos los eventos click del <code>h1</code>, si quisieramos eliminar un unico evento click, podriamos hacer uso de los espacios de nombres.</p>
+
+<p>Desde la versión <code>1.7</code> de <strong>jQuery</strong>, </p>
+
+<h2>Enlaces recomendados.</h2>
 
 <ul>
-<li><a href="http://www.w3.org/TR/html5/global-attributes.html#custom-data-attribute">Atributos personalizados</a></li>
+<li><a href="http://www.quirksmode.org/js/events_order.html#link1">Dos formas de propagación de un evento</a></li>
 </ul>
 </div><!-- end content -->
 <div id="pie_pagina">

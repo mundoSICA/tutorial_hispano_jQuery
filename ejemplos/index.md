@@ -1,12 +1,12 @@
-# Lista de ejemplos disponibles
+# Ejemplos disponibles
 
- - [`04.ejemplo_hover.html`](./04.ejemplo_hover.html)
- - [`04_evento_one.html`](./04_evento_one.html)
- - [`04.informacion_evento.html`](./04.informacion_evento.html)
- - [`05.-animacion.html`](./05.-animacion.html)
- - [`05.-fadeIn.html`](./05.-fadeIn.html)
- - [`05.tabla_insertando_columna.html`](./05.tabla_insertando_columna.html)
- - [`05.tabla_insertando_fila.html`](./05.tabla_insertando_fila.html)
+ - [`03.ejemplo_hover.html`](./03.ejemplo_hover.html)
+ - [`03_evento_one.html`](./03_evento_one.html)
+ - [`03.informacion_evento.html`](./03.informacion_evento.html)
+ - [`04.-animacion.html`](./04.-animacion.html)
+ - [`04.-fadeIn.html`](./04.-fadeIn.html)
+ - [`04.tabla_insertando_columna.html`](./04.tabla_insertando_columna.html)
+ - [`04.tabla_insertando_fila.html`](./04.tabla_insertando_fila.html)
  - [`06.plugin.html`](./06.plugin.html)
  - [`dom.html`](./dom.html)
  - [`ejemplo_xpath.html`](./ejemplo_xpath.html)

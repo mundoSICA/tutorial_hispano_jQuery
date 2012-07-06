@@ -2,14 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Ejemplo hover</title>
+<title>Ejemplo one</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
 	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
 	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
 	<script type='text/javascript'>
-	var fileName='/ejemplos/04.ejemplo_hover.html'
+	var fileName='/ejemplos/03_evento_one.html'
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -42,31 +42,39 @@ $(function() {
 
 <script language="Javascript"  type="text/javascript">
 $(function() {
-    $("h1").hover(
-        function (){$(this).css("color", "red");},
-        function (){$(this).css("color", "black");}
-    );
+    $('ol li').one('click', function(){
+        $(this).css("color", "red");
+        alert($(this).text());
+    });
 });
 </script>
 
-<h1>Ejemplo hover</h1>
+<h1>Ejemplo one</h1>
 
 <p>Analice el siguiente código HTML:</p>
 
-<pre><code>&lt;h1&gt;Titulo Prueba&lt;/h1&gt;
+<pre><code>&lt;ol&gt;
+    &lt;li&gt;uno&lt;/li&gt;
+    &lt;li&gt;dos&lt;/li&gt;
+&lt;/ol&gt;
 </code></pre>
 
 <p>Ahora tenemos el siguiente código <strong>jQuery</strong>:</p>
 
-<pre><code>$("h3").hover({
-    function (){$(this).css("color", "red");},
-    function (){$(this).css("color", "black");}
-);
+<pre><code>$(function() {
+    $('ol li').one('click', function(){
+        $(this).css("color", "red");
+        alert($(this).text());
+    });
+});
 </code></pre>
 
-<p>¿Que pasa?, cuando pasamos el mouse y lo quitamos?</p>
+<p>¿Que pasa?, cuando le damos click una vez y cuando le damos otras veces...</p>
 
-<h1>Titulo Prueba</h1>
+<ol>
+    <li>uno</li>
+    <li>dos</li>
+</ol>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">

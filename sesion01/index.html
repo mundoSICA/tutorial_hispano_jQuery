@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Sessión 1 - Introducción al manual</title>
+<title>Sessión 1 - Introducción a jQuery</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
@@ -31,7 +31,27 @@
 </div>
 <div id='content'>
 <div id='tabla_contenidos'></div>
-<h1>Sessión 1 - Introducción al manual</h1>
+<script type="text/javascript" src="../js/jquery.snippet.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+<script language="Javascript"  type="text/javascript">
+$(function() {
+    google_api = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
+    $pre = $("pre");
+    console.log($pre);
+    $($pre[0]).snippet("html", {style:'darkness'});
+    $($pre[1]).snippet("javascript", {style:'darkness'});
+    $($pre[2]).snippet("javascript", {style:'darkness'});
+
+    $('#jqueryInput').val(google_api);
+    $('#jqueryInput').focus( function(google_api){
+        $(this).select();
+    }).blur(function(){
+        $(this).val(google_api);
+    });
+});
+</script>
+
+<h1>Sessión 1 - Introducción a jQuery</h1>
 
 <h2>Descripción de este manual</h2>
 
@@ -135,6 +155,72 @@
 <li>Mac &copy;</li>
 <li>Windows &copy;</li>
 </ul>
+
+<h2>Introducción a <strong>jQuery</strong></h2>
+
+<p><strong>jQuery</strong> es una biblioteca de <em>JavaScript</em>, creada inicialmente por <a href="http://ejohn.org/">John Resig</a>, que nos permite simplificar la manera de interactuar con los documentos <strong>HTML</strong>, manipular el árbol <strong>DOM</strong>, manejar eventos, desarrollar animaciones y agregar interacción con la técnica <strong>AJAX</strong> a páginas web.</p>
+
+<blockquote>
+  <p>Extracto: <a href="http://es.wikipedia.org/wiki/JQuery">http://es.wikipedia.org/wiki/JQuery</a></p>
+</blockquote>
+
+<h2>Agregando <strong>jQuery</strong></h2>
+
+<p>Una vez que tenemos la libreria <a href="http://docs.jquery.com/Downloading_jQuery"><strong>jQuery más reciente</strong></a>, lo siguiente es incluir la libreria en nuestros documentos html, esto lo hacemos, agregando el script dentro de la cabecera del documento.</p>
+
+<pre>&lt;head&gt;
+  &lt;!-- agregando libreria jQuery --&gt;
+  &lt;script type='text/javascript' src='js/jquery1.7.3.js'&gt;&lt;/script&gt;
+&lt;/head&gt;</pre>
+
+<p>Por otra parte tambien puedes agregar la libreria directo del servidor de google</p>
+
+<p><input id='jqueryInput' value=''></p>
+
+<h2>Selectores con <strong>jQuery</strong></h2>
+
+<p>Quizás la propiedad más significativa de <strong>jQuery</strong> es su flexibilidad para hacer consultas a través del <strong>DOM</strong>(de ahí el nombre).</p>
+
+<p><strong>jQuery</strong> basicamente nos permite hacer 3 tipos de consultas:</p>
+
+<ul>
+<li>[Consultas <strong>CSS</strong>]</li>
+<li><a href="http://www.ibm.com/developerworks/xml/library/x-xpathjquery/">Consultas <strong>xPath</strong></a></li>
+<li>[Consultas <strong>Trasversales</strong>]</li>
+</ul>
+
+<p>Por cuestiones del alancance de este manual, sólo veremos las consultas <strong>CSS</strong> y algunos metodos <strong>trasversales</strong>, dejando un poco de lado las consultas <strong>xPath</strong> ya que casi no se usan pero es bueno que el lector sepa que existen y que tambien son una forma de acceder a los elementos.</p>
+
+<p>En el capitulo pasado conocimos la anatomia de <strong>CSS</strong> si usted tiene alguna duda sobre los selectores CSS que usaremos le invito a consultar la siguiente tabla:</p>
+
+<ul>
+<li><a href="../recursos/selectores_css.html">lista de selectores css</a></li>
+</ul>
+
+<h3>Trasversatilidad</h3>
+
+<p>La transversatilidad es un <a href="http://api.jquery.com/category/traversing/">conjunto de metodos</a> definidos por <strong>jQuery</strong> para refinamiento de selectores, para explicar esto ocuparemos 2 funciones.</p>
+
+<ul>
+<li><strong>find</strong>: Nos permite realizar una consulta sobre un objeto jQuery.</li>
+<li><strong>filter</strong>: Nos permite realizar un filtrado, descartando elementos, sobre un objeto jQuery.</li>
+</ul>
+
+<p>Imaginemos que tenemos una <em>tabla</em> que tiene como atributo <strong>id</strong> el valor <strong>idTabla</strong>, el cual queremos accecer a todos sus elementos th, una forma de hacerlo seria:</p>
+
+<pre><code>$("#idTabla th").css('background', '#ddd');
+</code></pre>
+
+<p>Otra alternativa es usar el metodo find para buscar en un objeto de jQuery el cual me representa una rama del DOM.</p>
+
+<pre><code>$("#idTabla").find('th').css('background', '#ddd');
+</code></pre>
+
+<h2>Lista de ejemplos:</h2>
+
+<ol>
+<li><a href="ejemplos/selector_css.html">Selectores con <strong>CSS</strong></a></li>
+</ol>
 
 <h2>Lecturas externas recomendables:</h2>
 

@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Sesión 4 - Manejo de eventos</title>
+<title>Sesión 4 - Efectos y modificaciones sobre el DOM.</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
@@ -31,101 +31,181 @@
 </div>
 <div id='content'>
 <div id='tabla_contenidos'></div>
+<script type="text/javascript" src="../js/jquery-ui-1.8.21.custom.min.js"></script>
+
 <script type="text/javascript" src="../js/jquery.snippet.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
+
+<p><link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 <script language="Javascript"  type="text/javascript">
 $(function() {
+    //mostrando la info del pre
     $("pre").snippet("javascript", {style:'darkness'});
-    //
-    $("h1")
-            .click(function() {
-                console.log('Ejecución del manejador1 para el evento click del h1');
-            })
-            .click(function() {
-                console.log('Ejecución del manejador2 para el evento click del h1');
-            });
-    //test enlaces.
-    $('a.testClick').click( function(){
-        console.log( $(this).text() );
-    });
-});
-</script>
-
-<h1>Sesión 4 - Manejo de eventos</h1>
-
-<h2>Introducción a los eventos.</h2>
-
-<p><strong>jQuery</strong> define una lista de eventos y funciones para la administración de los mismos, la sintaxis por defecto para un manejador de evento es de la siguiente forma <code>$.fn.nombreEvento</code>.</p>
-
-<pre><code>$('Selector').nombreEvento( function(){
-    //funcion que administra el evento.
-    //this es el elemento que disparo el evento.
-}
-</code></pre>
-
-<p>Aquí es importante resaltar que <strong>this</strong> contendra la instancia del elemento que disparo el evento, por ejemplos si a los enlaces(<code>a</code>) le agregamos el evento <code>click</code>, this contendra la instancia del enlace especifo sobre del cual  hallamos hecho click, analice el siguiente codigo.</p>
-
-<p><strong>Codigo HTML</strong></p>
-
-<pre><code>&lt;a class='testClick' href='#'&gt;enlace 1&lt;/a&gt;
-&lt;a class='testClick' href='#'&gt;enlace 3&lt;/a&gt;
-&lt;a class='testClick' href='#'&gt;enlace 2&lt;/a&gt;
-</code></pre>
-
-<p><strong>Código jQuery</strong></p>
-
-<pre><code>$('a.testClick').click( function(){
-    console.log( $(this).text() );
-}
-</code></pre>
-
-<p><em>* Como puede ver *</em></p>
-
-<ul>
-    <li><a class='testClick' href='#'>enlace 1</a></li>
-    <li><a class='testClick' href='#'>enlace 3</a></li>
-    <li><a class='testClick' href='#'>enlace 2</a></li>
-</ul>
-
-<p>En este caso mandaremos a la salida de la consola el contenido del enlace que se precione.</p>
-
-<h2>Comportamiento en cola.</h2>
-
-<p>Observe el siguiente código.</p>
-
-<pre><code>    $("h1")
-        .click(function() {
-            console.log('Ejecución del manejador1 para el evento click del h1');
-        })
-        .click(function() {
-            console.log('Ejecución del manejador2 para el evento click del h1');
+    //Sección efecto color cambiante
+    colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00' ];
+    var i = 0;
+    $box = $('div.box');
+    animateLoop = function() {
+    $($box).animate({backgroundColor:colors[(i++)%colors.length]
+        }, 900, function(){
+            animateLoop();
         });
+    }
+    animateLoop();
+    //Enviando la info de las velocidades
+    console.log($.fx.speeds);
+});
+</script><style type="text/css" media="all">
+div.box{
+    width: 100%;
+    height: 200px;
+    background:#666;
+    border:1px solid #EEE:
+}
+</style></p>
+
+<h1>Sesión 4 - Efectos y modificaciones sobre el DOM.</h1>
+
+<h2>insertbefore</h2>
+
+<pre><code>$('&lt;p&gt;Test&lt;/p&gt;').insertBefore('#selector');
 </code></pre>
 
-<p>¿Que cree que suceda cuando le demos click a un h1 en esta página?.</p>
+<h2>before</h2>
 
-<p>La respuesta la podemos encontrar al reflexionar que sucede cuando mandamos a llamar miltiples veces el evento <code>document.onReady</code>. Lo que hace <strong>jQuery</strong> es ocupar una cola para administrar los eventos, de esta forma se pueden agregar multiples funciones sobre el mismo <code>evento/elemento</code>, sin más el resultado en la consola seria:</p>
-
-<pre><code>Ejecución del manejador1 para el evento click del h1
-Ejecución del manejador2 para el evento click del h1
+<pre><code>$('#selector').before('&lt;p&gt;Test&lt;/p&gt;');
 </code></pre>
 
-<h2>Borrando eventos función off.</h2>
+<h2>insertafter</h2>
 
-<p>Podemos desvincular los eventos con la función <code>off</code> po ejemplo para eliminar el evento click en H1 podriamos hacer.</p>
-
-<pre><code>$("h1").off('click');
+<pre><code>$('&lt;p&gt;Test&lt;/p&gt;').insertAfter('#selector');
 </code></pre>
 
-<p>Con esto eliminariamos todos los eventos click del <code>h1</code>, si quisieramos eliminar un unico evento click, podriamos hacer uso de los espacios de nombres.</p>
+<h2>after</h2>
 
-<p>Desde la versión <code>1.7</code> de <strong>jQuery</strong>, </p>
+<pre><code>$('#selector').after('&lt;p&gt;Test&lt;/p&gt;');
+</code></pre>
 
-<h2>Enlaces recomendados.</h2>
+<h2>append</h2>
+
+<pre><code>$('#selector').append('&lt;p&gt;Test&lt;/p&gt;');
+</code></pre>
+
+<h2>appendto</h2>
+
+<pre><code>$('&lt;p&gt;Test&lt;/p&gt;').appendTo('#selector');
+</code></pre>
+
+<h2>fadeIn</h2>
+
+<pre><code>$('%selector').fadeIn();
+</code></pre>
+
+<p>Tambien puede llevar un argumento como <code>slow</code>, <code>fast</code>.</p>
+
+<pre><code>$('%selector').fadeIn('slow');
+</code></pre>
+
+<p>ó agregar un valor en milisegundos.</p>
+
+<pre><code>$('%selector').fadeIn('slow');
+</code></pre>
+
+<p>Los valores de <code>slow</code>, <code>fast</code>, estan predeterminados en la libreria usted puede ver los valores, predeterminados de los efectos.</p>
+
+<pre><code>console.log($.fx.speeds);
+</code></pre>
+
+<h2>Animate</h2>
+
+<p>Forma simple:</p>
+
+<pre><code>$("selector").animate('width', "500px");
+</code></pre>
+
+<p>Forma relativa:</p>
+
+<pre><code>$("selector").animate({"left": "+=50px"}, "slow");
+</code></pre>
+
+<p>Multiples parametros.</p>
+
+<pre><code>$("selector").animate({
+    width: "70%",
+    opacity: 0.4,
+    marginLeft: "0.6in",
+    fontSize: "3em",
+    borderWidth: "10px"
+}, 1500 );
+</code></pre>
+
+<h2>animate sobre un color.</h2>
+
+<p>Desgraciadamente efectos como los colores no funcionan del todo bien, anteriormente habia un plugin <code>jquery-plugin-color</code>que nos ayudaba a realizar integrar comportamiento pero ya no le han dado mantenimiento, sin embargo una forma de realizar determinada característica es por medio de <a href="http://jqueryui.com/download">jQuery-Ui</a>, del cual para este caso requerimos el nucleo <strong>jQuery-Ui</strong> (<code>core</code>),  el nucleo de los efectos (<code>Effects Core</code>) , y finalmente la opción <code>Effect "Highlight"</code>, una vez esto optenemos un archivo con el nombre <code>jquery-ui-1.8.21.custom.min.js</code> el cual contiene de forma compacta lo que requerimos, ahora lo siguiente es agregarla a la cabecera de nuestro archivo y hacer un tests:</p>
+
+<h4>Código HTML.</h4>
+
+<pre><code>&lt;div class="box"&gt;&lt;/div&gt;
+</code></pre>
+
+<h4>Código CSS.</h4>
+
+<pre><code>    div.box{
+        width: 100%;
+        height: 200px;
+        background:#666;
+        border:1px solid #EEE:
+    }
+</code></pre>
+
+<h4>Código jQuery.</h4>
+
+<pre><code>colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00' ];
+var i = 0;
+$box = $('div.box');
+animate_loop = function() {      
+$($box).animate({backgroundColor:colors[(i++)%colors.length]
+    }, 900, function(){
+        animate_loop();
+    });
+}
+animate_loop();
+</code></pre>
+
+<h4>Resultado</h4>
+
+<div class="box"></div>
+
+<h2>show</h2>
+
+<p>forma simple.</p>
+
+<pre><code>$('selector').show();
+</code></pre>
+
+<p>forma con velocidad.</p>
+
+<pre><code>$('slector').show('fast');
+</code></pre>
+
+<h2>hide</h2>
+
+<p>forma simple.</p>
+
+<pre><code>$('selector').hide();
+</code></pre>
+
+<p>forma con velocidad.</p>
+
+<pre><code>$('selector').hide('fast');
+</code></pre>
+
+<h2>Lecturas recomendadas.</h2>
 
 <ul>
-<li><a href="http://www.quirksmode.org/js/events_order.html#link1">Dos formas de propagación de un evento</a></li>
+<li><a href="http://api.jquery.com/category/effects/">Categoría efectos <strong>jQuery</strong> - http://api.jquery.com/category/effects/</a></li>
+<li><a href="http://api.jquery.com/category/manipulation/">Manipulación <strong>jQuery</strong> - http://api.jquery.com/category/manipulation/</a></li>
+<li><a href="http://jqueryui.com/download">Efectos jQuery-Ui - http://jqueryui.com/download</a></li>
 </ul>
 </div><!-- end content -->
 <div id="pie_pagina">
