@@ -95,7 +95,7 @@ Otra de las ventajas que tiene es que a partir de la [versión 11](http://arstec
 
 ### 3. La libreria jQuery.
 
-**JQuery** es una libreria en constante evolución, te recomiendo usar la [libreria más reciente](http://docs.jquery.com/Downloading_jQuery), ya que en cada nueva versión se integran caracteristicas nuevas al tiempo que se mejoran las anteriores, la imagen siguiente representa una compativa en el rendimiento de <strong style='background:#36c;color:white'>jQuery 1.6.4</strong>  VS <strong style='background:#dc3912;color:white'>jQuery 1.7</strong>.
+**JQuery** es una libreria en constante evolución, te recomiendo usar la [libreria más reciente](http://docs.jquery.com/Downloading_jQuery), ya que en cada nueva versión se integran caracteristicas nuevas al tiempo que se mejoran las anteriores, la imagen siguiente representa una compativa en el rendimiento de <strong style='background:#36c;color:white;text-shadow:none'>jQuery 1.6.4</strong>  VS <strong style='background:#dc3912;color:white;text-shadow:none'>jQuery 1.7</strong>.
 
 
 ![compartiva jQuery1.6.4 vs Query1.7](../img/compartiva_jquery_1.6.4_vs_1.7.png)

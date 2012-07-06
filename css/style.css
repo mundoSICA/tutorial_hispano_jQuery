@@ -1,9 +1,12 @@
 div{border:0;padding:0;}
 body{
-	background:URL(../img/linen.jpg);
+	background:#2A2A2A;
 	font-family: sans-serif;
 	margin:0;
 	padding:0;
+	font-size:1.2em;
+	text-shadow:1px 1px 0 #FFF,-1px -1px 0 #FFF,0 0 5px #999;
+	color:#333;
 }
 @font-face {
 	font-family: "neuropol";
@@ -15,19 +18,36 @@ body{
 }
 a{
 	text-decoration: none;
-	color: #5071BD;
+	text-shadow:1px 1px 1px #BBB;
+	color: #5E1CA7;
 }
 a:hover{
-	color: #D15F00;
+	text-shadow:-1px 2px 1px #FFF,1px -2px 1px #FFF,0 0 5px #001B9C;
+	color:#FF253C;
 }
+ul{
+	list-style-image: url(../img/flecha.png);
+}
+li a:hover{
+	padding-left:5px;
+}
+ul ul{
+	list-style-image: url(../img/ul_nivel_2.gif);
+}
+ul ul li a{
+	color: #0C4AD8;
+}
+
 img{
 	margin: 0;
 }
 h1{
-	text-shadow:1px 1px 5px #FFF;
+	text-shadow:1px -1px 0 #FFF,-1px 2px 0 #FFF,3px -3px 50px #0AE;
 	font-size:40px;
 	font-family:Cagliostro-Regular;
+	color: #000;
 }
+h2,h3,h4,h5,h6{color:#222;}
 /* section code */
 pre{
   background: #DBE7EA;
@@ -36,7 +56,7 @@ pre{
   padding:10px 10px 10px 35px;
   color: #1A1A1A;
   border: 1px solid #bbb;
-  width: 725px;
+  width: 95%;
   overflow: auto;
   white-space: pre;
   opacity:0.9;
@@ -44,6 +64,7 @@ pre{
 	-webkit-border-radius: 10px;
 	-o-border-radius: 10px;
 	border-radius: 10px;
+	text-shadow:none;
 }
 p code{
 	background:#fdfdfd;
@@ -88,18 +109,21 @@ tr:hover{
  ********************************* layout section ****************************************
 *****************************************************************************************/
 #head{
-	width:800px;
+	width:100%;
+	min-width:700px;
 	height:133px;
 	background: #EEE;
 	background-image: URL(../img/logo_ADSL.jpg), URL(../img/header_bg.jpg);
+	background-position:2% 0, 0 0;
 	background-repeat: no-repeat, repeat-x;
 	padding:0 10px 0 10px;
 	margin:0 Auto 0 Auto;
 }
-#head h1{float:right}
+#head h1{float:right; padding-right:3%;}
 
 #head h1 a#link_principal:hover{
-	color:#985200;
+	color:#999;
+	text-shadow: 1px 2px 0 #FFF, -2px -2px 3px #FFF,0 0 80px #003F5F;
 }
 #head h1 a#link_principal{
 	color:#705b48;
@@ -111,11 +135,13 @@ tr:hover{
 	display:block;
 	float:right;
 	color:#BE6700;
+	text-shadow:1px 1px 0 #FFF,-1px -1px 1px #FFF,0 0 5px #777;
 }
 #content{
-	width: 800px;
-	padding: 5px 10px 70px 10px;
-	background:#F8F8F8;
+	width: 96%;
+	min-width:700px;
+	padding: 5px 2% 10px 2%;
+	background:#EEE;
 	margin:0 Auto 0 Auto;
 	-webkit-box-shadow:0 2px 15px #aaa;
 	-moz-box-shadow:0 2px 15px #aaa;
@@ -151,8 +177,9 @@ pre:hover
 }
 
 #pie_pagina{
-	width: 820px;
-	margin:-20px auto 0 auto;
+	width: 100%;
+	min-width: 700px;
+	margin:0 auto 0 auto;
 	background: #FF5000;
 	background-repeat: repeat-x;
 	background-image: -moz-linear-gradient(top, #222, #111);
@@ -162,7 +189,7 @@ pre:hover
 	background-image: -o-linear-gradient(top, #222, #111);
 	background-image: linear-gradient(top, #222, #111);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#111',GradientType=0 );
-	height:150px;
+	height:170px;
 }
 
 #agradecimientos {
@@ -276,4 +303,35 @@ input, textarea {
 
 div.tabla_contenidos{
 	background:#A9D4FF;
+}
+div.links_paginacion{
+	padding:5px;
+	text-align:right;
+}
+div.links_paginacion a{
+	display:inline;
+	background:#DDD;
+	padding:5px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #CCC;
+}
+div.links_paginacion a:hover{
+	display:inline;
+	background:#5E1CA7;
+	padding:5px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #33006C;
+	color: #FFF;
+	text-shadow:1px 2px 2px #220049;
+	-webkit-box-shadow:inset 0 1px 0 #9B44FF,inset 0 -2px 5px #370075,0 0 10px #5CB8DD;
+	-moz-box-shadow:inset 0 1px 0 #9B44FF,inset 0 -2px 5px #370075,0 0 10px #5CB8DD;
+	-ms-box-shadow:inset 0 1px 0 #9B44FF,inset 0 -2px 5px #370075,0 0 10px #5CB8DD;
+	-o-box-shadow:inset 0 1px 0 #9B44FF,inset 0 -2px 5px #370075,0 0 10px #5CB8DD;
+	box-shadow:inset 0 1px 0 #9B44FF,inset 0 -2px 5px #370075,0 0 10px #5CB8DD;
 }

@@ -1,4 +1,4 @@
-# Lista de recursos disponibles
+# Lista de Recursos Disponibles
 
 Paleta de colores CSS3
 ------------------------------------------------------------------------------------------
@@ -45,3 +45,14 @@ Si deseas documentar, tal vez se te es mas comodo un editor en linea, te recomie
 
 - <http://www.showdown.im/>
 
+
+## Probar código al vuelo.
+
+Herramientas utiles para probar alguna funcionalidad de javascript a vuelo:
+
+ - <http://jsfiddle.net/>
+ - <http://jsbin.com/#source>
+ - <http://jsperf.com/>
+ - <http://www.jshint.com/>
+ - <http://www.jslint.com/>
+ 

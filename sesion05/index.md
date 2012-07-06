@@ -97,7 +97,7 @@ Multiples parametros.
 
 ## animate sobre un color.
 
-Desgraciadamente efectos como los colores no funcionan del todo bien, anteriormente habia un plugin `jquery-plugin-color`que nos ayudaba a realizar integrar comportamiento pero ya no le han dado mantenimiento, sin embargo una forma de realizar determinada caracteristica es por medio de [jQuery-Ui](http://jqueryui.com/download), del cual para este caso requerimos el nucleo **jQuery-Ui** (`core`),  el nucleo de los efectos (`Effects Core`) , y finalmente la opción `Effect "Highlight"`, una vez esto optenemos un archivo con el nombre `jquery-ui-1.8.21.custom.min.js` el cual contiene de forma compacta lo que requerimos, ahora lo siguiente es agregarla a la cabecera de nuestro archivo y hacer un tests:
+Desgraciadamente efectos como los colores no funcionan del todo bien, anteriormente habia un plugin `jquery-plugin-color`que nos ayudaba a realizar integrar comportamiento pero ya no le han dado mantenimiento, sin embargo una forma de realizar determinada característica es por medio de [jQuery-Ui](http://jqueryui.com/download), del cual para este caso requerimos el nucleo **jQuery-Ui** (`core`),  el nucleo de los efectos (`Effects Core`) , y finalmente la opción `Effect "Highlight"`, una vez esto optenemos un archivo con el nombre `jquery-ui-1.8.21.custom.min.js` el cual contiene de forma compacta lo que requerimos, ahora lo siguiente es agregarla a la cabecera de nuestro archivo y hacer un tests:
 
 #### Código HTML.
 

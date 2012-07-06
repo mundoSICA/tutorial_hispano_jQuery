@@ -151,5 +151,6 @@ Si somos detallistas nos daremos cuenta que `console.log(datos);` no garantiza q
 Existen otras funciones definas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria **Ajax** de la api de **jQuery**:
 
  - <http://api.jquery.com/category/ajax/>
-
+ - [Usando herramientas de calidad de código - por Anton Kovalyov (_inglés_)](http://anton.kovalyov.net/slides/gothamjs/)
+ - [Principios para escribir JavaScript consistente e idiomático](https://github.com/rwldrn/idiomatic.js/tree/master/translations/es_ES)
 

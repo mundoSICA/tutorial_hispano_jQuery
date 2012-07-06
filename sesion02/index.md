@@ -3,7 +3,12 @@
 <script language="Javascript"  type="text/javascript">
 $(function() {
 	google_api = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
-	$("pre").snippet("html", {style:'darkness'});
+	$pre = $("pre");
+	console.log($pre);
+	$($pre[0]).snippet("html", {style:'darkness'});
+	$($pre[1]).snippet("javascript", {style:'darkness'});
+	$($pre[2]).snippet("javascript", {style:'darkness'});
+	
 	$('#jqueryInput').val(google_api);
 	$('#jqueryInput').focus( function(google_api){
 		$(this).select();
@@ -73,7 +78,6 @@ Imaginemos que tenemos una _tabla_ que tiene como atributo **id** el valor **idT
 Otra alternativa es usar el metodo find para buscar en un objeto de jQuery el cual me representa una rama del DOM.
 
 	$("#idTabla").find('th').css('background', '#ddd');
-
 
 Lista de ejemplos:
 ------------------------------------------------------------------------------------------
