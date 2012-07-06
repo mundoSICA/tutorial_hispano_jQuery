@@ -98,49 +98,13 @@ TITLE=`markdown $1 | grep -Eo "<h1>.*</h1>" | head -1 | sed -r  "s/<h1>(.*)<\/h1
 ##########################################################################################
 #generando el archivo de salida.
 ##########################################################################################
-#Cabecera Html
-echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>' > $archivo_salida
-
-#Titulo
-echo "<title>$TITLE</title>" >>  $archivo_salida
-
-
-#Seccion metadatos, css y javascript
-echo "<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\" />
-	<link rel=\"stylesheet\" type=\"text/css\" href=\"${refPath}css/style.css\" />
-	<link rel='icon' type='image/png' href='${refPath}img/favicon.png' />
-	<script type='text/javascript' src='${refPath}js/jquery-1.7.2.js'></script>
-	<script type='text/javascript' src='${refPath}js/tabla_contenidos.js'></script>
-	<script type='text/javascript'>var fileName='${LOCAL_NAME}';</script>
-	<script type='text/javascript'>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33125186-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-</head>
-<body>
-" >> $archivo_salida
-
-#Titulo
-echo "<title>$TITLE</title>" >>  $archivo_salida
-
-#Seccion metadatos, css y javascript
 cat "$repo_path/plantilla/cabecera.html" |\
-sed  "s|%refPath%|$refPath|" >> $archivo_salida
+sed  "s|%refPath%|$refPath|g;s|%LOCAL_NAME%|$LOCAL_NAME|g;s|%TITLE%|$TITLE|g"\
+ > $archivo_salida
 
 #Generando el archivo en markdown
 markdown $1 >> $archivo_salida
 
 #Fin del content,Agregamos pie de pagina, finalmente cerramos el body y del documento html
 cat "$repo_path/plantilla/pie_pagina.html"  >> $archivo_salida
-
 #//firefox $archivo_salida &
