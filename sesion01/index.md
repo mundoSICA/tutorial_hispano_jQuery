@@ -1,6 +1,4 @@
-<script type="text/javascript" src="../js/jquery.snippet.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
-<script language="Javascript"  type="text/javascript">
+<script  type="text/javascript">
 $(function() {
 	google_api = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
 	$pre = $("pre");

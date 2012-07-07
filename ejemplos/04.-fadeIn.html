@@ -5,9 +5,11 @@
 <title>Ejemplo fadeIn</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
 	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
 	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
 	var fileName='/ejemplos/04.-fadeIn.html'
   var _gaq = _gaq || [];
@@ -31,16 +33,13 @@
 </div>
 <div id='content'>
 <div id='tabla_contenidos'></div>
-<script type="text/javascript" src="../js/jquery.snippet.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/jquery.snippet.css" />
-<link rel="stylesheet" type="text/css" href="../css/style.css" />
-<script language="Javascript"  type="text/javascript">
+<script  type="text/javascript">
 $(function() {
     $("pre").snippet("javascript", {style:'darkness'});
 });
 </script>
 
-<script language="Javascript"  type="text/javascript">
+<script  type="text/javascript">
 $(function() {
     $('h1')
                     .fadeOut('fast')

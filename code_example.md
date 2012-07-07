@@ -1,7 +1,4 @@
-<script type="text/javascript" src="js/jquery.snippet.js"></script>
-<link rel="stylesheet" type="text/css" href="css/jquery.snippet.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<script language="Javascript"  type="text/javascript">
+<script  type="text/javascript">
 $(function() {
 	$("pre").snippet("javascript", {style:'darkness'});
 });

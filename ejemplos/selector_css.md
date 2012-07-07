@@ -1,4 +1,4 @@
-<script language="Javascript"  type="text/javascript">
+<script  type="text/javascript">
 	$(function() {
 			$('ul li:odd').css('background','#ddd');
 	});
@@ -20,7 +20,7 @@ Ahora por cuestiones de usabilidad queremos los elementos impares de la lista se
 
 Para esto cabe señalar que existe una lista no numérica `ul` y  que ellos están contenida varios items `li`:
 
-	<script language="Javascript"  type="text/javascript">
+	<script  type="text/javascript">
 		$(function() {
 				$('ul li:odd').css('background','#ddd');
 		});

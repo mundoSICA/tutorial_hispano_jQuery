@@ -1,4 +1,4 @@
-<script language="Javascript"  type="text/javascript" src="css3-colores.js"></script>
+<script  src="css3-colores.js"></script>
 <style type="text/css">table.hslexample { background: #808080; padding:5px 20px; margin:0; float:left; }table.hslexample td,table.hslexample th { font-size:smaller;width:3em }tr:nth-child(2n) {background:#868686;}tr:hover{background:none;}th{background:#7C7C7C;}input, textarea {width:4em;font-size:1em;}.colores{ background: orange}#content{	height:1150px;}
 </style>
 
