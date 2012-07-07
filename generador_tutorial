@@ -8,7 +8,7 @@
 # realiza el script.
 cyan='\e[0;36m'
 light='\e[1;36m'
-red="\e[0;31m"
+red="\e[0;31m\033[1m"
 yellow="\e[0;33m"
 white="\e[0;37m"
 end='\e[0m'
@@ -76,8 +76,9 @@ if [ $# -ne 1 ]
 then
 	clear
   echo -e "${light}Manual jQuery Generator - Ejecución modo actualización general${end}";
-  echo -ne "${white}\r";
-  cat "${repo_path}/plantilla/img.txt"
+  echo -ne "${red}\r";
+  splash=`ls "${repo_path}/plantilla/splashes/" | sort -R | head -1`
+  cat "${repo_path}/plantilla/splashes/$splash"
   echo -e "${end}";
   echo "--------------------------------------------------------------------------------";
   echo -ne "${yellow}\r"
