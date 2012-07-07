@@ -1,6 +1,6 @@
 # Manual de JQuery en español
 
-<img src="img/samurai_javascript.png" align="right" alt="el chaco samurai javascript" />
+<div id=chacoSamurai><img src="img/samurai_javascript.png" alt="el chaco samurai javascript" /></div>
 
  - [**Sessión 1 - Introducción a jQuery**](./sesion01/index.html)
   - [Descripción de este manual]()

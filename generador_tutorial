@@ -55,7 +55,7 @@ function index_ejemplos {
 function imprimeTemario {
 
 	echo -e "# Manual de JQuery en español\n";
-	echo '<img src="img/samurai_javascript.png" align="right" alt="el chaco samurai javascript" />';
+	echo '<div id='chacoSamurai'><img src="img/samurai_javascript.png" alt="el chaco samurai javascript" /></div>';
 	echo '';
 	for i in {1..5}
 	do

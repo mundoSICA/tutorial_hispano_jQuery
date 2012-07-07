@@ -109,12 +109,13 @@ tr:hover{
  ********************************* layout section ****************************************
 *****************************************************************************************/
 #head{
-	width:100%;
+	width:96%;
 	min-width:700px;
 	height:133px;
 	background: #EEE URL(../img/header_bg.jpg) repeat-x;
-	padding:0 10px 0 10px;
+	padding:0 2%;
 	margin:0 Auto 0 Auto;
+	position:fixed;
 }
 #logoADSL{
 	height:23px;
@@ -159,6 +160,7 @@ tr:hover{
 	-ms-box-shadow:0 2px 15px #aaa;
 	-o-box-shadow:0 2px 15px #aaa;
 	box-shadow:0 2px 15px #aaa;
+	padding-top:133px;
 }
 #content #inner-content{
 	background:#fff;
@@ -385,4 +387,7 @@ a.button:active, button.button:active {
   -webkit-transition-duration: .5s,.5s,.5s,.5s;
   transition-duration: .5s,.5s,.5s,.5s;
   line-height: 34px;
+}
+#chacoSamurai{
+float:right;
 }
