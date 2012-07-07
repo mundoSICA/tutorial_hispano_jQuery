@@ -319,30 +319,70 @@ div.links_paginacion{
 	padding:5px;
 	text-align:right;
 }
-div.links_paginacion a{
-	display:inline;
-	background:#DDD;
-	padding:5px;
-	-moz-border-radius:10px;
-	-webkit-border-radius:10px;
-	-o-border-radius:10px;
-	border-radius:10px;
-	border:1px solid #CCC;
+/*************************************************************/
+div.links_paginacion a:link,
+div.links_paginacion a:visited,
+a.button:link,
+a.button:visited,
+button,
+input[type=submit],
+input[type=button] {
+  border: 0;
+  color: white;
+  display: inline-block;
+  font: 600 16px/31px "Open Sans","Helvetica Neue",Arial,sans-serif;
+  height: 32px;
+  background-color:
+  #267CC2;
+  padding: 0 24px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 1px #18354D;
+  white-space: nowrap;
+  
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .5em;
+  -ms-border-radius: .5em;
+  -o-border-radius: .5em;
+  border-radius: .5em;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, .2), inset 0 -1px 0 rgba(0, 0, 0, .2), inset 0 1px 0 0 rgba(255, 255, 255, .2);
+  -moz-box-shadow: 0 2px 1px rgba(0,0,0,.2), inset 0 -1px 0 rgba(0,0,0,.2), inset 0 1px 0 0 rgba(255,255,255,.2);
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), inset 0 -1px 0 rgba(0, 0, 0, .2), inset 0 1px 0 0 rgba(255, 255, 255, .2);
+  background-color: #267CC2;
+  background-image: -webkit-gradient(linear,left bottom,left top,from(#42A5E1),to(#267CC2));
+  background-image: linear-gradient(#42A5E1, #267CC2);
+  background-image: -moz-linear-gradient(#42A5E1, #267CC2);
+  background-image: -webkit-linear-gradient(#42A5E1, #267CC2);
+  -moz-transition-property: -moz-box-shadow,-webkit-box-shadow,box-shadow,line-height;
+  -webkit-transition-property: -moz-box-shadow,-webkit-box-shadow,box-shadow,line-height;
+  transition-property: -moz-box-shadow,-webkit-box-shadow,box-shadow,line-height;
+  -moz-transition-duration: .2s,.2s,.2s,.2s;
+  -webkit-transition-duration: .2s,.2s,.2s,.2s;
+  transition-duration: .2s,.2s,.2s,.2s;
 }
-div.links_paginacion a:hover{
-	display:inline;
-	background:#5E1CA7;
-	padding:5px;
-	-moz-border-radius:10px;
-	-webkit-border-radius:10px;
-	-o-border-radius:10px;
-	border-radius:10px;
-	border:1px solid #33006C;
-	color: #FFF;
-	text-shadow:1px 2px 2px #220049;
-	-webkit-box-shadow:inset 0 1px 0 #9B44FF,inset 0 -2px 5px #370075,0 0 10px #5CB8DD;
-	-moz-box-shadow:inset 0 1px 0 #9B44FF,inset 0 -2px 5px #370075,0 0 10px #5CB8DD;
-	-ms-box-shadow:inset 0 1px 0 #9B44FF,inset 0 -2px 5px #370075,0 0 10px #5CB8DD;
-	-o-box-shadow:inset 0 1px 0 #9B44FF,inset 0 -2px 5px #370075,0 0 10px #5CB8DD;
-	box-shadow:inset 0 1px 0 #9B44FF,inset 0 -2px 5px #370075,0 0 10px #5CB8DD;
+
+div.links_paginacion a:hover,
+div.links_paginacion a:focus,
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus,
+input[type=submit]:hover,
+input[type=button]:hover,
+input[type=submit]:focus,
+input[type=button]:focus {
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.2), 0 -3px 0 rgba(0, 0, 0, 0.2) inset;
+  line-height: 28px;
+  text-decoration: none;
+}
+div.links_paginacion a:active,
+a.button:active, button.button:active {
+    box-shadow: inset 0 2px 0 0 rgba(0, 0, 0, .3), inset 0 12px 24px 6px rgba(0, 0, 0, .3), inset 0 0 2px 2px rgba(0, 0, 0, .3);
+  -moz-box-shadow: inset 0 2px 0 0 rgba(0,0,0,.2), inset 0 12px 24px 6px rgba(0,0,0,.2), inset 0 0 2px 2px rgba(0,0,0,.2);
+  -webkit-box-shadow: inset 0 2px 0 0 rgba(0, 0, 0, .3), inset 0 12px 24px 6px rgba(0, 0, 0, .3), inset 0 0 2px 2px rgba(0, 0, 0, .3);
+  -moz-transition-duration: .5s,.5s,.5s,.5s;
+  -webkit-transition-duration: .5s,.5s,.5s,.5s;
+  transition-duration: .5s,.5s,.5s,.5s;
+  line-height: 34px;
 }
