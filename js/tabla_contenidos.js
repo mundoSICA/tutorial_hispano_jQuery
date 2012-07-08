@@ -14,7 +14,7 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 			modo = null,
 			num_sesiones = 5,
 			pie_links = '',
-			titulo = null;
+			titulo = null,
 /* funcion debug util para depurar */
 	debug = function (){
 		console.log($content);
@@ -22,6 +22,9 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 		console.log($tagTitulos);
 		console.log(document.title);
 		console.log(modo);
+	},
+	link = function (url,content){
+		return '<a href='+url+'>'+content+'</a>';
 	}
 /* A partir del archivo(fileName) obtenemos el modo
  *  index            - Pertenece a la pagina principal(index)
@@ -34,8 +37,19 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 		var path = window.location+'';
 		if( pageConf.fileName == '/index.html' ){//Modo index el directorio es raiz.
 			modo = 'index';
-			pie_links += '<a href="https://github.com/mundoSICA/tutorial_hispano_jQuery/tarball/master">'
-								+ '&darr; Descargar Repositorio</a>';
+			pie_links += link(
+				'https://github.com/mundoSICA/tutorial_hispano_jQuery/tarball/master',
+				'&darr; Descargar <strong>Tar.gz</strong>'
+			)+ ' | ' + link(
+				'./todo/index.html',
+				'Versión imprimible <strong>HTML</strong>'
+			)+ ' | ' + link(
+				'./todo/manual_jquery_basico.pdf',
+				'Versión imprimible <strong>PDF</strong>'
+			)+ ' | ' + link(
+				'https://github.com/mundoSICA/tutorial_hispano_jQuery/zipball/master',
+				'&darr; Descargar <strong>Zip</strong>'
+			);
 		}else if( pageConf.fileName.match(/^\/sesion0[1-9]\/index.html/g) ){
 			modo = 'index.sesion'
 			pie_links += '<a href="#tabla_contenidos" class="linkTablaContenido">&uarr; Tabla de Contendidos</a>'
@@ -56,6 +70,9 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 			pie_links +=  '<a href="#tabla_contenidos">Indice de ejemplos</a>'
 									+ ' | <a href="../sesion'+ses+'/index.html">Ir a la Sesion '+ses+'</a>'
 									+ ' | <a href="../index.html">&phi; Indice principal</a>';
+		}else if( pageConf.fileName == '/todo/index.html' ){
+			titulo = 'Versión impresa';
+			modo = 'version.impresa';
 		}
 	},
 /* Recibe una cadena de texto y la convierte en slug */
@@ -94,6 +111,9 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 					pie_links += '| <a href="../sesion'+ses_sig+
 											'/index.html">Sesion '+ses_sig+' &raquo;</a>';
 			}
+		}else if( modo == 'version.impresa' ){
+			pie_links +=  '<a href="#tabla_contenidos">Indice de ejemplos</a>'
+									+ ' | <a href="../index.html">&phi; Indice principal</a>';
 		}
 		$( '<div	class="links_paginacion">'+pie_links+'</div>' ).appendTo($content);
 		if(titulo) {

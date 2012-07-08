@@ -89,3 +89,4 @@ Desde la versión `1.7` de **jQuery**,
 ## Enlaces recomendados.
 
  - [Dos formas de propagación de un evento](http://www.quirksmode.org/js/events_order.html#link1)
+

@@ -1,3 +1,5 @@
+@import url("version_impresa.css") screen;
+
 div{border:0;padding:0;}
 body{
 	background:#2A2A2A;
@@ -55,7 +57,7 @@ h1{
 h2,h3,h4,h5,h6{color:#222;}
 /* section code */
 pre{
-  background: #DBE7EA;
+  background: #E5E5E5;
   font-family:"Bitstream Vera Sans Mono",Monaco,"Lucida Console",monospace;
   margin: 10px 5px;
   padding:10px 10px 10px 35px;

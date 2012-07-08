@@ -3,6 +3,7 @@
 #Requiere:
 # - Git
 # - Markdown
+# - wkhtmltopdf <- Sólo para generar pdfs.
 
 # Colores solo para que se distinga un poco mejor(creo yo) los procesos que
 # realiza el script.
@@ -39,11 +40,11 @@ function index_ejemplos {
 			rm $ejemplos_path/index.md
 		fi
 
-		echo '# Ejemplos disponibles' > $ejemplos_path/index.txt;
-		echo '' >> $ejemplos_path/index.txt;
+		echo '# Ejemplos disponibles' > "$ejemplos_path/index.txt";
+		echo '' >> "$ejemplos_path/index.txt";
 		for sesion in  $(seq 1 $NUM_SESIONES)
 		do
-			echo " - [Sesión 0${sesion}](../sesion0${sesion}/index.html)" >> $ejemplos_path/index.txt;
+			echo " - [Sesión 0${sesion}](../sesion0${sesion}/index.html)" >> "$ejemplos_path/index.txt";
 			for file in `find $repo_path/ejemplos/ -iregex ".*\0${sesion}.*\.html$" | sort `;
 			do
 					file=`echo ${file} | sed "s|${ejemplos_path}||i"`;
@@ -54,6 +55,23 @@ function index_ejemplos {
 		mv $ejemplos_path/index.txt $ejemplos_path/index.md;
 }
 
+##########################################################################################
+# Genera la versión todo en un documento
+##########################################################################################
+function versionTodo {
+		echo '# Vesión todo en linea' > "${repo_path}/todo/index.md"
+		for sesion in  $(seq 1 $NUM_SESIONES)
+		do
+			cat "${repo_path}/sesion0${sesion}/index.md" >> "${repo_path}/todo/index.md"
+			echo '' >> "${repo_path}/todo/index.md"
+		done;
+}
+##########################################################################################
+# Genera la versión todo en un documento
+##########################################################################################
+function versionPDF {
+		wkhtmltopdf -n -g "${repo_path}/todo/index.html" "${repo_path}/todo/manual_jquery_basico.pdf"
+}
 ##########################################################################################
 # Imprime Temario.
 ##########################################################################################
@@ -86,12 +104,19 @@ then
   cat "${repo_path}/plantilla/splashes/$splash"
   echo -e "${end}";
   echo "--------------------------------------------------------------------------------";
+  #Generando documento pdf
+  #echo -e "${light}Generando documento PDF${end}";
+  #versionPDF
+  #Generando versión impresa
+  #versionTodo
+  #Generamos todos los documentos html apartir del md
   echo -ne "${yellow}\r"
   for file in `find $repo_path -iregex ".*\.md$" | sort `;
   do
 		$0 $file
 	done;
 	echo -e "${end}"
+	#Generamos el index de ejemplos
 	index_ejemplos;
 	echo -ne "${yellow}\r"
 	$0 $repo_path/ejemplos/index.md;
