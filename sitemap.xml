@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/index.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/sesion01/index.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/sesion02/index.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/sesion03/index.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/sesion04/index.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/sesion05/index.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/recursos/index.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/recursos/colores-css3.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/recursos/selectores_css.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/ejemplos/index.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/ejemplos/03.ejemplo_hover.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/ejemplos/03_evento_one.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/ejemplos/03.informacion_evento.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/ejemplos/04.-animacion.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/ejemplos/04.-fadeIn.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/ejemplos/04.tabla_insertando_columna.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://mundosica.github.com/tutorial_hispano_jQuery/ejemplos/04.tabla_insertando_fila.html</loc>
+  <lastmod>2012-07-08T09:56:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+</urlset>
