@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
+	<script type='text/javascript'>
+	pageConf	= {fileName:'/ejemplos/tabla_contenidos.html', sesion:0, num_sesiones:5};
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33125186-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div id='head'>
+	<a href='http://www.adsl.org.mx/' id='logoADSL'>Academia de software libre</a>
+	<h1>
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<script  type="text/javascript">
+$(function() {
+    $("pre").snippet("javascript", {style:'darkness'});
+});
+</script>
+
+<h2>Ejemplo tabla de contendos.</h2>
+
+<p>El siguiente código es un ejemplo funcional de la tabla de contenido del sitio:</p>
+
+<pre><code>/* Se encarga de generar una lista de contendidos a partir de los títulos nivel 2
+ * encontrados dentro de un div identificado como 'content'.
+ **/
+$(function (){
+    // Guardamos la consulta de los h2 existentes en #content, como recordatorio:
+    //  1.- $('#content').find('h2') tiene mejor rendimiento que $('#content h2')
+    //  2.- Por convención la variable que contenga el resultado de una consulta debera iniciar con $
+    $h2 = $('#content').find('h2');
+    // Una vez almacenada la búsqueda en $h2, podemos insertar nuevos elementos h2
+    // dentro de #content alterando el DOM sin alterar el contenido de $h2
+    $('&lt;h2&gt;Tabla de contenidos&lt;/h2&gt;&lt;ol id="lista_contenidos"&gt;&lt;ol&gt;')
+        .appendTo('#tabla_contenidos');
+    // Para todos los títulos nivel 2(h2) almacenados en $h2, vamos a:
+    $h2.each( function(key, h2_actual) {
+        // Generamos el nuevo identificador que tendrá el h2_actual
+        nuevoID = $.trim($(h2_actual).text()) // Quitando espacios en blanco al inicio/final
+                        .toLowerCase()              // Convertimos minúsculas a mayúsculas
+                        .replace(/:/g, "")          // Borrando los dos puntos(:) del nuevo ID
+                        .replace(/\s+/g, "-");      // Remplazamos los espacios en blanco por el guión menos
+        // Seteamos el atributo id del h2_actual por el nuevoID
+        $(h2_actual).attr('id',  nuevoID);
+        // Creamos un item de la lista(&lt;li&gt;) con un link(&lt;a&gt;) con referencia(href) al #nuevoID
+        $('&lt;li&gt;&lt;a href="#' + nuevoID + '"&gt;' + $(h2_actual).html() + '&lt;/a&gt;&lt;/li&gt;').appendTo('#lista_contenidos');
+        // Mandamos a imprimir el resultado en la bitacola de la consola.
+        console.log( key + '. ' + nuevoID );
+    });
+});
+</code></pre>
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
+</div>
+</body>
+</html>

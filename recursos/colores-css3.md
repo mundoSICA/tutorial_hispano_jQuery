@@ -1,0 +1,809 @@
+<script  src="css3-colores.js"></script>
+<style type="text/css">table.hslexample { background: #808080; padding:5px 20px; margin:0; float:left; }table.hslexample td,table.hslexample th { font-size:smaller;width:3em }tr:nth-child(2n) {background:#868686;}tr:hover{background:none;}th{background:#7C7C7C;}input, textarea {width:4em;font-size:1em;}.colores{ background: orange}#content{	height:1150px;}
+</style>
+
+
+<h1>CSS3 colores <input type="text" value="black" class='input' name='input' id='input' /></h1>
+
+<p>Cada cuadro representa un matiz. Doce colores equidistantes (es decir, intervalos de 30º) han sido seleccionados de entre el círculo de color: <em>rojo, amarillo, verde, cian, azul, magenta,</em> con todos los colores intermedios (el último es el color entre el magenta y rojo).</p>
+<p>El eje X de cada tabla representa la saturación (100%, 75%, 50%, 25%, 0%).</p>
+<p>El eje Y representa la claridad. 50% es "normal".</p>
+
+<p>Información obtenida de: <a href="http://www.w3.org/TR/css3-color/#hsl-examples">http://www.w3.org/TR/css3-color/</a></p>
+
+<table class="hslexample">
+<tbody>
+<tr>
+ <th></th>
+ <th colspan="5">0&deg; Reds</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+</tr>
+<tr>
+ <th> 88 </th>
+ <td style="background:#FFBFBF">&nbsp;</td>
+ <td style="background:#F7C7C7">&nbsp;</td>
+ <td style="background:#EFCFCF">&nbsp;</td>
+ <td style="background:#E7D7D7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75 </th>
+ <td style="background:#FF8080">&nbsp;</td>
+ <td style="background:#EF8F8F">&nbsp;</td>
+ <td style="background:#DF9F9F">&nbsp;</td>
+ <td style="background:#CFAFAF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63 </th>
+ <td style="background:#FF4040">&nbsp;</td>
+ <td style="background:#E75858">&nbsp;</td>
+ <td style="background:#CF7070">&nbsp;</td>
+ <td style="background:#B78787">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50 </th>
+ <td style="background:#FF0000">&nbsp;</td>
+ <td style="background:#DF2020">&nbsp;</td>
+ <td style="background:#BF4040">&nbsp;</td>
+ <td style="background:#9F6060">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38 </th>
+ <td style="background:#BF0000">&nbsp;</td>
+ <td style="background:#A71818">&nbsp;</td>
+ <td style="background:#8F3030">&nbsp;</td>
+ <td style="background:#784848">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25 </th>
+ <td style="background:#800000">&nbsp;</td>
+ <td style="background:#701010">&nbsp;</td>
+ <td style="background:#602020">&nbsp;</td>
+ <td style="background:#503030">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13 </th>
+ <td style="background:#400000">&nbsp;</td>
+ <td style="background:#380808">&nbsp;</td>
+ <td style="background:#301010">&nbsp;</td>
+ <td style="background:#281818">&nbsp;</td>
+</tr>
+</table>
+
+<table class="hslexample">
+  <tbody>
+ <tr>
+ <th></th>
+ <th colspan="5">30&deg; Red-Yellows (=Oranges)</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+</tr>
+<tr>
+ <th> 88</th>
+ <td style="background:#FFDFBF">&nbsp;</td>
+ <td style="background:#F7DFC7">&nbsp;</td>
+ <td style="background:#EFDFCF">&nbsp;</td>
+ <td style="background:#E7DFD7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#FFBF80">&nbsp;</td>
+ <td style="background:#EFBF8F">&nbsp;</td>
+ <td style="background:#DFBF9F">&nbsp;</td>
+ <td style="background:#CFBFAF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#FF9F40">&nbsp;</td>
+ <td style="background:#E79F58">&nbsp;</td>
+ <td style="background:#CF9F70">&nbsp;</td>
+ <td style="background:#B79F87">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#FF8000">&nbsp;</td>
+ <td style="background:#DF8020">&nbsp;</td>
+ <td style="background:#BF8040">&nbsp;</td>
+ <td style="background:#9F8060">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#BF6000">&nbsp;</td>
+ <td style="background:#A76018">&nbsp;</td>
+ <td style="background:#8F6030">&nbsp;</td>
+ <td style="background:#786048">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#804000">&nbsp;</td>
+ <td style="background:#704010">&nbsp;</td>
+ <td style="background:#604020">&nbsp;</td>
+ <td style="background:#504030">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#402000">&nbsp;</td>
+ <td style="background:#382008">&nbsp;</td>
+ <td style="background:#302010">&nbsp;</td>
+ <td style="background:#282018">&nbsp;</td>
+</table>
+<table class="hslexample">
+   <tbody>
+<tr>
+ <th></th>
+ <th colspan="5">60&deg; Yellows</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+
+<tr>
+ <th> 88</th>
+ <td style="background:#FFFFBF">&nbsp;</td>
+ <td style="background:#F7F7C7">&nbsp;</td>
+ <td style="background:#EFEFCF">&nbsp;</td>
+ <td style="background:#E7E7D7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#FFFF80">&nbsp;</td>
+ <td style="background:#EFEF8F">&nbsp;</td>
+ <td style="background:#DFDF9F">&nbsp;</td>
+ <td style="background:#CFCFAF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#FFFF40">&nbsp;</td>
+ <td style="background:#E7E758">&nbsp;</td>
+ <td style="background:#CFCF70">&nbsp;</td>
+ <td style="background:#B7B787">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#FFFF00">&nbsp;</td>
+ <td style="background:#DFDF20">&nbsp;</td>
+ <td style="background:#BFBF40">&nbsp;</td>
+ <td style="background:#9F9F60">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#BFBF00">&nbsp;</td>
+ <td style="background:#A7A718">&nbsp;</td>
+ <td style="background:#8F8F30">&nbsp;</td>
+ <td style="background:#787848">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#808000">&nbsp;</td>
+ <td style="background:#707010">&nbsp;</td>
+ <td style="background:#606020">&nbsp;</td>
+ <td style="background:#505030">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#404000">&nbsp;</td>
+ <td style="background:#383808">&nbsp;</td>
+ <td style="background:#303010">&nbsp;</td>
+ <td style="background:#282818">&nbsp;</td>
+</table>
+<table class="hslexample">
+   <tbody>
+<tr>
+ <th></th>
+ <th colspan="5">90&deg; Yellow-Greens</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+
+<tr>
+ <th> 88</th>
+ <td style="background:#DFFFBF">&nbsp;</td>
+ <td style="background:#DFF7C7">&nbsp;</td>
+ <td style="background:#DFEFCF">&nbsp;</td>
+ <td style="background:#DFE7D7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#BFFF80">&nbsp;</td>
+ <td style="background:#BFEF8F">&nbsp;</td>
+ <td style="background:#BFDF9F">&nbsp;</td>
+ <td style="background:#BFCFAF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#9FFF40">&nbsp;</td>
+ <td style="background:#9FE758">&nbsp;</td>
+ <td style="background:#9FCF70">&nbsp;</td>
+ <td style="background:#9FB787">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#80FF00">&nbsp;</td>
+ <td style="background:#80DF20">&nbsp;</td>
+ <td style="background:#80BF40">&nbsp;</td>
+ <td style="background:#809F60">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#60BF00">&nbsp;</td>
+ <td style="background:#60A718">&nbsp;</td>
+ <td style="background:#608F30">&nbsp;</td>
+ <td style="background:#607848">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#408000">&nbsp;</td>
+ <td style="background:#407010">&nbsp;</td>
+ <td style="background:#406020">&nbsp;</td>
+ <td style="background:#405030">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#204000">&nbsp;</td>
+ <td style="background:#203808">&nbsp;</td>
+ <td style="background:#203010">&nbsp;</td>
+ <td style="background:#202818">&nbsp;</td>
+</table>
+<table class="hslexample">
+   <tbody>
+<tr>
+ <th></th>
+ <th colspan="5">120&deg; Greens</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+
+<tr>
+ <th> 88</th>
+ <td style="background:#BFFFBF">&nbsp;</td>
+ <td style="background:#C7F7C7">&nbsp;</td>
+ <td style="background:#CFEFCF">&nbsp;</td>
+ <td style="background:#D7E7D7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#80FF80">&nbsp;</td>
+ <td style="background:#8FEF8F">&nbsp;</td>
+ <td style="background:#9FDF9F">&nbsp;</td>
+ <td style="background:#AFCFAF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#40FF40">&nbsp;</td>
+ <td style="background:#58E758">&nbsp;</td>
+ <td style="background:#70CF70">&nbsp;</td>
+ <td style="background:#87B787">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#00FF00">&nbsp;</td>
+ <td style="background:#20DF20">&nbsp;</td>
+ <td style="background:#40BF40">&nbsp;</td>
+ <td style="background:#609F60">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#00BF00">&nbsp;</td>
+ <td style="background:#18A718">&nbsp;</td>
+ <td style="background:#308F30">&nbsp;</td>
+ <td style="background:#487848">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#008000">&nbsp;</td>
+ <td style="background:#107010">&nbsp;</td>
+ <td style="background:#206020">&nbsp;</td>
+ <td style="background:#305030">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#004000">&nbsp;</td>
+ <td style="background:#083808">&nbsp;</td>
+ <td style="background:#103010">&nbsp;</td>
+ <td style="background:#182818">&nbsp;</td>
+</table>
+<table class="hslexample">
+   <tbody>
+<tr>
+ <th></th>
+ <th colspan="5">150&deg; Green-Cyans</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+
+<tr>
+ <th> 88</th>
+ <td style="background:#BFFFDF">&nbsp;</td>
+ <td style="background:#C7F7DF">&nbsp;</td>
+ <td style="background:#CFEFDF">&nbsp;</td>
+ <td style="background:#D7E7DF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#80FFBF">&nbsp;</td>
+ <td style="background:#8FEFBF">&nbsp;</td>
+ <td style="background:#9FDFBF">&nbsp;</td>
+ <td style="background:#AFCFBF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#40FF9F">&nbsp;</td>
+ <td style="background:#58E79F">&nbsp;</td>
+ <td style="background:#70CF9F">&nbsp;</td>
+ <td style="background:#87B79F">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#00FF80">&nbsp;</td>
+ <td style="background:#20DF80">&nbsp;</td>
+ <td style="background:#40BF80">&nbsp;</td>
+ <td style="background:#609F80">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#00BF60">&nbsp;</td>
+ <td style="background:#18A760">&nbsp;</td>
+ <td style="background:#308F60">&nbsp;</td>
+ <td style="background:#487860">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#008040">&nbsp;</td>
+ <td style="background:#107040">&nbsp;</td>
+ <td style="background:#206040">&nbsp;</td>
+ <td style="background:#305040">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#004020">&nbsp;</td>
+ <td style="background:#083820">&nbsp;</td>
+ <td style="background:#103020">&nbsp;</td>
+ <td style="background:#182820">&nbsp;</td>
+</table>
+<table class="hslexample">
+   <tbody>
+<tr>
+ <th></th>
+ <th colspan="5">180&deg; Cyans</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+
+<tr>
+ <th> 88</th>
+ <td style="background:#BFFFFF">&nbsp;</td>
+ <td style="background:#C7F7F7">&nbsp;</td>
+ <td style="background:#CFEFEF">&nbsp;</td>
+ <td style="background:#D7E7E7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#80FFFF">&nbsp;</td>
+ <td style="background:#8FEFEF">&nbsp;</td>
+ <td style="background:#9FDFDF">&nbsp;</td>
+ <td style="background:#AFCFCF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#40FFFF">&nbsp;</td>
+ <td style="background:#58E7E7">&nbsp;</td>
+ <td style="background:#70CFCF">&nbsp;</td>
+ <td style="background:#87B7B7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#00FFFF">&nbsp;</td>
+ <td style="background:#20DFDF">&nbsp;</td>
+ <td style="background:#40BFBF">&nbsp;</td>
+ <td style="background:#609F9F">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#00BFBF">&nbsp;</td>
+ <td style="background:#18A7A7">&nbsp;</td>
+ <td style="background:#308F8F">&nbsp;</td>
+ <td style="background:#487878">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#008080">&nbsp;</td>
+ <td style="background:#107070">&nbsp;</td>
+ <td style="background:#206060">&nbsp;</td>
+ <td style="background:#305050">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#004040">&nbsp;</td>
+ <td style="background:#083838">&nbsp;</td>
+ <td style="background:#103030">&nbsp;</td>
+ <td style="background:#182828">&nbsp;</td>
+</table>
+<table class="hslexample">
+   <tbody>
+<tr>
+ <th></th>
+ <th colspan="5">210&deg; Cyan-Blues</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+
+<tr>
+ <th> 88</th>
+ <td style="background:#BFDFFF">&nbsp;</td>
+ <td style="background:#C7DFF7">&nbsp;</td>
+ <td style="background:#CFDFEF">&nbsp;</td>
+ <td style="background:#D7DFE7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#80BFFF">&nbsp;</td>
+ <td style="background:#8FBFEF">&nbsp;</td>
+ <td style="background:#9FBFDF">&nbsp;</td>
+ <td style="background:#AFBFCF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#409FFF">&nbsp;</td>
+ <td style="background:#589FE7">&nbsp;</td>
+ <td style="background:#709FCF">&nbsp;</td>
+ <td style="background:#879FB7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#0080FF">&nbsp;</td>
+ <td style="background:#2080DF">&nbsp;</td>
+ <td style="background:#4080BF">&nbsp;</td>
+ <td style="background:#60809F">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#0060BF">&nbsp;</td>
+ <td style="background:#1860A7">&nbsp;</td>
+ <td style="background:#30608F">&nbsp;</td>
+ <td style="background:#486078">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#004080">&nbsp;</td>
+ <td style="background:#104070">&nbsp;</td>
+ <td style="background:#204060">&nbsp;</td>
+ <td style="background:#304050">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#002040">&nbsp;</td>
+ <td style="background:#082038">&nbsp;</td>
+ <td style="background:#102030">&nbsp;</td>
+ <td style="background:#182028">&nbsp;</td>
+</table>
+<table class="hslexample">
+   <tbody>
+<tr>
+ <th></th>
+ <th colspan="5">240&deg; Blues</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+
+<tr>
+ <th> 88</th>
+ <td style="background:#BFBFFF">&nbsp;</td>
+ <td style="background:#C7C7F7">&nbsp;</td>
+ <td style="background:#CFCFEF">&nbsp;</td>
+ <td style="background:#D7D7E7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#8080FF">&nbsp;</td>
+ <td style="background:#8F8FEF">&nbsp;</td>
+ <td style="background:#9F9FDF">&nbsp;</td>
+ <td style="background:#AFAFCF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#4040FF">&nbsp;</td>
+ <td style="background:#5858E7">&nbsp;</td>
+ <td style="background:#7070CF">&nbsp;</td>
+ <td style="background:#8787B7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#0000FF">&nbsp;</td>
+ <td style="background:#2020DF">&nbsp;</td>
+ <td style="background:#4040BF">&nbsp;</td>
+ <td style="background:#60609F">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#0000BF">&nbsp;</td>
+ <td style="background:#1818A7">&nbsp;</td>
+ <td style="background:#30308F">&nbsp;</td>
+ <td style="background:#484878">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#000080">&nbsp;</td>
+ <td style="background:#101070">&nbsp;</td>
+ <td style="background:#202060">&nbsp;</td>
+ <td style="background:#303050">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#000040">&nbsp;</td>
+ <td style="background:#080838">&nbsp;</td>
+ <td style="background:#101030">&nbsp;</td>
+ <td style="background:#181828">&nbsp;</td>
+</table>
+<table class="hslexample">
+   <tbody>
+<tr>
+ <th></th>
+ <th colspan="5">270&deg; Blue-Magentas</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+
+<tr>
+ <th> 88</th>
+ <td style="background:#DFBFFF">&nbsp;</td>
+ <td style="background:#DFC7F7">&nbsp;</td>
+ <td style="background:#DFCFEF">&nbsp;</td>
+ <td style="background:#DFD7E7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#BF80FF">&nbsp;</td>
+ <td style="background:#BF8FEF">&nbsp;</td>
+ <td style="background:#BF9FDF">&nbsp;</td>
+ <td style="background:#BFAFCF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#9F40FF">&nbsp;</td>
+ <td style="background:#9F58E7">&nbsp;</td>
+ <td style="background:#9F70CF">&nbsp;</td>
+ <td style="background:#9F87B7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#8000FF">&nbsp;</td>
+ <td style="background:#8020DF">&nbsp;</td>
+ <td style="background:#8040BF">&nbsp;</td>
+ <td style="background:#80609F">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#6000BF">&nbsp;</td>
+ <td style="background:#6018A7">&nbsp;</td>
+ <td style="background:#60308F">&nbsp;</td>
+ <td style="background:#604878">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#400080">&nbsp;</td>
+ <td style="background:#401070">&nbsp;</td>
+ <td style="background:#402060">&nbsp;</td>
+ <td style="background:#403050">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#200040">&nbsp;</td>
+ <td style="background:#200838">&nbsp;</td>
+ <td style="background:#201030">&nbsp;</td>
+ <td style="background:#201828">&nbsp;</td>
+</table>
+<table class="hslexample">
+   <tbody>
+<tr>
+ <th></th>
+ <th colspan="5">300&deg; Magentas</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+
+<tr>
+ <th> 88</th>
+ <td style="background:#FFBFFF">&nbsp;</td>
+ <td style="background:#F7C7F7">&nbsp;</td>
+ <td style="background:#EFCFEF">&nbsp;</td>
+ <td style="background:#E7D7E7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#FF80FF">&nbsp;</td>
+ <td style="background:#EF8FEF">&nbsp;</td>
+ <td style="background:#DF9FDF">&nbsp;</td>
+ <td style="background:#CFAFCF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#FF40FF">&nbsp;</td>
+ <td style="background:#E758E7">&nbsp;</td>
+ <td style="background:#CF70CF">&nbsp;</td>
+ <td style="background:#B787B7">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#FF00FF">&nbsp;</td>
+ <td style="background:#DF20DF">&nbsp;</td>
+ <td style="background:#BF40BF">&nbsp;</td>
+ <td style="background:#9F609F">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#BF00BF">&nbsp;</td>
+ <td style="background:#A718A7">&nbsp;</td>
+ <td style="background:#8F308F">&nbsp;</td>
+ <td style="background:#784878">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#800080">&nbsp;</td>
+ <td style="background:#701070">&nbsp;</td>
+ <td style="background:#602060">&nbsp;</td>
+ <td style="background:#503050">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#400040">&nbsp;</td>
+ <td style="background:#380838">&nbsp;</td>
+ <td style="background:#301030">&nbsp;</td>
+ <td style="background:#281828">&nbsp;</td>
+</table>
+
+<table class="hslexample">
+<tbody>
+<tr>
+ <th></th>
+ <th colspan="5">330&deg; Magenta-Reds</th>
+</tr>
+<tr>
+ <th></th>
+ <th colspan="5">Saturation</th>
+</tr>
+<tr>
+ <th></th>
+ <th>100%</th>
+ <th>75%</th>
+ <th>50%</th>
+ <th>25%</th>
+</tr>
+<tr>
+ <th> 88</th>
+ <td style="background:#FFBFDF">&nbsp;</td>
+ <td style="background:#F7C7DF">&nbsp;</td>
+ <td style="background:#EFCFDF">&nbsp;</td>
+ <td style="background:#E7D7DF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 75</th>
+ <td style="background:#FF80BF">&nbsp;</td>
+ <td style="background:#EF8FBF">&nbsp;</td>
+ <td style="background:#DF9FBF">&nbsp;</td>
+ <td style="background:#CFAFBF">&nbsp;</td>
+</tr>
+<tr>
+ <th> 63</th>
+ <td style="background:#FF409F">&nbsp;</td>
+ <td style="background:#E7589F">&nbsp;</td>
+ <td style="background:#CF709F">&nbsp;</td>
+ <td style="background:#B7879F">&nbsp;</td>
+</tr>
+<tr>
+ <th> 50</th>
+ <td style="background:#FF0080">&nbsp;</td>
+ <td style="background:#DF2080">&nbsp;</td>
+ <td style="background:#BF4080">&nbsp;</td>
+ <td style="background:#9F6080">&nbsp;</td>
+</tr>
+<tr>
+ <th> 38</th>
+ <td style="background:#BF0060">&nbsp;</td>
+ <td style="background:#A71860">&nbsp;</td>
+ <td style="background:#8F3060">&nbsp;</td>
+ <td style="background:#784860">&nbsp;</td>
+</tr>
+<tr>
+ <th> 25</th>
+ <td style="background:#800040">&nbsp;</td>
+ <td style="background:#701040">&nbsp;</td>
+ <td style="background:#602040">&nbsp;</td>
+ <td style="background:#503040">&nbsp;</td>
+</tr>
+<tr>
+ <th> 13</th>
+ <td style="background:#400020">&nbsp;</td>
+ <td style="background:#380820">&nbsp;</td>
+ <td style="background:#301020">&nbsp;</td>
+ <td style="background:#281820">&nbsp;</td>
+</tr>
+</table>

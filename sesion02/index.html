@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Sesión 2 -Caracteristicas principales de jQuery.</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
+	<script type='text/javascript'>
+	pageConf	= {fileName:'/sesion02/index.html', sesion:2, num_sesiones:5};
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33125186-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div id='head'>
+	<a href='http://www.adsl.org.mx/' id='logoADSL'>Academia de software libre</a>
+	<h1>
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<script  type="text/javascript">
+$(function() {
+    //mostrando la info del pre
+    $("pre").snippet("javascript", {style:'darkness'});
+    //Cambiando el color de los titulos 2.
+    //forma 1 con iteración explicita
+        //$.each($('h2'), function(key, value) {
+        //  $(this).css("color", "#333");
+        //});
+    //
+    //cambiando los parrafos seguidos, de un titulo nivel 2.
+    //Opción1 no recomendado.
+        //$('h2 + p').css('color', '#946900');
+        //$('h2 + p').css('font-style', 'italic');
+    //Opción 2 recimendado cuando se va ocupar varias veces la misma consulta.
+        //$parrafosBajoTitulo = $('h2 + p');
+        //$parrafosBajoTitulo.css('color', '#946900');
+        //$parrafosBajoTitulo.css('font-style', 'italic');
+    //opcion 3, recomendado cuando todo lo que vamos a hacer se puede encolar.
+    $('h2 + p')
+        .css('color', '#946900')
+        .css('font-style', 'italic');
+});
+</script>
+
+<h1>Sesión 2 -Caracteristicas principales de jQuery.</h1>
+
+<h2>Trabaja por grupos(<em>Iteración implicita</em>).</h2>
+
+<p>Una carácteristica muy interesante es que los metodos de <strong>jQuery</strong> que realizan una consulta trabajan con iteración implicita, por ejemplo, la consulta.</p>
+
+<pre><code>$('h2')
+</code></pre>
+
+<p>Nos devuelve todos los titulos nivel 2 (<code>h2</code>) que esten en la página, ahora si por ejemplo quisieramos cambiarle el color a un gris obscuro (<code>#333</code>), esto lo podriamos hacer de la siguiente manera.</p>
+
+<pre><code>$.each($('h2'), function() {
+    $(this).css("color", "#333");
+});
+</code></pre>
+
+<p>En este caso estamos ocupando el metodo <code>each</code> el nos dice que para cada titulo en la selección ejecuta una función la cual le cambia el color.</p>
+
+<p>De momento no se preocupe en comprender el each, lo importante es que comprenda que estamos iterando explicitamente para realizar determinada acción sobre cada elemento en la selección.</p>
+
+<p>Existe una forma de hacer esto más fácil y es ocupando este comportamiento de trabajar por grupos de jQuery, en este caso la función <code>css</code> puede trabajar sobre toda una selección:</p>
+
+<pre><code>$('h2').css('color', '#333');
+</code></pre>
+
+<p>En general las funciones que tengan esta forma:</p>
+
+<pre><code>$('selector').funcionNombre(param1,param2,...);
+</code></pre>
+
+<p>Trabajan sobre toda la selección, es decir si la selección es todo un grupo la función se ejecutara sobre todos los elementos. A esta funciones las llamaremos <code>jQuery.fn.funcionNombre</code> o bien su forma reducida <code>$.fn.funcionNombre</code> ya que pertenecen al espacio de nombre <code>fn</code> de jQuery.</p>
+
+<p>Cuando hacemos referencia a <code>jQuery.fn</code> se hace referencia al espacio de nombre de <strong>jQuery</strong> del prototipo es decir de una extensión de <strong>jQuery</strong>, <code>jQuery.fn</code> es también un alias de <code>jQuery.prototype</code> <a href="https://github.com/mundoSICA/tutorial_hispano_jQuery/blob/gh-pages/js/jquery-1.7.2.js#L97"></a>.</p>
+
+<h2>Diseñado para realizar consultas atraves del <strong>DOM</strong>.</h2>
+
+<p>Quizas la principal caracteristica de <strong>jQuery</strong> es que esta diseñado para realizar consultas a travez de el <strong>DOM</strong>, como ya se menciono antes, <strong>jQuery</strong> nos permite realizar consultas <strong>CSS</strong>, <strong>xPath</strong> y <strong>trasversales</strong>.</p>
+
+<pre><code>$('h2 + p').css('color', '#946900');
+$('h2 + p').css('font-style', 'italic');
+</code></pre>
+
+<p>Con esto indicamos que todo parrafos(<code>p</code>) inmediatamente seguidos(<code>+</code>) de un titulo nivel 2(<code>h2</code>), va a tomar el color de la letra a café y el estilo de la fuente sera del tipo italica.</p>
+
+<p>No abuse de esta característica, la tarea de realizar una consulta atravez del <strong>DOM</strong> puede llegar a ser algo bastente complejo (<em>dependiendo de la consulta</em>).</p>
+
+<p>Una mejor opción es almacenar la consulta realizada en una variable:</p>
+
+<pre><code>$parrafosBajoTitulo = $('h2 + p');
+$parrafosBajoTitulo.css('color', '#946900');
+$parrafosBajoTitulo.css('font-style', 'italic');
+</code></pre>
+
+<blockquote>
+  <p>Es buena práctica agregar el prefijo <code>$</code> a las variables que almacenan el resultado de una consulta.</p>
+</blockquote>
+
+<h2>Es un sistema modular.</h2>
+
+<ul>
+<li><a href="https://github.com/jquery/plugins.jquery.com">jQuery plugins</a></li>
+<li><a href="http://jqueryui.com/">jQuery UI</a></li>
+<li><a href="http://jquerymobile.com/">jQuery mobile</a></li>
+</ul>
+
+<h2>Chaining.</h2>
+
+<p>Atienda al siguiente código:</p>
+
+<pre><code>$('h2').css('color','red');
+$('h2').text('Cambiando el contenido a todos los elementos h2');
+</code></pre>
+
+<p>Ahora comparelo con el siguiente código:</p>
+
+<pre><code>$('h2')
+            .css('color','red')
+            .text('Cambiando el contenido a todos los elementos h2');
+</code></pre>
+
+<p>¿Cual cree que sea mejor?, argumente su respuesta.</p>
+
+<h2>Enlaces externos.</h2>
+
+<ul>
+<li><a href="http://www.w3.org/TR/html5/global-attributes.html#custom-data-attribute">Atributos personalizados</a></li>
+</ul>
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
+</div>
+</body>
+</html>

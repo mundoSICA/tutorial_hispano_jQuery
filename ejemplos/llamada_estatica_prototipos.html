@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Llamada estatica versus prototipo</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
+	<script type='text/javascript'>
+	pageConf	= {fileName:'/ejemplos/llamada_estatica_prototipos.html', sesion:0, num_sesiones:5};
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33125186-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div id='head'>
+	<a href='http://www.adsl.org.mx/' id='logoADSL'>Academia de software libre</a>
+	<h1>
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<script  type="text/javascript">
+$(function() {
+    $("pre").snippet("javascript", {style:'darkness'});
+});
+</script>
+
+<script  type="text/javascript">
+//constructor objeto Gato
+function Gato( str ) {
+    this.msg = str;
+}
+//extendemos el prototipo del Gato
+Gato.prototype.imprime = function() {
+    console.log( this.msg );
+}
+//funcion estatica no es necesario instaciar un obj para llamarla
+Gato.impremeEstatico = function ( msg ){
+    console.log( msg );
+}
+//test
+gato = new Gato('hola mundo');
+gato.imprime();
+Gato.impremeEstatico('Adios mundo cruel');
+</script>
+
+<h1>Llamada estatica versus prototipo</h1>
+
+<p>Atienda al siguiente código.</p>
+
+<pre><code>//constructor objeto Gato
+function Gato( str ) {
+    this.msg = str;
+}
+//extendemos el prototipo del Gato
+Gato.prototype.imprime = function() {
+    console.log( this.msg );
+}
+//funcion estatica no es necesario instaciar un obj para llamarla
+Gato.impremeEstatico = function ( msg ){
+    console.log( msg );
+}
+//test
+gato = new Gato('hola mundo');
+gato.imprime();
+Gato.impremeEstatico('Adios mundo cruel');
+</code></pre>
+
+<p>Que pasaria si en lugar de Gato se llamara <code>jQuery</code> o <code>$</code>.</p>
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
+</div>
+</body>
+</html>

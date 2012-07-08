@@ -1,0 +1,11 @@
+{
+	one_piece : {
+		'autor' : 'fitorec',
+		'descripcion' : 'tema de la serie One piece',
+		'css_path': '/css/one_piece/estilo.css',
+	},
+	simpson : {
+		'autor' : 'Jorge Carreño',
+		'descripcion' : 'Tema de los simpsons',
+	},
+}

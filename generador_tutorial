@@ -1,0 +1,143 @@
+#!/bin/bash
+#
+#Requiere:
+# - Git
+# - Markdown
+
+# Colores solo para que se distinga un poco mejor(creo yo) los procesos que
+# realiza el script.
+cyan='\e[0;36m'
+light='\e[1;36m'
+red="\e[0;31m\033[1m"
+yellow="\e[0;33m"
+white="\e[0;37m"
+end='\e[0m'
+STARTTIME=$(date +%s )
+NUM_SESIONES=5
+
+#Revisamos que las dependencias se cumplan satisfactoriamente
+DEPENDENCIES="git markdown"
+for dep in $DEPENDENCIES
+do
+	which $dep > /dev/null;
+	if [ $? -ne 0 ]
+	then
+			echo -e "Dependencia incumplida ${dep}, favor de instalar";
+			echo -e "sudo apt-get install ${dep}";
+	fi
+done;
+
+#optenemos la ruta del repositorio
+repo_path=$(git rev-parse --show-toplevel)
+
+##########################################################################################
+function index_ejemplos {
+	echo -e "${light}Generando index de la ṕagina de ejemplos${end}";
+	ejemplos_path=`echo ${repo_path}/ejemplos/`;
+		if [ -c "$ejemplos_path/index.md" ]
+		then
+			rm $ejemplos_path/index.md
+		fi
+
+		echo '# Ejemplos disponibles' > $ejemplos_path/index.txt;
+		echo '' >> $ejemplos_path/index.txt;
+		for sesion in  $(seq 1 $NUM_SESIONES)
+		do
+			echo " - [Sesión 0${sesion}](../sesion0${sesion}/index.html)" >> $ejemplos_path/index.txt;
+			for file in `find $repo_path/ejemplos/ -iregex ".*\0${sesion}.*\.html$" | sort `;
+			do
+					file=`echo ${file} | sed "s|${ejemplos_path}||i"`;
+					target=$(echo $file | sed "s|_|\_|g");
+					echo "  - [${target}](./$file)" >> $ejemplos_path/index.txt;
+			done;
+		done;
+		mv $ejemplos_path/index.txt $ejemplos_path/index.md;
+}
+
+##########################################################################################
+# Imprime Temario.
+##########################################################################################
+function imprimeTemario {
+	echo -e "# Manual de JQuery en español\n";
+	echo '<div id="chacoSamurai"><img src="img/samurai_javascript.png" alt="el chaco samurai javascript" /></div>';
+	echo '';
+	for i in  $(seq 1 $NUM_SESIONES)
+	do
+		 grep -ERhio "^<h[1-2]>(.*)</h[0-9]>" sesion0${i}/index.html | \
+				sed -r "s/^<h([1-3]+)>(.*)<\/h[1-3]>/\1\2/" | sed -r "s/(\.|:)$//"  | \
+				sed -r "s/^(1)(.*)/\1[**\2**](.\/sesion0${i}\/index.html)/" | \
+				sed -r 's/^(2)(.*)/  - [\2]()/;s/^1/ - /';
+	done
+	grep -ERhio "^<h[1-2]>(.*)</h[0-9]>" recursos/index.html | \
+				sed -r "s/^<h([1-2]+)>(.*)<\/h[1-3]>/\1\2/" | sed -r "s/(\.|:)$//"  | \
+				sed -r "s/^(1)(.*)/\1[**\2**](.\/recursos\/index.html)/" | \
+				sed -r 's|^2|  - |;s|^1| - |;s|href="./|href="./recursos/|';
+	echo ' - [**Listado de ejemplos disponibles**](./ejemplos/index.html)';
+	echo ""
+	echo "> Es manual es un [repositorio Público](https://github.com/mundoSICA/tutorial_hispano_jQuery/): sientase libre de usar y distribuir";
+}
+#Si no recibe ningún argumento, actualiza todo el directorio
+if [ $# -ne 1 ]
+then
+	clear
+  echo -e "${light}Manual jQuery Generator - Ejecución modo actualización general${end}";
+  echo -ne "${red}\r";
+  splash=`ls "${repo_path}/plantilla/splashes/" | sort -R | head -1`
+  cat "${repo_path}/plantilla/splashes/$splash"
+  echo -e "${end}";
+  echo "--------------------------------------------------------------------------------";
+  echo -ne "${yellow}\r"
+  for file in `find $repo_path -iregex ".*\.md$" | sort `;
+  do
+		$0 $file
+	done;
+	echo -e "${end}"
+	index_ejemplos;
+	echo -ne "${yellow}\r"
+	$0 $repo_path/ejemplos/index.md;
+	imprimeTemario > $repo_path/index.md;
+	$0 $repo_path/index.md;
+	echo -e "${end}"
+	RUNTIME=$(expr `date +%s` - ${STARTTIME} )
+	echo -e "${light}Tiempo de ejecución:${end} ${yellow}${RUNTIME} Segundos${end}"
+	exit 0;
+fi
+#Revisamos que el archivo de entrada tenga la extensión adecuada.
+(echo ${1} | grep -Evq '\.md$') && (echo "El documento de entrada ${1} debe tener la extension md"; exit 1 );
+#generamos el nombre que tendra el archivo de salida
+archivo_salida=`echo ${1} | sed 's/\.md$/.html/'`;
+
+LOCAL_NAME=$(echo ${archivo_salida} | sed "s|${repo_path}||");
+NUM_SESION=$(echo ${LOCAL_NAME} | grep -Eo "sesion[0-9]+" | grep -Eo "[1-9]+" | sed -r 's/^[0]+//');
+if [ ! "$NUM_SESION" ]
+then
+	NUM_SESION='0'
+fi
+
+echo -ne "\t${LOCAL_NAME}                                    \r";
+
+#Optenemos la referencia local
+aux_path_level=`echo ${1} | sed "s|${repo_path}||i" | xargs dirname`;
+refPath='./';
+
+while [ "${aux_path_level}" != "/" ]; do
+	aux_path_level=`dirname $aux_path_level`;
+	refPath=`echo ${refPath}../`;
+done
+
+USER=`eval whoami`
+#generamos el titulo
+TITLE=`markdown $1 | grep -Eo "<h1>.*</h1>" | head -1 | sed -r  "s/<h1>(.*)<\/h1>/\1/"`
+##########################################################################################
+#generando el archivo de salida.
+##########################################################################################
+cat "$repo_path/plantilla/cabecera.html" |\
+sed  "s|%NUM_SESIONES%|$NUM_SESIONES|g;s|%refPath%|$refPath|g;s|%LOCAL_NAME%|$LOCAL_NAME|g;s|%TITLE%|$TITLE|g;s|%NUM_SESION%|$NUM_SESION|g"\
+ > $archivo_salida
+
+#Generando el archivo en markdown
+markdown $1 >> $archivo_salida
+
+#Fin del content,Agregamos pie de pagina, finalmente cerramos el body y del documento html
+cat "$repo_path/plantilla/pie_pagina.html"  >> $archivo_salida
+#//firefox $archivo_salida &
