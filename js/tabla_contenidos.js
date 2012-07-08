@@ -44,7 +44,7 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 				'Versión imprimible <strong>HTML</strong>'
 			)+ ' | ' + link(
 				'./todo/manual_jquery_basico.pdf',
-				'Versión imprimible <strong>PDF</strong>'
+				'&darr; Versión imprimible <strong>PDF</strong>'
 			)+ ' | ' + link(
 				'https://github.com/mundoSICA/tutorial_hispano_jQuery/zipball/master',
 				'&darr; Descargar <strong>Zip</strong>'
@@ -106,14 +106,14 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 				ses_prev = '0'+(pageConf.sesion-1);
 				pie_links = link(
 								'../sesion'+ses_prev+'/index.html',
-								'&laquo; Sesion '+ses_prev
+								'&laquo; Sesión '+ses_prev
 							) + ' | ' + pie_links;
 			}
 			if( pageConf.sesion < pageConf.num_sesiones ){
 					ses_sig = '0'+(pageConf.sesion+1);
 					pie_links += '| ' + link(
 									'../sesion'+ses_sig+'/index.html',
-									'&laquo; Sesion '+ses_sig
+									'Sesión '+ses_sig + ' &raquo;'
 								);
 			}
 		}else if( modo == 'version.impresa' ){
@@ -126,7 +126,7 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 						'&uarr; Tabla de Contendidos'
 				)  + ' | ' + link(
 						'./manual_jquery_basico.pdf',
-						'Versión imprimible <strong>PDF</strong>'
+						'&darr; Versión imprimible <strong>PDF</strong>'
 					);
 		}
 		$( '<div	class="links_paginacion">'+pie_links+'</div>' ).appendTo($content);
