@@ -4,7 +4,6 @@
  * Licencia   : Dual licensed under the MIT or GPL Version 2 licenses.
  * Date       : 2012/07/06 18:16:52
  */
-
 $(function() {
 tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 /* variables a utilizar */
@@ -52,8 +51,13 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 			);
 		}else if( pageConf.fileName.match(/^\/sesion0[1-9]\/index.html/g) ){
 			modo = 'index.sesion'
-			pie_links += '<a href="#tabla_contenidos" class="linkTablaContenido">&uarr; Tabla de Contendidos</a>'
-									+ ' | <a href="../index.html">&phi; Indice principal</a>';
+			pie_links += link(
+				'#tabla_contenidos',
+				'&uarr; Tabla de Contendidos'
+				) + ' | ' + link(
+				'../index.html',
+				'&phi; Indice principal'
+			);
 			titulo = 'Tabla de Contenidos';
 		}else if( pageConf.fileName == '/recursos/index.html' ){
 			modo = 'index.recurso';
@@ -61,15 +65,24 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 			titulo = '';
 		}else if( pageConf.fileName == '/ejemplos/index.html' ){
 			modo = 'index.ejempo';
-			pie_links +=  '<a href="../index.html">&phi; Indice principal</a>';
+			pie_links += link('../index.html','&phi; Indice principal');
 			titulo = ' ';
 		}else if( pageConf.fileName.match(/^\/ejemplos/g) ){
 			titulo = 'Contenido del ejemplo';
 			modo = 'algun.ejemplo';
 			ses = pageConf.fileName.split('/').pop().split('.').shift();
-			pie_links +=  '<a href="#tabla_contenidos">Indice de ejemplos</a>'
-									+ ' | <a href="../sesion'+ses+'/index.html">Ir a la Sesion '+ses+'</a>'
-									+ ' | <a href="../index.html">&phi; Indice principal</a>';
+			pie_links += link(
+								'#tabla_contenidos',
+								'&uarr; Tabla de Contendidos'
+							) + ' | ' +
+							link(
+								'../sesion'+ses+'/index.html',
+								'Ir a la Sesion '+ses
+							) + ' | ' +
+							link(
+								'../index.html',
+								'&phi; Indice principal'
+							);
 		}else if( pageConf.fileName == '/todo/index.html' ){
 			titulo = 'Versión impresa';
 			modo = 'version.impresa';
@@ -83,6 +96,41 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 		replace(/ñ/g, "ni").
 		replace(/ú/g, "u").replace(/\(/g, "-").replace(/\)/g, "");
 	},
+	links_content = function(){
+		if( modo == 'index.sesion'){
+			pie_links = link(
+								'../index.html',
+								'&phi; Indice principal'
+							);
+			if( pageConf.sesion > 1 ){
+				ses_prev = '0'+(pageConf.sesion-1);
+				pie_links = link(
+								'../sesion'+ses_prev+'/index.html',
+								'&laquo; Sesion '+ses_prev
+							) + ' | ' + pie_links;
+			}
+			if( pageConf.sesion < pageConf.num_sesiones ){
+					ses_sig = '0'+(pageConf.sesion+1);
+					pie_links += '| ' + link(
+									'../sesion'+ses_sig+'/index.html',
+									'&laquo; Sesion '+ses_sig
+								);
+			}
+		}else if( modo == 'version.impresa' ){
+			pie_links += link(
+										'../index.html',
+										'&phi; Indice principal'
+					) + ' | ' +
+					link(
+						'#tabla_contenidos',
+						'&uarr; Tabla de Contendidos'
+				)  + ' | ' + link(
+						'./manual_jquery_basico.pdf',
+						'Versión imprimible <strong>PDF</strong>'
+					);
+		}
+		$( '<div	class="links_paginacion">'+pie_links+'</div>' ).appendTo($content);
+	}
 /* Genera la tabla de contenido segun el modo */
 	generaTabla = function (){
 		if( modo == null )
@@ -95,27 +143,16 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 			nuevoID = slug_str($(h2_actual).text());
 			$(h2_actual).attr('id',  nuevoID);
 			$(h2_actual).before('<div	class="links_paginacion">'+pie_links+'</div>');
-			// Creamos un item de la lista(<li>) con un link(<a>) con referencia(href) al #nuevoID
-			if(titulo)
-				tContenidoHtml += '<li><a href="#' + nuevoID + '">' + $(h2_actual).html() + '</a></li>';
+			// Creamos un item de la lista(<li>) con un link(<a>)
+			// con referencia(href) al #nuevoID
+			if( titulo ) {
+				tContenidoHtml += '<li>' + 
+														link('#' + nuevoID,$(h2_actual).html()) +
+													'</li>';
+			}
 		});
-		if( modo == 'index.sesion'){
-			pie_links = '<a href="../index.html">&phi; Indice principal</a>';
-			if( pageConf.sesion > 1 ){
-				ses_prev = '0'+(pageConf.sesion-1);
-				pie_links = '<a href="../sesion'+ses_prev+'/index.html">&laquo; Sesion '
-										+ses_prev+'</a> | ' + pie_links;
-			}
-			if( pageConf.sesion < pageConf.num_sesiones ){
-					ses_sig = '0'+(pageConf.sesion+1);
-					pie_links += '| <a href="../sesion'+ses_sig+
-											'/index.html">Sesion '+ses_sig+' &raquo;</a>';
-			}
-		}else if( modo == 'version.impresa' ){
-			pie_links +=  '<a href="#tabla_contenidos">Indice de ejemplos</a>'
-									+ ' | <a href="../index.html">&phi; Indice principal</a>';
-		}
-		$( '<div	class="links_paginacion">'+pie_links+'</div>' ).appendTo($content);
+		//generamos los cambios en el pie del contenido
+		links_content()
 		if(titulo) {
 			$destino.append(tContenidoHtml+ '</ol>');
 			//insertamos la ancla para que suba a la tabla de contenido
