@@ -22,7 +22,7 @@ div.box{
 	width: 100%;
 	height: 200px;
 	background:#666;
-	border:1px solid #EEE:
+	border:1px solid #999;
 }
 </style>
 
@@ -106,7 +106,7 @@ Desgraciadamente efectos como los colores no funcionan del todo bien, anteriorme
 			width: 100%;
 			height: 200px;
 			background:#666;
-			border:1px solid #EEE:
+			border:1px solid #999:
 		}
 #### Código jQuery.
 

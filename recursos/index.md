@@ -1,19 +1,10 @@
-# Lista de Recursos Disponibles
+# Listado de Recursos Disponibles
 
-Paleta de colores CSS3
+[Colores CSS3](./colores-css3.html)
 ------------------------------------------------------------------------------------------
 
-Paleta de colores [ir](./css3-colores.html).
-
-
-
-Lista de selectores CSS
+[selectores CSS](./selectores_css.html)
 ------------------------------------------------------------------------------------------
-
-Listado con ejemplo de los distintos selectores CSS [ir](./selectores_css.html).
-
-
-
 
 Recursos Externos.
 ------------------------------------------------------------------------------------------

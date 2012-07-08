@@ -40,10 +40,11 @@
   - [Ajax]()
   - [Ajax y Jquery]()
   - [Otras funciones Ajax]()
- - [**Lista de Recursos Disponibles**](./recursos/index.html)
-  - Paleta de colores CSS3
-  - Lista de selectores CSS
+ - [**Listado de Recursos Disponibles**](./recursos/index.html)
+  - <a href="./recursos/colores-css3.html">Colores CSS3</a>
+  - <a href="./recursos/selectores_css.html">selectores CSS</a>
   - Recursos Externos
   - Probar código al vuelo
+ - [**Listado de ejemplos disponibles**](./ejemplos/index.html)
 
 > Es manual es un [repositorio Público](https://github.com/mundoSICA/tutorial_hispano_jQuery/): sientase libre de usar y distribuir
