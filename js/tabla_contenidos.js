@@ -56,7 +56,7 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 				'&uarr; Tabla de Contendidos'
 				) + ' | ' + link(
 				'../index.html',
-				'&pi; Indice principal'
+				'&Theta; Indice principal'
 			);
 			titulo = 'Tabla de Contenidos';
 		}else if( pageConf.fileName == '/recursos/index.html' ){
@@ -65,7 +65,7 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 			titulo = '';
 		}else if( pageConf.fileName == '/ejemplos/index.html' ){
 			modo = 'index.ejempo';
-			pie_links += link('../index.html','&pi; Indice principal');
+			pie_links += link('../index.html','&Theta; Indice principal');
 			titulo = ' ';
 		}else if( pageConf.fileName.match(/^\/ejemplos/g) ){
 			titulo = 'Contenido del ejemplo';
@@ -81,7 +81,7 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 							) + ' | ' +
 							link(
 								'../index.html',
-								'&pi; Indice principal'
+								'&Theta; Indice principal'
 							);
 		}else if( pageConf.fileName == '/todo/index.html' ){
 			titulo = 'Versión impresa';
@@ -100,7 +100,7 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 		if( modo == 'index.sesion'){
 			pie_links = link(
 								'../index.html',
-								'&pi; Indice principal'
+								'&Theta; Indice principal'
 							);
 			if( pageConf.sesion > 1 ){
 				ses_prev = '0'+(pageConf.sesion-1);
@@ -119,7 +119,7 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 		}else if( modo == 'version.impresa' ){
 			pie_links += link(
 										'../index.html',
-										'&pi; Indice principal'
+										'&Theta; Indice principal'
 					) + ' | ' +
 					link(
 						'#tabla_contenidos',
