@@ -24,6 +24,12 @@ a{
 	text-shadow:1px 1px 1px #BBB;
 	color: #0C4AD8;
 }
+em{
+	color:#233E48;
+	background:#F2F2F2;
+	border:1px solid #E6E6E6;
+	padding:0 0.3em;
+}
 a:hover{
 	text-shadow:-1px 2px 1px #FFF,1px -2px 1px #FFF,0 0 5px #001B9C;
 	color:#FF253C;
