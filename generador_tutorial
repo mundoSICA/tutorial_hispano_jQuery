@@ -33,28 +33,26 @@ repo_path=$(git rev-parse --show-toplevel)
 
 ##########################################################################################
 function index_ejemplos {
-	echo -e "${light}Generando index de la ṕagina de ejemplos${end}";
+	echo -ne "${light}Generando index de la ṕagina de ejemplos${end}: ";
 	ejemplos_path=`echo ${repo_path}/ejemplos/`;
-		if [ -c "$ejemplos_path/index.md" ]
-		then
-			rm $ejemplos_path/index.md
-		fi
-
-		echo '# Ejemplos disponibles' > "$ejemplos_path/index.txt";
-		echo '' >> "$ejemplos_path/index.txt";
-		for sesion in  $(seq 1 $NUM_SESIONES)
+	if [ -c "$ejemplos_path/index.md" ]
+	then
+		rm $ejemplos_path/index.md
+	fi
+	echo '# Ejemplos disponibles' > "$ejemplos_path/index.md";
+	echo '' >> "$ejemplos_path/index.md";
+	for sesion in  $(seq 1 $NUM_SESIONES)
+	do
+		echo " - [**Sesión 0${sesion}**](../sesion0${sesion}/index.html)" >> "$ejemplos_path/index.md";
+		for file in `find $repo_path/ejemplos/ -iregex ".*\0${sesion}.*\.html$" | sort `;
 		do
-			echo " - [Sesión 0${sesion}](../sesion0${sesion}/index.html)" >> "$ejemplos_path/index.txt";
-			for file in `find $repo_path/ejemplos/ -iregex ".*\0${sesion}.*\.html$" | sort `;
-			do
-					file=`echo ${file} | sed "s|${ejemplos_path}||i"`;
-					target=$(echo $file | sed "s|_|\_|g");
-					echo "  - [${target}](./$file)" >> $ejemplos_path/index.txt;
-			done;
+				file=`echo ${file} | sed "s|${ejemplos_path}||i"`;
+				target=$(echo $file | sed -r 's|_|\\_|g');
+				echo "  - [${target}](./$file)" >> $ejemplos_path/index.md;
 		done;
-		mv $ejemplos_path/index.txt $ejemplos_path/index.md;
+	done;
+	echo -e "${yellow}/ejemplos/index.md${end}";
 }
-
 ##########################################################################################
 # Genera la versión todo en un documento
 ##########################################################################################
@@ -120,9 +118,11 @@ then
 	index_ejemplos;
 	echo -ne "${yellow}\r"
 	$0 $repo_path/ejemplos/index.md;
+	#Generamos la página principal
 	imprimeTemario > $repo_path/index.md;
 	$0 $repo_path/index.md;
 	echo -e "${end}"
+	#Finalmente mostramos el tiempo en ejecución del script.
 	RUNTIME=$(expr `date +%s` - ${STARTTIME} )
 	echo -e "${light}Tiempo de ejecución:${end} ${yellow}${RUNTIME} Segundos${end}"
 	exit 0;
