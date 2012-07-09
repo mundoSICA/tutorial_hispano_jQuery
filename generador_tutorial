@@ -161,7 +161,7 @@ sed  "s|%NUM_SESIONES%|$NUM_SESIONES|g;s|%refPath%|$refPath|g;s|%LOCAL_NAME%|$LO
  > $archivo_salida
 
 #Generando el archivo en markdown
-markdown $1 >> $archivo_salida
+markdown $1 | sed -r 'N; s|\n</code>|</code>|g;'  >> $archivo_salida
 
 #Fin del content,Agregamos pie de pagina, finalmente cerramos el body y del documento html
 cat "$repo_path/plantilla/pie_pagina.html"  >> $archivo_salida
