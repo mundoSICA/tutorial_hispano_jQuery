@@ -2,9 +2,10 @@
 
 <div id="chacoSamurai"><img src="img/samurai_javascript.png" alt="el chaco samurai javascript" /></div>
 
- - [**Sessión 1 - Introducción a jQuery**](./sesion01/index.html)
+ - [**Sesión 1 - Introducción a jQuery**](./sesion01/index.html)
   - [Descripción de este manual]()
   - [Breve referencia <strong>HTML</strong>]()
+  - [Concepto <strong>DOM</strong>]()
   - [Breve referencia <strong>CSS</strong>]()
   - [Software a usar]()
   - [Introducción a <strong>jQuery</strong>]()

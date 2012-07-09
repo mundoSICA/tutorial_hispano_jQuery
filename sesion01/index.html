@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Sessión 1 - Introducción a jQuery</title>
+<title>Sesión 1 - Introducción a jQuery</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
@@ -51,31 +51,70 @@ $(function() {
 });
 </script>
 
-<h1>Sessión 1 - Introducción a jQuery</h1>
+<h1>Sesión 1 - Introducción a jQuery</h1>
 
 <h2>Descripción de este manual</h2>
 
-<p>Este es un pequeño manual <em>básico de <strong>jQuery</strong></em>, el cual consta de 5 capitulos, esta diseñadado para una clase de 2 horas cada capitulo.</p>
+<p>Este es un pequeño manual <em>básico de <strong>jQuery</strong></em>, el cual consta de 5 sesiones, cada una de estas sesiones esta diseñada para una clase de 2 horas.</p>
 
-<p>Este manual esta licenciado bajo <a href="http://creativecommons.org/licenses/by/2.5/mx/"><em>atribución creative commons</em></a>, si desear colaborar te invito a que visites el <a href="https://github.com/mundoSICA/tutorial_hispano_jQuery">repositorio</a> para que puedas ver <em>las instrucciones para los colaboradores</em>.</p>
+<p>El proposito de este manual es ser ayuda en la comprensión de los conceptos básicos de esta libreria, al concluir la lectura de este manual se espera que el lector sea capaz: de comprender casi cualquier código en <strong>jQuery</strong> y continuar su aprendizaje por su cuenta.</p>
+
+<p>Cabe mencionar que esta documentación esta licenciada bajo <strong><em><a href="http://creativecommons.org/licenses/by/2.5/mx/">atribución creative commons</a></em></strong>, <em><strong>sientase libre de modificar, compartir y redistribuir</strong></em>, si desear colaborar te invito a que visites el <a href="https://github.com/mundoSICA/tutorial_hispano_jQuery">repositorio publico</a>.</p>
 
 <h2>Breve referencia <strong>HTML</strong></h2>
 
-<p><strong>HTML</strong>, siglas de <em>HyperText Markup Language</em> («lenguaje de marcado de hipertexto»), hace referencia al <a href="http://es.wikipedia.org/wiki/Lenguaje_de_marcado">lenguaje de marcado</a> para la elaboración de páginas web. Se utiliza para describir la estructura y el contenido en forma de texto. El <strong>HTML</strong> se escribe en forma de «etiquetas», rodeadas por <em>corchetes angulares</em> (<code>&lt;</code>,<code>&gt;</code>). <strong>HTML</strong> también puede describir, hasta un cierto punto, la apariencia de un documento aunque resulta una practica más recomendable incluir hojas de estilos(<strong>CSS</strong>) para este proposito, tambien suele incluir scripts (como <a href="http://es.wikipedia.org/wiki/JavaScript">JavaScript</a>), el cual puede afectar el comportamiento de navegadores web.</p>
+<p><strong>HTML</strong>, siglas de <em>HyperText Markup Language</em> («lenguaje de marcado de hipertexto»), hace referencia al <a href="http://es.wikipedia.org/wiki/Lenguaje_de_marcado">lenguaje de marcado</a> para la elaboración de páginas web. Se utiliza para describir la estructura y el contenido en forma de texto. El <strong>HTML</strong> se escribe en forma de «etiquetas», rodeadas por <em>corchetes angulares</em> (<code>&lt;</code>,<code>&gt;</code>). <strong>HTML</strong> también puede describir, hasta un cierto punto, la apariencia de un documento aunque resulta una practica más recomendable incluir hojas de estilos(<strong>CSS</strong>) para este proposito, tambien suele incluir scripts (como <a href="http://es.wikipedia.org/wiki/JavaScript">JavaScript</a>), el cual puede afectar el comportamiento de navegadores web. <em>fuente: <a href="http://es.wikipedia.org/wiki/HTML">http://es.wikipedia.org/wiki/HTML</a></em></p>
+
+<p>Un ducumento <strong>Html</strong> tiene mas o menos el siguiente aspecto:</p>
+
+<pre><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;Título&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Documento de ejemplo&lt;/h1&gt;
+  &lt;div&gt;
+      &lt;h1&gt;Contenido dentro del div&lt;/h1&gt;
+      &lt;h2&gt;sub título&lt;/h2&gt;
+      &lt;p&gt;parrafo 1&lt;/p&gt;
+      &lt;p&gt;parrafo 2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Las primeras dos lineas describen el tipo de archivo en este caso es <strong>XHTML 1.0 Strict</strong>, en la seguda linea viene la ruta del archivo de definición de datos(<strong>dtd</strong>):</p>
+
+<pre><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;</code></pre>
 
 <blockquote>
   <p>A lo largo de esta manual se usara <strong>XHTML1.0 estricto</strong> almenos que se diga lo contrario.</p>
-
-<p>fuente: <a href="http://es.wikipedia.org/wiki/HTML">http://es.wikipedia.org/wiki/HTML</a></p>
 </blockquote>
 
-<h3>Concepto <strong>DOM</strong></h3>
+<p>Posteriormente viene el head, el cual en este caso contiene solo el titulo del documento, pero aquí se suelen poner tanto información de indexación como solicitudes de archivos necesarios como hojas de estilos y funcionalidades en javascript.</p>
 
-<p>El <em>Document Object Model</em> o <strong>DOM</strong> ('Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos'), proporciona un conjunto estándar de objetos para representar documentos <strong>HTML</strong> y <strong>XML</strong>, un modelo estándar sobre cómo pueden combinarse dichos objetos, y una interfaz estándar para acceder a ellos y manipularlos. A través del DOM, los programas pueden acceder y modificar el contenido, estructura y estilo de los documentos <strong>HTML</strong> y* <em>XML</em>*, que es para lo que se diseñó principalmente.</p>
+<pre><code>&lt;head&gt;
+  &lt;title&gt;Título&lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
 
-<p>En otras parabras el DOM es una interfaz de programación de aplicaciones para acceder, añadir y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (<em>JavaScript</em>).</p>
+<p>Sí desea conocer un poco mas sobre etiquetas validas puedes ver el siguiente ejemplo: <a href="../ejemplos/01.01.Etiquetas_head.html">01.01.Etiquetas_head.html</a>.</p>
+
+<h2>Concepto <strong>DOM</strong></h2>
+
+<p>El <em>Document Object Model</em> o <strong>DOM</strong> ('Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos'), es un estándar de objetos para representar documentos <strong>HTML</strong> y <strong>XML</strong>, A través del dicho estánndar, los programas pueden acceder y modificar el contenido, estructura y estilo.</p>
+
+<p>En otras parabras el DOM es una interfaz de programación de aplicaciones para acceder, añadir y cambiar dinámicamente contenido estructurado en documentos con lenguajes como <em>JavaScript</em>.</p>
+
+<p>La siguiente imagen es una <strong>representación</strong> del <strong>DOM</strong>  del documento anterior:</p>
 
 <p><img src="../img/dom.png" alt="Imagen Dom" title="" /></p>
+
+<p>Como podemos ver, la imagen muestra el documento <strong>Html</strong> en forma de un arbol. Esta representación es también conocida como un arbol <strong>DOM</strong>.</p>
 
 <blockquote>
   <p>El responsable del DOM es el <em>World Wide Web Consortium</em> (<a href="http://www.w3.org/DOM/"><strong>W3C</strong></a>).</p>
@@ -213,8 +252,7 @@ $(function() {
 
 <p>Otra alternativa es usar el metodo find para buscar en un objeto de jQuery el cual me representa una rama del DOM.</p>
 
-<pre><code>$("#idTabla").find('th').css('background', '#ddd');
-</code></pre>
+<pre><code>$("#idTabla").find('th').css('background', '#ddd');</code></pre>
 
 <h2>Lista de ejemplos:</h2>
 
