@@ -89,7 +89,7 @@ background: URL(../img/code_bg.png);text-shadow:1px 1px 0 #000,0 0 5px #000,0 0 
 * html .snippet-wrap .snippet-hide {bottom:25px;}
 .snippet-wrap .snippet-menu pre, .snippet-wrap .snippet-hide pre {background-color:transparent; margin:0; padding:0;}
 .snippet-wrap .snippet-menu a, .snippet-wrap .snippet-hide a {padding:0 5px; text-decoration:underline;}
-.snippet-wrap pre.sh_sourceCode{padding:0;line-height:1.8em;overflow:auto;position:relative;
+.snippet-wrap pre.sh_sourceCode{padding:0;line-height:1em;overflow:auto;position:relative;
 -moz-border-radius:15px;
 -webkit-border-radius:15px;
 border-radius:15px;
