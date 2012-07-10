@@ -108,6 +108,12 @@ blockquote {
 		color: #170C00;
 		opacity:0.9;
 }
+blockquote em{
+	color:#233E48;
+	background:#FFF9D9;
+	border:1px solid #FFF5BD;
+	padding:0 0.3em;
+}
 blockquote p{
   padding:0;
   text-shadow:none;

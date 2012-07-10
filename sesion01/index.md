@@ -71,11 +71,11 @@ Sí desea conocer un poco mas sobre etiquetas validas puedes ver el siguiente ej
 
 ## Concepto **DOM**
 
-El _Document Object Model_ o **DOM** ('Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos'), es un estándar de objetos para representar documentos **HTML** y **XML**, A través del dicho estánndar, los programas pueden acceder y modificar el contenido, estructura y estilo.
+El **Modelo en Objetos para la Representación de Documentos** ó **DOM** (_Document Object Model_), es un estándar de objetos para representar documentos **HTML** y **XML**.
 
-En otras parabras el DOM es una interfaz de programación de aplicaciones para acceder, añadir y cambiar dinámicamente contenido estructurado en documentos con lenguajes como _JavaScript_.
+A través del dicho estándar, los programas pueden acceder y modificar el contenido, estructura y estilo.
 
-La siguiente imagen es una **representación** del **DOM**  del documento anterior:
+La siguiente imagen es una **representación** del **DOM**  del documento visto anteriormente:
 
 ![Imagen Dom](../img/dom.png)
 
@@ -227,9 +227,13 @@ Lista de ejemplos:
 
  1. [Selectores con **CSS**](ejemplos/selector_css.html)
 
-Lecturas externas recomendables:
+
+Enlaces externos recomendables:
 ------------------------------------------------------------------------------------------
 
  - [Libro **CSS** Avanzado](http://www.librosweb.es/css_avanzado/)
  - [Secuencias de caracteres de escape __CSS__](http://mathiasbynens.be/notes/css-escapes)
  - [Como maneja _CSS_ los errores.](http://www.xanthir.com/blog/b4JF0)
+ - [**Sitio oficial jQuery**][http://jquery.com/)
+ - [**Foro de jQuery**][http://forum.jquery.com/)
+ - [**IRC de freeNode canal jQuery**][http://webchat.freenode.net/?channels=#jquery)

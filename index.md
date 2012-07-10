@@ -12,7 +12,7 @@
   - [Agregando <strong>jQuery</strong>]()
   - [Selectores con <strong>jQuery</strong>]()
   - [Lista de ejemplos]()
-  - [Lecturas externas recomendables]()
+  - [Enlaces externos recomendables]()
  - [**Sesión 2 -Caracteristicas principales de jQuery**](./sesion02/index.html)
   - [Trabaja por grupos(<em>Iteración implicita</em>)]()
   - [Diseñado para realizar consultas atraves del <strong>DOM</strong>]()
