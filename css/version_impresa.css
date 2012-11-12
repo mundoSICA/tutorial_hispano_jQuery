@@ -1,0 +1,21 @@
+h1,h2,h3,*{text-shadow:none;}
+h1,h2,h3{color:#000;}
+#content{
+background:#FFF;
+}
+body{
+	text-shadow:none;
+	color:#111;
+}
+pre{font-size:1.2em;}
+a:hover{text-shadow:none;}
+#content{padding-top:5px;}
+div#tabla_contenidos{
+background:none repeat scroll 0 0 #EEE;
+}
+em{
+	color:#233E48;
+	background:#FAFAFA;
+	border:1px solid #EEE;
+	padding:0 0.3em;
+}

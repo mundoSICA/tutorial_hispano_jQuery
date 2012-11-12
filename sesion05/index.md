@@ -1,5 +1,12 @@
 <script  type="text/javascript">
-$(function() {$("pre").snippet("javascript", {style:'darkness'});});
+$(function() {
+$("pre").snippet("javascript", {style:'darkness'});
+$('#algunBoton').click(function() {
+	console.log('entro al a funcion');
+	$('#elementoDinamico').load('file.html');
+});
+
+});
 </script>
 
 Sesión 5 - Ajax y buenas prácticas.
@@ -145,6 +152,26 @@ Si somos detallistas nos daremos cuenta que `console.log(datos);` no garantiza q
 ## Otras funciones Ajax
 
 Existen otras funciones definas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria **Ajax** de la api de **jQuery**:
+
+
+## Ejemplo load
+
+Entre las funciones que ofrece **jQuery** para el control asincrono es la función  `load` esta función se encarga de cargar algun contenido optenido desde alguna url, observe el siguiente esquema.
+
+![Imagen load jQuery](../img/imagen_load.png)
+
+El esquema enterior muestra un documento **Html** el cual contiene un **div** identificado como `elementoDinamico` el cual va a cargar el contenido de `http://url/file.html` en el momento que hagan click sobre el botón identificado como `algunBoton`, bien ahora veamos como quedaria este ejemplo:
+
+	$('#algunBoton').click(function() {
+		$('#elementoDinamico').load('file.html');
+	});
+
+
+<div id='elementoDinamico'></div>
+
+<div class="links_paginacion">
+<a id="algunBoton" href='javascript:;' >algunBoton</a>
+</div>
 
  - <http://api.jquery.com/category/ajax/>
  - [Usando herramientas de calidad de código - por Anton Kovalyov (_inglés_)](http://anton.kovalyov.net/slides/gothamjs/)

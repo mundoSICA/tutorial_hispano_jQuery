@@ -1,3 +1,5 @@
+@import url("version_impresa.css") screen;
+
 div{border:0;padding:0;}
 body{
 	background:#2A2A2A;
@@ -21,6 +23,12 @@ a{
 	text-decoration: none;
 	text-shadow:1px 1px 1px #BBB;
 	color: #0C4AD8;
+}
+em{
+	color:#233E48;
+	background:#F2F2F2;
+	border:1px solid #E6E6E6;
+	padding:0 0.3em;
 }
 a:hover{
 	text-shadow:-1px 2px 1px #FFF,1px -2px 1px #FFF,0 0 5px #001B9C;
@@ -55,7 +63,7 @@ h1{
 h2,h3,h4,h5,h6{color:#222;}
 /* section code */
 pre{
-  background: #DBE7EA;
+  background: #E5E5E5;
   font-family:"Bitstream Vera Sans Mono",Monaco,"Lucida Console",monospace;
   margin: 10px 5px;
   padding:10px 10px 10px 35px;
@@ -99,6 +107,12 @@ blockquote {
 		border-radius: 10px;
 		color: #170C00;
 		opacity:0.9;
+}
+blockquote em{
+	color:#233E48;
+	background:#FFF9D9;
+	border:1px solid #FFF5BD;
+	padding:0 0.3em;
 }
 blockquote p{
   padding:0;

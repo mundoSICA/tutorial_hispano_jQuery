@@ -1,0 +1,717 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Vesión todo en linea</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
+	<link rel="stylesheet" type="text/css" href="./../css/version_impresa.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
+	<script src="../js/jquery-ui-1.8.21.custom.min.js"></script>
+	<script type='text/javascript'>
+	pageConf	= {fileName:'/todo/index.html', sesion:0, num_sesiones:5};
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33125186-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<p><script type="text/javascript">
+$(function() {
+    google_api = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
+    $('#jqueryInput').val(google_api);
+    $('#jqueryInput').focus( function(google_api){
+        $(this).select();
+    }).blur(function(){
+        $(this).val(google_api);
+    });
+    $('h2 + p')
+        .css('color', '#946900')
+        .css('font-style', 'italic');
+    $("h1")
+            .click(function() {
+                console.log('Ejecución del manejador1 para el evento click del h1');
+            })
+            .click(function() {
+                console.log('Ejecución del manejador2 para el evento click del h1');
+            });
+    //test enlaces.
+    $('a.testClick').click( function(){
+        console.log( $(this).text() );
+    });
+    colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00' ];
+    var i = 0;
+    $box = $('div.box');
+    animateLoop = function() {
+    $($box).animate({backgroundColor:colors[(i++)%colors.length]
+        }, 900, function(){
+            animateLoop();
+        });
+    }
+    animateLoop();
+    //Enviando la info de las velocidades
+    console.log($.fx.speeds);
+});
+</script><style type="text/css" media="all">
+div.box{
+    width: 100%;
+    height: 200px;
+    background:#666;
+    border:1px solid #999;
+}
+</style></p>
+
+<h1>Sessión 1 - Introducción a jQuery</h1>
+
+<h2>Descripción de este manual</h2>
+
+<p>Este es un pequeño manual <em>básico de <strong>jQuery</strong></em>, el cual consta de 5 capitulos, esta diseñadado para una clase de 2 horas cada capitulo.</p>
+
+<p>Este manual esta licenciado bajo <a href="http://creativecommons.org/licenses/by/2.5/mx/"><em>atribución creative commons</em></a>, si desear colaborar te invito a que visites el <a href="https://github.com/mundoSICA/tutorial_hispano_jQuery">repositorio</a> para que puedas ver <em>las instrucciones para los colaboradores</em>.</p>
+
+<h2>Breve referencia <strong>HTML</strong></h2>
+
+<p><strong>HTML</strong>, siglas de <em>HyperText Markup Language</em> («lenguaje de marcado de hipertexto»), hace referencia al <a href="http://es.wikipedia.org/wiki/Lenguaje_de_marcado">lenguaje de marcado</a> para la elaboración de páginas web. Se utiliza para describir la estructura y el contenido en forma de texto. El <strong>HTML</strong> se escribe en forma de «etiquetas», rodeadas por <em>corchetes angulares</em> (<code>&lt;</code>,<code>&gt;</code>). <strong>HTML</strong> también puede describir, hasta un cierto punto, la apariencia de un documento aunque resulta una practica más recomendable incluir hojas de estilos(<strong>CSS</strong>) para este proposito, tambien suele incluir scripts (como <a href="http://es.wikipedia.org/wiki/JavaScript">JavaScript</a>), el cual puede afectar el comportamiento de navegadores web.</p>
+
+<blockquote>
+  <p>A lo largo de esta manual se usara <strong>XHTML1.0 estricto</strong> almenos que se diga lo contrario.</p>
+
+<p>fuente: <a href="http://es.wikipedia.org/wiki/HTML">http://es.wikipedia.org/wiki/HTML</a></p>
+</blockquote>
+
+<h3>Concepto <strong>DOM</strong></h3>
+
+<p>El <em>Document Object Model</em> o <strong>DOM</strong> ('Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos'), proporciona un conjunto estándar de objetos para representar documentos <strong>HTML</strong> y <strong>XML</strong>, un modelo estándar sobre cómo pueden combinarse dichos objetos, y una interfaz estándar para acceder a ellos y manipularlos. A través del DOM, los programas pueden acceder y modificar el contenido, estructura y estilo de los documentos <strong>HTML</strong> y* <em>XML</em>*, que es para lo que se diseñó principalmente.</p>
+
+<p>En otras parabras el DOM es una interfaz de programación de aplicaciones para acceder, añadir y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (<em>JavaScript</em>).</p>
+
+<p><img src="../img/dom.png" alt="Imagen Dom" title="" /></p>
+
+<blockquote>
+  <p>El responsable del DOM es el <em>World Wide Web Consortium</em> (<a href="http://www.w3.org/DOM/"><strong>W3C</strong></a>).</p>
+</blockquote>
+
+<h2>Breve referencia <strong>CSS</strong></h2>
+
+<p><em>Cascading Style Sheets</em> (hojas de estilo en cascada). CSS es un lenguaje usado para definir la presentación de un documento estructurado escrito en HTML o XML2 (y por extensión en XHTML). El consorcio web <a href="http://www.w3.org/Style/CSS/">W3C</a> es el encargado de mantener la especificaciones.</p>
+
+<h3>Anatomía CSS</h3>
+
+<p>La anatomía de la sintaxis de CSS es la siguiente:</p>
+
+<p><img src="../img/anatomia_basica_css.png" alt="Imagen Dom" title="" /></p>
+
+<p>Con <strong>CSS</strong> podemos hacer declaraciones de estilo sobre los elementos <strong>HTML</strong>, para esto <strong>CSS</strong> ha definido una serie de selectores.</p>
+
+<p><strong>JQuery</strong> hace uso de estos selectores para interactuar con el DOM, por esta razón es importante que el lector comprenda <strong>CSS</strong>  lamentablemente el alcance de este manual no contempla la explicación detallada de <strong>CSS</strong>. Sin embargo para nuestros fines nos basta con que conozcamos bien el uso de sus selectores por tal motivo he agregado una <a href="../recursos/selectores_css.html">lista de selectores css</a>. </p>
+
+<h2>Software a usar</h2>
+
+<p>Para desarrollar sitios de Internet con <strong>jQuery</strong> basicamente necesitamos 4 cosas:</p>
+
+<ol>
+<li>Editor de texto</li>
+<li>Navegador web.</li>
+<li>La libreria jQuery.</li>
+<li>Servidor web(para la sección <code>ajax</code>, <code>json</code>).</li>
+</ol>
+
+<h3>1. Editor de texto:</h3>
+
+<p>El editor de texto es la herramienta básica para editar archivos: <strong>HTML<em>, _</em>javaScript</strong> y <strong>CSS</strong>. Hay muchos editores muy buenos y usted puede puede usar el editor de su agrado, entre los que recomendamos son los siguientes (<em>ordenados según mis preferencias</em>):</p>
+
+<ul>
+<li><a href="http://www.geany.org/Download/Releases">Geany</a></li>
+<li><a href="http://www.vim.org/download.php">Vim</a></li>
+<li><a href="http://www.gnu.org/software/emacs/">Emacs</a></li>
+<li><a href="http://kate-editor.org/">Kate</a></li>
+<li><a href="http://notepad-plus-plus.org/download/v6.1.3.html">Notepad++</a></li>
+<li><a href="http://kate-editor.org/">TextMate</a></li>
+<li><a href="http://www.sublimetext.com/">sublimeText</a></li>
+</ul>
+
+<p>Sin embargo te recomiendo el <a href="http://www.geany.org/Download/Releases">geany</a> el cual esta disponible para multiples Sistema operativos, ademas de agregarle el <a href="http://mundosica.github.com/geany-web-ninja/">geany-web-ninja</a> el cual es una colección de archivos de configuración orientadas al desarrollo web. </p>
+
+<h3>2. Navegador web:</h3>
+
+<p>Por cuestiones de pruebas te recomiendo que tengas todos los navegadores que esten disponibles en tu <strong>S.O.</strong>, sin embargo para  desarrollar/depurar te comiendo el <a href="http://www.mozilla.org/en-US/firefox/all.html#es-MX"><strong>firefox</strong></a> con la extensión <a href="https://addons.mozilla.org/en-US/firefox/addon/firebug/?src=search"><strong>firebug</strong></a>.</p>
+
+<p><img src="../img/firefox_con_firebug.png" alt="Imagen firefox con el complemento firebug" title="" /></p>
+
+<p>Otra de las ventajas que tiene es que a partir de la <a href="http://arstechnica.com/business/2012/03/firefox-11-released-with-style-editor-and-3d-dom-viewer/">versión 11</a> de <strong>Mozilla Firefox</strong>, trae integrado el <em><strong>3D inspector</strong></em> el cual nos permite analizar la profundidad de las capas <strong>CSS</strong> desde una forma muy gráfica, como podemos ver a continuación:</p>
+
+<p><img src="../img/3d_inspector.png" alt="Imagen firefox con el complemento firebug" title="" /></p>
+
+<blockquote>
+  <p>Otra razón para usar firefox es que es un proyecto de codigo libre y abierto, distribuyendose bajo <a href="http://es.wikipedia.org/wiki/Mozilla_Firefox#Licencias">triple licencia</a>: <ul><li>Licencia Pública de Mozilla (MPL)</li><li>Licencia pública general de GNU (GPL)</li><li>Licencia pública general reducida de GNU (LGPL).</li></ul></p>
+</blockquote>
+
+<h3>3. La libreria jQuery.</h3>
+
+<p><strong>JQuery</strong> es una libreria en constante evolución, te recomiendo usar la <a href="http://docs.jquery.com/Downloading_jQuery">libreria más reciente</a>, ya que en cada nueva versión se integran caracteristicas nuevas al tiempo que se mejoran las anteriores, la imagen siguiente representa una compativa en el rendimiento de <strong style='background:#36c;color:white;text-shadow:none'>jQuery 1.6.4</strong>  VS <strong style='background:#dc3912;color:white;text-shadow:none'>jQuery 1.7</strong>.</p>
+
+<p><img src="../img/compartiva_jquery_1.6.4_vs_1.7.png" alt="compartiva jQuery1.6.4 vs Query1.7" title="" /></p>
+
+<blockquote>
+  <p>fuente: <a href="http://blog.jquery.com/2011/11/03/jquery-1-7-released/">blog.jquery.com/2011/11/03/jquery-1-7-released</a></p>
+</blockquote>
+
+<h3>4. Servidor web.</h3>
+
+<p>Un servidor web es un equipo que esta en la escucha del puerto http(<code>80</code>), para nuestros fines nos es suficiente con instalar <a href="http://httpd.apache.org/"><strong>apache web server</strong></a>, sin embargo cuando se habla de servidor web casi siempre se incluye <strong>apache</strong>, <strong>php</strong> y <strong>msql</strong>,si deseas tener todos estos paquetes los cuales te seran utiles a futuro te recomiendo instalar un <a href="http://www.apachefriends.org/en/xampp.html"><strong>xampp</strong></a> el cual esta disponible para:</p>
+
+<ul>
+<li>GNU/Linux</li>
+<li>Mac &copy;</li>
+<li>Windows &copy;</li>
+</ul>
+
+<h2>Introducción a <strong>jQuery</strong></h2>
+
+<p><strong>jQuery</strong> es una biblioteca de <em>JavaScript</em>, creada inicialmente por <a href="http://ejohn.org/">John Resig</a>, que nos permite simplificar la manera de interactuar con los documentos <strong>HTML</strong>, manipular el árbol <strong>DOM</strong>, manejar eventos, desarrollar animaciones y agregar interacción con la técnica <strong>AJAX</strong> a páginas web.</p>
+
+<blockquote>
+  <p>Extracto: <a href="http://es.wikipedia.org/wiki/JQuery">http://es.wikipedia.org/wiki/JQuery</a></p>
+</blockquote>
+
+<h2>Agregando <strong>jQuery</strong></h2>
+
+<p>Una vez que tenemos la libreria <a href="http://docs.jquery.com/Downloading_jQuery"><strong>jQuery más reciente</strong></a>, lo siguiente es incluir la libreria en nuestros documentos html, esto lo hacemos, agregando el script dentro de la cabecera del documento.</p>
+
+<pre>&lt;head&gt;
+  &lt;!-- agregando libreria jQuery --&gt;
+  &lt;script type='text/javascript' src='js/jquery1.7.3.js'&gt;&lt;/script&gt;
+&lt;/head&gt;</pre>
+
+<p>Por otra parte tambien puedes agregar la libreria directo del servidor de google</p>
+
+<p><input id='jqueryInput' value=''></p>
+
+<h2>Selectores con <strong>jQuery</strong></h2>
+
+<p>Quizás la propiedad más significativa de <strong>jQuery</strong> es su flexibilidad para hacer consultas a través del <strong>DOM</strong>(de ahí el nombre).</p>
+
+<p><strong>jQuery</strong> basicamente nos permite hacer 3 tipos de consultas:</p>
+
+<ul>
+<li>[Consultas <strong>CSS</strong>]</li>
+<li><a href="http://www.ibm.com/developerworks/xml/library/x-xpathjquery/">Consultas <strong>xPath</strong></a></li>
+<li>[Consultas <strong>Trasversales</strong>]</li>
+</ul>
+
+<p>Por cuestiones del alancance de este manual, sólo veremos las consultas <strong>CSS</strong> y algunos metodos <strong>trasversales</strong>, dejando un poco de lado las consultas <strong>xPath</strong> ya que casi no se usan pero es bueno que el lector sepa que existen y que tambien son una forma de acceder a los elementos.</p>
+
+<p>En el capitulo pasado conocimos la anatomia de <strong>CSS</strong> si usted tiene alguna duda sobre los selectores CSS que usaremos le invito a consultar la siguiente tabla:</p>
+
+<ul>
+<li><a href="../recursos/selectores_css.html">lista de selectores css</a></li>
+</ul>
+
+<h3>Trasversatilidad</h3>
+
+<p>La transversatilidad es un <a href="http://api.jquery.com/category/traversing/">conjunto de metodos</a> definidos por <strong>jQuery</strong> para refinamiento de selectores, para explicar esto ocuparemos 2 funciones.</p>
+
+<ul>
+<li><strong>find</strong>: Nos permite realizar una consulta sobre un objeto jQuery.</li>
+<li><strong>filter</strong>: Nos permite realizar un filtrado, descartando elementos, sobre un objeto jQuery.</li>
+</ul>
+
+<p>Imaginemos que tenemos una <em>tabla</em> que tiene como atributo <strong>id</strong> el valor <strong>idTabla</strong>, el cual queremos accecer a todos sus elementos th, una forma de hacerlo seria:</p>
+
+<pre><code>$("#idTabla th").css('background', '#ddd');
+</code></pre>
+
+<p>Otra alternativa es usar el metodo find para buscar en un objeto de jQuery el cual me representa una rama del DOM.</p>
+
+<pre><code>$("#idTabla").find('th').css('background', '#ddd');
+</code></pre>
+
+<h2>Lista de ejemplos:</h2>
+
+<ol>
+<li><a href="ejemplos/selector_css.html">Selectores con <strong>CSS</strong></a></li>
+</ol>
+
+<h2>Lecturas externas recomendables:</h2>
+
+<ul>
+<li><a href="http://www.librosweb.es/css_avanzado/">Libro <strong>CSS</strong> Avanzado</a></li>
+<li><a href="http://mathiasbynens.be/notes/css-escapes">Secuencias de caracteres de escape <strong>CSS</strong></a></li>
+<li><a href="http://www.xanthir.com/blog/b4JF0">Como maneja <em>CSS</em> los errores.</a></li>
+</ul>
+
+<h1>Sesión 2 -Caracteristicas principales de jQuery.</h1>
+
+<h2>Trabaja por grupos(<em>Iteración implicita</em>).</h2>
+
+<p>Una carácteristica muy interesante es que los metodos de <strong>jQuery</strong> que realizan una consulta trabajan con iteración implicita, por ejemplo, la consulta.</p>
+
+<pre><code>$('h2')
+</code></pre>
+
+<p>Nos devuelve todos los titulos nivel 2 (<code>h2</code>) que esten en la página, ahora si por ejemplo quisieramos cambiarle el color a un gris obscuro (<code>#333</code>), esto lo podriamos hacer de la siguiente manera.</p>
+
+<pre><code>$.each($('h2'), function() {
+    $(this).css("color", "#333");
+});
+</code></pre>
+
+<p>En este caso estamos ocupando el metodo <code>each</code> el nos dice que para cada titulo en la selección ejecuta una función la cual le cambia el color.</p>
+
+<p>De momento no se preocupe en comprender el each, lo importante es que comprenda que estamos iterando explicitamente para realizar determinada acción sobre cada elemento en la selección.</p>
+
+<p>Existe una forma de hacer esto más fácil y es ocupando este comportamiento de trabajar por grupos de jQuery, en este caso la función <code>css</code> puede trabajar sobre toda una selección:</p>
+
+<pre><code>$('h2').css('color', '#333');
+</code></pre>
+
+<p>En general las funciones que tengan esta forma:</p>
+
+<pre><code>$('selector').funcionNombre(param1,param2,...);
+</code></pre>
+
+<p>Trabajan sobre toda la selección, es decir si la selección es todo un grupo la función se ejecutara sobre todos los elementos. A esta funciones las llamaremos <code>jQuery.fn.funcionNombre</code> o bien su forma reducida <code>$.fn.funcionNombre</code> ya que pertenecen al espacio de nombre <code>fn</code> de jQuery.</p>
+
+<p>Cuando hacemos referencia a <code>jQuery.fn</code> se hace referencia al espacio de nombre de <strong>jQuery</strong> del prototipo es decir de una extensión de <strong>jQuery</strong>, <code>jQuery.fn</code> es también un alias de <code>jQuery.prototype</code> <a href="https://github.com/mundoSICA/tutorial_hispano_jQuery/blob/gh-pages/js/jquery-1.7.2.js#L97"></a>.</p>
+
+<h2>Diseñado para realizar consultas atraves del <strong>DOM</strong>.</h2>
+
+<p>Quizas la principal caracteristica de <strong>jQuery</strong> es que esta diseñado para realizar consultas a travez de el <strong>DOM</strong>, como ya se menciono antes, <strong>jQuery</strong> nos permite realizar consultas <strong>CSS</strong>, <strong>xPath</strong> y <strong>trasversales</strong>.</p>
+
+<pre><code>$('h2 + p').css('color', '#946900');
+$('h2 + p').css('font-style', 'italic');
+</code></pre>
+
+<p>Con esto indicamos que todo parrafos(<code>p</code>) inmediatamente seguidos(<code>+</code>) de un titulo nivel 2(<code>h2</code>), va a tomar el color de la letra a café y el estilo de la fuente sera del tipo italica.</p>
+
+<p>No abuse de esta característica, la tarea de realizar una consulta atravez del <strong>DOM</strong> puede llegar a ser algo bastente complejo (<em>dependiendo de la consulta</em>).</p>
+
+<p>Una mejor opción es almacenar la consulta realizada en una variable:</p>
+
+<pre><code>$parrafosBajoTitulo = $('h2 + p');
+$parrafosBajoTitulo.css('color', '#946900');
+$parrafosBajoTitulo.css('font-style', 'italic');
+</code></pre>
+
+<blockquote>
+  <p>Es buena práctica agregar el prefijo <code>$</code> a las variables que almacenan el resultado de una consulta.</p>
+</blockquote>
+
+<h2>Es un sistema modular.</h2>
+
+<ul>
+<li><a href="https://github.com/jquery/plugins.jquery.com">jQuery plugins</a></li>
+<li><a href="http://jqueryui.com/">jQuery UI</a></li>
+<li><a href="http://jquerymobile.com/">jQuery mobile</a></li>
+</ul>
+
+<h2>Chaining.</h2>
+
+<p>Atienda al siguiente código:</p>
+
+<pre><code>$('h2').css('color','red');
+$('h2').text('Cambiando el contenido a todos los elementos h2');
+</code></pre>
+
+<p>Ahora comparelo con el siguiente código:</p>
+
+<pre><code>$('h2')
+            .css('color','red')
+            .text('Cambiando el contenido a todos los elementos h2');
+</code></pre>
+
+<p>¿Cual cree que sea mejor?, argumente su respuesta.</p>
+
+<h2>Enlaces externos.</h2>
+
+<ul>
+<li><a href="http://www.w3.org/TR/html5/global-attributes.html#custom-data-attribute">Atributos personalizados</a></li>
+</ul>
+
+<h1>Sesión 3 - Manejo de eventos</h1>
+
+<h2>Introducción a los eventos.</h2>
+
+<p><strong>jQuery</strong> define una lista de eventos y funciones para la administración de los mismos, la sintaxis por defecto para un manejador de evento es de la siguiente forma <code>$.fn.nombreEvento</code>.</p>
+
+<pre><code>$('Selector').nombreEvento( function(){
+    //funcion que administra el evento.
+    //this es el elemento que disparo el evento.
+}
+</code></pre>
+
+<p>Aquí es importante resaltar que <strong>this</strong> contendra la instancia del elemento que disparo el evento, por ejemplos si a los enlaces(<code>a</code>) le agregamos el evento <code>click</code>, this contendra la instancia del enlace especifo sobre del cual  hallamos hecho click, analice el siguiente codigo.</p>
+
+<p><strong>Codigo HTML</strong></p>
+
+<pre><code>&lt;a class='testClick' href='#'&gt;enlace 1&lt;/a&gt;
+&lt;a class='testClick' href='#'&gt;enlace 3&lt;/a&gt;
+&lt;a class='testClick' href='#'&gt;enlace 2&lt;/a&gt;
+</code></pre>
+
+<p><strong>Código jQuery</strong></p>
+
+<pre><code>$('a.testClick').click( function(){
+    console.log( $(this).text() );
+}
+</code></pre>
+
+<p><em>* Como puede ver *</em></p>
+
+<ul>
+    <li><a class='testClick' href='#'>enlace 1</a></li>
+    <li><a class='testClick' href='#'>enlace 3</a></li>
+    <li><a class='testClick' href='#'>enlace 2</a></li>
+</ul>
+
+<p>En este caso mandaremos a la salida de la consola el contenido del enlace que se precione.</p>
+
+<h2>Comportamiento en cola.</h2>
+
+<p>Observe el siguiente código.</p>
+
+<pre><code>    $("h1")
+        .click(function() {
+            console.log('Ejecución del manejador1 para el evento click del h1');
+        })
+        .click(function() {
+            console.log('Ejecución del manejador2 para el evento click del h1');
+        });
+</code></pre>
+
+<p>¿Que cree que suceda cuando le demos click a un h1 en esta página?.</p>
+
+<p>La respuesta la podemos encontrar al reflexionar que sucede cuando mandamos a llamar miltiples veces el evento <code>document.onReady</code>. Lo que hace <strong>jQuery</strong> es ocupar una cola para administrar los eventos, de esta forma se pueden agregar multiples funciones sobre el mismo <code>evento/elemento</code>, sin más el resultado en la consola seria:</p>
+
+<pre><code>Ejecución del manejador1 para el evento click del h1
+Ejecución del manejador2 para el evento click del h1
+</code></pre>
+
+<h2>Borrando eventos función off.</h2>
+
+<p>Podemos desvincular los eventos con la función <code>off</code> po ejemplo para eliminar el evento click en H1 podriamos hacer.</p>
+
+<pre><code>$("h1").off('click');
+</code></pre>
+
+<p>Con esto eliminariamos todos los eventos click del <code>h1</code>, si quisieramos eliminar un unico evento click, podriamos hacer uso de los espacios de nombres.</p>
+
+<p>Desde la versión <code>1.7</code> de <strong>jQuery</strong>, </p>
+
+<h2>Enlaces recomendados.</h2>
+
+<ul>
+<li><a href="http://www.quirksmode.org/js/events_order.html#link1">Dos formas de propagación de un evento</a></li>
+</ul>
+
+<h1>Sesión 4 - Efectos y modificaciones sobre el DOM.</h1>
+
+<h2>insertbefore</h2>
+
+<pre><code>$('&lt;p&gt;Test&lt;/p&gt;').insertBefore('#selector');
+</code></pre>
+
+<h2>before</h2>
+
+<pre><code>$('#selector').before('&lt;p&gt;Test&lt;/p&gt;');
+</code></pre>
+
+<h2>insertafter</h2>
+
+<pre><code>$('&lt;p&gt;Test&lt;/p&gt;').insertAfter('#selector');
+</code></pre>
+
+<h2>after</h2>
+
+<pre><code>$('#selector').after('&lt;p&gt;Test&lt;/p&gt;');
+</code></pre>
+
+<h2>append</h2>
+
+<pre><code>$('#selector').append('&lt;p&gt;Test&lt;/p&gt;');
+</code></pre>
+
+<h2>appendto</h2>
+
+<pre><code>$('&lt;p&gt;Test&lt;/p&gt;').appendTo('#selector');
+</code></pre>
+
+<h2>fadeIn</h2>
+
+<pre><code>$('%selector').fadeIn();
+</code></pre>
+
+<p>Tambien puede llevar un argumento como <code>slow</code>, <code>fast</code>.</p>
+
+<pre><code>$('%selector').fadeIn('slow');
+</code></pre>
+
+<p>ó agregar un valor en milisegundos.</p>
+
+<pre><code>$('%selector').fadeIn('slow');
+</code></pre>
+
+<p>Los valores de <code>slow</code>, <code>fast</code>, estan predeterminados en la libreria usted puede ver los valores, predeterminados de los efectos.</p>
+
+<pre><code>console.log($.fx.speeds);
+</code></pre>
+
+<h2>Animate</h2>
+
+<p>Forma simple:</p>
+
+<pre><code>$("selector").animate('width', "500px");
+</code></pre>
+
+<p>Forma relativa:</p>
+
+<pre><code>$("selector").animate({"left": "+=50px"}, "slow");
+</code></pre>
+
+<p>Multiples parametros.</p>
+
+<pre><code>$("selector").animate({
+    width: "70%",
+    opacity: 0.4,
+    marginLeft: "0.6in",
+    fontSize: "3em",
+    borderWidth: "10px"
+}, 1500 );
+</code></pre>
+
+<h2>animate sobre un color.</h2>
+
+<p>Desgraciadamente efectos como los colores no funcionan del todo bien, anteriormente habia un plugin <code>jquery-plugin-color</code>que nos ayudaba a realizar integrar comportamiento pero ya no le han dado mantenimiento, sin embargo una forma de realizar determinada característica es por medio de <a href="http://jqueryui.com/download">jQuery-Ui</a>, del cual para este caso requerimos el nucleo <strong>jQuery-Ui</strong> (<code>core</code>),  el nucleo de los efectos (<code>Effects Core</code>) , y finalmente la opción <code>Effect "Highlight"</code>, una vez esto optenemos un archivo con el nombre <code>jquery-ui-1.8.21.custom.min.js</code> el cual contiene de forma compacta lo que requerimos, ahora lo siguiente es agregarla a la cabecera de nuestro archivo y hacer un tests:</p>
+
+<h4>Código HTML.</h4>
+
+<pre><code>&lt;div class="box"&gt;&lt;/div&gt;
+</code></pre>
+
+<h4>Código CSS.</h4>
+
+<pre><code>    div.box{
+        width: 100%;
+        height: 200px;
+        background:#666;
+        border:1px solid #999:
+    }
+</code></pre>
+
+<h4>Código jQuery.</h4>
+
+<pre><code>colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00' ];
+var i = 0;
+$box = $('div.box');
+animate_loop = function() {      
+$($box).animate({backgroundColor:colors[(i++)%colors.length]
+    }, 900, function(){
+        animate_loop();
+    });
+}
+animate_loop();
+</code></pre>
+
+<h4>Resultado</h4>
+
+<div class="box"></div>
+
+<h2>show</h2>
+
+<p>forma simple.</p>
+
+<pre><code>$('selector').show();
+</code></pre>
+
+<p>forma con velocidad.</p>
+
+<pre><code>$('slector').show('fast');
+</code></pre>
+
+<h2>hide</h2>
+
+<p>forma simple.</p>
+
+<pre><code>$('selector').hide();
+</code></pre>
+
+<p>forma con velocidad.</p>
+
+<pre><code>$('selector').hide('fast');
+</code></pre>
+
+<h2>Lecturas recomendadas.</h2>
+
+<ul>
+<li><a href="http://api.jquery.com/category/effects/">Categoría efectos <strong>jQuery</strong> - http://api.jquery.com/category/effects/</a></li>
+<li><a href="http://api.jquery.com/category/manipulation/">Manipulación <strong>jQuery</strong> - http://api.jquery.com/category/manipulation/</a></li>
+<li><a href="http://jqueryui.com/download">Efectos jQuery-Ui - http://jqueryui.com/download</a></li>
+</ul>
+
+<h1>Sesión 5 - Ajax y buenas prácticas.</h1>
+
+<h2>Ajax.</h2>
+
+<p><strong>Ajax</strong>, acrónimo de Asynchronous JavaScript And XML (<em>JavaScript asíncrono y XML</em>), es una técnica de desarrollo web para crear aplicaciones interactivas o RIA (Rich Internet Applications). Estas aplicaciones se ejecutan en el cliente, es decir, en el navegador de los usuarios mientras se mantiene la comunicación asíncrona con el servidor en segundo plano. De esta forma es posible realizar cambios sobre las páginas sin necesidad de recargarlas, lo que significa aumentar la interactividad, velocidad y usabilidad en las aplicaciones.</p>
+
+<p>En concepta parte del hecho que desde javascript podemos realizar solicitudes( <em>httpRequests</em> ) y que por medio que <em>javascript</em> no espera el resultado de dicha solicitud para continuar su flujo, veamos un ejemplo con javascript puro.</p>
+
+<h4>Opteniendo un httpRequests.</h4>
+
+<pre><code>//regresa un Requests Object
+function createRequestObject() {
+    var ro;
+    if (window.XMLHttpRequest) {
+            ro = new XMLHttpRequest();
+    } else {
+            ro = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if (!ro)
+            debug("Couldn't start XMLHttpRequest object");
+    return ro;
+}
+</code></pre>
+
+<h4>Manejador de la respuesta.</h4>
+
+<pre><code>function handleResponse() {
+if (http.readyState != 4 &amp;&amp; http.readyState != 3)
+    return;
+if (http.readyState == 3 &amp;&amp; http.status != 200)
+    return;
+if (http.readyState == 4 &amp;&amp; http.status != 200) {
+    clearInterval(pollTimer);
+    inProgress = false;
+}
+// In konqueror http.responseText is sometimes null here...
+if (http.responseText === null)
+    return;
+
+while (prevDataLength != http.responseText.length) {
+    if (http.readyState == 4  &amp;&amp; prevDataLength == http.responseText.length)
+        break;
+    prevDataLength = http.responseText.length;
+    var response = http.responseText.substring(nextLine);
+    var lines = response.split('\n');
+    nextLine = nextLine + response.lastIndexOf('\n') + 1;
+    if (response[response.length-1] != '\n')
+        lines.pop();
+
+    for (var i = 0; i &lt; lines.length; i++) {
+        // ...
+    }
+}
+
+if (http.readyState == 4 &amp;&amp; prevDataLength == http.responseText.length)
+    clearInterval(pollTimer);
+
+inProgress = false;
+}
+</code></pre>
+
+<h4>Usandolos</h4>
+
+<pre><code>function startProcess(dataUrl) {
+    http = createRequestObject();
+    http.open('get', dataUrl);
+    http.onreadystatechange = handleResponse;
+    http.send(null);
+
+    pollTimer = setInterval(handleResponse, 1000);
+}
+</code></pre>
+
+<h2>Ajax y Jquery.</h2>
+
+<h4>Ejemplo básico</h4>
+
+<pre><code>$.ajax({
+    url: 'ajax/test.html',
+    success: function(data) {
+        $('.result').html(data);
+        alert('Load was performed.');
+    }
+});
+</code></pre>
+
+<h3>Quitando la opción asincrona.</h3>
+
+<p>Observe el siguiente código.</p>
+
+<pre><code>var datos  = null;
+$.ajax({
+    url: 'ajax/test.html',
+    success: function(data) {
+        datos = data;
+    }
+});
+console.log(datos);
+</code></pre>
+
+<p>Datos sera <code>null</code>, ya que la respuesta es asincrona es decir <code>console.log()</code> no espera la finalización de <code>$.ajax</code> para ejecutarse, hacer <code>async</code> igual a <code>false</code> resulta una opción util para esta logica.</p>
+
+<pre><code>var datos  = null;
+$.ajax({
+    url: 'ajax/test.html',
+    //detiene la ejecución.
+    async : false,
+    success: function(data) {
+        datos = data;
+    }
+});
+console.log(datos);
+</code></pre>
+
+<p>Otra opción para esperar que ajax se haya ejecutado para realizar determinada acción seria encaminar la funcion <code>done</code> como se muestra acontinuación.</p>
+
+<pre><code>var datos  = null;
+$.ajax({
+    url: 'ajax/test.html',
+    success: function(data) {
+        datos = data;
+    }
+}).done(function( msg ) {
+    console.log(datos);}
+);
+</code></pre>
+
+<h4>Ejemplo Manejando el error.</h4>
+
+<p>Si somos detallistas nos daremos cuenta que <code>console.log(datos);</code> no garantiza que los datos no sean nulos, pues la respuesta puede llegar a fallar y en este caso tal vez deseamos rellenar a datos con valores por defecto.</p>
+
+<pre><code>var datos  = null;
+$.ajax({
+    url: 'ajax/test.html',
+    success: function(data) {
+        datos = data;
+    }
+    error: function() {
+        datos = {v1:'valor defecto 1', v2:'valor defecto 2'};
+    }
+}).done(function( msg ) {
+    console.log(datos);}
+);
+</code></pre>
+
+<h2>Otras funciones Ajax</h2>
+<p>Existen otras funciones definas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria <strong>Ajax</strong> de la api de <strong>jQuery</strong>:</p>
+<ul>
+<li><a href="http://api.jquery.com/category/ajax/">http://api.jquery.com/category/ajax/</a></li>
+<li><a href="http://anton.kovalyov.net/slides/gothamjs/">Usando herramientas de calidad de código - por Anton Kovalyov (<em>inglés</em>)</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/es_ES">Principios para escribir JavaScript consistente e idiomático</a></li>
+</ul>
+</div><!-- end content -->
+</body>
+</html>

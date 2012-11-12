@@ -69,8 +69,7 @@ $(function() {
 
 <pre><code>&lt;a class='testClick' href='#'&gt;enlace 1&lt;/a&gt;
 &lt;a class='testClick' href='#'&gt;enlace 3&lt;/a&gt;
-&lt;a class='testClick' href='#'&gt;enlace 2&lt;/a&gt;
-</code></pre>
+&lt;a class='testClick' href='#'&gt;enlace 2&lt;/a&gt;</code></pre>
 
 <p><strong>Código jQuery</strong></p>
 
@@ -99,16 +98,14 @@ $(function() {
         })
         .click(function() {
             console.log('Ejecución del manejador2 para el evento click del h1');
-        });
-</code></pre>
+        });</code></pre>
 
 <p>¿Que cree que suceda cuando le demos click a un h1 en esta página?.</p>
 
 <p>La respuesta la podemos encontrar al reflexionar que sucede cuando mandamos a llamar miltiples veces el evento <code>document.onReady</code>. Lo que hace <strong>jQuery</strong> es ocupar una cola para administrar los eventos, de esta forma se pueden agregar multiples funciones sobre el mismo <code>evento/elemento</code>, sin más el resultado en la consola seria:</p>
 
 <pre><code>Ejecución del manejador1 para el evento click del h1
-Ejecución del manejador2 para el evento click del h1
-</code></pre>
+Ejecución del manejador2 para el evento click del h1</code></pre>
 
 <h2>Borrando eventos función off.</h2>
 

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Etiquetas en la cabecera.</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
+	<script type='text/javascript'>
+	pageConf	= {fileName:'/ejemplos/01.01.Etiquetas_head.html', sesion:0, num_sesiones:5};
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33125186-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div id='head'>
+	<a href='http://www.adsl.org.mx/' id='logoADSL'>Academia de software libre</a>
+	<h1>
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<script  type="text/javascript">
+$(function() {
+    $("pre").snippet("javascript", {style:'darkness'});
+});
+</script>
+
+<h1>Etiquetas en la cabecera.</h1>
+
+<p>Todos los suguientes ejemplos se contempla que estaran dentro de la etiqueta <code>head</code> </p>
+
+<pre><code>&lt;head&gt;
+    /* aqui viene el código de ejemplo */
+&lt;/head&gt;</code></pre>
+
+<h2>Inserción de código javascript</h2>
+
+<p>Básicamente hay 2 formas de insertar código javascript en nuestros documentos <strong>Html</strong>, la primera es la inserción en linea:</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;
+    //Código javascript
+&lt;/script&gt;
+</code></pre>
+
+<p>La segunda forma es definir el código en otro archivo y mandarlo a llamar, esto lo hacemos de la siguiente forma:</p>
+
+<pre><code>&lt;!-- Insertando /js/miScript.js --&gt;</code></pre>
+
+<p><script type="text/javascript" src="/js/miScript.js"></script>
+    <!-- Insertando /js/jquery.min.js -->
+    <script type='text/javascript' src='/js/jquery.min.js'></script></p>
+
+<h2>Insercción de código CSS.</h2>
+
+<p>De forma analoga hay 2 formas de insertar código CSS en nuestras páginas web, la primera inserción en linea:</p>
+
+<pre><code>&lt;style type="text/css" media="all"&gt;
+    /* código css */
+&lt;/style&gt;
+</code></pre>
+
+<p>La segunda mandando a llamar archivo remoto:</p>
+
+<pre><code>&lt;link rel="stylesheet" type="text/css" media="all" href="/ruta/estilo.css" /&gt;</code></pre>
+
+<h2>Tipo de carácteres.</h2>
+
+<p>Es util decir el tipo de carácteres que tendra la página, por ejemplo para carácteres acentuados como es el caso de la lengua hispana:</p>
+
+<pre><code>&lt;meta http-equiv="content-type" content="text/html;charset=utf-8" /&gt;
+</code></pre>
+
+<h2>Descripción de la página.</h2>
+
+<p>Existen una serie de <code>etiquetas</code> y <code>metadatos</code> que sirven para describir la información de la página esta información es utilizada por los nevagadores para indexas. La información siguiente fue extraida del artículo <a href="http://support.google.com/webmasters/bin/answer.py?hl=es&amp;hlrm=en&amp;answer=79812"><em>google metaetiquetas</em></a>.</p>
+
+<h3>Title.</h3>
+
+<pre><code>&lt;title&gt;título de la página&lt;/title&gt;</code></pre>
+
+<p>Se suele utilizar en junto con la "descripción"(<code>description</code>). El contenido de esta etiqueta suele mostrarse como el título de los resultados de búsqueda (y, por supuesto, en el navegador del usuario). <a href="http://support.google.com/webmasters/bin/answer.py?hl=es&amp;answer=35624">Más información</a>.</p>
+
+<h3>Descripción (<code>Descriptión</code>)</h3>
+
+<p>Proporciona una descripción breve de la página. En algunos casos esta descripción se utiliza como parte del fragmento que se muestra en los resultados de búsqueda. <a href="http://support.google.com/webmasters/bin/answer.py?hl=es&amp;answer=35624">Más información</a>.</p>
+
+<pre><code>&lt;meta name="description" content="Descripción de la página" /&gt;
+</code></pre>
+
+<h3>Robots.</h3>
+
+<p>Nos ayudan a controlar el comportamiento del rastreo y la indexación del motor de búsqueda. La metaetiqueta robots se aplica a todos los motores de búsqueda. Los valores predeterminados son "index, follow" (igual que "all") y no es necesario especificarlos. Google entiende los siguientes valores (si especificas varios valores, sepáralos con una coma):</p>
+
+<ul>
+<li><strong>noindex</strong>: impide que la página se indexe.</li>
+<li><strong>nofollow</strong>: impide que los buscadores sigan los enlaces de esta página.</li>
+<li><strong>nosnippet</strong>: impide que un fragmento se muestre en los resultados de búsqueda.</li>
+<li><strong>noodp</strong>: impide que se utilice la descripción alternativa de ODP/DMOZ.</li>
+<li><strong>noarchive</strong>: impide que Google muestre el enlace En caché de una página.</li>
+<li><strong>unavailable_after[date]</strong>: te permite especificar la hora y la fecha exactas en que quieres detener el rastreo y la indexación de la página.</li>
+<li><strong>noimageindex</strong>: te permite especificar que no quieres que la página aparezca como la página de referencia de una imagen que se muestra en los resultados de la búsqueda de Google.</li>
+</ul>
+
+<p>Ahora también se puede especificar esta información en la cabecera de las páginas mediante la directiva de cabecera HTTP "X-Robots-Tag". Esto resulta especialmente útil para limitar la indexación de archivos que no sean HTML, como archivos gráficos y otro tipo de documentos. Más información sobre el archivo <a href="https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag">robots.txt</a>.</p>
+
+<pre><code>&lt;!-- quitando indexación y no explorar --&gt;
+&lt;meta name="robots" content="noindex, nofollow"&gt;
+</code></pre>
+
+<h3>Parabras clave <strong>Keywords</strong>:</h3>
+
+<p>Pese a que esta <em>meta-etiqueta</em> no es utilizada por <strong>google</strong> para indexar busquedas, es recomendable utilizarla ya que otros buscadores como <strong>Yahoo</strong> si lo hace, la sintaxis es la siguiente:</p>
+
+<pre><code>&lt;meta name="Keywords" content="jquery,manual,ejemplos,metaetiquetas,keywords"&gt;</code></pre>
+
+<p>Como podemos ver podemos definir multiples parabras clave separadas por coma (<code>,</code>).</p>
+
+<h2>Enlaces recomendados:</h2>
+
+<ul>
+<li><strong>Google <code>metaetiquetas</code></strong>: <a href="http://support.google.com/webmasters/bin/answer.py?hl=es&amp;hlrm=en&amp;answer=79812">http://support.google.com/webmasters/bin/answer.py?hl=es&amp;hlrm=en&amp;answer=79812</a></li>
+<li><strong>Robots bloqueando seguimiento</strong>: <a href="http://searchengineland.com/meta-robots-tag-101-blocking-spiders-cached-pages-more-10665">http://searchengineland.com/meta-robots-tag-101-blocking-spiders-cached-pages-more-10665</a></li>
+<li><strong>Yahoo como agregar metatags</strong>: <a href="http://help.yahoo.com/l/us/yahoo/smallbusiness/webhosting/promote/promote-03.html">http://help.yahoo.com/l/us/yahoo/smallbusiness/webhosting/promote/promote-03.html</a></li>
+<li><strong>Yahoo metatags por defecto</strong>: <a href="http://help.yahoo.com/l/us/yahoo/smallbusiness/webhosting/yss/promote/promote-04.html">http://help.yahoo.com/l/us/yahoo/smallbusiness/webhosting/yss/promote/promote-04.html</a></li>
+<li><strong>Google Microdatos HTML5</strong>: <a href="http://support.google.com/webmasters/bin/answer.py?hl=es&amp;hlrm=en&amp;answer=176035">http://support.google.com/webmasters/bin/answer.py?hl=es&amp;hlrm=en&amp;answer=176035</a></li>
+<li><strong>W3C Microdatos HTML5</strong>: <a href="http://www.w3.org/TR/html5/microdata.html">http://www.w3.org/TR/html5/microdata.html</a></li>
+<li><em>*Fragmentos enriquecidos _(microdatos, microformatos y RDFa)_
+*</em>: <a href="http://support.google.com/webmasters/bin/answer.py?hl=es&amp;answer=99170">http://support.google.com/webmasters/bin/answer.py?hl=es&amp;answer=99170</a></li>
+<li><a href="http://www.data-vocabulary.org/">http://www.data-vocabulary.org/</a></li>
+</ul>
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
+</div>
+</body>
+</html>

@@ -3,6 +3,7 @@
 #Requiere:
 # - Git
 # - Markdown
+# - wkhtmltopdf <- Sólo para generar pdfs.
 
 # Colores solo para que se distinga un poco mejor(creo yo) los procesos que
 # realiza el script.
@@ -32,28 +33,43 @@ repo_path=$(git rev-parse --show-toplevel)
 
 ##########################################################################################
 function index_ejemplos {
-	echo -e "${light}Generando index de la ṕagina de ejemplos${end}";
+	echo -ne "${light}Generando index de la ṕagina de ejemplos${end}: ";
 	ejemplos_path=`echo ${repo_path}/ejemplos/`;
-		if [ -c "$ejemplos_path/index.md" ]
-		then
-			rm $ejemplos_path/index.md
-		fi
-
-		echo '# Ejemplos disponibles' > $ejemplos_path/index.txt;
-		echo '' >> $ejemplos_path/index.txt;
+	if [ -c "$ejemplos_path/index.md" ]
+	then
+		rm $ejemplos_path/index.md
+	fi
+	echo '# Ejemplos disponibles' > "$ejemplos_path/index.md";
+	echo '' >> "$ejemplos_path/index.md";
+	for sesion in  $(seq 1 $NUM_SESIONES)
+	do
+		echo " - [**Sesión 0${sesion}**](../sesion0${sesion}/index.html)" >> "$ejemplos_path/index.md";
+		for file in `find $repo_path/ejemplos/ -iregex ".*\0${sesion}.*\.html$" | sort `;
+		do
+				file=`echo ${file} | sed "s|${ejemplos_path}||i"`;
+				target=$(echo $file | sed -r 's|_|\\_|g');
+				echo "  - [${target}](./$file)" >> $ejemplos_path/index.md;
+		done;
+	done;
+	echo -e "${yellow}/ejemplos/index.md${end}";
+}
+##########################################################################################
+# Genera la versión todo en un documento
+##########################################################################################
+function versionTodo {
+		echo '# Vesión todo en linea' > "${repo_path}/todo/index.md"
 		for sesion in  $(seq 1 $NUM_SESIONES)
 		do
-			echo " - [Sesión 0${sesion}](../sesion0${sesion}/index.html)" >> $ejemplos_path/index.txt;
-			for file in `find $repo_path/ejemplos/ -iregex ".*\0${sesion}.*\.html$" | sort `;
-			do
-					file=`echo ${file} | sed "s|${ejemplos_path}||i"`;
-					target=$(echo $file | sed "s|_|\_|g");
-					echo "  - [${target}](./$file)" >> $ejemplos_path/index.txt;
-			done;
+			cat "${repo_path}/sesion0${sesion}/index.md" >> "${repo_path}/todo/index.md"
+			echo '' >> "${repo_path}/todo/index.md"
 		done;
-		mv $ejemplos_path/index.txt $ejemplos_path/index.md;
 }
-
+##########################################################################################
+# Genera la versión todo en un documento
+##########################################################################################
+function versionPDF {
+		wkhtmltopdf -n -g "${repo_path}/todo/index.html" "${repo_path}/todo/manual_jquery_basico.pdf"
+}
 ##########################################################################################
 # Imprime Temario.
 ##########################################################################################
@@ -86,18 +102,27 @@ then
   cat "${repo_path}/plantilla/splashes/$splash"
   echo -e "${end}";
   echo "--------------------------------------------------------------------------------";
+  #Generando documento pdf
+  #echo -e "${light}Generando documento PDF${end}";
+  #versionPDF
+  #Generando versión impresa
+  #versionTodo
+  #Generamos todos los documentos html apartir del md
   echo -ne "${yellow}\r"
   for file in `find $repo_path -iregex ".*\.md$" | sort `;
   do
 		$0 $file
 	done;
 	echo -e "${end}"
+	#Generamos el index de ejemplos
 	index_ejemplos;
 	echo -ne "${yellow}\r"
 	$0 $repo_path/ejemplos/index.md;
+	#Generamos la página principal
 	imprimeTemario > $repo_path/index.md;
 	$0 $repo_path/index.md;
 	echo -e "${end}"
+	#Finalmente mostramos el tiempo en ejecución del script.
 	RUNTIME=$(expr `date +%s` - ${STARTTIME} )
 	echo -e "${light}Tiempo de ejecución:${end} ${yellow}${RUNTIME} Segundos${end}"
 	exit 0;
@@ -136,7 +161,7 @@ sed  "s|%NUM_SESIONES%|$NUM_SESIONES|g;s|%refPath%|$refPath|g;s|%LOCAL_NAME%|$LO
  > $archivo_salida
 
 #Generando el archivo en markdown
-markdown $1 >> $archivo_salida
+markdown $1 | sed -r 'N; s|\n</code>|</code>|g;'  >> $archivo_salida
 
 #Fin del content,Agregamos pie de pagina, finalmente cerramos el body y del documento html
 cat "$repo_path/plantilla/pie_pagina.html"  >> $archivo_salida

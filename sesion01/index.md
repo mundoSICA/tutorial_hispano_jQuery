@@ -16,36 +16,70 @@ $(function() {
 });
 </script>
 
-Sessión 1 - Introducción a jQuery
+Sesión 1 - Introducción a jQuery
 ==========================================================================================
 
 Descripción de este manual
 ------------------------------------------------------------------------------------------
 
-Este es un pequeño manual _básico de **jQuery**_, el cual consta de 5 capitulos, esta diseñadado para una clase de 2 horas cada capitulo.
+Este es un pequeño manual _básico de **jQuery**_, el cual consta de 5 sesiones, cada una de estas sesiones esta diseñada para una clase de 2 horas.
 
+El proposito de este manual es ser ayuda en la comprensión de los conceptos básicos de esta libreria, al concluir la lectura de este manual se espera que el lector sea capaz: de comprender casi cualquier código en **jQuery** y continuar su aprendizaje por su cuenta.
 
-Este manual esta licenciado bajo [_atribución creative commons_](http://creativecommons.org/licenses/by/2.5/mx/), si desear colaborar te invito a que visites el [repositorio](https://github.com/mundoSICA/tutorial_hispano_jQuery) para que puedas ver _las instrucciones para los colaboradores_.
+Cabe mencionar que esta documentación esta licenciada bajo **_[atribución creative commons](http://creativecommons.org/licenses/by/2.5/mx/)_**, _**sientase libre de modificar, compartir y redistribuir**_, si desear colaborar te invito a que visites el [repositorio publico](https://github.com/mundoSICA/tutorial_hispano_jQuery).
 
 
 Breve referencia **HTML**
 ------------------------------------------------------------------------------------------
 
-**HTML**, siglas de _HyperText Markup Language_ («lenguaje de marcado de hipertexto»), hace referencia al [lenguaje de marcado](http://es.wikipedia.org/wiki/Lenguaje_de_marcado) para la elaboración de páginas web. Se utiliza para describir la estructura y el contenido en forma de texto. El **HTML** se escribe en forma de «etiquetas», rodeadas por _corchetes angulares_ (`<`,`>`). **HTML** también puede describir, hasta un cierto punto, la apariencia de un documento aunque resulta una practica más recomendable incluir hojas de estilos(**CSS**) para este proposito, tambien suele incluir scripts (como [JavaScript](http://es.wikipedia.org/wiki/JavaScript)), el cual puede afectar el comportamiento de navegadores web.
+**HTML**, siglas de _HyperText Markup Language_ («lenguaje de marcado de hipertexto»), hace referencia al [lenguaje de marcado](http://es.wikipedia.org/wiki/Lenguaje_de_marcado) para la elaboración de páginas web. Se utiliza para describir la estructura y el contenido en forma de texto. El **HTML** se escribe en forma de «etiquetas», rodeadas por _corchetes angulares_ (`<`,`>`). **HTML** también puede describir, hasta un cierto punto, la apariencia de un documento aunque resulta una practica más recomendable incluir hojas de estilos(**CSS**) para este proposito, tambien suele incluir scripts (como [JavaScript](http://es.wikipedia.org/wiki/JavaScript)), el cual puede afectar el comportamiento de navegadores web. _fuente: <http://es.wikipedia.org/wiki/HTML>_
 
+Un ducumento **Html** tiene mas o menos el siguiente aspecto:
+
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	  <title>Título</title>
+	</head>
+	<body>
+	  <h1>Documento de ejemplo</h1>
+	  <div>
+		  <h1>Contenido dentro del div</h1>
+		  <h2>sub título</h2>
+		  <p>parrafo 1</p>
+		  <p>parrafo 2</p>
+	  </div>
+	</body>
+	</html>
+
+Las primeras dos lineas describen el tipo de archivo en este caso es **XHTML 1.0 Strict**, en la seguda linea viene la ruta del archivo de definición de datos(**dtd**):
+
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 > A lo largo de esta manual se usara **XHTML1.0 estricto** almenos que se diga lo contrario.
 
-> fuente: <http://es.wikipedia.org/wiki/HTML>
+Posteriormente viene el head, el cual en este caso contiene solo el titulo del documento, pero aquí se suelen poner tanto información de indexación como solicitudes de archivos necesarios como hojas de estilos y funcionalidades en javascript.
 
+	<head>
+	  <title>Título</title>
+	</head>
 
-### Concepto **DOM**
+Sí desea conocer un poco mas sobre etiquetas validas puedes ver el siguiente ejemplo: [01.01.Etiquetas\_head.html](../ejemplos/01.01.Etiquetas_head.html).
 
-El _Document Object Model_ o **DOM** ('Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos'), proporciona un conjunto estándar de objetos para representar documentos **HTML** y **XML**, un modelo estándar sobre cómo pueden combinarse dichos objetos, y una interfaz estándar para acceder a ellos y manipularlos. A través del DOM, los programas pueden acceder y modificar el contenido, estructura y estilo de los documentos **HTML** y* *XML**, que es para lo que se diseñó principalmente.
+## Concepto **DOM**
 
-En otras parabras el DOM es una interfaz de programación de aplicaciones para acceder, añadir y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (_JavaScript_).
+El **Modelo en Objetos para la Representación de Documentos** ó **DOM** (_Document Object Model_), es un estándar de objetos para representar documentos **HTML** y **XML**.
+
+A través del dicho estándar, los programas pueden acceder y modificar el contenido, estructura y estilo.
+
+La siguiente imagen es una **representación** del **DOM**  del documento visto anteriormente:
 
 ![Imagen Dom](../img/dom.png)
+
+Como podemos ver, la imagen muestra el documento **Html** en forma de un arbol. Esta representación es también conocida como un arbol **DOM**.
 
 > El responsable del DOM es el _World Wide Web Consortium_ ([**W3C**](http://www.w3.org/DOM/)).
 
@@ -193,9 +227,13 @@ Lista de ejemplos:
 
  1. [Selectores con **CSS**](ejemplos/selector_css.html)
 
-Lecturas externas recomendables:
+
+Enlaces externos recomendables:
 ------------------------------------------------------------------------------------------
 
  - [Libro **CSS** Avanzado](http://www.librosweb.es/css_avanzado/)
  - [Secuencias de caracteres de escape __CSS__](http://mathiasbynens.be/notes/css-escapes)
  - [Como maneja _CSS_ los errores.](http://www.xanthir.com/blog/b4JF0)
+ - [**Sitio oficial jQuery**][http://jquery.com/)
+ - [**Foro de jQuery**][http://forum.jquery.com/)
+ - [**IRC de freeNode canal jQuery**][http://webchat.freenode.net/?channels=#jquery)

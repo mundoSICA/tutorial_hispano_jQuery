@@ -34,7 +34,14 @@
 <div id='content'>
 <div id='tabla_contenidos'></div>
 <script  type="text/javascript">
-$(function() {$("pre").snippet("javascript", {style:'darkness'});});
+$(function() {
+$("pre").snippet("javascript", {style:'darkness'});
+$('#algunBoton').click(function() {
+    console.log('entro al a funcion');
+    $('#elementoDinamico').load('file.html');
+});
+
+});
 </script>
 
 <h1>Sesión 5 - Ajax y buenas prácticas.</h1>
@@ -58,8 +65,7 @@ function createRequestObject() {
     if (!ro)
             debug("Couldn't start XMLHttpRequest object");
     return ro;
-}
-</code></pre>
+}</code></pre>
 
 <h4>Manejador de la respuesta.</h4>
 
@@ -120,8 +126,7 @@ inProgress = false;
         $('.result').html(data);
         alert('Load was performed.');
     }
-});
-</code></pre>
+});</code></pre>
 
 <h3>Quitando la opción asincrona.</h3>
 
@@ -134,8 +139,7 @@ $.ajax({
         datos = data;
     }
 });
-console.log(datos);
-</code></pre>
+console.log(datos);</code></pre>
 
 <p>Datos sera <code>null</code>, ya que la respuesta es asincrona es decir <code>console.log()</code> no espera la finalización de <code>$.ajax</code> para ejecutarse, hacer <code>async</code> igual a <code>false</code> resulta una opción util para esta logica.</p>
 
@@ -148,8 +152,7 @@ $.ajax({
         datos = data;
     }
 });
-console.log(datos);
-</code></pre>
+console.log(datos);</code></pre>
 
 <p>Otra opción para esperar que ajax se haya ejecutado para realizar determinada acción seria encaminar la funcion <code>done</code> como se muestra acontinuación.</p>
 
@@ -185,6 +188,24 @@ $.ajax({
 <h2>Otras funciones Ajax</h2>
 
 <p>Existen otras funciones definas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria <strong>Ajax</strong> de la api de <strong>jQuery</strong>:</p>
+
+<h2>Ejemplo load</h2>
+
+<p>Entre las funciones que ofrece <strong>jQuery</strong> para el control asincrono es la función  <code>load</code> esta función se encarga de cargar algun contenido optenido desde alguna url, observe el siguiente esquema.</p>
+
+<p><img src="../img/imagen_load.png" alt="Imagen load jQuery" title="" /></p>
+
+<p>El esquema enterior muestra un documento <strong>Html</strong> el cual contiene un <strong>div</strong> identificado como <code>elementoDinamico</code> el cual va a cargar el contenido de <code>http://url/file.html</code> en el momento que hagan click sobre el botón identificado como <code>algunBoton</code>, bien ahora veamos como quedaria este ejemplo:</p>
+
+<pre><code>$('#algunBoton').click(function() {
+    $('#elementoDinamico').load('file.html');
+});</code></pre>
+
+<div id='elementoDinamico'></div>
+
+<div class="links_paginacion">
+<a id="algunBoton" href='#' >algunBoton</a>
+</div>
 
 <ul>
 <li><a href="http://api.jquery.com/category/ajax/">http://api.jquery.com/category/ajax/</a></li>
