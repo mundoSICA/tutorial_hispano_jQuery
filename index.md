@@ -41,6 +41,7 @@
   - [Ajax]()
   - [Ajax y Jquery]()
   - [Otras funciones Ajax]()
+  - [Ejemplo load]()
  - [**Listado de Recursos Disponibles**](./recursos/index.html)
   - <a href="./recursos/colores-css3.html">Colores CSS3</a>
   - <a href="./recursos/selectores_css.html">selectores CSS</a>
