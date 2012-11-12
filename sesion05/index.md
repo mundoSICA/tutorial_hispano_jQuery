@@ -156,14 +156,18 @@ Existen otras funciones definas para manejar respuestas asincronas para una deta
 
 ## Ejemplo load
 
-Entre las funciones que ofrece **jQuery** para el control asincrono es la función  `load` esta función se encarga de cargar algun contenido optenido desde alguna url, observe el siguiente esquema.
+Entre las funciones que ofrece **jQuery** para el control asincrono esta la función  [`load`](http://api.jquery.com/load/) dicha función se encarga de cargar algun contenido obtenido desde alguna url, para entender mejor esta función observe el siguiente esquema:
 
 ![Imagen load jQuery](../img/imagen_load.png)
 
 El esquema enterior muestra un documento **Html** el cual contiene un **div** identificado como `elementoDinamico` el cual va a cargar el contenido de `http://url/file.html` en el momento que hagan click sobre el botón identificado como `algunBoton`, bien ahora veamos como quedaria este ejemplo:
 
+	//relacionamos el evento click del boton #algunBoton
 	$('#algunBoton').click(function(event) {
-		$('#elementoDinamico').load('file.html');
+		//En el div #elementoDinamico vamos a cargar el contenido de file.html
+		// Notar que el parametro qeu recibe puede ser una url absoluta o un ruta refenenciada.
+		$('#elementoDinamico').load('file.html');	
+		// Detenmos los demas eventos(si no hacemos esto subiria el scroll)
 		event.preventDefault();
 	});
 

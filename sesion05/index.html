@@ -191,14 +191,18 @@ $.ajax({
 
 <h2>Ejemplo load</h2>
 
-<p>Entre las funciones que ofrece <strong>jQuery</strong> para el control asincrono es la función  <code>load</code> esta función se encarga de cargar algun contenido optenido desde alguna url, observe el siguiente esquema.</p>
+<p>Entre las funciones que ofrece <strong>jQuery</strong> para el control asincrono esta la función  <a href="http://api.jquery.com/load/"><code>load</code></a> dicha función se encarga de cargar algun contenido obtenido desde alguna url, para entender mejor esta función observe el siguiente esquema:</p>
 
 <p><img src="../img/imagen_load.png" alt="Imagen load jQuery" title="" /></p>
 
 <p>El esquema enterior muestra un documento <strong>Html</strong> el cual contiene un <strong>div</strong> identificado como <code>elementoDinamico</code> el cual va a cargar el contenido de <code>http://url/file.html</code> en el momento que hagan click sobre el botón identificado como <code>algunBoton</code>, bien ahora veamos como quedaria este ejemplo:</p>
 
-<pre><code>$('#algunBoton').click(function(event) {
-    $('#elementoDinamico').load('file.html');
+<pre><code>//relacionamos el evento click del boton #algunBoton
+$('#algunBoton').click(function(event) {
+    //En el div #elementoDinamico vamos a cargar el contenido de file.html
+    // Notar que el parametro qeu recibe puede ser una url absoluta o un ruta refenenciada.
+    $('#elementoDinamico').load('file.html');   
+    // Detenmos los demas eventos(si no hacemos esto subiria el scroll)
     event.preventDefault();
 });
 </code></pre>
