@@ -175,7 +175,7 @@ El esquema enterior muestra un documento **Html** el cual contiene un **div** id
 <div id='elementoDinamico'></div>
 
 <div class="links_paginacion">
-<a id="algunBoton" href='javascript:;' >algunBoton</a>
+Probar ejemplo: <a id="algunBoton" href='javascript:;' >algunBoton</a>
 </div>
 
  - <http://api.jquery.com/category/ajax/>
