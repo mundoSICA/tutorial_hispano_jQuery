@@ -50,7 +50,7 @@ $('#algunBoton').click(function(event) {
 
 <p><strong>Ajax</strong>, acrónimo de Asynchronous JavaScript And XML (<em>JavaScript asíncrono y XML</em>), es una técnica de desarrollo web para crear aplicaciones interactivas o RIA (Rich Internet Applications). Estas aplicaciones se ejecutan en el cliente, es decir, en el navegador de los usuarios mientras se mantiene la comunicación asíncrona con el servidor en segundo plano. De esta forma es posible realizar cambios sobre las páginas sin necesidad de recargarlas, lo que significa aumentar la interactividad, velocidad y usabilidad en las aplicaciones.</p>
 
-<p>En concepta parte del hecho que desde javascript podemos realizar solicitudes( <em>httpRequests</em> ) y que por medio que <em>javascript</em> no espera el resultado de dicha solicitud para continuar su flujo, veamos un ejemplo con javascript puro.</p>
+<p>En concepto parte del hecho que desde javascript podemos realizar solicitudes( <em>httpRequests</em> ) y que por medio que <em>javascript</em> no espera el resultado de dicha solicitud para continuar su flujo, veamos un ejemplo con javascript puro.</p>
 
 <h4>Opteniendo un httpRequests.</h4>
 
@@ -117,6 +117,10 @@ inProgress = false;
 </code></pre>
 
 <h2>Ajax y Jquery.</h2>
+
+<p>Personalmente siento que el concepto es algo confuso con <strong>jQuery</strong>, ya que propiamente no se deberia llamar <code>ajax</code> si no HttpRequest ó simplemente Request (<a href="http://mootools.net/docs/core/Request/Request">como funciona en mootools</a>).</p>
+
+<p>En adelante cuando se mencione <code>ajax</code> en la jerga de <strong>jQuery</strong> nos referimos a una funcion de jQuery que realiza un <strong>http request</strong>, espero que quede mas claro con algunos ejemplos:</p>
 
 <h4>Ejemplo básico</h4>
 
@@ -187,7 +191,7 @@ $.ajax({
 
 <h2>Otras funciones Ajax</h2>
 
-<p>Existen otras funciones definas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria <strong>Ajax</strong> de la api de <strong>jQuery</strong>:</p>
+<p>Existen otras funciones definidas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria <strong>Ajax</strong> de la api de <strong>jQuery</strong>:</p>
 
 <h2>Ejemplo load</h2>
 

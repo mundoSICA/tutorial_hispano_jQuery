@@ -16,7 +16,7 @@ Sesión 5 - Ajax y buenas prácticas.
 
 **Ajax**, acrónimo de Asynchronous JavaScript And XML (_JavaScript asíncrono y XML_), es una técnica de desarrollo web para crear aplicaciones interactivas o RIA (Rich Internet Applications). Estas aplicaciones se ejecutan en el cliente, es decir, en el navegador de los usuarios mientras se mantiene la comunicación asíncrona con el servidor en segundo plano. De esta forma es posible realizar cambios sobre las páginas sin necesidad de recargarlas, lo que significa aumentar la interactividad, velocidad y usabilidad en las aplicaciones.
 
-En concepta parte del hecho que desde javascript podemos realizar solicitudes( _httpRequests_ ) y que por medio que _javascript_ no espera el resultado de dicha solicitud para continuar su flujo, veamos un ejemplo con javascript puro.
+En concepto parte del hecho que desde javascript podemos realizar solicitudes( _httpRequests_ ) y que por medio que _javascript_ no espera el resultado de dicha solicitud para continuar su flujo, veamos un ejemplo con javascript puro.
 
 
 #### Opteniendo un httpRequests.
@@ -82,6 +82,11 @@ En concepta parte del hecho que desde javascript podemos realizar solicitudes( _
 	}
 
 ## Ajax y Jquery.
+
+Personalmente siento que el concepto es algo confuso con **jQuery**, ya que propiamente no se deberia llamar `ajax` si no HttpRequest ó simplemente Request ([como funciona en mootools](http://mootools.net/docs/core/Request/Request)).
+
+En adelante cuando se mencione `ajax` en la jerga de **jQuery** nos referimos a una funcion de jQuery que realiza un **http request**, espero que quede mas claro con algunos ejemplos:
+
 
 #### Ejemplo básico
 
@@ -151,7 +156,7 @@ Si somos detallistas nos daremos cuenta que `console.log(datos);` no garantiza q
 
 ## Otras funciones Ajax
 
-Existen otras funciones definas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria **Ajax** de la api de **jQuery**:
+Existen otras funciones definidas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria **Ajax** de la api de **jQuery**:
 
 
 ## Ejemplo load
