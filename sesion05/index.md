@@ -1,9 +1,9 @@
 <script  type="text/javascript">
 $(function() {
 $("pre").snippet("javascript", {style:'darkness'});
-$('#algunBoton').click(function() {
-	console.log('entro al a funcion');
+$('#algunBoton').click(function(event) {
 	$('#elementoDinamico').load('file.html');
+	event.preventDefault();
 });
 
 });
@@ -162,8 +162,9 @@ Entre las funciones que ofrece **jQuery** para el control asincrono es la funci√
 
 El esquema enterior muestra un documento **Html** el cual contiene un **div** identificado como `elementoDinamico` el cual va a cargar el contenido de `http://url/file.html` en el momento que hagan click sobre el bot√≥n identificado como `algunBoton`, bien ahora veamos como quedaria este ejemplo:
 
-	$('#algunBoton').click(function() {
+	$('#algunBoton').click(function(event) {
 		$('#elementoDinamico').load('file.html');
+		event.preventDefault();
 	});
 
 

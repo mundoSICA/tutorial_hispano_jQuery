@@ -36,9 +36,9 @@
 <script  type="text/javascript">
 $(function() {
 $("pre").snippet("javascript", {style:'darkness'});
-$('#algunBoton').click(function() {
-    console.log('entro al a funcion');
+$('#algunBoton').click(function(event) {
     $('#elementoDinamico').load('file.html');
+    event.preventDefault();
 });
 
 });
@@ -197,14 +197,16 @@ $.ajax({
 
 <p>El esquema enterior muestra un documento <strong>Html</strong> el cual contiene un <strong>div</strong> identificado como <code>elementoDinamico</code> el cual va a cargar el contenido de <code>http://url/file.html</code> en el momento que hagan click sobre el botón identificado como <code>algunBoton</code>, bien ahora veamos como quedaria este ejemplo:</p>
 
-<pre><code>$('#algunBoton').click(function() {
+<pre><code>$('#algunBoton').click(function(event) {
     $('#elementoDinamico').load('file.html');
-});</code></pre>
+    event.preventDefault();
+});
+</code></pre>
 
 <div id='elementoDinamico'></div>
 
 <div class="links_paginacion">
-<a id="algunBoton" href='#' >algunBoton</a>
+<a id="algunBoton" href='javascript:;' >algunBoton</a>
 </div>
 
 <ul>
