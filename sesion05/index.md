@@ -165,7 +165,7 @@ El esquema enterior muestra un documento **Html** el cual contiene un **div** id
 	//relacionamos el evento click del boton #algunBoton
 	$('#algunBoton').click(function(event) {
 		//En el div #elementoDinamico vamos a cargar el contenido de file.html
-		// Notar que el parametro qeu recibe puede ser una url absoluta o un ruta refenenciada.
+		// Notar que el parametro que recibe puede ser una url absoluta o un ruta refenenciada.
 		$('#elementoDinamico').load('file.html');	
 		// Detenmos los demas eventos(si no hacemos esto subiria el scroll)
 		event.preventDefault();
