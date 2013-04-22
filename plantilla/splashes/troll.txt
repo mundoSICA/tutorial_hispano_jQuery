@@ -12,4 +12,4 @@
      ▀▄     ▀▀▄▄▄█▄█▄█▄█▄▀  █  
        ▀▄▄ ▒▒▒▒          ▒   █ 
           ▀▀▄▄ ▒▒▒▒▒▒▒▒▒▒    █                      Manual de jQuery
-              ▀▄▄▄▄▄        █                       Para de mamar!
+              ▀▄▄▄▄▄        █                       Pare de mamar!

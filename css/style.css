@@ -52,7 +52,18 @@ li > a > strong{ color: #5E1CA7; }
 ul ul li > a > strong{color: #0C4AD8;}
 
 img{
-	margin: 0;
+	margin: 0 auto;
+	display: block;
+	border: 5px solid #888;
+	background: #FFF;
+	-webkit-border-radius: 5px;
+		 -moz-border-radius: 5px;
+					border-radius: 5px;
+	-webkit-box-shadow: 1px 1px 0 #FFF,-1px -1px 0 #FFF, 0 0 5px #0D99F3;
+		 -moz-box-shadow: 1px 1px 0 #FFF,-1px -1px 0 #FFF, 0 0 5px #0D99F3;
+			-ms-box-shadow: 1px 1px 0 #FFF,-1px -1px 0 #FFF, 0 0 5px #0D99F3;
+			 -o-box-shadow: 1px 1px 0 #FFF,-1px -1px 0 #FFF, 0 0 5px #0D99F3;
+					box-shadow: 1px 1px 0 #FFF,-1px -1px 0 #FFF, 0 0 5px #0D99F3;
 }
 h1{
 	text-shadow:2px -2px 1px #FFF,-2px 2px 1px #FFF,3px -3px 20px #0AE;
@@ -430,4 +441,12 @@ a.button:active, button.button:active {
 }
 #chacoSamurai{
 float:right;
+}
+#chacoSamurai img{
+	border:none;
+	-webkit-box-shadow: none;
+		 -moz-box-shadow: none;
+			-ms-box-shadow: none;
+			 -o-box-shadow: none;
+					box-shadow: none;
 }

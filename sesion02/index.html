@@ -1,13 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <title>Sesión 2 -Caracteristicas principales de jQuery.</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
-	<script type='text/javascript' src='./../js/jquery-1.7.2.js'></script>
+	<script type='text/javascript' src='./../js/jquery-1.9.1.min.js'></script>
 	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
 	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
@@ -60,42 +59,89 @@ $(function() {
 
 <h1>Sesión 2 -Caracteristicas principales de jQuery.</h1>
 
-<h2>Trabaja por grupos(<em>Iteración implicita</em>).</h2>
+<h2>Tecnicamente ¿que es jQuery?.</h2>
 
-<p>Una carácteristica muy interesante es que los metodos de <strong>jQuery</strong> que realizan una consulta trabajan con iteración implicita, por ejemplo, la consulta.</p>
+<p><strong>jQuery</strong> es un objeto define un conjunto funciones(ó metodos) en él.</p>
 
-<pre><code>$('h2')
+<h3>constructor jQuery</h3>
+
+<p>El constructor es una función sobrecargada que:</p>
+
+<ul>
+<li>Si recibe un <strong>string</strong> esta la toma como una <code>query</code>(consulta) y devuelve un conjunto de elementos del <strong>DOM</strong> correspondientes a la consulta.</li>
+<li>En caso de no recibir nada revuelve un conjunto vacio.</li>
+</ul>
+
+<p>En ambos casos el sub conjunto de funciones en jQuery estan disponibles, por ejemplo todas las siguientes intrucciones son validas:</p>
+
+<pre><code>//construccion con consulta valida o invalida
+jQuery('h2').css('color', 'red');
+jQuery('esto no existe').css('color', 'red');
+
+//construccion sin consulta
+jQuery.css('color', 'red');
 </code></pre>
 
-<p>Nos devuelve todos los titulos nivel 2 (<code>h2</code>) que esten en la página, ahora si por ejemplo quisieramos cambiarle el color a un gris obscuro (<code>#333</code>), esto lo podriamos hacer de la siguiente manera.</p>
+<h3><code>$</code> es una alias de <strong>jQuery</strong>.</h3>
+
+<p>Es mas común ver que en los ejemplos hacen referencia a la llamada de la función <code>$</code> esta es un alias(un sobrenombre) de <strong>jQuery</strong>. Los ejemplos anteriores usando el alias seria:</p>
+
+<pre><code>//construccion con consulta valida o invalida
+$('h2').css('color', 'red');
+$('esto no existe').css('color', 'red');
+
+//construccion sin consulta
+$.css('color', 'red');
+</code></pre>
+
+<blockquote>
+  <p>Esto no siempre es valido, cuando se utilizan otras librerias que usan la funcion $, para esto se emplea el <strong>noconflict</strong> de jQuery.</p>
+</blockquote>
+
+<h2>Trabaja por grupos(<em>Iteración implicita</em>).</h2>
+
+<p>Los metodos de <strong>jQuery</strong> que realizan consultas trabajan con iteración implicita, por ejemplo, la consulta.</p>
+
+<pre><code>$('h2')</code></pre>
+
+<p>Nos devuelve el conjunto de los titulos nivel 2 (<code>h2</code>), ahora si por ejemplo quisieramos cambiarle el color a un gris obscuro (<code>#333</code>), esto lo podriamos hacer de la siguiente manera.</p>
 
 <pre><code>$.each($('h2'), function() {
     $(this).css("color", "#333");
-});</code></pre>
+});
+</code></pre>
 
-<p>En este caso estamos ocupando el metodo <code>each</code> el nos dice que para cada titulo en la selección ejecuta una función la cual le cambia el color.</p>
+<p>En este caso estamos ocupando el metodo <code>each</code>, en el cual para cada titulo en la selección se ejecuta una función la cual le cambia el color.</p>
 
-<p>De momento no se preocupe en comprender el each, lo importante es que comprenda que estamos iterando explicitamente para realizar determinada acción sobre cada elemento en la selección.</p>
+<blockquote>
+  <p>De momento no se preocupe en comprender el <code>each</code>.
+<strong>Lo importante</strong> es que comprenda que estamos iterando explicitamente para realizar una determinada acción sobre cada elemento en el conjunto seleccionado.</p>
+</blockquote>
 
-<p>Existe una forma de hacer esto más fácil y es ocupando este comportamiento de trabajar por grupos de jQuery, en este caso la función <code>css</code> puede trabajar sobre toda una selección:</p>
+<p>Existe una forma de hacer esto más "fácil" y es ocupando el comportamiento de iteración implicita de <strong>jQuery</strong> (o acción sobre el conjunto), en este caso la función <code>css</code> puede trabajar sobre toda una selección:</p>
 
 <pre><code>$('h2').css('color', '#333');
 </code></pre>
 
-<p>En general las funciones que tengan esta forma:</p>
+<p>En general las funciones en <strong>jQuery</strong> son de la siguiente forma:</p>
 
-<pre><code>$('selector').funcionNombre(param1,param2,...);</code></pre>
+<pre><code>//ejemplo 1
+$('selector').funcionNombre(param1,param2,...);
+//ejemplo 2
+$('selector').find('selector 2').funcionNombre(param1,param2,...);
+</code></pre>
 
-<p>Trabajan sobre toda la selección, es decir si la selección es todo un grupo la función se ejecutara sobre todos los elementos. A esta funciones las llamaremos <code>jQuery.fn.funcionNombre</code> o bien su forma reducida <code>$.fn.funcionNombre</code> ya que pertenecen al espacio de nombre <code>fn</code> de jQuery.</p>
+<p>Y trabajan sobre toda la selección(<em>conjunto</em>), es decir si la selección es todo un grupo la función se ejecutara sobre todos los elementos.</p>
 
-<p>Cuando hacemos referencia a <code>jQuery.fn</code> se hace referencia al espacio de nombre de <strong>jQuery</strong> del prototipo es decir de una extensión de <strong>jQuery</strong>, <code>jQuery.fn</code> es también un alias de <code>jQuery.prototype</code> <a href="https://github.com/mundoSICA/tutorial_hispano_jQuery/blob/gh-pages/js/jquery-1.7.2.js#L97"></a>.</p>
+<p>A esta funciones las llamaremos <code>jQuery.fn.funcionNombre</code> o bien su forma reducida <code>$.fn.funcionNombre</code> ya que pertenecen al espacio de nombre <code>fn</code> de <strong>jQuery</strong> que se hacen a un <strong>prototipo</strong> de <strong>jQuery</strong> del es decir de una extensión de <strong>jQuery</strong>, <code>jQuery.fn</code> es también un alias de <a href="https://github.com/mundoSICA/tutorial_hispano_jQuery/blob/gh-pages/js/jquery-1.7.2.js#L97"><code>jQuery.prototype</code></a>.</p>
 
 <h2>Diseñado para realizar consultas atraves del <strong>DOM</strong>.</h2>
 
 <p>Quizas la principal caracteristica de <strong>jQuery</strong> es que esta diseñado para realizar consultas a travez de el <strong>DOM</strong>, como ya se menciono antes, <strong>jQuery</strong> nos permite realizar consultas <strong>CSS</strong>, <strong>xPath</strong> y <strong>trasversales</strong>.</p>
 
 <pre><code>$('h2 + p').css('color', '#946900');
-$('h2 + p').css('font-style', 'italic');</code></pre>
+$('h2 + p').css('font-style', 'italic');
+</code></pre>
 
 <p>Con esto indicamos que todo parrafos(<code>p</code>) inmediatamente seguidos(<code>+</code>) de un titulo nivel 2(<code>h2</code>), va a tomar el color de la letra a café y el estilo de la fuente sera del tipo italica.</p>
 
@@ -105,8 +151,7 @@ $('h2 + p').css('font-style', 'italic');</code></pre>
 
 <pre><code>$parrafosBajoTitulo = $('h2 + p');
 $parrafosBajoTitulo.css('color', '#946900');
-$parrafosBajoTitulo.css('font-style', 'italic');
-</code></pre>
+$parrafosBajoTitulo.css('font-style', 'italic');</code></pre>
 
 <blockquote>
   <p>Es buena práctica agregar el prefijo <code>$</code> a las variables que almacenan el resultado de una consulta.</p>
@@ -125,14 +170,14 @@ $parrafosBajoTitulo.css('font-style', 'italic');
 <p>Atienda al siguiente código:</p>
 
 <pre><code>$('h2').css('color','red');
-$('h2').text('Cambiando el contenido a todos los elementos h2');
-</code></pre>
+$('h2').text('Cambiando el contenido a todos los elementos h2');</code></pre>
 
 <p>Ahora comparelo con el siguiente código:</p>
 
 <pre><code>$('h2')
             .css('color','red')
-            .text('Cambiando el contenido a todos los elementos h2');</code></pre>
+            .text('Cambiando el contenido a todos los elementos h2');
+</code></pre>
 
 <p>¿Cual cree que sea mejor?, argumente su respuesta.</p>
 

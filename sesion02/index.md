@@ -26,35 +26,71 @@ $(function() {
 Sesión 2 -Caracteristicas principales de jQuery.
 ==========================================================================================
 
+
+## Tecnicamente ¿que es jQuery?.
+
+**jQuery** es un objeto define un conjunto funciones(ó metodos) en él.
+
+### constructor jQuery
+
+El constructor es una función sobrecargada que:
+
+ - Si recibe un **string** esta la toma como una `query`(consulta) y devuelve un conjunto de elementos del **DOM** correspondientes a la consulta.
+ - En caso de no recibir nada revuelve un conjunto vacio.
+
+En ambos casos el sub conjunto de funciones en jQuery estan disponibles, por ejemplo todas las siguientes intrucciones son validas:
+
+	//construccion con consulta valida o invalida
+	jQuery('h2').css('color', 'red');
+	jQuery('esto no existe').css('color', 'red');
+
+	//construccion sin consulta
+	jQuery.css('color', 'red');
+
+### `$` es una alias de **jQuery**.
+
+Es mas común ver que en los ejemplos hacen referencia a la llamada de la función `$` esta es un alias(un sobrenombre) de **jQuery**. Los ejemplos anteriores usando el alias seria:
+
+	//construccion con consulta valida o invalida
+	$('h2').css('color', 'red');
+	$('esto no existe').css('color', 'red');
+
+	//construccion sin consulta
+	$.css('color', 'red');
+
+> Esto no siempre es valido, cuando se utilizan otras librerias que usan la funcion $, para esto se emplea el **noconflict** de jQuery.
+
 ## Trabaja por grupos(_Iteración implicita_).
 
-Una carácteristica muy interesante es que los metodos de **jQuery** que realizan una consulta trabajan con iteración implicita, por ejemplo, la consulta.
+Los metodos de **jQuery** que realizan consultas trabajan con iteración implicita, por ejemplo, la consulta.
 
 	$('h2')
 
-Nos devuelve todos los titulos nivel 2 (`h2`) que esten en la página, ahora si por ejemplo quisieramos cambiarle el color a un gris obscuro (`#333`), esto lo podriamos hacer de la siguiente manera.
+Nos devuelve el conjunto de los titulos nivel 2 (`h2`), ahora si por ejemplo quisieramos cambiarle el color a un gris obscuro (`#333`), esto lo podriamos hacer de la siguiente manera.
 
 	$.each($('h2'), function() {
 		$(this).css("color", "#333");
 	});
 
-En este caso estamos ocupando el metodo `each` el nos dice que para cada titulo en la selección ejecuta una función la cual le cambia el color.
+En este caso estamos ocupando el metodo `each`, en el cual para cada titulo en la selección se ejecuta una función la cual le cambia el color.
 
-De momento no se preocupe en comprender el each, lo importante es que comprenda que estamos iterando explicitamente para realizar determinada acción sobre cada elemento en la selección.
+> De momento no se preocupe en comprender el `each`.
+> **Lo importante** es que comprenda que estamos iterando explicitamente para realizar una determinada acción sobre cada elemento en el conjunto seleccionado.
 
-Existe una forma de hacer esto más fácil y es ocupando este comportamiento de trabajar por grupos de jQuery, en este caso la función `css` puede trabajar sobre toda una selección:
+Existe una forma de hacer esto más "fácil" y es ocupando el comportamiento de iteración implicita de __jQuery__ (o acción sobre el conjunto), en este caso la función `css` puede trabajar sobre toda una selección:
 
 	$('h2').css('color', '#333');
 
-En general las funciones que tengan esta forma:
+En general las funciones en **jQuery** son de la siguiente forma:
 
+	//ejemplo 1
 	$('selector').funcionNombre(param1,param2,...);
+	//ejemplo 2
+	$('selector').find('selector 2').funcionNombre(param1,param2,...);
 
-Trabajan sobre toda la selección, es decir si la selección es todo un grupo la función se ejecutara sobre todos los elementos. A esta funciones las llamaremos `jQuery.fn.funcionNombre` o bien su forma reducida `$.fn.funcionNombre` ya que pertenecen al espacio de nombre `fn` de jQuery.
+Y trabajan sobre toda la selección(_conjunto_), es decir si la selección es todo un grupo la función se ejecutara sobre todos los elementos.
 
-Cuando hacemos referencia a `jQuery.fn` se hace referencia al espacio de nombre de **jQuery** del prototipo es decir de una extensión de **jQuery**, `jQuery.fn` es también un alias de `jQuery.prototype` [](https://github.com/mundoSICA/tutorial_hispano_jQuery/blob/gh-pages/js/jquery-1.7.2.js#L97).
-
-
+A esta funciones las llamaremos `jQuery.fn.funcionNombre` o bien su forma reducida `$.fn.funcionNombre` ya que pertenecen al espacio de nombre `fn` de **jQuery** que se hacen a un **prototipo** de **jQuery** del es decir de una extensión de **jQuery**, `jQuery.fn` es también un alias de [`jQuery.prototype`](https://github.com/mundoSICA/tutorial_hispano_jQuery/blob/gh-pages/js/jquery-1.7.2.js#L97).
 
 ## Diseñado para realizar consultas atraves del **DOM**.
 
