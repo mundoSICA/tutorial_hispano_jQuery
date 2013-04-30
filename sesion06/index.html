@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>$ es un alias de jQuery</title>
+<title>Organización de código.</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
@@ -11,7 +11,7 @@
 	<script type='text/javascript' src='./../js/jquery.linkEjemplos.js'></script>
 	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
-	pageConf	= {fileName:'/ejemplos/02.jquery_alias.html', sesion:0, num_sesiones:5};
+	pageConf	= {fileName:'/sesion06/index.html', sesion:6, num_sesiones:5};
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -33,54 +33,82 @@
 </div>
 <div id='content'>
 <div id='tabla_contenidos'></div>
-<script>
-$(document).ready(function(){
+<script  type="text/javascript">
+$(function() {
+    //mostrando la info del pre
     $("pre").snippet("javascript", {style:'darkness'});
-    $h2 = $('h2');
-    $('a.alias').hover(function(event) {
-        $h2.css('color', 'red');
-    },function(event) {
-        $h2.css('color', 'black');
-    });
-    jQuery('a.jquery').hover(function(event) {
-        $h2.css('color', 'red');
-    },function(event) {
-        $h2.css('color', 'black');
-    });
-});</script>
+    $('a[href^="../ejemplos/"]').linkEjemplos();
+});
+</script>
 
-<h1>$ es un alias de jQuery</h1>
+<h1>Organización de código.</h1>
 
-<h2>Código HTML.</h2>
+<h2>jQuery Plugins.</h2>
 
-<pre><code>&lt;a class="button alias" href="#"&gt;Acción con $&lt;/a&gt;
-&lt;a class="button jquery"  href="#"&gt;Acción con jQuery&lt;/a&gt;
+<p>Observe el siguiente código:</p>
+
+<pre><code>(function($){
+    $.yourPluginName = function(el, radius, options){
+        // To avoid scope issues, use 'base' instead of 'this'
+        // to reference this class from internal events and functions.
+        var base = this;
+
+        // Access to jQuery and DOM versions of element
+        base.$el = $(el);
+        base.el = el;
+
+        // Add a reverse reference to the DOM object
+        base.$el.data("yourPluginName", base);
+
+        base.init = function(){
+            if( typeof( radius ) === "undefined" || radius === null ) radius = "20px";
+
+            base.radius = radius;
+
+            base.options = $.extend({},$.yourPluginName.defaultOptions, options);
+
+            // Put your initialization code here
+        };
+
+        // Sample Function, Uncomment to use
+        // base.functionName = function(paramaters){
+        // 
+        // };
+
+        // Run initializer
+        base.init();
+    };
+
+    $.yourPluginName.defaultOptions = {
+        radius: "20px"
+    };
+
+    $.fn.yourPluginName = function(radius, options){
+        return this.each(function(){
+            (new $.yourPluginName(this, radius, options));
+
+           // HAVE YOUR PLUGIN DO STUFF HERE
+
+
+           // END DOING STUFF
+
+        });
+    };
+
+})(jQuery);</code></pre>
+
+<h2>Uso.</h2>
+
+<pre><code>$(function() {
+    $("#round-me").yourPluginName("20px");
+});
 </code></pre>
 
-<h2>Código jQuery</h2>
+<p><a href="../ejemplos/06.ejemplo_plugin.html">Ejemplo - plugin jQuery</a></p>
 
-<pre><code>$h2 = $('h2');
-//Ejecución del evento hover sobre el alias $
-$('a.alias').hover(function(event) {
-    $h2.css('color', 'red');
-},function(event) {
-    $h2.css('color', 'black');
-});
-
-//Ejecución del evento hover sobre jQuery
-jQuery('a.jquery').hover(function(event) {
-    $h2.css('color', 'red');
-},function(event) {
-    $h2.css('color', 'black');
-});
-</code></pre>
-
-<h2>Resultado</h2>
-
-<p><a class="button alias" href="#">Acción con $</a>
-<a class="button jquery"  href="#">Acción con jQuery</a></p>
-
-<div id="elementoDinamico"></div>
+<blockquote>
+  <p><strong>Fuente:</strong> <a href="http://css-tricks.com/snippets/jquery/jquery-plugin-template/">http://css-tricks.com/snippets/jquery/jquery-plugin-template/</a></p>
+</blockquote>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">

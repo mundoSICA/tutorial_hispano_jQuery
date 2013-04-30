@@ -21,7 +21,7 @@ $(function() {
 		.css('color', '#946900')
 		.css('font-style', 'italic');
 	//
-	$('a[href^="../ejemplos/"]').addClass('button').attr('target', 'blank');
+	$('a[href^="../ejemplos/"]').linkEjemplos();
 });
 </script>
 

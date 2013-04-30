@@ -9,7 +9,7 @@ $('#algunBoton').click(function(event) {
 });
 </script>
 
-Sesión 5 - Ajax y buenas prácticas.
+Sesión 5 - Ajax.
 =============================================================================
 
 ## Ajax.
@@ -95,6 +95,29 @@ Si somos detallistas nos daremos cuenta que `console.log(datos);` no garantiza q
 ## Otras funciones Ajax
 
 Existen otras funciones definidas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria **Ajax** de la api de **jQuery**:
+
+## getScript
+
+Es una función `ajax` de **jQuery** equivalente a:
+
+	$.ajax({
+		url: url,
+		dataType: "script",
+		success: success
+	});
+
+A partir de **jQuery** `1.5` puedes ocupar la función `.fail()` para detectar y manejar errores.
+
+	$.getScript("ajax/test.js")
+	.done(function(script, textStatus) {
+		$( "div.log" ).text( textStatus );
+	})
+	.fail(function(jqxhr, settings, exception) {
+		$( "div.log" ).text( "Triggered ajaxError handler." );
+	});
+
+[Ejemplo - getScript](../ejemplos/02.getScript.html)
+
 
 ## getJSON
 

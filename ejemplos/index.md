@@ -16,4 +16,5 @@
   - [04.tabla\_insertando\_fila.html](./04.tabla_insertando_fila.html)
  - [**Sesión 05**](../sesion05/index.html)
   - [05.get\_json.html](./05.get_json.html)
+  - [05.getScript.html](./05.getScript.html)
   - [05.load.html](./05.load.html)

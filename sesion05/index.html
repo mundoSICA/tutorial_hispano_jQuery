@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Sesión 5 - Ajax y buenas prácticas.</title>
+<title>Sesión 5 - Ajax.</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
 	<link rel='icon' type='image/png' href='./../img/favicon.png' />
 	<script type='text/javascript' src='./../js/jquery-1.9.1.min.js'></script>
 	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+	<script type='text/javascript' src='./../js/jquery.linkEjemplos.js'></script>
 	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
 	pageConf	= {fileName:'/sesion05/index.html', sesion:5, num_sesiones:5};
@@ -43,7 +44,7 @@ $('#algunBoton').click(function(event) {
 });
 </script>
 
-<h1>Sesión 5 - Ajax y buenas prácticas.</h1>
+<h1>Sesión 5 - Ajax.</h1>
 
 <h2>Ajax.</h2>
 
@@ -128,6 +129,29 @@ $.ajax({
 <h2>Otras funciones Ajax</h2>
 
 <p>Existen otras funciones definidas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria <strong>Ajax</strong> de la api de <strong>jQuery</strong>:</p>
+
+<h2>getScript</h2>
+
+<p>Es una función <code>ajax</code> de <strong>jQuery</strong> equivalente a:</p>
+
+<pre><code>$.ajax({
+    url: url,
+    dataType: "script",
+    success: success
+});
+</code></pre>
+
+<p>A partir de <strong>jQuery</strong> <code>1.5</code> puedes ocupar la función <code>.fail()</code> para detectar y manejar errores.</p>
+
+<pre><code>$.getScript("ajax/test.js")
+.done(function(script, textStatus) {
+    $( "div.log" ).text( textStatus );
+})
+.fail(function(jqxhr, settings, exception) {
+    $( "div.log" ).text( "Triggered ajaxError handler." );
+});</code></pre>
+
+<p><a href="../ejemplos/02.getScript.html">Ejemplo - getScript</a></p>
 
 <h2>getJSON</h2>
 
