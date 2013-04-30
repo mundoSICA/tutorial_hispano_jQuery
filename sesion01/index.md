@@ -251,4 +251,5 @@ Enlaces externos recomendables:
  - [Como maneja _CSS_ los errores.](http://www.xanthir.com/blog/b4JF0)
  - [**Sitio oficial jQuery**](http://jquery.com/)
  - [**Foro de jQuery**](http://forum.jquery.com/)
+ - [**Documentación jQuery**](http://api.jquery.com/)
  - [**IRC de freeNode canal jQuery**](http://webchat.freenode.net/?channels=#jquery)

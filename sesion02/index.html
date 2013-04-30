@@ -54,6 +54,8 @@ $(function() {
     $('h2 + p')
         .css('color', '#946900')
         .css('font-style', 'italic');
+    //
+    $('a[href^="../ejemplos/"]').addClass('button').attr('target', 'blank');
 });
 </script>
 
@@ -94,6 +96,8 @@ $('esto no existe').css('color', 'red');
 $.css('color', 'red');
 </code></pre>
 
+<p><a href="../ejemplos/02.jquery_alias.html">Ejemplo - jQuery Alias</a></p>
+
 <blockquote>
   <p>Esto no siempre es valido, cuando se utilizan otras librerias que usan la funcion $, para esto se emplea el <strong>noconflict</strong> de jQuery.</p>
 </blockquote>
@@ -122,6 +126,8 @@ $.css('color', 'red');
 
 <pre><code>$('h2').css('color', '#333');
 </code></pre>
+
+<p><a href="../ejemplos/02.trabajo_grupos.html">Ejemplo - Comportamiento trabajo por grupo</a></p>
 
 <p>En general las funciones en <strong>jQuery</strong> son de la siguiente forma:</p>
 

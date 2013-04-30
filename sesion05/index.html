@@ -49,71 +49,7 @@ $('#algunBoton').click(function(event) {
 
 <p><strong>Ajax</strong>, acrónimo de Asynchronous JavaScript And XML (<em>JavaScript asíncrono y XML</em>), es una técnica de desarrollo web para crear aplicaciones interactivas o RIA (Rich Internet Applications). Estas aplicaciones se ejecutan en el cliente, es decir, en el navegador de los usuarios mientras se mantiene la comunicación asíncrona con el servidor en segundo plano. De esta forma es posible realizar cambios sobre las páginas sin necesidad de recargarlas, lo que significa aumentar la interactividad, velocidad y usabilidad en las aplicaciones.</p>
 
-<p>En concepto parte del hecho que desde javascript podemos realizar solicitudes( <em>httpRequests</em> ) y que por medio que <em>javascript</em> no espera el resultado de dicha solicitud para continuar su flujo, veamos un ejemplo con javascript puro.</p>
-
-<h4>Opteniendo un httpRequests.</h4>
-
-<pre><code>//regresa un Requests Object
-function createRequestObject() {
-    var ro;
-    if (window.XMLHttpRequest) {
-            ro = new XMLHttpRequest();
-    } else {
-            ro = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    if (!ro)
-            debug("Couldn't start XMLHttpRequest object");
-    return ro;
-}</code></pre>
-
-<h4>Manejador de la respuesta.</h4>
-
-<pre><code>function handleResponse() {
-if (http.readyState != 4 &amp;&amp; http.readyState != 3)
-    return;
-if (http.readyState == 3 &amp;&amp; http.status != 200)
-    return;
-if (http.readyState == 4 &amp;&amp; http.status != 200) {
-    clearInterval(pollTimer);
-    inProgress = false;
-}
-// In konqueror http.responseText is sometimes null here...
-if (http.responseText === null)
-    return;
-
-while (prevDataLength != http.responseText.length) {
-    if (http.readyState == 4  &amp;&amp; prevDataLength == http.responseText.length)
-        break;
-    prevDataLength = http.responseText.length;
-    var response = http.responseText.substring(nextLine);
-    var lines = response.split('\n');
-    nextLine = nextLine + response.lastIndexOf('\n') + 1;
-    if (response[response.length-1] != '\n')
-        lines.pop();
-
-    for (var i = 0; i &lt; lines.length; i++) {
-        // ...
-    }
-}
-
-if (http.readyState == 4 &amp;&amp; prevDataLength == http.responseText.length)
-    clearInterval(pollTimer);
-
-inProgress = false;
-}
-</code></pre>
-
-<h4>Usandolos</h4>
-
-<pre><code>function startProcess(dataUrl) {
-    http = createRequestObject();
-    http.open('get', dataUrl);
-    http.onreadystatechange = handleResponse;
-    http.send(null);
-
-    pollTimer = setInterval(handleResponse, 1000);
-}
-</code></pre>
+<p>En concepto parte del hecho que desde javascript podemos realizar solicitudes( <em>httpRequests</em> ) y que por medio que <em>javascript</em> no espera el resultado de dicha solicitud para continuar su flujo.</p>
 
 <h2>Ajax y Jquery.</h2>
 
@@ -129,7 +65,8 @@ inProgress = false;
         $('.result').html(data);
         alert('Load was performed.');
     }
-});</code></pre>
+});
+</code></pre>
 
 <h3>Quitando la opción asincrona.</h3>
 
@@ -142,7 +79,8 @@ $.ajax({
         datos = data;
     }
 });
-console.log(datos);</code></pre>
+console.log(datos);
+</code></pre>
 
 <p>Datos sera <code>null</code>, ya que la respuesta es asincrona es decir <code>console.log()</code> no espera la finalización de <code>$.ajax</code> para ejecutarse, hacer <code>async</code> igual a <code>false</code> resulta una opción util para esta logica.</p>
 
@@ -155,7 +93,8 @@ $.ajax({
         datos = data;
     }
 });
-console.log(datos);</code></pre>
+console.log(datos);
+</code></pre>
 
 <p>Otra opción para esperar que ajax se haya ejecutado para realizar determinada acción seria encaminar la funcion <code>done</code> como se muestra acontinuación.</p>
 
@@ -167,8 +106,7 @@ $.ajax({
     }
 }).done(function( msg ) {
     console.log(datos);}
-);
-</code></pre>
+);</code></pre>
 
 <h4>Ejemplo Manejando el error.</h4>
 
@@ -185,12 +123,17 @@ $.ajax({
     }
 }).done(function( msg ) {
     console.log(datos);}
-);
-</code></pre>
+);</code></pre>
 
 <h2>Otras funciones Ajax</h2>
 
 <p>Existen otras funciones definidas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria <strong>Ajax</strong> de la api de <strong>jQuery</strong>:</p>
+
+<h2>getJSON</h2>
+
+<p><a href="http://api.jquery.com/jQuery.getJSON/">http://api.jquery.com/jQuery.getJSON/</a></p>
+
+<p>https://api.twitter.com/1/statuses/user<em>timeline.json?include</em>entities=true&amp;include<em>rts=true&amp;screen</em>name=fitorec&amp;count=2</p>
 
 <h2>Ejemplo load</h2>
 
@@ -207,8 +150,7 @@ $('#algunBoton').click(function(event) {
     $('#elementoDinamico').load('file.html');   
     // Detenmos los demas eventos(si no hacemos esto subiria el scroll)
     event.preventDefault();
-});
-</code></pre>
+});</code></pre>
 
 <div id='elementoDinamico'></div>
 

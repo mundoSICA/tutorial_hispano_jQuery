@@ -20,6 +20,8 @@ $(function() {
 	$('h2 + p')
 		.css('color', '#946900')
 		.css('font-style', 'italic');
+	//
+	$('a[href^="../ejemplos/"]').addClass('button').attr('target', 'blank');
 });
 </script>
 
@@ -58,6 +60,8 @@ Es mas común ver que en los ejemplos hacen referencia a la llamada de la funci�
 	//construccion sin consulta
 	$.css('color', 'red');
 
+[Ejemplo - jQuery Alias](../ejemplos/02.jquery_alias.html)
+
 > Esto no siempre es valido, cuando se utilizan otras librerias que usan la funcion $, para esto se emplea el **noconflict** de jQuery.
 
 ## Trabaja por grupos(_Iteración implicita_).
@@ -80,6 +84,8 @@ En este caso estamos ocupando el metodo `each`, en el cual para cada titulo en l
 Existe una forma de hacer esto más "fácil" y es ocupando el comportamiento de iteración implicita de __jQuery__ (o acción sobre el conjunto), en este caso la función `css` puede trabajar sobre toda una selección:
 
 	$('h2').css('color', '#333');
+
+[Ejemplo - Comportamiento trabajo por grupo](../ejemplos/02.trabajo_grupos.html)
 
 En general las funciones en **jQuery** son de la siguiente forma:
 

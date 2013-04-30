@@ -16,76 +16,14 @@ Sesión 5 - Ajax y buenas prácticas.
 
 **Ajax**, acrónimo de Asynchronous JavaScript And XML (_JavaScript asíncrono y XML_), es una técnica de desarrollo web para crear aplicaciones interactivas o RIA (Rich Internet Applications). Estas aplicaciones se ejecutan en el cliente, es decir, en el navegador de los usuarios mientras se mantiene la comunicación asíncrona con el servidor en segundo plano. De esta forma es posible realizar cambios sobre las páginas sin necesidad de recargarlas, lo que significa aumentar la interactividad, velocidad y usabilidad en las aplicaciones.
 
-En concepto parte del hecho que desde javascript podemos realizar solicitudes( _httpRequests_ ) y que por medio que _javascript_ no espera el resultado de dicha solicitud para continuar su flujo, veamos un ejemplo con javascript puro.
-
-
-#### Opteniendo un httpRequests.
-
-	//regresa un Requests Object
-	function createRequestObject() {
-        var ro;
-        if (window.XMLHttpRequest) {
-                ro = new XMLHttpRequest();
-        } else {
-                ro = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        if (!ro)
-                debug("Couldn't start XMLHttpRequest object");
-        return ro;
-	}
-
-#### Manejador de la respuesta.
-
-	function handleResponse() {
-    if (http.readyState != 4 && http.readyState != 3)
-        return;
-    if (http.readyState == 3 && http.status != 200)
-        return;
-    if (http.readyState == 4 && http.status != 200) {
-        clearInterval(pollTimer);
-        inProgress = false;
-    }
-    // In konqueror http.responseText is sometimes null here...
-    if (http.responseText === null)
-        return;
-
-    while (prevDataLength != http.responseText.length) {
-        if (http.readyState == 4  && prevDataLength == http.responseText.length)
-            break;
-        prevDataLength = http.responseText.length;
-        var response = http.responseText.substring(nextLine);
-        var lines = response.split('\n');
-        nextLine = nextLine + response.lastIndexOf('\n') + 1;
-        if (response[response.length-1] != '\n')
-            lines.pop();
-
-        for (var i = 0; i < lines.length; i++) {
-            // ...
-        }
-    }
-
-    if (http.readyState == 4 && prevDataLength == http.responseText.length)
-        clearInterval(pollTimer);
-
-    inProgress = false;
-	}
-
-#### Usandolos
-
-	function startProcess(dataUrl) {
-        http = createRequestObject();
-        http.open('get', dataUrl);
-        http.onreadystatechange = handleResponse;
-        http.send(null);
-
-        pollTimer = setInterval(handleResponse, 1000);
-	}
+En concepto parte del hecho que desde javascript podemos realizar solicitudes( _httpRequests_ ) y que por medio que _javascript_ no espera el resultado de dicha solicitud para continuar su flujo.
 
 ## Ajax y Jquery.
 
 Personalmente siento que el concepto es algo confuso con **jQuery**, ya que propiamente no se deberia llamar `ajax` si no HttpRequest ó simplemente Request ([como funciona en mootools](http://mootools.net/docs/core/Request/Request)).
 
 En adelante cuando se mencione `ajax` en la jerga de **jQuery** nos referimos a una funcion de jQuery que realiza un **http request**, espero que quede mas claro con algunos ejemplos:
+
 
 
 #### Ejemplo básico
@@ -158,6 +96,12 @@ Si somos detallistas nos daremos cuenta que `console.log(datos);` no garantiza q
 
 Existen otras funciones definidas para manejar respuestas asincronas para una detallado mas extenso se recomienda consultar la categoria **Ajax** de la api de **jQuery**:
 
+## getJSON
+
+
+<http://api.jquery.com/jQuery.getJSON/>
+
+https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=fitorec&count=2
 
 ## Ejemplo load
 

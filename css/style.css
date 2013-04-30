@@ -443,6 +443,7 @@ a.button:active, button.button:active {
 float:right;
 }
 #chacoSamurai img{
+	background: transparent;
 	border:none;
 	-webkit-box-shadow: none;
 		 -moz-box-shadow: none;

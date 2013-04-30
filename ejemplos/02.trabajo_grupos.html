@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Ejemplos disponibles</title>
+<title>jQuery Trabaja por grupos</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
@@ -10,7 +10,7 @@
 	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
 	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
-	pageConf	= {fileName:'/ejemplos/index.html', sesion:0, num_sesiones:5};
+	pageConf	= {fileName:'/ejemplos/02.trabajo_grupos.html', sesion:0, num_sesiones:5};
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -32,37 +32,55 @@
 </div>
 <div id='content'>
 <div id='tabla_contenidos'></div>
-<h1>Ejemplos disponibles</h1>
+<script>
+$(document).ready(function(){
+    $("pre").snippet("javascript", {style:'darkness'});
+    $h2 = $('h2');
+    // Cambiando el color de todos los titulos desde un ciclo each
+    $('a.each').click( function(event){
+        $.each($h2, function() {
+            $(this).css("color", "red");
+        });
+        event.preventDefault();
+    });
+    // Cambiando el color de todos los titulos desde el comportamiento en grupo
+    $('a.grupo').click( function(event){
+        $h2.css("color", "blue");
+        event.preventDefault();
+    });
 
-<ul>
-<li><a href="../sesion01/index.html"><strong>Sesión 01</strong></a>
-<ul>
-<li><a href="./01.01.Etiquetas_head.html">01.01.Etiquetas_head.html</a></li>
-</ul></li>
-<li><a href="../sesion02/index.html"><strong>Sesión 02</strong></a>
-<ul>
-<li><a href="./02.jquery_alias.html">02.jquery_alias.html</a></li>
-<li><a href="./02.trabajo_grupos.html">02.trabajo_grupos.html</a></li>
-</ul></li>
-<li><a href="../sesion03/index.html"><strong>Sesión 03</strong></a>
-<ul>
-<li><a href="./03.ejemplo_hover.html">03.ejemplo_hover.html</a></li>
-<li><a href="./03_evento_one.html">03_evento_one.html</a></li>
-<li><a href="./03.informacion_evento.html">03.informacion_evento.html</a></li>
-</ul></li>
-<li><a href="../sesion04/index.html"><strong>Sesión 04</strong></a>
-<ul>
-<li><a href="./04.-animacion.html">04.-animacion.html</a></li>
-<li><a href="./04.-fadeIn.html">04.-fadeIn.html</a></li>
-<li><a href="./04.tabla_insertando_columna.html">04.tabla_insertando_columna.html</a></li>
-<li><a href="./04.tabla_insertando_fila.html">04.tabla_insertando_fila.html</a></li>
-</ul></li>
-<li><a href="../sesion05/index.html"><strong>Sesión 05</strong></a>
-<ul>
-<li><a href="./05.get_json.html">05.get_json.html</a></li>
-<li><a href="./05.load.html">05.load.html</a></li>
-</ul></li>
-</ul>
+});</script>
+
+<h1>jQuery Trabaja por grupos</h1>
+
+<h2>Código HTML.</h2>
+
+<pre><code>&lt;a class="button each" href="#"&gt;Acción con $&lt;/a&gt;
+&lt;a class="button grupo"  href="#"&gt;Acción con jQuery&lt;/a&gt;</code></pre>
+
+<h2>Código jQuery</h2>
+
+<pre><code>$h2 = $('h2');
+// Cambiando el color de todos los titulos desde un ciclo each
+$('a.each').click( function(event){
+    $.each($h2, function() {
+        $(this).css("color", "red");
+    });
+    event.preventDefault();
+});
+// Cambiando el color de todos los titulos desde el comportamiento en grupo
+$('a.grupo').click( function(event){
+    $h2.css("color", "blue");
+    event.preventDefault();
+});
+</code></pre>
+
+<h2>Resultado</h2>
+
+<p><a class="button each" href="#">Acción con $</a>
+<a class="button grupo"  href="#">Acción con jQuery</a></p>
+
+<div id="elementoDinamico"></div>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">
