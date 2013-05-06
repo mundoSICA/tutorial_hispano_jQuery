@@ -11,7 +11,7 @@
 	<script type='text/javascript' src='./../js/jquery.linkEjemplos.js'></script>
 	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
-	pageConf	= {fileName:'/sesion03/index.html', sesion:3, num_sesiones:5};
+	pageConf	= {fileName:'/sesion03/index.html', sesion:3, num_sesiones:6};
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -37,17 +37,8 @@
 $(function() {
     $("pre").snippet("javascript", {style:'darkness'});
     //
-    $("h1")
-            .click(function() {
-                console.log('Ejecución del manejador1 para el evento click del h1');
-            })
-            .click(function() {
-                console.log('Ejecución del manejador2 para el evento click del h1');
-            });
     //test enlaces.
-    $('a.testClick').click( function(){
-        console.log( $(this).text() );
-    });
+    $('a[href^="../ejemplos/"]').linkEjemplos();
 });
 </script>
 
@@ -57,62 +48,133 @@ $(function() {
 
 <p><strong>jQuery</strong> define una lista de eventos y funciones para la administración de los mismos, la sintaxis por defecto para un manejador de evento es de la siguiente forma <code>$.fn.nombreEvento</code>.</p>
 
-<pre><code>$('Selector').nombreEvento( function(){
+<pre><code>$('Selector').nombreEvento( function(event){
     //funcion que administra el evento.
     //this es el elemento que disparo el evento.
-}
-</code></pre>
+}</code></pre>
 
 <p>Aquí es importante resaltar que <strong>this</strong> contendra la instancia del elemento que disparo el evento, por ejemplos si a los enlaces(<code>a</code>) le agregamos el evento <code>click</code>, this contendra la instancia del enlace especifo sobre del cual  hallamos hecho click, analice el siguiente codigo.</p>
 
-<p><strong>Codigo HTML</strong></p>
+<p><strong>jQuery</strong> define varios eventos para agregar un manejador de dicho evento basta con agregar una función en la llamada de dicho evento esta función puede recibir un argumento <code>event</code> el cual es util para obtener información de dicho evento ó para cambiar el comportamiento del mismo.</p>
 
-<pre><code>&lt;a class='testClick' href='#'&gt;enlace 1&lt;/a&gt;
-&lt;a class='testClick' href='#'&gt;enlace 3&lt;/a&gt;
-&lt;a class='testClick' href='#'&gt;enlace 2&lt;/a&gt;</code></pre>
+<h2>Evento click</h2>
 
-<p><strong>Código jQuery</strong></p>
+<p>El evento <code>click</code> es disparado cuando con el mouse le hacemos le damos <strong>click</strong> sobre un elemento seleccionado, la forma que tiene este evento es la siguiente:</p>
 
-<pre><code>$('a.testClick').click( function(){
-    console.log( $(this).text() );
-}
+<pre><code>$("a.button").click(
+    function(event) {
+        console.log('Manejador para el evento click del enlace(a) con clase(.) button');
+        event.preventDefault();
+});
 </code></pre>
 
-<p><em>* Como puede ver *</em></p>
+<p>En el ejemplo anterior vemos como al evento <code>click</code> le agregamos una funcion como manejador de dicho evento, esta recibe el objeto <code>event</code> el cual ocupamos para ejecutar el metodo <code>preventDefault</code> este metodo detiene el comportamiento por defecto de dicho evento, en este caso tenemos un link(<code>a</code>) que al darle click lo comun seria que siguiera en enlace definido en el atributo <code>href</code>.</p>
 
-<ul>
-    <li><a class='testClick' href='#'>enlace 1</a></li>
-    <li><a class='testClick' href='#'>enlace 3</a></li>
-    <li><a class='testClick' href='#'>enlace 2</a></li>
-</ul>
-
-<p>En este caso mandaremos a la salida de la consola el contenido del enlace que se precione.</p>
+<p><a href="../ejemplos/03.ejemplo_click.html">Ejemplo - Click</a></p>
 
 <h2>Comportamiento en cola.</h2>
 
-<p>Observe el siguiente código.</p>
+<p><strong>jQuery</strong> tiene un comportamiento en cola(el primero en entrar es el 1ro en ejecutarse), para explicar esto observe el siguiente código:</p>
 
-<pre><code>    $("h1")
+<pre><code>    $("a")
         .click(function() {
-            console.log('Ejecución del manejador1 para el evento click del h1');
+            console.log('Ejecución del manejador1 para el evento click del enlace');
         })
         .click(function() {
-            console.log('Ejecución del manejador2 para el evento click del h1');
+            console.log('Ejecución del manejador2 para el evento click del enlace');
         });</code></pre>
 
-<p>¿Que cree que suceda cuando le demos click a un h1 en esta página?.</p>
+<p><strong>¿Que cree que suceda cuando le demos click a un enlace(<code>a</code>) en la página?.</strong></p>
 
-<p>La respuesta la podemos encontrar al reflexionar que sucede cuando mandamos a llamar miltiples veces el evento <code>document.onReady</code>. Lo que hace <strong>jQuery</strong> es ocupar una cola para administrar los eventos, de esta forma se pueden agregar multiples funciones sobre el mismo <code>evento/elemento</code>, sin más el resultado en la consola seria:</p>
+<p>La respuesta la podemos encontrar al reflexionar que sucede cuando mandamos a llamar miltiples veces el evento <code>document.onReady</code>.</p>
 
-<pre><code>Ejecución del manejador1 para el evento click del h1
-Ejecución del manejador2 para el evento click del h1</code></pre>
+<p>Lo que hace <strong>jQuery</strong> es ocupar una cola para administrar los eventos, de esta forma se pueden agregar multiples funciones sobre el mismo <code>evento/elemento</code>, por lo cual el resultado en la consola seria:</p>
+
+<pre><code>Ejecución del manejador1 para el evento click del enlace
+Ejecución del manejador2 para el evento click del enlace</code></pre>
+
+<h2>Evento hover</h2>
+
+<p>El evento <code>hand over</code> o <code>hover</code> es disparado cuando pasamos el cursor por encima de algun elemento, la sintaxis basica es la siguiente.</p>
+
+<pre><code>$("a").hover(function() {
+    console.log('Ejecución del manejador para el evento hover del enlace');
+});
+</code></pre>
+
+<p>Cabe mensionar que este evento puede soportar 2 manejadores, el primero es ejecutado cuando el cursor pase por encima del elemento y el segundo es ejecutado cuando el cursor se quita de dicho elemento, p.e.:</p>
+
+<pre><code>$("a").hover(
+    function() {
+        $(this).css('color', 'red');
+    },
+    function() {
+        $(this).css('color', 'blue');
+    }
+);
+</code></pre>
+
+<p>En este caso estamos agregando 2 manejadores el resultado sera que cuando pasemos el mouse por encima de un enlace el color de la fuente se cambiara a rojo y cuando quitemos el cursor el color sera azul, veamos otro ejemplo:</p>
+
+<p><a href="../ejemplos/03.ejemplo_hover.html">Ejemplo - Hover</a></p>
+
+<h2>Eventos del teclado</h2>
+
+<p>jQuery define un conjunto de <a href="http://api.jquery.com/category/events/keyboard-events/">eventos para el teclado</a> los eventos que definen son los siguientes.</p>
+
+<h3>focusout</h3>
+
+<p>Vincula a los inputs sobre el evento <code>out Focus</code>.</p>
+
+<blockquote>
+  <p>Mayor información: <a href="http://api.jquery.com/focusout/">http://api.jquery.com/focusout/</a></p>
+</blockquote>
+
+<h3>keypress</h3>
+
+<p>El evento es disparado cuando una tecla es presionada.</p>
+
+<blockquote>
+  <p>Mayor información:   <a href="http://api.jquery.com/keypress/">http://api.jquery.com/keypress/</a></p>
+</blockquote>
+
+<h3>keyup</h3>
+
+<p>El evento es disparado cuando una tecla deja de estar presionada.</p>
+
+<blockquote>
+  <p>Mayor información:   <a href="http://api.jquery.com/keyup/">http://api.jquery.com/keyup/</a></p>
+</blockquote>
+
+<h3>keydown</h3>
+
+<p>El evento es disparado cuando se encuentra una tecla presionada.</p>
+
+<blockquote>
+  <p>Mayor información:   <a href="http://api.jquery.com/keydown/">http://api.jquery.com/keydown/</a></p>
+</blockquote>
+
+<h3>Ejemplo de eventos de teclado:</h3>
+
+<p>Como podemos ver las funciones <code>keyup</code>, <code>keydown</code> y <code>keypress</code>, veamos un simple ejemplo:</p>
+
+<pre><code>$('#target').keyup(function(event) {
+    var msg = 'El evento keyup() fue llamado para la tecla ' + event.which;
+    console.log(msg);
+}).keydown(function(event) {
+    if (event.which == 13) {
+        event.preventDefault();
+    }
+});
+</code></pre>
+
+<p><a href="../ejemplos/03.evento_teclado.html">Ejemplo - Evento Teclado</a></p>
 
 <h2>Borrando eventos función off.</h2>
 
 <p>Podemos desvincular los eventos con la función <code>off</code> po ejemplo para eliminar el evento click en H1 podriamos hacer.</p>
 
-<pre><code>$("h1").off('click');
-</code></pre>
+<pre><code>$("h1").off('click');</code></pre>
 
 <p>Con esto eliminariamos todos los eventos click del <code>h1</code>, si quisieramos eliminar un unico evento click, podriamos hacer uso de los espacios de nombres.</p>
 

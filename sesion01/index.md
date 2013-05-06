@@ -31,6 +31,8 @@ El proposito de este manual es ser una ayuda en la comprensión de los conceptos
 Esta documentación esta licenciada bajo **_[atribución creative commons](http://creativecommons.org/licenses/by/2.5/mx/)_**, _**sientase libre de modificar, compartir y redistribuir**_, si desear colaborar te invito a que revises el [repositorio publico](https://github.com/mundoSICA/tutorial_hispano_jQuery).
 
 
+<a class='button' href="https://github.com/mundoSICA/tutorial_hispano_jQuery/archive/gh-pages.zip">Descargar Manual</a>
+
 Breve referencia **HTML**
 ------------------------------------------------------------------------------------------
 

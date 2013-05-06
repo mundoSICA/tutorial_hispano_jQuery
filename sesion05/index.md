@@ -1,10 +1,11 @@
 <script  type="text/javascript">
 $(function() {
-$("pre").snippet("javascript", {style:'darkness'});
-$('#algunBoton').click(function(event) {
-	$('#elementoDinamico').load('file.html');
-	event.preventDefault();
-});
+	$("pre").snippet("javascript", {style:'darkness'});
+	$('a[href^="../ejemplos/"]').linkEjemplos();
+	$('#algunBoton').click(function(event) {
+		$('#elementoDinamico').load('file.html');
+		event.preventDefault();
+	});
 
 });
 </script>
@@ -116,15 +117,22 @@ A partir de **jQuery** `1.5` puedes ocupar la función `.fail()` para detectar y
 		$( "div.log" ).text( "Triggered ajaxError handler." );
 	});
 
-[Ejemplo - getScript](../ejemplos/02.getScript.html)
+[Ejemplo - getScript](../ejemplos/05.getScript.html)
 
 
 ## getJSON
 
+Esta función es en particular muy util ya que varios servicios por Internet nos brindan una API y por lo regular los datos son enviados en formato json.
+
 
 <http://api.jquery.com/jQuery.getJSON/>
 
-https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=fitorec&count=2
+[Ejemplo - getJson y la API de youtube](../ejemplos/05.getjson.html)
+
+[Ejemplo - getJson y la API de Flickr](../ejemplos/05.get_json.html)
+
+[Ejemplo - getJson y la API de twitter](../ejemplos/05.getjson.twitter.html)
+
 
 ## Ejemplo load
 

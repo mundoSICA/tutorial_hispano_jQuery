@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Organización de código.</title>
+<title>Sesión 6 - Organización de código.</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
@@ -11,7 +11,7 @@
 	<script type='text/javascript' src='./../js/jquery.linkEjemplos.js'></script>
 	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
-	pageConf	= {fileName:'/sesion06/index.html', sesion:6, num_sesiones:5};
+	pageConf	= {fileName:'/sesion06/index.html', sesion:6, num_sesiones:6};
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -41,7 +41,43 @@ $(function() {
 });
 </script>
 
-<h1>Organización de código.</h1>
+<h1>Sesión 6 - Organización de código.</h1>
+
+<h2>Organizando el código en archivos.</h2>
+
+<p>Como sabemos con <strong>jQuery</strong> podemos agregar multiples funciones para manejar un evento, y estas funciones se van a ir ejecutando en formato de cola.</p>
+
+<p>Ahora imagine que tiene 2 documentos, uno con el nombre <strong>titulos.js</strong> con el siguiente contenido:</p>
+
+<pre><code>$(document).ready(function(){
+    //Cambiamos el color para el titulo nivel 2
+    $('h2').css('color', 'green');
+
+    //Agregamos un evento para h1
+    $('h1').hover( function(){
+        $(this).css('color', 'red');
+    },function(){
+        $(this).css('color', '#222');
+    });
+});</code></pre>
+
+<p>Por otra parte tenemos el archivo con el nombre <strong>enlaces.js</strong> con el siguiente contenido:</p>
+
+<pre><code>$(document).ready(function(){
+    //Obliga abrir los enlaces en una pestaña nueva
+    $('a').attr('target', 'blank');
+});</code></pre>
+
+<p>Si mandamos a llamar ambos documentos de la manera siguiente:</p>
+
+<pre><code>&lt;script src="js/titulos.js"&gt;&lt;/script&gt;
+&lt;script src="js/enlaces.js"&gt;&lt;/script&gt;</code></pre>
+
+<p>¿Que crees que pase?.</p>
+
+<p>Es una practica bastante comun separar la logica en archivos distintos de esta manera tenemos mas ordenado nuestro código, de echo así es como funciona este manual donde tenemos un archivo que se encarga de manejar la tabla de los contenidos.</p>
+
+<p><a href="../ejemplos/06.tabla_contenidos.html">Ejemplo - tabla de contenidos</a></p>
 
 <h2>jQuery Plugins.</h2>
 
@@ -95,14 +131,14 @@ $(function() {
         });
     };
 
-})(jQuery);</code></pre>
+})(jQuery);
+</code></pre>
 
-<h2>Uso.</h2>
+<h3>Uso.</h3>
 
 <pre><code>$(function() {
     $("#round-me").yourPluginName("20px");
-});
-</code></pre>
+});</code></pre>
 
 <p><a href="../ejemplos/06.ejemplo_plugin.html">Ejemplo - plugin jQuery</a></p>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Ejemplo load</title>
+<title>Ejemplo load con la API de flicker</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
@@ -34,61 +34,79 @@
 <div id='content'>
 <div id='tabla_contenidos'></div>
 <script>$(document).ready(function(){
-    url = "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name="
+$("pre").snippet("javascript", {style:'darkness'});
 
 var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-$.getJSON( flickerAPI, {
-tags: "fitorec",
-tagmode: "any",
-format: "json"
-})
-.done(function( data ) {
-$.each( data.items, function( i, item ) {
-$( "<img/>" ).attr( "src", item.media.m ).appendTo( "#images" );
-if ( i === 3 ) {
-return false;
-}
-});
-});
 
-});</script>
+$('a.button').one('click', function(e){
+    $.getJSON( flickerAPI, {
+        tags: "fitorec",
+        tagmode: "any",
+        format: "json"
+    }).done(function( data ) {
+        $.each( data.items, function( i, item ) {
+            $( "<img/>" ).attr( "src", item.media.m ).appendTo( "#imagenes" );
+            if ( i === 3 ) {
+            return false;
+            }
+        });// Fin each
+    });// Fin done de getJSON
+    e.preventDefault();
+    });
+});
+</script>
 
-<p><style type="text/css" media="all">#elementoDinamico {
-    color: white;
-    background: #444;
+<p><style type="text/css" media="all">#imagenes {
+    color: #131A04;
+    background: #CFEC99
+} #imagenes img{
+    margin: 10px auto;
 }</style></p>
 
-<h1>Ejemplo load</h1>
+<h1>Ejemplo load con la API de flicker</h1>
 
-<h2>Código HTML.</h2>
+<h2>Código HTML</h2>
 
-<pre><code>&lt;a id='boton' class="button" href='http://google.com'&gt;Botón&lt;/a&gt;
-&lt;div id="elementoDinamico"&gt;&lt;/div&gt;</code></pre>
+<pre><code>&lt;a class='button' href="#"&gt;Cargar info de Flicker&lt;/a&gt;
+&lt;div id="images"&gt;&lt;/div&gt;
+</code></pre>
 
-<h2>Código CSS</h2>
+<h2>Código CSS:</h2>
 
-<pre><code>#elementoDinamico {
-    color: white;
-    background: #444;
+<pre><code>#imagenes {
+    color: #131A04;
+    background: #CFEC99
+}
+#imagenes img{
+    margin: 10px auto;
 }</code></pre>
 
 <h2>Código jQuery</h2>
 
-<pre><code>$('#boton').click(function(event) {
-    $('#elementoDinamico').load('file.html');
-    event.preventDefault();
-});</code></pre>
+<pre><code>var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 
-<h2>Contenido en <code>file.html</code></h2>
-
-<pre><code>&lt;h1&gt;Contenido dinamico&lt;/h1&gt;
-&lt;p&gt;Parrafó 1&lt;/p&gt;
-&lt;p&gt;Parrafó 2&lt;/p&gt;
+$('a.button').one('click', function(e){
+    $.getJSON( flickerAPI, {
+        tags: "fitorec",
+        tagmode: "any",
+        format: "json"
+    }).done(function( data ) {
+        $.each( data.items, function( i, item ) {
+            $( "&lt;img/&gt;" ).attr( "src", item.media.m ).appendTo( "#imagenes" );
+            if ( i === 3 ) {
+            return false;
+            }
+        });// Fin each
+    });// Fin done de getJSON
+    e.preventDefault();
+});
 </code></pre>
 
 <h2>Resultado</h2>
 
-<p><div id="images"></div></p>
+<p><a class='button' href="#">Cargar info de Flicker</a></p>
+
+<div id="imagenes"></div>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">

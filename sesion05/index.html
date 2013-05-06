@@ -11,7 +11,7 @@
 	<script type='text/javascript' src='./../js/jquery.linkEjemplos.js'></script>
 	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
-	pageConf	= {fileName:'/sesion05/index.html', sesion:5, num_sesiones:5};
+	pageConf	= {fileName:'/sesion05/index.html', sesion:5, num_sesiones:6};
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -35,11 +35,12 @@
 <div id='tabla_contenidos'></div>
 <script  type="text/javascript">
 $(function() {
-$("pre").snippet("javascript", {style:'darkness'});
-$('#algunBoton').click(function(event) {
-    $('#elementoDinamico').load('file.html');
-    event.preventDefault();
-});
+    $("pre").snippet("javascript", {style:'darkness'});
+    $('a[href^="../ejemplos/"]').linkEjemplos();
+    $('#algunBoton').click(function(event) {
+        $('#elementoDinamico').load('file.html');
+        event.preventDefault();
+    });
 
 });
 </script>
@@ -66,8 +67,7 @@ $('#algunBoton').click(function(event) {
         $('.result').html(data);
         alert('Load was performed.');
     }
-});
-</code></pre>
+});</code></pre>
 
 <h3>Quitando la opción asincrona.</h3>
 
@@ -80,8 +80,7 @@ $.ajax({
         datos = data;
     }
 });
-console.log(datos);
-</code></pre>
+console.log(datos);</code></pre>
 
 <p>Datos sera <code>null</code>, ya que la respuesta es asincrona es decir <code>console.log()</code> no espera la finalización de <code>$.ajax</code> para ejecutarse, hacer <code>async</code> igual a <code>false</code> resulta una opción util para esta logica.</p>
 
@@ -94,8 +93,7 @@ $.ajax({
         datos = data;
     }
 });
-console.log(datos);
-</code></pre>
+console.log(datos);</code></pre>
 
 <p>Otra opción para esperar que ajax se haya ejecutado para realizar determinada acción seria encaminar la funcion <code>done</code> como se muestra acontinuación.</p>
 
@@ -107,7 +105,8 @@ $.ajax({
     }
 }).done(function( msg ) {
     console.log(datos);}
-);</code></pre>
+);
+</code></pre>
 
 <h4>Ejemplo Manejando el error.</h4>
 
@@ -124,7 +123,8 @@ $.ajax({
     }
 }).done(function( msg ) {
     console.log(datos);}
-);</code></pre>
+);
+</code></pre>
 
 <h2>Otras funciones Ajax</h2>
 
@@ -138,8 +138,7 @@ $.ajax({
     url: url,
     dataType: "script",
     success: success
-});
-</code></pre>
+});</code></pre>
 
 <p>A partir de <strong>jQuery</strong> <code>1.5</code> puedes ocupar la función <code>.fail()</code> para detectar y manejar errores.</p>
 
@@ -149,15 +148,22 @@ $.ajax({
 })
 .fail(function(jqxhr, settings, exception) {
     $( "div.log" ).text( "Triggered ajaxError handler." );
-});</code></pre>
+});
+</code></pre>
 
-<p><a href="../ejemplos/02.getScript.html">Ejemplo - getScript</a></p>
+<p><a href="../ejemplos/05.getScript.html">Ejemplo - getScript</a></p>
 
 <h2>getJSON</h2>
 
+<p>Esta función es en particular muy util ya que varios servicios por Internet nos brindan una API y por lo regular los datos son enviados en formato json.</p>
+
 <p><a href="http://api.jquery.com/jQuery.getJSON/">http://api.jquery.com/jQuery.getJSON/</a></p>
 
-<p>https://api.twitter.com/1/statuses/user<em>timeline.json?include</em>entities=true&amp;include<em>rts=true&amp;screen</em>name=fitorec&amp;count=2</p>
+<p><a href="../ejemplos/05.getjson.html">Ejemplo - getJson y la API de youtube</a></p>
+
+<p><a href="../ejemplos/05.get_json.html">Ejemplo - getJson y la API de Flickr</a></p>
+
+<p><a href="../ejemplos/05.getjson.twitter.html">Ejemplo - getJson y la API de twitter</a></p>
 
 <h2>Ejemplo load</h2>
 
@@ -174,7 +180,8 @@ $('#algunBoton').click(function(event) {
     $('#elementoDinamico').load('file.html');   
     // Detenmos los demas eventos(si no hacemos esto subiria el scroll)
     event.preventDefault();
-});</code></pre>
+});
+</code></pre>
 
 <div id='elementoDinamico'></div>
 

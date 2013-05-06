@@ -4,16 +4,17 @@
  * Licencia   : Dual licensed under the MIT or GPL Version 2 licenses.
  * Date       : 2012/07/06 18:16:52
  */
-$(function() {
-tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
-/* variables a utilizar */
+$(document).ready(function(){
+
+tablaContenido = (function(div_contenedor, div_destino, tag_titulos) {
+	/* variables a utilizar */
 	var $content = $(div_contenedor),  /* contenedor principal */
-			$destino = $content.find(div_destino),  /* div q contendra la tabla*/
-			$tagTitulos = $content.find(tag_titulos), /*Titulos a observar*/
-			modo = null,    /* nos indica el tipo del archivo a genear la tabla*/
-			pie_links = '', /* forma del pie de links de cada sección */
-			titulo = null, /* titulo de la tabla de contenidos */
-/* funcion debug util para depurar */
+		$destino = $content.find(div_destino),  /* div q contendra la tabla*/
+		$tagTitulos = $content.find(tag_titulos), /*Titulos a observar*/
+		modo = null,    /* nos indica el tipo del archivo a genear la tabla*/
+		pie_links = '', /* forma del pie de links de cada sección */
+		titulo = null, /* titulo de la tabla de contenidos */
+	/* funcion debug util para depurar */
 	debug = function (){
 		console.log($content);
 		console.log($destino);
@@ -21,17 +22,17 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 		console.log(document.title);
 		console.log(modo);
 	},
-/* devuelve un string que contiene un link apartir de la url y del content */
+	/* devuelve un string que contiene un link apartir de la url y del content */
 	link = function (url,content){
 		return '<a href='+url+'>'+content+'</a>';
 	},
-/* A partir del archivo(fileName) obtenemos el modo
- *  index            - Pertenece a la pagina principal(index)
- *  index.sesion     - Pertenece a una sesión especifica.
- *  index.ejemplos   - Index de ejemplos.
- *  algun.ejemplo    - Algun ejemplo.
- *  algun.recurso   -  Algun recurso.
- */
+	/* A partir del archivo(fileName) obtenemos el modo
+	 *  index            - Pertenece a la pagina principal(index)
+	 *  index.sesion     - Pertenece a una sesión especifica.
+	 *  index.ejemplos   - Index de ejemplos.
+	 *  algun.ejemplo    - Algun ejemplo.
+	 *  algun.recurso   -  Algun recurso.
+	 */
 	obtenerModo = function (value){
 		var path = window.location+'';
 		//Modo index agregamos botones de descarga
@@ -39,8 +40,8 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 			modo = 'index';
 			repoURL = 'https://github.com/mundoSICA/tutorial_hispano_jQuery';
 			pie_links += link(
-				repoURL + '/tarball/master',
-				'&darr; Descargar <strong>Tar.gz</strong>'
+				repoURL + '/archive/gh-pages.zip',
+				'&darr; Descargar <strong>Zip</strong>'
 			)+ ' | ' + link(
 				'./todo/index.html',
 				'Versión imprimible <strong>HTML</strong>'
@@ -95,7 +96,7 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 			modo = 'version.impresa';
 		}
 	},
-/* Recibe una cadena de texto y la convierte en slug */
+	/* Recibe una cadena de texto y la convierte en slug */
 	slug_str = function( str ){
 		return    $.trim(str).toLowerCase().replace(/:/g, "").
 		replace(/\./g, "").replace(/\s+/g, "-").replace(/á/g, "a").
@@ -103,7 +104,7 @@ tablaContenido = (function(div_contenedor, div_destino, tag_titulos){
 		replace(/ñ/g, "ni").
 		replace(/ú/g, "u").replace(/\(/g, "-").replace(/\)/g, "");
 	},
-/* a partir del modo devuelve lo que sera los links para el pie de página */
+	/* a partir del modo devuelve lo que sera los links para el pie de página */
 	links_fin_content = function(){
 		if( modo == 'index.sesion'){
 			pie_links = link(

@@ -14,7 +14,7 @@ yellow="\e[0;33m"
 white="\e[0;37m"
 end='\e[0m'
 STARTTIME=$(date +%s )
-NUM_SESIONES=5
+NUM_SESIONES=6
 
 #Revisamos que las dependencias se cumplan satisfactoriamente
 DEPENDENCIES="git markdown"

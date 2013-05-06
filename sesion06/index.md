@@ -6,7 +6,46 @@ $(function() {
 });
 </script>
 
-# Organización de código.
+# Sesión 6 - Organización de código.
+
+
+## Organizando el código en archivos.
+
+Como sabemos con **jQuery** podemos agregar multiples funciones para manejar un evento, y estas funciones se van a ir ejecutando en formato de cola.
+
+Ahora imagine que tiene 2 documentos, uno con el nombre **titulos.js** con el siguiente contenido:
+
+	$(document).ready(function(){
+		//Cambiamos el color para el titulo nivel 2
+		$('h2').css('color', 'green');
+
+		//Agregamos un evento para h1
+		$('h1').hover( function(){
+			$(this).css('color', 'red');
+		},function(){
+			$(this).css('color', '#222');
+		});
+	});
+
+
+Por otra parte tenemos el archivo con el nombre **enlaces.js** con el siguiente contenido:
+
+	$(document).ready(function(){
+		//Obliga abrir los enlaces en una pestaña nueva
+		$('a').attr('target', 'blank');
+	});
+
+Si mandamos a llamar ambos documentos de la manera siguiente:
+
+	<script src="js/titulos.js"></script>
+	<script src="js/enlaces.js"></script>
+
+¿Que crees que pase?.
+
+Es una practica bastante comun separar la logica en archivos distintos de esta manera tenemos mas ordenado nuestro código, de echo así es como funciona este manual donde tenemos un archivo que se encarga de manejar la tabla de los contenidos.
+
+[Ejemplo - tabla de contenidos](../ejemplos/06.tabla_contenidos.html)
+
 
 ## jQuery Plugins.
 
@@ -62,7 +101,7 @@ Observe el siguiente código:
 		
 	})(jQuery);
 
-## Uso.
+### Uso.
 
 	$(function() {
 		$("#round-me").yourPluginName("20px");

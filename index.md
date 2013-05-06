@@ -24,7 +24,10 @@
   - [Enlaces externos]()
  - [**Sesión 3 - Manejo de eventos**](./sesion03/index.html)
   - [Introducción a los eventos]()
+  - [Evento click]()
   - [Comportamiento en cola]()
+  - [Evento hover]()
+  - [Eventos del teclado]()
   - [Borrando eventos función off]()
   - [Enlaces recomendados]()
  - [**Sesión 4 - Efectos y modificaciones sobre el DOM**](./sesion04/index.html)
@@ -47,6 +50,9 @@
   - [getScript]()
   - [getJSON]()
   - [Ejemplo load]()
+ - [**Sesión 6 - Organización de código**](./sesion06/index.html)
+  - [Organizando el código en archivos]()
+  - [jQuery Plugins]()
  - [**Listado de Recursos Disponibles**](./recursos/index.html)
   - <a href="./recursos/colores-css3.html">Colores CSS3</a>
   - <a href="./recursos/selectores_css.html">selectores CSS</a>
