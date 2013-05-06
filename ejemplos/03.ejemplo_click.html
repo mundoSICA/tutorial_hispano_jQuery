@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title></title>
+<title>Ejemplo evento click</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
 	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
@@ -11,7 +11,7 @@
 	<script type='text/javascript' src='./../js/jquery.linkEjemplos.js'></script>
 	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
-	pageConf	= {fileName:'/ejemplos/06.ejemplo_plugin.html', sesion:0, num_sesiones:6};
+	pageConf	= {fileName:'/ejemplos/03.ejemplo_click.html', sesion:0, num_sesiones:6};
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -35,65 +35,44 @@
 <div id='tabla_contenidos'></div>
 <script  type="text/javascript">
 $(function() {
-    $("pre").snippet("javascript", {style:'darkness'});
+    $("pre").snippet("javascript", {style:'darkness'}); 
+    $('a.testClick').click( function(event){
+        $('.log').html( '<strong>Resultado:</strong> ' + $(this).text() );
+        event.preventDefault();
+    });
 });
 </script>
 
-<h2>Ejemplo Plugin jQuery</h2>
+<p><style type="text/css" media="all">.log {
+    padding: 10px;
+    color: #004983;
+    background: #ADE0FF;
+}</style></p>
+
+<h1>Ejemplo evento click</h1>
+
+<h2>Codigo HTML</h2>
+
+<pre><code>&lt;a class='testClick' href='http://adsl.org.mx'&gt;enlace 1&lt;/a&gt;
+&lt;a class='testClick' href='http://google.com'&gt;enlace 2&lt;/a&gt;
+&lt;a class='testClick' href='../sesion03/index.html'&gt;enlace 3&lt;/a&gt;</code></pre>
 
 <h2>Código JS</h2>
 
-<pre><code>(function($){
-    $.linkEjemplos = function(el, options){
-        // To avoid scope issues, use 'base' instead of 'this'
-        // to reference this class from internal events and functions.
-        var base = this;
+<pre><code>$('a.testClick').click( function(event){
+    $('.log').html( '&lt;strong&gt;Resultado:&lt;/strong&gt; ' + $(this).text() );
+    event.preventDefault();
+});</code></pre>
 
-        // Access to jQuery and DOM versions of element
-        base.$el = $(el);
-        base.el = el;
+<h2>Resultado</h2>
 
-        // Add a reverse reference to the DOM object
-        base.$el.data("linkEjemplos", base);
+<ul>
+    <li><a class='testClick' href='http://adsl.org.mx'>enlace 1</a></li>
+    <li><a class='testClick' href='http://google.com'>enlace 2</a></li>
+    <li><a class='testClick' href='../sesion03/index.html'>enlace 3</a></li>
+</ul>
 
-        base.init = function(){
-            base.options = $.extend({},$.linkEjemplos.defaultOptions, options);
-            // Put your initialization code here
-        };
-        // Run initializer
-        base.init();
-        base.$el.addClass(base.options.clase).attr('target', base.options.target);
-    };
-
-    $.linkEjemplos.defaultOptions = {
-        'clase' : "button",
-        'target' : "blank",
-    };
-
-    $.fn.linkEjemplos = function(options) {
-        return this.each(function(){
-            (new $.linkEjemplos(this, options));
-
-        });
-    };
-
-})(jQuery);</code></pre>
-
-<h2>Uso.</h2>
-
-<p>Insertamos el plugin.</p>
-
-<pre><code>&lt;script type='text/javascript' src='../js/jquery.linkEjemplos.js'&gt;&lt;/script&gt;
-</code></pre>
-
-<p>Lo usamos tal cual:</p>
-
-<pre><code>$('a[href^="../ejemplos/"]').linkEjemplos();</code></pre>
-
-<p>Podemos ocupar los argumentos de opcionales:</p>
-
-<pre><code>$('a[href^="../ejemplos/"]').linkEjemplos({'clase': 'link', 'target': '_self'});
-</code></pre>
+<p class='log'></p>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">

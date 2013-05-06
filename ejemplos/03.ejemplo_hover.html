@@ -11,7 +11,7 @@
 	<script type='text/javascript' src='./../js/jquery.linkEjemplos.js'></script>
 	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
-	pageConf	= {fileName:'/ejemplos/03.ejemplo_hover.html', sesion:0, num_sesiones:5};
+	pageConf	= {fileName:'/ejemplos/03.ejemplo_hover.html', sesion:0, num_sesiones:6};
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -36,36 +36,57 @@
 <script  type="text/javascript">
 $(function() {
     $("pre").snippet("javascript", {style:'darkness'});
-});
-</script>
-
-<script  type="text/javascript">
-$(function() {
-    $("h1").hover(
-        function (){$(this).css("color", "red");},
-        function (){$(this).css("color", "black");}
+    $("#box").hover(
+        function (){
+            $(this).animate({ 'width': "300px", "height" : "300px"});
+        },
+        function (){
+            $(this).animate({ 'width': "100px", "height" : "100px"});
+        }
     );
 });
 </script>
 
+<p><style>#box{
+    width: 100px;
+    height: 100px;
+    background: orange;
+    display: block;
+    border-radius: 5px;
+}
+</style></p>
+
 <h1>Ejemplo hover</h1>
 
-<p>Analice el siguiente código HTML:</p>
+<h2>código HTML:</h2>
 
-<pre><code>&lt;h1&gt;Titulo Prueba&lt;/h1&gt;
+<pre><code>&lt;div id='box'&gt;&lt;/div&gt;
 </code></pre>
 
-<p>Ahora tenemos el siguiente código <strong>jQuery</strong>:</p>
+<h2>CSS</h2>
 
-<pre><code>$("h3").hover({
-    function (){$(this).css("color", "red");},
-    function (){$(this).css("color", "black");}
-);
-</code></pre>
+<pre><code>#box{
+    width: 100px;
+    height: 100px;
+    background: orange;
+    display: block;
+    border-radius: 5px;
+}</code></pre>
 
-<p>¿Que pasa?, cuando pasamos el mouse y lo quitamos?</p>
+<h2>código JS:</h2>
 
-<h1>Titulo Prueba</h1>
+<pre><code>$("#box").hover(
+    function (){
+        $(this).animate({ 'width': "300px", "height" : "300px"});
+    },
+    function (){
+        $(this).animate({ 'width': "100px", "height" : "100px"});
+    }
+);</code></pre>
+
+<h2>Resultado</h2>
+
+<div id='box'></div>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">

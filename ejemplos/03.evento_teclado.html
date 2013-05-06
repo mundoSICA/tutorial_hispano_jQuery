@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Ejemplo eventos del teclado</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./../css/jquery.snippet.css" />
+	<link rel='icon' type='image/png' href='./../img/favicon.png' />
+	<script type='text/javascript' src='./../js/jquery-1.9.1.min.js'></script>
+	<script type='text/javascript' src='./../js/tabla_contenidos.js'></script>
+	<script type='text/javascript' src='./../js/jquery.linkEjemplos.js'></script>
+	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
+	<script type='text/javascript'>
+	pageConf	= {fileName:'/ejemplos/03.evento_teclado.html', sesion:0, num_sesiones:6};
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33125186-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div id='head'>
+	<a href='http://www.adsl.org.mx/' id='logoADSL'>Academia de software libre</a>
+	<h1>
+		<a id='link_principal' href='./../index.html'>Manual básico de jQuery</a><br />
+		<span id='descripcion'>Compartiendo conocimientos</span>
+	</h1>
+</div>
+<div id='content'>
+<div id='tabla_contenidos'></div>
+<script  type="text/javascript">
+$(function() {
+    $("pre").snippet("javascript", {style:'darkness'});
+    $pollito = $("#pollito");
+    $ecenario = $("#ecenario");
+    pos_x = 400;
+
+    $('body').keydown(function(event) {
+        switch(event.which) {
+        case 39:
+          $pollito.css("background-position", "0 0");
+          if(pos_x < ($ecenario.width() - $pollito.width()) ) {
+            pos_x += 10;
+            $pollito.css("margin-left", pos_x + "px");
+            }
+          break;
+        case 37:
+          $pollito.css("background-position", "-161px 0");
+          if(pos_x>0) {
+            pos_x -= 10;
+            $pollito.css("margin-left", pos_x + "px");
+            }
+          break;
+        default:
+            console.log('Tecla: '+ event.which);
+        }
+    });
+});
+</script>
+
+<p><style>#ecenario {
+    width: 100%;
+    min-width: 500px;
+    height: 180px;
+    background: #6FD9FF;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(top, #6FD9FF, #289FCB);
+    background-image: -ms-linear-gradient(top, #6FD9FF, #289FCB);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#6FD9FF), to(#289FCB));
+    background-image: -webkit-linear-gradient(top, #6FD9FF, #289FCB);
+    background-image: -o-linear-gradient(top, #6FD9FF, #289FCB);
+    background-image: linear-gradient(top, #6FD9FF, #289FCB);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6FD9FF', endColorstr='#289FCB',GradientType=0 );
+    border-bottom: 25px solid #208A00;
+} #pollito {
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 70px;
+    background: URL('pollito.png') no-repeat;
+    width: 161px;
+    height: 134px;
+}</style></p>
+
+<h1>Ejemplo eventos del teclado</h1>
+
+<h3>código HTML:</h3>
+
+<pre><code>&lt;div id="ecenario"&gt;&lt;div id="pollito"&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre>
+
+<h3>código CSS:</h3>
+
+<pre><code>#ecenario {
+    width: 100%;
+    min-width: 500px;
+    height: 180px;
+    background: #6FD9FF;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(top, #6FD9FF, #289FCB);
+    background-image: -ms-linear-gradient(top, #6FD9FF, #289FCB);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#6FD9FF), to(#289FCB));
+    background-image: -webkit-linear-gradient(top, #6FD9FF, #289FCB);
+    background-image: -o-linear-gradient(top, #6FD9FF, #289FCB);
+    background-image: linear-gradient(top, #6FD9FF, #289FCB);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6FD9FF', endColorstr='#289FCB',GradientType=0 );
+    border-bottom: 25px solid #208A00;
+}
+#pollito {
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 70px;
+    background: URL('pollito.png') no-repeat;
+    width: 161px;
+    height: 134px;
+}</code></pre>
+
+<h2>Código <strong>jQuery</strong>::</h2>
+
+<pre><code>$pollito = $("#pollito");
+$ecenario = $("#ecenario");
+pos_x = 400;
+
+$('body').keydown(function(event) {
+    switch(event.which) {
+    case 39:
+      $pollito.css("background-position", "0 0");
+      if(pos_x &lt; ($ecenario.width() - $pollito.width()) ) {
+        pos_x += 10;
+        $pollito.css("margin-left", pos_x + "px");
+        }
+      break;
+    case 37:
+      $pollito.css("background-position", "-161px 0");
+      if(pos_x&gt;0) {
+        pos_x -= 10;
+        $pollito.css("margin-left", pos_x + "px");
+        }
+      break;
+    default:
+        console.log('Tecla: '+ event.which);
+    }
+});</code></pre>
+
+<h2>Resultado</h2>
+
+<p>Utilice las feclas de su teclado para darle animación al pollito :</p>
+
+<div id="ecenario"><div id="pollito"></div></div>
+</div><!-- end content -->
+<div id="pie_pagina">
+	<div id="agradecimientos">
+		<h2>Con especial agredecimiento a:</h2>
+		<ul>
+				<li><a href="http://mundosica.com">mundosica</a></li>
+				<li><a href="http://adsl.mx">ADSL</a></li>
+				<li><a href="https://github.com/mundosica/tutorial_hispano_jQuery/contributors">Colaboradores</a></li>
+		</ul>
+		<br/>
+		<a class="copy" rel="license" href="http://mundosica.github.com//tutorial_hispano_jQuery/copyright.html">&nbsp;</a>
+    <a class="xhtml-valido" href="http://validator.w3.org/check?uri=referer">&nbsp;</a>
+	</div>
+</div>
+</body>
+</html>

@@ -11,7 +11,7 @@
 	<script type='text/javascript' src='./../js/jquery.linkEjemplos.js'></script>
 	<script type='text/javascript' src='./../js/jquery.snippet.js'></script>
 	<script type='text/javascript'>
-	pageConf	= {fileName:'/ejemplos/04.-fadeIn.html', sesion:0, num_sesiones:5};
+	pageConf	= {fileName:'/ejemplos/04.-fadeIn.html', sesion:0, num_sesiones:6};
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33125186-1']);
   _gaq.push(['_trackPageview']);
@@ -41,25 +41,34 @@ $(function() {
 
 <script  type="text/javascript">
 $(function() {
-    $('h1')
-                    .fadeOut('fast')
-                    .fadeIn('slow');
-    $("h1").click(function() {
-        $(this).fadeOut('slow');
+    $('a.button').click(function(event){
+        $(this)
+            .fadeOut('fast')
+            .fadeIn('slow');
+        event.preventDefault();
     });
-
 });
 </script>
 
 <h1>Ejemplo fadeIn</h1>
 
-<pre><code>$('h1')
+<h2>Código JS</h2>
+
+<pre><code>$('a.button').click(function(event){
+    $(this)
             .fadeOut('fast')
             .fadeIn('slow');
-$("h1").click(function() {
-    $(this).fadeOut('slow');
-});
+    event.preventDefault();
+});</code></pre>
+
+<h2>Código HTML</h2>
+
+<pre><code>&lt;a class='button' href='#'&gt;Ejemplo fadeIn&lt;/a&gt;
 </code></pre>
+
+<h2>Resultado</h2>
+
+<p><a class='button' href='#'>Ejemplo fadeIn</a></p>
 </div><!-- end content -->
 <div id="pie_pagina">
 	<div id="agradecimientos">
