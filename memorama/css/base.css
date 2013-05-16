@@ -10,12 +10,13 @@ body{
 	padding: 0 20px;
 }
 
-.fila .ficha{
+.ficha{
 	float: left;
 	width: 175px;
 	height: 200px;
 	background: #0041B7;
 	margin-left:20px;
+	margin-bottom: 10px;
 	cursor: pointer;
 	cursor: hand;
 }

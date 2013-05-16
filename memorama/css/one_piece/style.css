@@ -16,11 +16,11 @@ body{
 	-o-border-radius:20px;
 	border-radius:20px;
 }
-
-.fila .ficha{
+.ficha {
 	border:1px solid #00000A;
 	background: #0041B7;
-	background-image:URL(ficha_fondo.png);
+	background-image:URL(fichas.png);
+	background-position: 0 0;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	-o-border-radius:10px;
