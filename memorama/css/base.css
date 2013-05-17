@@ -5,7 +5,7 @@ body{
 #tablero{
 	width: 810px;
 	background-color:#FFF;
-	height:700px;
+	/* height:750px; */
 	margin:0 auto;
 	padding: 0 20px;
 }
@@ -44,4 +44,21 @@ div.fila{
 	background-image: -o-linear-gradient(top, #222, #000);
 	background-image: linear-gradient(top, #222, #000);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#000',GradientType=0 );
+}
+
+.MemoramaScore {
+	background: black;
+	color: white;
+	padding: 5px;
+	position:absolute;
+	margin-top: -50px;
+	margin-left: 500px;
+	width: 350px;
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+			border-radius: 10px;
+}
+.MemoramaScore span {
+	color: #00B3FC;
+	font-weight: bold;
 }

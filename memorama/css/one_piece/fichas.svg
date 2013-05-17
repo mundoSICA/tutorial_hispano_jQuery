@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="Nuevo documento 1">
+   sodipodi:docname="fichas.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="997.01791"
-     inkscape:cy="461.55262"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="1125.1833"
+     inkscape:cy="178.71087"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -54,7 +54,10 @@
      id="layer1">
     <g
        id="g3142"
-       transform="translate(617.14286,-437.14286)">
+       transform="translate(611.42857,328.57143)"
+       inkscape:export-filename="/home/fitorec/SICA/git/tutorial_hispano_jQuery/memorama/css/one_piece/fichas.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          transform="translate(-569.22617,-218.57141)"
          id="g3117">

@@ -19,7 +19,7 @@ body{
 .ficha {
 	border:1px solid #00000A;
 	background: #0041B7;
-	background-image:URL(fichas.png);
+	background-image:URL(fichas.jpg);
 	background-position: 0 0;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
