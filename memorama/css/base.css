@@ -23,7 +23,7 @@ body{
 div.fila{
 	height: 210px;
 }
-#seleccion_estilo{
+.MemoramaConfiguracion {
 	position:absolute;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -46,17 +46,27 @@ div.fila{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#000',GradientType=0 );
 }
 
+h1.MemoramaTitulo {
+	display: inline;
+}
+
 .MemoramaScore {
 	background: black;
 	color: white;
 	padding: 5px;
-	position:absolute;
+	/*position:absolute;
 	margin-top: -50px;
-	margin-left: 500px;
-	width: 350px;
+	margin-left: 400px;*/
+	float: right;
+	/* width: 400px; */
 	-webkit-border-radius: 10px;
 	   -moz-border-radius: 10px;
 			border-radius: 10px;
+}
+a.memoramaLinkCodigo {
+	display: block;
+	text-decoration: none;
+	padding: 5px;
 }
 .MemoramaScore span {
 	color: #00B3FC;

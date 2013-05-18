@@ -1,5 +1,5 @@
 body{
-	background: #00DCF1;
+	background: #00398C;
 	background-repeat: repeat-x;
 	background-image: -moz-linear-gradient(top, #00DCF1, #00398C);
 	background-image: -ms-linear-gradient(top, #00DCF1, #00398C);
@@ -17,12 +17,17 @@ body{
 	border-radius:20px;
 }
 .ficha {
-	border:1px solid #00000A;
+	border: 2px solid #00000A;
 	background: #0041B7;
 	background-image:URL(fichas.jpg);
 	background-position: 0 0;
-	-moz-border-radius:10px;
+	/*-webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.05);
+	   -moz-box-shadow: inset 0 0 1px rgba(0,0,0,.05);
+		-ms-box-shadow: inset 0 0 1px rgba(0,0,0,.05);
+		 -o-box-shadow: inset 0 0 1px rgba(0,0,0,.05);*/
+			box-shadow: inset 0 0 20px rgba(0,0,0,.3), 7px 6px 2px rgba(0,0,0,.2);
 	-webkit-border-radius:10px;
-	-o-border-radius:10px;
-	border-radius:10px;
+	   -moz-border-radius:10px;
+	     -o-border-radius:10px;
+	        border-radius:10px;
 }
